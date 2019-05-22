@@ -1,0 +1,6 @@
+framework module UCloudRTC {
+  umbrella header "UCloudRTC.h"
+
+  export *
+  module * { export * }
+}
