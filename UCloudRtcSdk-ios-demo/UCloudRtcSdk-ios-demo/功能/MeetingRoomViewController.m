@@ -1,0 +1,421 @@
+//
+//  MeetingRoomViewController.m
+//  MeetingSDK
+//
+//  Created by jacksimjia on 2018/2/2.
+//  Copyright © 2018年 ppyun. All rights reserved.
+//
+
+#import "MeetingRoomViewController.h"
+#import "UIView+Toast.h"
+#import <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>
+#import "MeetingRoomCell.h"
+#import "YBPopupMenu.h"
+
+@interface MeetingRoomViewController () <UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate,YBPopupMenuDelegate,MeetingRoomCellDelegate>
+{
+    NSMutableArray *streamTitleArray;
+    NSMutableArray<UCloudRtcStream*> *canSubstreamList;
+}
+@property (weak, nonatomic) IBOutlet UICollectionView *listView;
+@property (weak, nonatomic) IBOutlet UIView *localView;
+@property (weak, nonatomic) IBOutlet UIView *settingView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthOfSettingView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfListView;
+
+@property (weak, nonatomic) IBOutlet UIButton *bottomButton;
+@property (weak, nonatomic) IBOutlet UILabel *roomNameLabel;
+@property (nonatomic , strong) UCloudRtcEngine *manager;
+@property (nonatomic, strong) NSMutableArray *streamList;//已订阅远端流
+
+@property (nonatomic, assign) BOOL isConnected;
+@property (nonatomic, strong) UCloudRtcStream *bigScreenStream;
+
+@property (nonatomic, strong) YBPopupMenu *popupMenu;//可订阅流弹出视图
+@end
+
+static NSInteger kHorizontalCount = 3;
+
+@implementation MeetingRoomViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    streamTitleArray = [NSMutableArray new];
+    canSubstreamList = [NSMutableArray new];
+    self.streamList = @[].mutableCopy;
+    self.roomNameLabel.text = [NSString stringWithFormat:@"ROOM:%@",self.roomId];
+    
+    [self.listView registerNib:[UINib nibWithNibName:@"MeetingRoomCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    
+    //初始化engine
+    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId];
+    self.manager.delegate = self;
+    self.isConnected = NO;
+    //配置SDK
+    [self settingSDK:self.engineSetting];
+    //加入房间
+    [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {}];
+}
+
+- (void)settingSDK:(NSDictionary *)setting{
+    if (setting[@"isAutoPublish"]) {
+        NSString * isAutoPublish = [NSString stringWithFormat:@"%@",setting[@"isAutoPublish"]];
+        NSString * isAutoSubscribe = [NSString stringWithFormat:@"%@",setting[@"isAutoSubscribe"]];
+        NSString * isOnlyAudio = [NSString stringWithFormat:@"%@",setting[@"isOnlyAudio"]];
+        NSString * videoProfile = [NSString stringWithFormat:@"%@",setting[@"videoProfile"]];
+        NSString * streamProfile = [NSString stringWithFormat:@"%@",setting[@"streamProfile"]];
+        NSString * isDebug = [NSString stringWithFormat:@"%@",setting[@"isDebug"]];
+        self.manager.isAutoPublish = isAutoPublish.boolValue;
+        self.manager.isAutoSubscribe = isAutoSubscribe.boolValue;
+        self.manager.isOnlyAudio = isOnlyAudio.boolValue;
+        //设置是否开启日志
+        [UCloudRtcEngine setLogEnable:isDebug.boolValue];
+        switch (videoProfile.integerValue) {
+            case 0:
+                self.manager.videoProfile = UCloudRtcEngine_VideoProfile_180P;
+                break;
+            case 1:
+                self.manager.videoProfile = UCloudRtcEngine_VideoProfile_360P_1;
+                break;
+            case 2:
+                self.manager.videoProfile = UCloudRtcEngine_VideoProfile_360P_2;
+                break;
+            case 3:
+                self.manager.videoProfile = UCloudRtcEngine_VideoProfile_480P;
+                break;
+            case 4:
+                self.manager.videoProfile = UCloudRtcEngine_VideoProfile_720P;
+                break;
+            default:
+                break;
+        }
+        switch (streamProfile.integerValue) {
+            case 0:
+                self.manager.streamProfile = UCloudRtcEngine_StreamProfileAll;
+                break;
+            case 1:
+                self.manager.streamProfile = UCloudRtcEngine_StreamProfileUpload;
+                break;
+            case 2:
+                self.manager.streamProfile = UCloudRtcEngine_StreamProfileDownload;
+                break;
+            default:
+                break;
+        }
+    }
+   
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    UCloudRtcLog(@"----didReceiveMemoryWarning");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.manager setLocalPreview:self.localView];
+    self.bigScreenStream = self.manager.localStream;
+    
+}
+
+
+//退出房间
+- (IBAction)leaveRoom:(id)sender {
+     [self showAlertWithMessage:@"您确定要退出房间吗" Sure:^{
+         [self.manager leaveRoom];
+     }];
+}
+
+
+- (void)showAlertWithMessage:(NSString *)message Sure:(void (^)(void))block {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:nil];
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定"
+                                                   style:UIAlertActionStyleDefault
+                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                     if (block) {
+                                                         block();
+                                                     }
+                                                 }];
+    [alert addAction:cancel];
+    [alert addAction:sure];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+- (IBAction)showSubscribeList:(UIButton *)sender {
+    if (streamTitleArray.count > 0) {
+        [YBPopupMenu showRelyOnView:sender titles:streamTitleArray icons:nil menuWidth:300 otherSettings:^(YBPopupMenu *popupMenu) {
+            popupMenu.priorityDirection = YBPopupMenuPriorityDirectionBottom;
+            popupMenu.borderWidth = 1;
+            popupMenu.borderColor = [UIColor blueColor];
+            popupMenu.delegate = self;
+        }];
+    }
+}
+#pragma mark - YBPopupMenuDelegate
+- (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu
+{
+    //手动订阅一条流  仅限于非自动订阅模式
+    UCloudRtcStream  *stream = canSubstreamList[index];
+    [canSubstreamList removeObjectAtIndex:index];
+    [streamTitleArray removeObjectAtIndex:index];
+    [self.manager subscribeMethod:stream];
+}
+
+
+- (IBAction)didSwitchCameraAction:(id)sender {
+    [self.manager switchCamera];
+}
+- (IBAction)didSetMicrophoneMuteAction:(UIButton *)sender {
+    
+    sender.selected = !sender.selected;
+    [self.manager setMute:sender.selected];
+}
+
+- (IBAction)didOpenLoudspeakerAction:(UIButton *)sender {
+    
+    sender.selected = !sender.selected;
+    [self.manager openLoudspeaker:sender.selected];
+}
+- (IBAction)didOpenVideoAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    [self.manager openCamera:!sender.selected];
+}
+#pragma mark - 流
+//发布流
+- (IBAction)didPublishStreamAction:(id)sender {
+    if (self.isConnected) {
+        [self showAlertWithMessage:@"您确定要取消发布吗" Sure:^{
+            NSLog(@"取消发布");
+            [self.manager unPublish];
+        }];
+    } else {
+        
+        [self.manager.localStream renderOnView:self.localView];
+        [self.manager publish];
+        self.bigScreenStream = self.manager.localStream;
+    }
+
+}
+
+
+#pragma mark ------UCloudRtcEngineDelegate method-----
+-(void)uCloudRtcEngineDidJoinRoom:(NSMutableArray<UCloudRtcStream *> *)canSubStreamList{
+    [self.view makeToast:@"加入房间成功" duration:1.0 position:CSToastPositionCenter];
+    canSubstreamList = canSubStreamList;
+    //远端所有可订阅的流将在这里展示  仅在非自动订阅模式下 否则为空
+    if (canSubStreamList.count > 0) {
+        [streamTitleArray removeAllObjects];
+        for (UCloudRtcStream *stream in canSubStreamList) {
+            [streamTitleArray addObject:stream.streamId];
+        }
+    }
+}
+
+//新成员加入房间
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager memberDidJoinRoom:(NSDictionary *)memberInfo{
+    NSString *message = [NSString stringWithFormat:@"用户:%@ 加入房间",memberInfo[@"user_id"]];
+    [self.view makeToast:message duration:1.5 position:CSToastPositionCenter];
+}
+//成员离开房间
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager memberDidLeaveRoom:(NSDictionary *)memberInfo{
+    NSString *message = [NSString stringWithFormat:@"用户:%@ 离开房间",memberInfo[@"user_id"]];
+    [self.view makeToast:message duration:1.5 position:CSToastPositionCenter];
+}
+
+//非自动订阅模式 新流加入会收到该回调
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager newStreamHasJoinRoom:(UCloudRtcStream *)stream{
+    [self.view makeToast:@"有新的流可以订阅" duration:1.5 position:CSToastPositionCenter];
+    [canSubstreamList addObject:stream];
+    [streamTitleArray addObject:stream.streamId];
+}
+//非自动订阅模式 新流退出会收到该回调
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamHasLeaveRoom:(UCloudRtcStream *)stream{
+    [self.view makeToast:@"可订阅的流离开" duration:1.5 position:CSToastPositionCenter];
+    UCloudRtcStream *newS = [UCloudRtcStream new];
+    for (UCloudRtcStream *tempS in canSubstreamList) {
+        if ([tempS.streamId isEqualToString:stream.streamId]) {
+            newS = tempS;
+            break;
+        }
+    }
+    [canSubstreamList removeObject:newS];
+    [streamTitleArray removeObject:stream.streamId];
+}
+
+//非自动订阅模式 订阅成功会收到该回调
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didSubscribe:(UCloudRtcStream *)stream{
+    [self.view makeToast:@"订阅成功" duration:1.5 position:CSToastPositionCenter];
+    [canSubstreamList removeObject:stream];
+    [streamTitleArray removeObject:stream.streamId];
+     [self reloadVideos];
+}
+//非自动订阅模式 取消订阅成功会收到该回调
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didCancleSubscribe:(UCloudRtcStream *)stream{
+    [self.view makeToast:@"可订阅的流离开" duration:1.5 position:CSToastPositionCenter];
+}
+
+- (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *)manager {
+    [self.view makeToast:@"退出房间" duration:1.5 position:CSToastPositionCenter];
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+- (void)uCloudRtcEngineDisconnectRoom:(UCloudRtcEngine *)manager {
+    [self.view makeToast:@"房间已断开连接" duration:1.5 position:CSToastPositionCenter];
+}
+
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamPublishSucceed:(NSString *)streamId {
+
+}
+
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState {
+    switch (publishState) {
+        case UCloudRtcEnginePublishStateUnPublish:
+            self.isConnected = NO;
+            break;
+        case UCloudRtcEnginePublishStatePublishing: {
+            [self.bottomButton setTitle:@"正在发布..." forState:UIControlStateNormal];
+        }
+            break;
+        case UCloudRtcEnginePublishStatePublishSucceed:{
+            self.isConnected = YES;
+            [self.view makeToast:@"发布成功" duration:1.5 position:CSToastPositionCenter];
+            [self.bottomButton setTitle:@"发布成功" forState:UIControlStateNormal];
+        }
+            break;
+        case UCloudRtcEnginePublishStateRepublishing: {
+            [self.bottomButton setTitle:@"正在重新发布..." forState:UIControlStateNormal];
+        }
+            break;
+        case UCloudRtcEnginePublishStatePublishFailed: {
+            self.isConnected = NO;
+            [self.bottomButton setTitle:@"开始发布" forState:UIControlStateNormal];
+        }
+            break;
+        case UCloudRtcEnginePublishStatePublishStoped: {
+            self.isConnected = NO;
+            [self.view makeToast:@"发布已停止" duration:1.5 position:CSToastPositionCenter];
+            [self.bottomButton setTitle:@"开始发布" forState:UIControlStateNormal];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didConnectFail:(id)data {
+    NSLog(@"发布失败:%@",data);
+    self.isConnected = NO;
+    [self.view makeToast:[NSString stringWithFormat:@"发布失败:%@",data ?: @""] duration:5.0 position:CSToastPositionCenter];
+
+}
+
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager receiveRemoteStream:(UCloudRtcStream *)stream {
+    if (stream) {
+        [self.streamList addObject:stream];
+        [self reloadVideos];
+    }
+}
+
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didRemoveStream:(UCloudRtcStream * _Nonnull)stream{
+    UCloudRtcStream *delete = [UCloudRtcStream new];
+    for (UCloudRtcStream *obj in self.streamList) {
+        if ([obj.streamId isEqualToString:stream.streamId]) {
+            delete = obj;
+            break;
+        }
+    }
+    [self.streamList removeObject:delete];
+    [self reloadVideos];
+}
+
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager error:(UCloudRtcError *)error{
+    switch (error.errorType) {
+        case UCloudRtcErrorTypeTokenInvalid:
+            [self.view makeToast:[NSString stringWithFormat:@"token无效"] duration:3.0 position:CSToastPositionCenter];
+            break;
+        case UCloudRtcErrorTypeJoinRoomFail:
+            [self.view makeToast:[NSString stringWithFormat:@"加入房间失败：%@",error.message] duration:3.0 position:CSToastPositionCenter];
+            break;
+        case UCloudRtcErrorTypeCreateRoomFail:
+            break;
+        case UCloudRtcErrorTypePublishStreamFail: {
+            self.isConnected = NO;
+            [self.bottomButton setTitle:@"开始发布" forState:UIControlStateNormal];
+            [self.view makeToast:[NSString stringWithFormat:@"发布失败：%@",error.message] duration:3.0 position:CSToastPositionCenter];
+        }
+            break;
+        default:
+            [self.view makeToast:[NSString stringWithFormat:@"%@",error.message] duration:3.0 position:CSToastPositionCenter];
+            break;
+    }
+}
+
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager didReceiveStreamVolume:(NSArray<UCloudRtcStreamVolume *> *)volume{
+
+}
+
+- (void)reloadVideos {
+    CGFloat width = (CGRectGetWidth(self.listView.frame) - kHorizontalCount * 5) / kHorizontalCount;
+    CGFloat height = width / 3.0 * 4.0 + 5.0;
+    
+    double count = self.streamList.count * 1.0;
+    int row = ceil(count / kHorizontalCount);
+    row = row < 4 ? row : 4;
+    
+    self.heightOfListView.constant = height * row;
+    [self.view layoutSubviews];
+    
+    [self.listView reloadData];
+    
+}
+#pragma mark
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.streamList.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    MeetingRoomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    [cell configureWithStream:self.streamList[indexPath.row]];
+    cell.delegate = self;
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UCloudRtcStream *stream = self.streamList[indexPath.row];
+    [stream getReportStates:^(UCloudRtcStreamStatsInfo *info) {
+        if (info) {
+            NSLog(@"info:%@",info);
+        }
+    }];
+}
+
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(90, 120);
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 5.0;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0;
+}
+
+
+#pragma  mark -- MeetingRoomCellDelegate ---
+-(void)didMuteStream:(UCloudRtcStream *)stream muteAudio:(BOOL)mute{
+    [self.manager setRemoteStream:stream muteAudio:mute];
+}
+
+-(void)didMuteStream:(UCloudRtcStream *)stream muteVideo:(BOOL)mute{
+    [self.manager setRemoteStream:stream muteAudio:mute];
+}
+
+@end

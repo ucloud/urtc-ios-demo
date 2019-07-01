@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		387805B722B8F2CF00E4FC74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805B622B8F2CF00E4FC74 /* AppDelegate.m */; };
+		387805BD22B8F2CF00E4FC74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387805BB22B8F2CF00E4FC74 /* Main.storyboard */; };
+		387805BF22B8F2D300E4FC74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 387805BE22B8F2D300E4FC74 /* Assets.xcassets */; };
+		387805C222B8F2D300E4FC74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387805C022B8F2D300E4FC74 /* LaunchScreen.storyboard */; };
+		387805C522B8F2D300E4FC74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805C422B8F2D300E4FC74 /* main.m */; };
+		387805D522B8F3D000E4FC74 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805CE22B8F3D000E4FC74 /* LoginViewController.m */; };
+		387805D722B8F3D000E4FC74 /* MeetingRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805D122B8F3D000E4FC74 /* MeetingRoomCell.m */; };
+		387805D822B8F3D000E4FC74 /* MeetingRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805D322B8F3D000E4FC74 /* MeetingRoomViewController.m */; };
+		387805D922B8F3D000E4FC74 /* MeetingRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387805D422B8F3D000E4FC74 /* MeetingRoomCell.xib */; };
+		387805DC22B8F4BC00E4FC74 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805DA22B8F4BC00E4FC74 /* UIView+Toast.m */; };
+		3878075622BA139F00E4FC74 /* UCloudRtcSdk_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3878075322BA12EB00E4FC74 /* UCloudRtcSdk_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		387808FD22BB367600E4FC74 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 387808FC22BB367600E4FC74 /* libc++.tbd */; };
+		387808FF22BB368400E4FC74 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 387808FE22BB368400E4FC74 /* libicucore.tbd */; };
+		3878090122BB368D00E4FC74 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3878090022BB368D00E4FC74 /* VideoToolbox.framework */; };
+		3878090322BB369500E4FC74 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3878090222BB369500E4FC74 /* GLKit.framework */; };
+		3878090522BB36A000E4FC74 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3878090422BB369F00E4FC74 /* OpenGLES.framework */; };
+		3878090722BB36CE00E4FC74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3878090622BB36CE00E4FC74 /* UIKit.framework */; };
+		38780BC922C2173200E4FC74 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BC822C2173200E4FC74 /* SettingViewController.m */; };
+		38780BEF22C31B3800E4FC74 /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BEA22C31B3800E4FC74 /* YBRectConst.m */; };
+		38780BF022C31B3800E4FC74 /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BEB22C31B3800E4FC74 /* YBPopupMenuPath.m */; };
+		38780BF122C31B3800E4FC74 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BED22C31B3800E4FC74 /* YBPopupMenu.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		387805E122B9CA2E00E4FC74 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3878075622BA139F00E4FC74 /* UCloudRtcSdk_ios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		387805B222B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UCloudRtcSdk-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		387805B522B8F2CF00E4FC74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		387805B622B8F2CF00E4FC74 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		387805BC22B8F2CF00E4FC74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		387805BE22B8F2D300E4FC74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		387805C122B8F2D300E4FC74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		387805C322B8F2D300E4FC74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		387805C422B8F2D300E4FC74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		387805CC22B8F3D000E4FC74 /* MeetingRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingRoomCell.h; sourceTree = "<group>"; };
+		387805CE22B8F3D000E4FC74 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		387805CF22B8F3D000E4FC74 /* MeetingRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingRoomViewController.h; sourceTree = "<group>"; };
+		387805D122B8F3D000E4FC74 /* MeetingRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingRoomCell.m; sourceTree = "<group>"; };
+		387805D222B8F3D000E4FC74 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		387805D322B8F3D000E4FC74 /* MeetingRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingRoomViewController.m; sourceTree = "<group>"; };
+		387805D422B8F3D000E4FC74 /* MeetingRoomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingRoomCell.xib; sourceTree = "<group>"; };
+		387805DA22B8F4BC00E4FC74 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		387805DB22B8F4BC00E4FC74 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		3878075322BA12EB00E4FC74 /* UCloudRtcSdk_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UCloudRtcSdk_ios.framework; sourceTree = "<group>"; };
+		387808FC22BB367600E4FC74 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		387808FE22BB368400E4FC74 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		3878090022BB368D00E4FC74 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		3878090222BB369500E4FC74 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		3878090422BB369F00E4FC74 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3878090622BB36CE00E4FC74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		38780BC722C2173200E4FC74 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		38780BC822C2173200E4FC74 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		38780BE922C31B3800E4FC74 /* YBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenu.h; sourceTree = "<group>"; };
+		38780BEA22C31B3800E4FC74 /* YBRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBRectConst.m; sourceTree = "<group>"; };
+		38780BEB22C31B3800E4FC74 /* YBPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenuPath.m; sourceTree = "<group>"; };
+		38780BEC22C31B3800E4FC74 /* YBRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRectConst.h; sourceTree = "<group>"; };
+		38780BED22C31B3800E4FC74 /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
+		38780BEE22C31B3800E4FC74 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		387805AF22B8F2CF00E4FC74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3878090722BB36CE00E4FC74 /* UIKit.framework in Frameworks */,
+				3878090522BB36A000E4FC74 /* OpenGLES.framework in Frameworks */,
+				3878090322BB369500E4FC74 /* GLKit.framework in Frameworks */,
+				3878090122BB368D00E4FC74 /* VideoToolbox.framework in Frameworks */,
+				387808FF22BB368400E4FC74 /* libicucore.tbd in Frameworks */,
+				387808FD22BB367600E4FC74 /* libc++.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		387805A922B8F2CF00E4FC74 = {
+			isa = PBXGroup;
+			children = (
+				387805B422B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo */,
+				387805B322B8F2CF00E4FC74 /* Products */,
+				387808FB22BB367500E4FC74 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		387805B322B8F2CF00E4FC74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				387805B222B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		387805B422B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo */ = {
+			isa = PBXGroup;
+			children = (
+				38780BE822C31B3800E4FC74 /* tools */,
+				3878075322BA12EB00E4FC74 /* UCloudRtcSdk_ios.framework */,
+				387805CB22B8F3D000E4FC74 /* 功能 */,
+				387805B522B8F2CF00E4FC74 /* AppDelegate.h */,
+				387805B622B8F2CF00E4FC74 /* AppDelegate.m */,
+				387805DB22B8F4BC00E4FC74 /* UIView+Toast.h */,
+				387805DA22B8F4BC00E4FC74 /* UIView+Toast.m */,
+				387805BB22B8F2CF00E4FC74 /* Main.storyboard */,
+				387805BE22B8F2D300E4FC74 /* Assets.xcassets */,
+				387805C022B8F2D300E4FC74 /* LaunchScreen.storyboard */,
+				387805C322B8F2D300E4FC74 /* Info.plist */,
+				387805C422B8F2D300E4FC74 /* main.m */,
+			);
+			path = "UCloudRtcSdk-ios-demo";
+			sourceTree = "<group>";
+		};
+		387805CB22B8F3D000E4FC74 /* 功能 */ = {
+			isa = PBXGroup;
+			children = (
+				387805D222B8F3D000E4FC74 /* LoginViewController.h */,
+				387805CE22B8F3D000E4FC74 /* LoginViewController.m */,
+				387805CF22B8F3D000E4FC74 /* MeetingRoomViewController.h */,
+				387805D322B8F3D000E4FC74 /* MeetingRoomViewController.m */,
+				38780BC722C2173200E4FC74 /* SettingViewController.h */,
+				38780BC822C2173200E4FC74 /* SettingViewController.m */,
+				387805CC22B8F3D000E4FC74 /* MeetingRoomCell.h */,
+				387805D122B8F3D000E4FC74 /* MeetingRoomCell.m */,
+				387805D422B8F3D000E4FC74 /* MeetingRoomCell.xib */,
+			);
+			path = "功能";
+			sourceTree = "<group>";
+		};
+		387808FB22BB367500E4FC74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3878090622BB36CE00E4FC74 /* UIKit.framework */,
+				3878090422BB369F00E4FC74 /* OpenGLES.framework */,
+				3878090222BB369500E4FC74 /* GLKit.framework */,
+				3878090022BB368D00E4FC74 /* VideoToolbox.framework */,
+				387808FE22BB368400E4FC74 /* libicucore.tbd */,
+				387808FC22BB367600E4FC74 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38780BE822C31B3800E4FC74 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				38780BE922C31B3800E4FC74 /* YBPopupMenu.h */,
+				38780BEA22C31B3800E4FC74 /* YBRectConst.m */,
+				38780BEB22C31B3800E4FC74 /* YBPopupMenuPath.m */,
+				38780BEC22C31B3800E4FC74 /* YBRectConst.h */,
+				38780BED22C31B3800E4FC74 /* YBPopupMenu.m */,
+				38780BEE22C31B3800E4FC74 /* YBPopupMenuPath.h */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		387805B122B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 387805C822B8F2D300E4FC74 /* Build configuration list for PBXNativeTarget "UCloudRtcSdk-ios-demo" */;
+			buildPhases = (
+				387805AE22B8F2CF00E4FC74 /* Sources */,
+				387805AF22B8F2CF00E4FC74 /* Frameworks */,
+				387805B022B8F2CF00E4FC74 /* Resources */,
+				387805E122B9CA2E00E4FC74 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UCloudRtcSdk-ios-demo";
+			productName = "UCloudRtcSdk-ios-demo";
+			productReference = 387805B222B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		387805AA22B8F2CF00E4FC74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Tony;
+				TargetAttributes = {
+					387805B122B8F2CF00E4FC74 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 387805AD22B8F2CF00E4FC74 /* Build configuration list for PBXProject "UCloudRtcSdk-ios-demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 387805A922B8F2CF00E4FC74;
+			productRefGroup = 387805B322B8F2CF00E4FC74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				387805B122B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		387805B022B8F2CF00E4FC74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387805C222B8F2D300E4FC74 /* LaunchScreen.storyboard in Resources */,
+				387805BF22B8F2D300E4FC74 /* Assets.xcassets in Resources */,
+				387805D922B8F3D000E4FC74 /* MeetingRoomCell.xib in Resources */,
+				387805BD22B8F2CF00E4FC74 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		387805AE22B8F2CF00E4FC74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38780BEF22C31B3800E4FC74 /* YBRectConst.m in Sources */,
+				387805D522B8F3D000E4FC74 /* LoginViewController.m in Sources */,
+				387805D822B8F3D000E4FC74 /* MeetingRoomViewController.m in Sources */,
+				387805D722B8F3D000E4FC74 /* MeetingRoomCell.m in Sources */,
+				38780BF122C31B3800E4FC74 /* YBPopupMenu.m in Sources */,
+				38780BC922C2173200E4FC74 /* SettingViewController.m in Sources */,
+				387805C522B8F2D300E4FC74 /* main.m in Sources */,
+				387805DC22B8F4BC00E4FC74 /* UIView+Toast.m in Sources */,
+				38780BF022C31B3800E4FC74 /* YBPopupMenuPath.m in Sources */,
+				387805B722B8F2CF00E4FC74 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		387805BB22B8F2CF00E4FC74 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				387805BC22B8F2CF00E4FC74 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		387805C022B8F2D300E4FC74 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				387805C122B8F2D300E4FC74 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		387805C622B8F2D300E4FC74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		387805C722B8F2D300E4FC74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		387805C922B8F2D300E4FC74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B95PLC2A2S;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCloudRtcSdk-ios-demo",
+				);
+				INFOPLIST_FILE = "UCloudRtcSdk-ios-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.UCloudRtcSdk-ios-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = Debug;
+		};
+		387805CA22B8F2D300E4FC74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B95PLC2A2S;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCloudRtcSdk-ios-demo",
+				);
+				INFOPLIST_FILE = "UCloudRtcSdk-ios-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.UCloudRtcSdk-ios-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		387805AD22B8F2CF00E4FC74 /* Build configuration list for PBXProject "UCloudRtcSdk-ios-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				387805C622B8F2D300E4FC74 /* Debug */,
+				387805C722B8F2D300E4FC74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		387805C822B8F2D300E4FC74 /* Build configuration list for PBXNativeTarget "UCloudRtcSdk-ios-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				387805C922B8F2D300E4FC74 /* Debug */,
+				387805CA22B8F2D300E4FC74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 387805AA22B8F2CF00E4FC74 /* Project object */;
+}
