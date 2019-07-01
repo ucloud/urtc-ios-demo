@@ -2,7 +2,7 @@
 urtc ios 端demo
 
 # 1 描述
-URTCAndroid 是UCloud推出的一款适用于android平台的实时音视频 SDK，支持android4.4及以上系统，提供了音视频通话基础功能，提供灵活的接口，支持高度定制以及二次开发。
+UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时音视频 SDK，支持iOS 8.0及以上系统，提供了音视频通话基础功能，提供灵活的接口，支持高度定制以及二次开发。
 # 2 功能列表
 ## 2.1 基本功能
 * 基本的音视频通话功能	
