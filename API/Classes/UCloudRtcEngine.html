@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>UCloudRtcEngine Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">UCloudRtcSdk_ios </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">ucloud</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/isAutoPublish">isAutoPublish</option>
+		
+		<option value="//api/name/isAutoSubscribe">isAutoSubscribe</option>
+		
+		<option value="//api/name/isLoudSpeaker">isLoudSpeaker</option>
+		
+		<option value="//api/name/isOnlyAudio">isOnlyAudio</option>
+		
+		<option value="//api/name/streamProfile">streamProfile</option>
+		
+		<option value="//api/name/videoProfile">videoProfile</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/currentVersion">+ currentVersion</option>
+		
+		<option value="//api/name/setLogEnable:">+ setLogEnable:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithUserId:appId:roomId:">- initWithUserId:appId:roomId:</option>
+		
+		<option value="//api/name/joinRoomWithcompletionHandler:">- joinRoomWithcompletionHandler:</option>
+		
+		<option value="//api/name/leaveRoom">- leaveRoom</option>
+		
+		<option value="//api/name/openCamera:">- openCamera:</option>
+		
+		<option value="//api/name/openLoudspeaker:">- openLoudspeaker:</option>
+		
+		<option value="//api/name/publish">- publish</option>
+		
+		<option value="//api/name/room:willReconnectedStream:">- room:willReconnectedStream:</option>
+		
+		<option value="//api/name/setLocalPreview:">- setLocalPreview:</option>
+		
+		<option value="//api/name/setMute:">- setMute:</option>
+		
+		<option value="//api/name/setRemoteStream:muteAudio:">- setRemoteStream:muteAudio:</option>
+		
+		<option value="//api/name/setRemoteStream:muteVideo:">- setRemoteStream:muteVideo:</option>
+		
+		<option value="//api/name/signalingChannel:didReceiveStreamVolume:">- signalingChannel:didReceiveStreamVolume:</option>
+		
+		<option value="//api/name/signalingChannel:didSubscribe:">- signalingChannel:didSubscribe:</option>
+		
+		<option value="//api/name/signalingChannel:error:">- signalingChannel:error:</option>
+		
+		<option value="//api/name/subscribeMethod:">- subscribeMethod:</option>
+		
+		<option value="//api/name/switchCamera">- switchCamera</option>
+		
+		<option value="//api/name/uCloudRtcEngine:newStreamHasJoinRoom:">- uCloudRtcEngine:newStreamHasJoinRoom:</option>
+		
+		<option value="//api/name/unPublish">- unPublish</option>
+		
+		<option value="//api/name/unSubscribeMethod:">- unSubscribeMethod:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">UCloudRtcEngine Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>UCloudRtcEngine.h<br />UCloudRtcEngine.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isAutoPublish" title="isAutoPublish"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAutoPublish">&nbsp;&nbsp;isAutoPublish</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>是否自动发布  默认是: YES  必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isAutoPublish</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>是否自动发布  默认是: YES  必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAutoSubscribe" title="isAutoSubscribe"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAutoSubscribe">&nbsp;&nbsp;isAutoSubscribe</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>是否自动订阅  默认是: YES 必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isAutoSubscribe</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>是否自动订阅  默认是: YES 必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isOnlyAudio" title="isOnlyAudio"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isOnlyAudio">&nbsp;&nbsp;isOnlyAudio</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>是否开启纯音频模式  默认否: NO  必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isOnlyAudio</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>是否开启纯音频模式  默认否: NO  必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoProfile" title="videoProfile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoProfile">&nbsp;&nbsp;videoProfile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>视频分辨率设置 默认:480*360  必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) UCloudRtcEngineVideoProfile videoProfile</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>视频分辨率设置 默认:480*360  必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/streamProfile" title="streamProfile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/streamProfile">&nbsp;&nbsp;streamProfile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>本地流权限设置 默认:所有权限  必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) UCloudRtcEngineStreamProfile streamProfile</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>本地流权限设置 默认:所有权限  必须在加入房间之前设置才会生效 否则采用默认值</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isLoudSpeaker" title="isLoudSpeaker"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isLoudSpeaker">&nbsp;&nbsp;isLoudSpeaker</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>是否开启免提</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL isLoudSpeaker</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>是否开启免提</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLogEnable:" title="setLogEnable:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLogEnable:">+&nbsp;setLogEnable:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>是否开启日志</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setLogEnable:(BOOL)<em>enable</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enable</code></th>
+						<td><p>是否开启日志</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentVersion" title="currentVersion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentVersion">+&nbsp;currentVersion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>返回SDK当前版本号</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *_Nonnull)currentVersion</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>currentVersion</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithUserId:appId:roomId:" title="initWithUserId:appId:roomId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithUserId:appId:roomId:">&ndash;&nbsp;initWithUserId:appId:roomId:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>初始化UCloudRtcEngine</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nonnull)initWithUserId:(NSString *_Nonnull)<em>userId</em> appId:(NSString *_Nonnull)<em>appId</em> roomId:(NSString *_Nonnull)<em>roomId</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userId</code></th>
+						<td><p>当前用户的ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appId</code></th>
+						<td><p>分配得到的应用ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>roomId</code></th>
+						<td><p>即将加入的房间ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>UCloudRtcEngine</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/joinRoomWithcompletionHandler:" title="joinRoomWithcompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/joinRoomWithcompletionHandler:">&ndash;&nbsp;joinRoomWithcompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>加入房间</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)joinRoomWithcompletionHandler:(void ( ^ _Nonnull ) ( NSData *_Nonnull data , NSURLResponse *_Nonnull response , NSError *_Nonnull error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/leaveRoom" title="leaveRoom"></a>
+	<h3 class="method-title"><code><a href="#//api/name/leaveRoom">&ndash;&nbsp;leaveRoom</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>退出房间</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)leaveRoom</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/publish" title="publish"></a>
+	<h3 class="method-title"><code><a href="#//api/name/publish">&ndash;&nbsp;publish</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>手动发布</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)publish</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unPublish" title="unPublish"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unPublish">&ndash;&nbsp;unPublish</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>取消发布</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unPublish</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/subscribeMethod:" title="subscribeMethod:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/subscribeMethod:">&ndash;&nbsp;subscribeMethod:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>手动订阅</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)subscribeMethod:(UCloudRtcStream *_Nonnull)<em>stream</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stream</code></th>
+						<td><p>将要订阅的流 <a href="../Classes/UCloudRtcStream.html">UCloudRtcStream</a> *></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unSubscribeMethod:" title="unSubscribeMethod:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unSubscribeMethod:">&ndash;&nbsp;unSubscribeMethod:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>取消订阅</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unSubscribeMethod:(UCloudRtcStream *_Nonnull)<em>stream</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stream</code></th>
+						<td><p>将要取消订阅的流 <a href="../Classes/UCloudRtcStream.html">UCloudRtcStream</a> *></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLocalPreview:" title="setLocalPreview:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLocalPreview:">&ndash;&nbsp;setLocalPreview:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>设置本地的预览画面</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setLocalPreview:(UIView *_Nonnull)<em>preview</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>preview</code></th>
+						<td><p>本地画面即将渲染到的目标视图</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/switchCamera" title="switchCamera"></a>
+	<h3 class="method-title"><code><a href="#//api/name/switchCamera">&ndash;&nbsp;switchCamera</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>切换本地摄像头</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)switchCamera</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMute:" title="setMute:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMute:">&ndash;&nbsp;setMute:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>设置本地流是否静音</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setMute:(BOOL)<em>isMute</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isMute</code></th>
+						<td><p>是否禁用</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/openCamera:" title="openCamera:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/openCamera:">&ndash;&nbsp;openCamera:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>设置本地流是否禁用视频</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)openCamera:(BOOL)<em>isOpen</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isOpen</code></th>
+						<td><p>是否开启</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/openLoudspeaker:" title="openLoudspeaker:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/openLoudspeaker:">&ndash;&nbsp;openLoudspeaker:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>开启免提</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)openLoudspeaker:(BOOL)<em>isOpen</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isOpen</code></th>
+						<td><p>是否开启</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setRemoteStream:muteVideo:" title="setRemoteStream:muteVideo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setRemoteStream:muteVideo:">&ndash;&nbsp;setRemoteStream:muteVideo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>设置远程流是否禁用视频</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setRemoteStream:(UCloudRtcStream *_Nonnull)<em>stream</em> muteVideo:(BOOL)<em>isMute</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stream</code></th>
+						<td><p>目标远端流</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isMute</code></th>
+						<td><p>是否禁用视频</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setRemoteStream:muteAudio:" title="setRemoteStream:muteAudio:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setRemoteStream:muteAudio:">&ndash;&nbsp;setRemoteStream:muteAudio:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>设置远程流是否禁用音频</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setRemoteStream:(UCloudRtcStream *_Nonnull)<em>stream</em> muteAudio:(BOOL)<em>isMute</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stream</code></th>
+						<td><p>目标远端流</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isMute</code></th>
+						<td><p>是否禁用音频频</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/room:willReconnectedStream:" title="room:willReconnectedStream:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/room:willReconnectedStream:">&ndash;&nbsp;room:willReconnectedStream:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>/    [self.signalingChannel stopPublishStream];</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)room:(UCloudRtcRoom *)<em>room</em> willReconnectedStream:(NSString *)<em>streamId</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>/    [self.signalingChannel stopPublishStream];</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uCloudRtcEngine:newStreamHasJoinRoom:" title="uCloudRtcEngine:newStreamHasJoinRoom:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngine:newStreamHasJoinRoom:">&ndash;&nbsp;uCloudRtcEngine:newStreamHasJoinRoom:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>非自动订阅模式下 用可订阅流加入</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)uCloudRtcEngine:(UCloudRtcEngine *)<em>channel</em> newStreamHasJoinRoom:(UCloudRtcStream *)<em>stream</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>非自动订阅模式下 用可订阅流加入</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/signalingChannel:didSubscribe:" title="signalingChannel:didSubscribe:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/signalingChannel:didSubscribe:">&ndash;&nbsp;signalingChannel:didSubscribe:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><em>*非自动订阅模式下 用可订阅流退出</em>/</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)signalingChannel:(UCloudRtcSignalingChannel *)<em>channel</em> didSubscribe:(UCloudRtcStream *)<em>stream</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p><em>*非自动订阅模式下 用可订阅流退出</em>/</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/signalingChannel:error:" title="signalingChannel:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/signalingChannel:error:">&ndash;&nbsp;signalingChannel:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>/        <a href="../Classes/UCloudRtcStream.html">UCloudRtcStream</a> *remoteStream = self.remoteStreamList[streams.streamId];</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)signalingChannel:(UCloudRtcSignalingChannel *)<em>channel</em> error:(UCloudRtcError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>/        <a href="../Classes/UCloudRtcStream.html">UCloudRtcStream</a> *remoteStream = self.remoteStreamList[streams.streamId];</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/signalingChannel:didReceiveStreamVolume:" title="signalingChannel:didReceiveStreamVolume:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/signalingChannel:didReceiveStreamVolume:">&ndash;&nbsp;signalingChannel:didReceiveStreamVolume:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>流 音量回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)signalingChannel:(UCloudRtcSignalingChannel *_Nonnull)<em>channel</em> didReceiveStreamVolume:(NSArray&lt;UCloudRtcStreamVolume*&gt; *_Nonnull)<em>volume</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>流 音量回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2019 ucloud. All rights reserved. Updated: 2019-07-02</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
