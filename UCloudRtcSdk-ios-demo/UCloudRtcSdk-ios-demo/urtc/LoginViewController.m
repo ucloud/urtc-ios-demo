@@ -2,8 +2,8 @@
 //  LoginViewController.m
 //  MeetingSDK
 //
-//  Created by jacksimjia on 2018/2/2.
-//  Copyright © 2018年 ppyun. All rights reserved.
+//  Created by tony on 2019/4/2.
+//  Copyright © 2018年 ucloud. All rights reserved.
 //
 
 #import "LoginViewController.h"
@@ -37,7 +37,6 @@
     self.userTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入房间号"
                                                                                   attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:0.4]}];
     
-    self.segment.selectedSegmentIndex = [UCloudRtcPortList isDeveloperServer] ? 0 : 1;
     self.userLabel.text = [self getUserId];
     
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -102,7 +101,6 @@
 }
 
 - (IBAction)didChangeServer:(UISegmentedControl *)sender {
-    [UCloudRtcPortList switchServer:sender.selectedSegmentIndex == 0];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

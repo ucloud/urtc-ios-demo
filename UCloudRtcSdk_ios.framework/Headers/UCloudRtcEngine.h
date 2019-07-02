@@ -125,50 +125,124 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 
 @property (nonatomic, readonly) UCloudRtcStream * _Nonnull localStream;
 
-/**是否开启日志*/
+
+/**
+ @brief 是否开启日志
+
+ @param enable 是否开启日志
+ */
 + (void)setLogEnable:(BOOL)enable;
 
-/**当前版本号*/
+
+/**
+ @brief 返回SDK当前版本号
+
+ @return currentVersion
+ */
 + (NSString *_Nonnull)currentVersion;
 
-/**初始化方法 new */
+
+/**
+ @brief 初始化UCloudRtcEngine
+ @param userId 当前用户的ID
+ @param appId 分配得到的应用ID
+ @param roomId 即将加入的房间ID
+ @return UCloudRtcEngine
+ */
 - (instancetype _Nonnull )initWithUserId:(NSString *_Nonnull)userId appId:(NSString *_Nonnull)appId roomId:(NSString *_Nonnull)roomId;
 
-/**加入房间*/
+
+/**
+ @brief 加入房间
+
+ @param completion completion
+ */
 - (void)joinRoomWithcompletionHandler:(void (^_Nonnull)(NSData * _Nonnull data, NSURLResponse * _Nonnull response, NSError * _Nonnull error))completion;
 
-/**退出房间*/
+/**
+ @brief 退出房间
+ */
 - (void)leaveRoom;
 
-/**手动发布*/
+/**
+ @brief 手动发布
+ */
 - (void)publish;
-/**取消发布*/
+
+/**
+ @brief 取消发布
+ */
 - (void)unPublish;
 
-/**手动订阅*/
+/**
+ @brief 手动订阅
+
+ @param stream 将要订阅的流 <UCloudRtcStream *>
+ */
 - (void)subscribeMethod:(UCloudRtcStream *_Nonnull)stream;
-///**取消订阅*/
+
+
+/**
+ @brief 取消订阅
+
+ @param stream 将要取消订阅的流 <UCloudRtcStream *>
+ */
 - (void)unSubscribeMethod:(UCloudRtcStream *_Nonnull)stream;
 
-/**设置本地的预览画面*/
+
+/**
+ @brief 设置本地的预览画面
+
+ @param preview 本地画面即将渲染到的目标视图
+ */
 - (void)setLocalPreview:(UIView *_Nonnull)preview;
 
-/**切换本地摄像头*/
+
+/**
+ @brief 切换本地摄像头
+ */
 - (void)switchCamera;
 
-/**设置本地流是否静音*/
+
+/**
+ @brief 设置本地流是否静音
+
+ @param isMute 是否禁用
+ */
 - (void)setMute:(BOOL)isMute;
 
-/**设置本地流是否禁用视频*/
+
+/**
+ @brief 设置本地流是否禁用视频
+
+ @param isOpen 是否开启
+ */
 - (void)openCamera:(BOOL)isOpen;
 
-/**开启免提*/
+
+/**
+ @brief 开启免提
+
+ @param isOpen 是否开启
+ */
 - (void)openLoudspeaker:(BOOL)isOpen;
 
-/**设置远程流是否禁用视频*/
+
+/**
+ @brief 设置远程流是否禁用视频
+
+ @param stream 目标远端流
+ @param isMute 是否禁用视频
+ */
 - (void)setRemoteStream:(UCloudRtcStream *_Nonnull)stream muteVideo:(BOOL)isMute;
 
-/**设置远程流是否禁用音频*/
+
+/**
+ @brief 设置远程流是否禁用音频
+
+ @param stream 目标远端流
+ @param isMute 是否禁用音频频
+ */
 - (void)setRemoteStream:(UCloudRtcStream *_Nonnull)stream muteAudio:(BOOL)isMute;
 
 @end

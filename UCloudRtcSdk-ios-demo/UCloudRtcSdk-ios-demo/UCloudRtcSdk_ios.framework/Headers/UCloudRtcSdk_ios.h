@@ -18,11 +18,8 @@ FOUNDATION_EXPORT const unsigned char UCloudRtcSdk_iosVersionString[];
 
 #import <UCloudRtcSdk_ios/UCloudRtcEngine.h>
 #import <UCloudRtcSdk_ios/UCloudRtcStream.h>
-#import <UCloudRtcSdk_ios/UCloudRtcRoomStream.h>
 #import <UCloudRtcSdk_ios/UCloudRtcGetToken.h>
 #import <UCloudRtcSdk_ios/UCloudRtcStreamStatsInfo.h>
 #import <UCloudRtcSdk_ios/UCloudRtcError.h>
-#import <UCloudRtcSdk_ios/UCloudRtcPortList.h>
-#import <UCloudRtcSdk_ios/UCloudRtcRequestInfo.h>
 #import <UCloudRtcSdk_ios/UCloudRtcLogger.h>
 #import <UCloudRtcSdk_ios/UCloudRtcStreamVolume.h>

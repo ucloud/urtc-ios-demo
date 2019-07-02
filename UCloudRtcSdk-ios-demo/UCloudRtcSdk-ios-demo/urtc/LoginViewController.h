@@ -2,8 +2,8 @@
 //  LoginViewController.h
 //  MeetingSDK
 //
-//  Created by jacksimjia on 2018/2/2.
-//  Copyright © 2018年 ppyun. All rights reserved.
+//  Created by tony on 2019/4/2.
+//  Copyright © 2018年 ucloud. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -13,6 +13,5 @@ FOUNDATION_EXPORT void UCloudRtcLog(NSString *format, ...);
 @interface UCloudRtcLogger : NSObject
 + (void)setLogEnable:(BOOL)enable;
 + (BOOL)logEnable;
-+(void)outPutFileLogger;
 @end
 

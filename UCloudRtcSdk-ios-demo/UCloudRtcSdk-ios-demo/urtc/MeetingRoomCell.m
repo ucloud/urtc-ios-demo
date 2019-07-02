@@ -2,8 +2,8 @@
 //  MeetingRoomCell.m
 //  MeetingSDK
 //
-//  Created by jacksimjia on 2018/2/28.
-//  Copyright © 2018年 ppyun. All rights reserved.
+//  Created by tony on 2019/4/28.
+//  Copyright © 2018年 ucloud. All rights reserved.
 //
 
 #import "MeetingRoomCell.h"
