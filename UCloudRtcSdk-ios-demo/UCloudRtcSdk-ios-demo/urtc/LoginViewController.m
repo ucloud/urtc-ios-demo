@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    [UCloudRtcPortList switchServer:NO];
+
     self.engineSetting = [NSDictionary dictionary];
     self.navigationController.navigationBarHidden = YES;
     self.userTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入房间号"

@@ -12,13 +12,14 @@
 		383D0D8122CB6635004DBE93 /* MeetingRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383D0D7C22CB6635004DBE93 /* MeetingRoomViewController.m */; };
 		383D0D8222CB6635004DBE93 /* MeetingRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383D0D7D22CB6635004DBE93 /* MeetingRoomCell.xib */; };
 		383D0D8322CB6635004DBE93 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383D0D7E22CB6635004DBE93 /* SettingViewController.m */; };
+		383D0D8C22CCA7BA004DBE93 /* UCloudRtcSdk_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383D0D8B22CCA7B9004DBE93 /* UCloudRtcSdk_ios.framework */; };
+		383D0D8D22CCA7BA004DBE93 /* UCloudRtcSdk_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 383D0D8B22CCA7B9004DBE93 /* UCloudRtcSdk_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		387805B722B8F2CF00E4FC74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805B622B8F2CF00E4FC74 /* AppDelegate.m */; };
 		387805BD22B8F2CF00E4FC74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387805BB22B8F2CF00E4FC74 /* Main.storyboard */; };
 		387805BF22B8F2D300E4FC74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 387805BE22B8F2D300E4FC74 /* Assets.xcassets */; };
 		387805C222B8F2D300E4FC74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387805C022B8F2D300E4FC74 /* LaunchScreen.storyboard */; };
 		387805C522B8F2D300E4FC74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805C422B8F2D300E4FC74 /* main.m */; };
 		387805DC22B8F4BC00E4FC74 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 387805DA22B8F4BC00E4FC74 /* UIView+Toast.m */; };
-		3878075622BA139F00E4FC74 /* UCloudRtcSdk_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3878075322BA12EB00E4FC74 /* UCloudRtcSdk_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		387808FD22BB367600E4FC74 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 387808FC22BB367600E4FC74 /* libc++.tbd */; };
 		387808FF22BB368400E4FC74 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 387808FE22BB368400E4FC74 /* libicucore.tbd */; };
 		3878090122BB368D00E4FC74 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3878090022BB368D00E4FC74 /* VideoToolbox.framework */; };
@@ -37,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3878075622BA139F00E4FC74 /* UCloudRtcSdk_ios.framework in Embed Frameworks */,
+				383D0D8D22CCA7BA004DBE93 /* UCloudRtcSdk_ios.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +55,7 @@
 		383D0D7C22CB6635004DBE93 /* MeetingRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingRoomViewController.m; sourceTree = "<group>"; };
 		383D0D7D22CB6635004DBE93 /* MeetingRoomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingRoomCell.xib; sourceTree = "<group>"; };
 		383D0D7E22CB6635004DBE93 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		383D0D8B22CCA7B9004DBE93 /* UCloudRtcSdk_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UCloudRtcSdk_ios.framework; path = "UCloudRtcSdk-ios-demo/UCloudRtcSdk_ios.framework"; sourceTree = "<group>"; };
 		387805B222B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UCloudRtcSdk-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		387805B522B8F2CF00E4FC74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		387805B622B8F2CF00E4FC74 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,7 +66,6 @@
 		387805C422B8F2D300E4FC74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		387805DA22B8F4BC00E4FC74 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		387805DB22B8F4BC00E4FC74 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
-		3878075322BA12EB00E4FC74 /* UCloudRtcSdk_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UCloudRtcSdk_ios.framework; sourceTree = "<group>"; };
 		387808FC22BB367600E4FC74 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		387808FE22BB368400E4FC74 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		3878090022BB368D00E4FC74 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -85,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3878090722BB36CE00E4FC74 /* UIKit.framework in Frameworks */,
+				383D0D8C22CCA7BA004DBE93 /* UCloudRtcSdk_ios.framework in Frameworks */,
 				3878090522BB36A000E4FC74 /* OpenGLES.framework in Frameworks */,
 				3878090322BB369500E4FC74 /* GLKit.framework in Frameworks */,
 				3878090122BB368D00E4FC74 /* VideoToolbox.framework in Frameworks */,
@@ -115,6 +117,7 @@
 		387805A922B8F2CF00E4FC74 = {
 			isa = PBXGroup;
 			children = (
+				383D0D8B22CCA7B9004DBE93 /* UCloudRtcSdk_ios.framework */,
 				387805B422B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo */,
 				387805B322B8F2CF00E4FC74 /* Products */,
 				387808FB22BB367500E4FC74 /* Frameworks */,
@@ -134,7 +137,6 @@
 			children = (
 				383D0D7522CB6635004DBE93 /* urtc */,
 				38780BE822C31B3800E4FC74 /* tools */,
-				3878075322BA12EB00E4FC74 /* UCloudRtcSdk_ios.framework */,
 				387805B522B8F2CF00E4FC74 /* AppDelegate.h */,
 				387805B622B8F2CF00E4FC74 /* AppDelegate.m */,
 				387805DB22B8F4BC00E4FC74 /* UIView+Toast.h */,
