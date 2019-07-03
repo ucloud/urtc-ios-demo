@@ -60,3 +60,84 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
 ## 4.5 在线客服
 线上开展音视频对话，对客户的资信情况进行审核，方便金融科技企业实现用户在线签约、视频开户验证以及呼叫中心等功能
 提供云端存储空间及海量数据的处理能力，提供高可用的技术和高稳定的平台
+
+# 5 快速使用
+## 5.1 初始化 
+建议在初始化 App 的同时，初始化 SDK。
+### 5.1.1 导入 SDK 头文件
+    <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>    
+### 5.1.2. 设置 userId 和 roomId，获取AppID；
+### 5.1.3 初始化UCloudRtcEngine 并设置代理以接收相关回调信息；
+    UCloudRtcEngine *engine = [[UCloudRtcEngine alloc] initWithUserId:userId  appId:appId roomId:roomId]];
+    engine.delegate = self;
+### 5.1.4 配置参数
+初始化完成后，即可调用 SDK相关接口，实现对应功能。使用之前需要对SDK进行相关设置，如果不设置也可以，系统将会采用默认值。
+
+    self.engine.isAutoPublish = YES;//加入房间后将自动发布本地音视频 默认为YES
+    self.engine.isAutoSubscribe = YES;//加入房间后将自动订阅远端音视频 默认为YES
+    self.engine.isOnlyAudio = NO;//将启用纯音频模式 默认为NO
+    self.engine.isDebug = NO;//是否开启日志
+    self.engine.videoProfile = UCloudRtcEngine_VideoProfile_360P_1;//设置视频分辨率
+    self.engine.streamProfile = UCloudRtcEngine_StreamProfileAll;//设置流权限
+## 5.2 加入房间
+    [self.engine joinRoomWithcompletionHandler:^(NSData *data, NSUrlResponse *response, NSError error) {
+    }];
+## 5.3 发布本地流
+* 自动发布模式下，joinRoom成功后，即可发布本地流，无需再次调用publish接口；
+* 手动发布模式下，joinRoom成功后，可通过下述接口发布本地流；
+    
+        [self.engine publish];
+* 发布过程中可以监听以下事件获取发布状态，根据状态调用渲染或其他接口即可。
+
+        - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState {
+            switch (publishState) {
+                        case UCloudRtcEnginePublishStateUnPublish:
+                            self.isConnected = NO;
+                        break;
+                        case UCloudRtcEnginePublishStatePublishing: {
+                            [self.bottomButton setTitle:@"正在发布..." forState:UIControlStateNormal];
+                        }
+                        break;
+                        case UCloudRtcEnginePublishStatePublishSucceed:{
+                            self.isConnected = YES;
+                            [self.view makeToast:@"发布成功" duration:1.5 position:CSToastPositionCenter];
+                            [self.bottomButton setTitle:@"发布成功" forState:UIControlStateNormal];
+                        }
+                        break;
+                        case UCloudRtcEnginePublishStateRepublishing: {
+                            [self.bottomButton setTitle:@"正在重新发布..." forState:UIControlStateNormal];
+                        }
+                        break;
+                        case UCloudRtcEnginePublishStatePublishFailed: {
+                        self.isConnected = NO;
+                            [self.bottomButton setTitle:@"开始发布" forState:UIControlStateNormal];
+                        }
+                        break;
+                        case UCloudRtcEnginePublishStatePublishStoped: {
+                        self.isConnected = NO;
+                            [self.view makeToast:@"发布已停止" duration:1.5 position:CSToastPositionCenter];
+                            [self.bottomButton setTitle:@"开始发布" forState:UIControlStateNormal];
+                        }
+                        break;
+                        default:
+                        break;
+                    }                               
+                }
+## 5.4 取消发布本地流
+    [self.engine unPublish];
+## 5.5 订阅远程流
+* 自动订阅模式下，joinRoom成功后，即可订阅远程流，无需再次调用subscribeMethod接口；\\
+* 手动订阅模式下，joinRoom成功后，可通过下述接口订阅远程流；\\
+
+        [self.engine subscribeMethod:remoteStream];
+* 订阅成功，在回调事件中调用渲染接口即可。
+
+        -(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didSubscribe:(UCloudRtcStream *)stream{
+            [self reloadVideos];
+        }
+## 5.6 取消订阅远程流
+    [self.engine unSubscribeMethod:remoteStream];
+## 5.7 离开房间
+    [self.engine leaveRoom];    
+## 6.8 编译、运行，开始体验吧！
+
