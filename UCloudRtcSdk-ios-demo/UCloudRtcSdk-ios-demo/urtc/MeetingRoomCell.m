@@ -1,9 +1,9 @@
 //
 //  MeetingRoomCell.m
-//  MeetingSDK
+//  UCloudRtcSdkDemo
 //
 //  Created by tony on 2019/4/28.
-//  Copyright © 2018年 ucloud. All rights reserved.
+//  Copyright © 2019年 ucloud. All rights reserved.
 //
 
 #import "MeetingRoomCell.h"
