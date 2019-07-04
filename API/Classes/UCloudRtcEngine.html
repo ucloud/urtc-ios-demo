@@ -54,6 +54,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/engineMode">engineMode</option>
+		
 		<option value="//api/name/isAutoPublish">isAutoPublish</option>
 		
 		<option value="//api/name/isAutoSubscribe">isAutoSubscribe</option>
@@ -82,7 +84,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithUserId:appId:roomId:">- initWithUserId:appId:roomId:</option>
+		<option value="//api/name/initWithUserId:appId:roomId:appKey:token:">- initWithUserId:appId:roomId:appKey:token:</option>
 		
 		<option value="//api/name/joinRoomWithcompletionHandler:">- joinRoomWithcompletionHandler:</option>
 		
@@ -119,6 +121,8 @@
 		<option value="//api/name/unPublish">- unPublish</option>
 		
 		<option value="//api/name/unSubscribeMethod:">- unSubscribeMethod:</option>
+		
+		<option value="//api/name/verfyToken:">- verfyToken:</option>
 		
 	</optgroup>
 	
@@ -162,6 +166,52 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/engineMode" title="engineMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/engineMode">&nbsp;&nbsp;engineMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>SDK模式  默认是: 测试  正式上线前需要切换到正式模式</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) UCloudRtcEngineMode engineMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>SDK模式  默认是: 测试  正式上线前需要切换到正式模式</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/isAutoPublish" title="isAutoPublish"></a>
 	<h3 class="method-title"><code><a href="#//api/name/isAutoPublish">&nbsp;&nbsp;isAutoPublish</a></code>
 </h3>
@@ -537,8 +587,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithUserId:appId:roomId:" title="initWithUserId:appId:roomId:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithUserId:appId:roomId:">&ndash;&nbsp;initWithUserId:appId:roomId:</a></code>
+	<a name="//api/name/initWithUserId:appId:roomId:appKey:token:" title="initWithUserId:appId:roomId:appKey:token:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithUserId:appId:roomId:appKey:token:">&ndash;&nbsp;initWithUserId:appId:roomId:appKey:token:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -553,7 +603,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nonnull)initWithUserId:(NSString *_Nonnull)<em>userId</em> appId:(NSString *_Nonnull)<em>appId</em> roomId:(NSString *_Nonnull)<em>roomId</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nonnull)initWithUserId:(NSString *_Nonnull)<em>userId</em> appId:(NSString *_Nonnull)<em>appId</em> roomId:(NSString *_Nonnull)<em>roomId</em> appKey:(NSString *_Nullable)<em>appKey</em> token:(NSString *_Nullable)<em>token</em></code></div>
 
 		    
 			
@@ -574,6 +624,16 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>roomId</code></th>
 						<td><p>即将加入的房间ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appKey</code></th>
+						<td><p>分配得到的appkey</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>token</code></th>
+						<td><p>生成的<a href="#//api/name/token">token</a></p></td>
 					</tr>
 				
 				</table>
@@ -1264,6 +1324,52 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/verfyToken:" title="verfyToken:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/verfyToken:">&ndash;&nbsp;verfyToken:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>测试模式 用户传入appkey appid  为用户生成token后进行验证</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)verfyToken:(NSString *)<em>token</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>测试模式 用户传入appkey appid  为用户生成token后进行验证</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/room:willReconnectedStream:" title="room:willReconnectedStream:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/room:willReconnectedStream:">&ndash;&nbsp;room:willReconnectedStream:</a></code>
 </h3>
@@ -1508,7 +1614,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 ucloud. All rights reserved. Updated: 2019-07-02</p>
+						<p class="copyright">Copyright &copy; 2019 ucloud. All rights reserved. Updated: 2019-07-04</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

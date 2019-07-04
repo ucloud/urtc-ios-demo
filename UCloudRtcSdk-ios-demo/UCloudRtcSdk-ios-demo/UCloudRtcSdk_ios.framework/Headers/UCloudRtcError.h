@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger,UCloudRtcErrorType) {
     UCloudRtcErrorTypePublishStreamFail = 5007, //发布失败
     UCloudRtcErrorTypePublishStreamTimeout = 5008, //发布超时
     
+    UCloudRtcErrorTypeParameterInvalid = 5100, //初始化参数错误
+    
     
 };
 
