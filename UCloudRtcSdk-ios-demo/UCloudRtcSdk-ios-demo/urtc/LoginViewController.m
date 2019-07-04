@@ -13,7 +13,8 @@
 
 
 #define APP_ID @"URtc-h4r1txxy"
-
+#define APP_KEY @"9129304dbf8c5c4bf68d70824462409f"
+#define TOKEN @""
 
 @interface LoginViewController ()
 
@@ -101,6 +102,7 @@
 }
 
 - (IBAction)didChangeServer:(UISegmentedControl *)sender {
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -109,7 +111,14 @@
         meeting.userId = self.userLabel.text;
         meeting.roomId = self.userTextField.text;
         meeting.appId = APP_ID;
+        meeting.appKey = APP_KEY;
+        meeting.token = TOKEN;
         meeting.engineSetting = self.engineSetting;
+        if (self.segment.selectedSegmentIndex == 0) {
+            meeting.engineMode = UCloudRtcEngineModeTrival;
+        }else{
+            meeting.engineMode = UCloudRtcEngineModeNormal;
+        }
     }
 }
 @end

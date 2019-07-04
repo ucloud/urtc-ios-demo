@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class UCloudRtcEngine;
+
 @interface UCloudRtcGetToken : NSObject
 
 + (instancetype _Nonnull )sharedInstance;
 
-- (void)getTokenWithAppId:(NSString *_Nonnull)appID userID:(NSString *_Nonnull)userID roomID:(NSString *_Nonnull)roomID completionHandler:(void (^_Nonnull)(NSString * _Nonnull token, NSError * _Nonnull error))completion;
+- (void)getTokenWithAppId:(NSString *_Nonnull)appID userID:(NSString *_Nonnull)userID roomID:(NSString *_Nonnull)roomID  andAppSecret:(NSString *_Nonnull)appSecret completionHandler:(void (^_Nonnull)(NSString * _Nonnull token, NSError * _Nonnull error))completion;
 
 
 

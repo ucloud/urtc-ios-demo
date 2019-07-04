@@ -8,9 +8,11 @@
 
 #import "MeetingRoomViewController.h"
 #import "UIView+Toast.h"
-#import <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>
+
 #import "MeetingRoomCell.h"
 #import "YBPopupMenu.h"
+
+
 
 @interface MeetingRoomViewController () <UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate,YBPopupMenuDelegate,MeetingRoomCellDelegate>
 {
@@ -40,24 +42,27 @@ static NSInteger kHorizontalCount = 3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isConnected = NO;
     streamTitleArray = [NSMutableArray new];
     canSubstreamList = [NSMutableArray new];
     self.streamList = @[].mutableCopy;
     self.roomNameLabel.text = [NSString stringWithFormat:@"ROOM:%@",self.roomId];
-    
     [self.listView registerNib:[UINib nibWithNibName:@"MeetingRoomCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     
     //初始化engine
-    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId];
+    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
     self.manager.delegate = self;
-    self.isConnected = NO;
+    //指定SDK模式
+    self.manager.engineMode = self.engineMode;
     //配置SDK
     [self settingSDK:self.engineSetting];
+    NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
     //加入房间
     [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {}];
 }
 
 - (void)settingSDK:(NSDictionary *)setting{
+    
     if (setting[@"isAutoPublish"]) {
         NSString * isAutoPublish = [NSString stringWithFormat:@"%@",setting[@"isAutoPublish"]];
         NSString * isAutoSubscribe = [NSString stringWithFormat:@"%@",setting[@"isAutoSubscribe"]];
@@ -122,9 +127,13 @@ static NSInteger kHorizontalCount = 3;
 
 //退出房间
 - (IBAction)leaveRoom:(id)sender {
-     [self showAlertWithMessage:@"您确定要退出房间吗" Sure:^{
-         [self.manager leaveRoom];
-     }];
+    if (_isConnected) {
+        [self showAlertWithMessage:@"您确定要退出房间吗" Sure:^{
+            [self.manager leaveRoom];
+        }];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:^{}];
+    }
 }
 
 
@@ -206,7 +215,7 @@ static NSInteger kHorizontalCount = 3;
 
 #pragma mark ------UCloudRtcEngineDelegate method-----
 -(void)uCloudRtcEngineDidJoinRoom:(NSMutableArray<UCloudRtcStream *> *)canSubStreamList{
-    [self.view makeToast:@"加入房间成功" duration:1.0 position:CSToastPositionBottom];
+    [self.view makeToast:@"加入房间成功" duration:1.0 position:CSToastPositionCenter];
     canSubstreamList = canSubStreamList;
     //远端所有可订阅的流将在这里展示  仅在非自动订阅模式下 否则为空
     if (canSubStreamList.count > 0) {
@@ -220,23 +229,23 @@ static NSInteger kHorizontalCount = 3;
 //新成员加入房间
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager memberDidJoinRoom:(NSDictionary *)memberInfo{
     NSString *message = [NSString stringWithFormat:@"用户:%@ 加入房间",memberInfo[@"user_id"]];
-    [self.view makeToast:message duration:1.5 position:CSToastPositionBottom];
+    [self.view makeToast:message duration:1.5 position:CSToastPositionCenter];
 }
 //成员离开房间
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager memberDidLeaveRoom:(NSDictionary *)memberInfo{
     NSString *message = [NSString stringWithFormat:@"用户:%@ 离开房间",memberInfo[@"user_id"]];
-    [self.view makeToast:message duration:1.5 position:CSToastPositionBottom];
+    [self.view makeToast:message duration:1.5 position:CSToastPositionCenter];
 }
 
 //非自动订阅模式 新流加入会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager newStreamHasJoinRoom:(UCloudRtcStream *)stream{
-    [self.view makeToast:@"有新的流可以订阅" duration:1.5 position:CSToastPositionBottom];
+    [self.view makeToast:@"有新的流可以订阅" duration:1.5 position:CSToastPositionCenter];
     [canSubstreamList addObject:stream];
     [streamTitleArray addObject:stream.streamId];
 }
 //非自动订阅模式 新流退出会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamHasLeaveRoom:(UCloudRtcStream *)stream{
-    [self.view makeToast:@"可订阅的流离开" duration:1.5 position:CSToastPositionBottom];
+    [self.view makeToast:@"可订阅的流离开" duration:1.5 position:CSToastPositionCenter];
     UCloudRtcStream *newS = [UCloudRtcStream new];
     for (UCloudRtcStream *tempS in canSubstreamList) {
         if ([tempS.streamId isEqualToString:stream.streamId]) {
@@ -250,23 +259,23 @@ static NSInteger kHorizontalCount = 3;
 
 //非自动订阅模式 订阅成功会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didSubscribe:(UCloudRtcStream *)stream{
-    [self.view makeToast:@"订阅成功" duration:1.5 position:CSToastPositionBottom];
+    [self.view makeToast:@"订阅成功" duration:1.5 position:CSToastPositionCenter];
     [canSubstreamList removeObject:stream];
     [streamTitleArray removeObject:stream.streamId];
      [self reloadVideos];
 }
 //非自动订阅模式 取消订阅成功会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didCancleSubscribe:(UCloudRtcStream *)stream{
-    [self.view makeToast:@"可订阅的流离开" duration:1.5 position:CSToastPositionBottom];
+    [self.view makeToast:@"可订阅的流离开" duration:1.5 position:CSToastPositionCenter];
 }
 
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *)manager {
-    [self.view makeToast:@"退出房间" duration:1.5 position:CSToastPositionBottom];
+    [self.view makeToast:@"退出房间" duration:1.5 position:CSToastPositionCenter];
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)uCloudRtcEngineDisconnectRoom:(UCloudRtcEngine *)manager {
-    [self.view makeToast:@"房间已断开连接" duration:1.5 position:CSToastPositionBottom];
+    [self.view makeToast:@"房间已断开连接" duration:1.5 position:CSToastPositionCenter];
 }
 
 - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamPublishSucceed:(NSString *)streamId {
@@ -284,7 +293,7 @@ static NSInteger kHorizontalCount = 3;
             break;
         case UCloudRtcEnginePublishStatePublishSucceed:{
             self.isConnected = YES;
-            [self.view makeToast:@"发布成功" duration:1.5 position:CSToastPositionBottom];
+            [self.view makeToast:@"发布成功" duration:1.5 position:CSToastPositionCenter];
             [self.bottomButton setTitle:@"发布成功" forState:UIControlStateNormal];
         }
             break;
@@ -299,7 +308,7 @@ static NSInteger kHorizontalCount = 3;
             break;
         case UCloudRtcEnginePublishStatePublishStoped: {
             self.isConnected = NO;
-            [self.view makeToast:@"发布已停止" duration:1.5 position:CSToastPositionBottom];
+            [self.view makeToast:@"发布已停止" duration:1.5 position:CSToastPositionCenter];
             [self.bottomButton setTitle:@"开始发布" forState:UIControlStateNormal];
         }
             break;
@@ -311,7 +320,7 @@ static NSInteger kHorizontalCount = 3;
 - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didConnectFail:(id)data {
     NSLog(@"发布失败:%@",data);
     self.isConnected = NO;
-    [self.view makeToast:[NSString stringWithFormat:@"发布失败:%@",data ?: @""] duration:5.0 position:CSToastPositionBottom];
+    [self.view makeToast:[NSString stringWithFormat:@"发布失败:%@",data ?: @""] duration:5.0 position:CSToastPositionCenter];
 
 }
 
@@ -337,21 +346,21 @@ static NSInteger kHorizontalCount = 3;
 - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager error:(UCloudRtcError *)error{
     switch (error.errorType) {
         case UCloudRtcErrorTypeTokenInvalid:
-            [self.view makeToast:[NSString stringWithFormat:@"token无效"] duration:3.0 position:CSToastPositionBottom];
+            [self.view makeToast:[NSString stringWithFormat:@"token无效"] duration:3.0 position:CSToastPositionCenter];
             break;
         case UCloudRtcErrorTypeJoinRoomFail:
-            [self.view makeToast:[NSString stringWithFormat:@"加入房间失败：%@",error.message] duration:3.0 position:CSToastPositionBottom];
+            [self.view makeToast:[NSString stringWithFormat:@"加入房间失败：%@",error.message] duration:3.0 position:CSToastPositionCenter];
             break;
         case UCloudRtcErrorTypeCreateRoomFail:
             break;
         case UCloudRtcErrorTypePublishStreamFail: {
             self.isConnected = NO;
             [self.bottomButton setTitle:@"开始发布" forState:UIControlStateNormal];
-            [self.view makeToast:[NSString stringWithFormat:@"发布失败：%@",error.message] duration:3.0 position:CSToastPositionBottom];
+            [self.view makeToast:[NSString stringWithFormat:@"发布失败：%@",error.message] duration:3.0 position:CSToastPositionCenter];
         }
             break;
         default:
-            [self.view makeToast:[NSString stringWithFormat:@"错误%ld:%@",(long)error.code,error.message] duration:3.0 position:CSToastPositionBottom];
+            [self.view makeToast:[NSString stringWithFormat:@"错误%ld:%@",(long)error.code,error.message] duration:3.0 position:CSToastPositionCenter];
             break;
     }
 }

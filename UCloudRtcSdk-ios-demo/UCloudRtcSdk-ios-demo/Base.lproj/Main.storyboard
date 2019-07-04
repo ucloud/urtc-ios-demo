@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="WhQ-sa-hdF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000006" height="862"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户ID：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biE-em-BG9">
                                 <rect key="frame" x="20" y="184.5" width="68.5" height="20.5"/>
@@ -78,10 +78,10 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Br1-DU-hMX">
-                                <rect key="frame" x="125.5" y="120.5" width="83" height="29"/>
+                                <rect key="frame" x="125.5" y="120.5" width="137" height="29"/>
                                 <segments>
-                                    <segment title="开发"/>
-                                    <segment title="测试"/>
+                                    <segment title="测试模式"/>
+                                    <segment title="正式模式"/>
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -101,7 +101,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="929-rp-nW8">
-                                <rect key="frame" x="304" y="119.5" width="80" height="30"/>
+                                <rect key="frame" x="304" y="177.5" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.4736064076" green="0.70945364239999997" blue="0.97650581599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="HJk-Dv-Jlk"/>
@@ -134,7 +134,7 @@
                             <constraint firstAttribute="trailing" secondItem="WhQ-sa-hdF" secondAttribute="trailing" id="mXA-LL-yft"/>
                             <constraint firstItem="WhQ-sa-hdF" firstAttribute="leading" secondItem="od2-eA-6id" secondAttribute="leading" id="oCW-cF-KM6"/>
                             <constraint firstItem="biE-em-BG9" firstAttribute="leading" secondItem="rxg-Co-4Cw" secondAttribute="leading" id="oaz-gR-xft"/>
-                            <constraint firstItem="929-rp-nW8" firstAttribute="centerY" secondItem="Br1-DU-hMX" secondAttribute="centerY" id="qEi-X4-MJh"/>
+                            <constraint firstItem="929-rp-nW8" firstAttribute="centerY" secondItem="Br1-DU-hMX" secondAttribute="centerY" constant="58" id="qEi-X4-MJh"/>
                             <constraint firstItem="sRh-7i-dPU" firstAttribute="leading" secondItem="od2-eA-6id" secondAttribute="leading" constant="20" id="teo-p5-d5X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ago-a9-TGz"/>

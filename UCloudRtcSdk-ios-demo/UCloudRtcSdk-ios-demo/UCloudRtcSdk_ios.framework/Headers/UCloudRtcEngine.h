@@ -11,6 +11,14 @@
 
 typedef NS_ENUM(NSInteger)
 {
+    UCloudRtcEngineModeNormal = 0,//正式
+    UCloudRtcEngineModeTrival = 1,//测试
+    
+}UCloudRtcEngineMode;
+
+
+typedef NS_ENUM(NSInteger)
+{
     UCloudRtcEngine_StreamProfileAll = 0,            // 所有权限 默认值
     UCloudRtcEngine_StreamProfileUpload = 1,          // 上传权限
     UCloudRtcEngine_StreamProfileDownload = 2,          // 下载权限
@@ -98,10 +106,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 @end
 
 @interface UCloudRtcEngine : NSObject
-@property (nonatomic, strong) NSString * _Nonnull userId;//用户id
-@property (nonatomic, strong) NSString * _Nonnull roomId;//房间id
-@property (nonatomic, strong) NSString * _Nonnull appId;//app id
-@property (nonatomic, strong) NSString * _Nonnull token;
+
+/**SDK模式  默认是: 测试  正式上线前需要切换到正式模式*/
+@property (nonatomic, assign) UCloudRtcEngineMode engineMode;
 
 /**是否自动发布  默认是: YES  必须在加入房间之前设置才会生效 否则采用默认值*/
 @property (nonatomic, assign) BOOL isAutoPublish;
@@ -126,6 +133,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 @property (nonatomic, readonly) UCloudRtcStream * _Nonnull localStream;
 
 
+
 /**
  @brief 是否开启日志
 
@@ -147,9 +155,11 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
  @param userId 当前用户的ID
  @param appId 分配得到的应用ID
  @param roomId 即将加入的房间ID
+ @param appKey 分配得到的appkey
+ @param token  生成的token
  @return UCloudRtcEngine
  */
-- (instancetype _Nonnull )initWithUserId:(NSString *_Nonnull)userId appId:(NSString *_Nonnull)appId roomId:(NSString *_Nonnull)roomId;
+- (instancetype _Nonnull )initWithUserId:(NSString *_Nonnull)userId appId:(NSString *_Nonnull)appId roomId:(NSString *_Nonnull)roomId appKey:(NSString *_Nullable)appKey token:(NSString *_Nullable)token;
 
 
 /**
