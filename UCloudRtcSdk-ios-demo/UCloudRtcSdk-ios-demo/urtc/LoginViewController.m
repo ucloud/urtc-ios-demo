@@ -11,9 +11,12 @@
 #import <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>
 #import "MeetingRoomViewController.h"
 
-
+//线上
 #define APP_ID @"URtc-h4r1txxy"
 #define APP_KEY @"9129304dbf8c5c4bf68d70824462409f"
+//pre 测试
+//#define APP_ID @""
+//#define APP_KEY @""
 #define TOKEN @""
 
 @interface LoginViewController ()
@@ -114,6 +117,7 @@
         meeting.appKey = APP_KEY;
         meeting.token = TOKEN;
         meeting.engineSetting = self.engineSetting;
+        NSLog(@"meeting.engineSetting===%@",meeting.engineSetting);
         if (self.segment.selectedSegmentIndex == 0) {
             meeting.engineMode = UCloudRtcEngineModeTrival;
         }else{

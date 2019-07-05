@@ -29,21 +29,24 @@
     self.stream = stream;
     
     [stream renderOnView:self.contentView];
-    self.streamLabel.text = [NSString stringWithFormat:@"id:%@",stream.streamId];
-    [self.contentView bringSubviewToFront:self.streamLabel];
+    if (stream.streamId) {
+        self.streamLabel.text = [NSString stringWithFormat:@"id:%@",stream.streamId];
+        [self.contentView bringSubviewToFront:self.streamLabel];
+        
+        UIButton *audioBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 20, self.frame.size.height - 20, 20, 20)];
+        [audioBtn setImage:[UIImage imageNamed:@"microphone.png"] forState:UIControlStateNormal];
+        [audioBtn setImage:[UIImage imageNamed:@"microphone_close.png"] forState:UIControlStateSelected];
+        [audioBtn addTarget:self action:@selector(audioClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:audioBtn];
+        
+        
+        UIButton *videoBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 45, self.frame.size.height - 20, 20, 20)];
+        [videoBtn setImage:[UIImage imageNamed:@"camera_btn_on.png"] forState:UIControlStateNormal];
+        [videoBtn setImage:[UIImage imageNamed:@"camera_btn_off.png"] forState:UIControlStateSelected];
+        [videoBtn addTarget:self action:@selector(videoClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:videoBtn];
+    }
     
-    UIButton *audioBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 20, self.frame.size.height - 20, 20, 20)];
-    [audioBtn setImage:[UIImage imageNamed:@"microphone.png"] forState:UIControlStateNormal];
-    [audioBtn setImage:[UIImage imageNamed:@"microphone_close.png"] forState:UIControlStateSelected];
-    [audioBtn addTarget:self action:@selector(audioClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:audioBtn];
-    
-    
-    UIButton *videoBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 45, self.frame.size.height - 20, 20, 20)];
-    [videoBtn setImage:[UIImage imageNamed:@"camera_btn_on.png"] forState:UIControlStateNormal];
-    [videoBtn setImage:[UIImage imageNamed:@"camera_btn_off.png"] forState:UIControlStateSelected];
-    [videoBtn addTarget:self action:@selector(videoClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:videoBtn];
 }
 
 - (void)layoutSubviews {

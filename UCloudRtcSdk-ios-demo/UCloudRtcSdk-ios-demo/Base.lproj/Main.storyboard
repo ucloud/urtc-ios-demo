@@ -160,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5W-sV-gse">
-                                <rect key="frame" x="107" y="624" width="200" height="30"/>
+                                <rect key="frame" x="107" y="683" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.4736064076" green="0.70945364239999997" blue="0.97650581599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="698-KY-egJ"/>
@@ -293,18 +293,45 @@
                                 <color key="textColor" red="0.4736064076" green="0.70945364239999997" blue="0.97650581599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2lp-X0-8Sf">
-                                <rect key="frame" x="10" y="447" width="394" height="33"/>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ASU-9P-mrO">
+                                <rect key="frame" x="10" y="507" width="394" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="S07-m0-80R"/>
+                                    <constraint firstAttribute="height" constant="32" id="yc3-0o-pO6"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="所有权限"/>
                                     <segment title="上传"/>
                                     <segment title="下载"/>
                                 </segments>
                                 <connections>
+                                    <action selector="broadcastLimit:" destination="7ir-JH-Mvj" eventType="valueChanged" id="btP-l3-2Dv"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2lp-X0-8Sf">
+                                <rect key="frame" x="10" y="507" width="394" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="S07-m0-80R"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="上传"/>
+                                    <segment title="下载"/>
+                                    <segment title="全部"/>
+                                </segments>
+                                <connections>
                                     <action selector="selectedLimit:" destination="7ir-JH-Mvj" eventType="valueChanged" id="gEP-T1-hAI"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LVc-gx-tRb">
+                                <rect key="frame" x="92" y="452" width="230" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="IUb-8G-bHB"/>
+                                    <constraint firstAttribute="height" constant="27" id="Lf7-G2-7yc"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Communication"/>
+                                    <segment title="Broadcast"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeRoomType:" destination="7ir-JH-Mvj" eventType="valueChanged" id="SPp-Rv-nxF"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -317,8 +344,10 @@
                             <constraint firstItem="lGj-AG-f4q" firstAttribute="leading" secondItem="ttC-Gb-3Xz" secondAttribute="leading" id="DKt-dk-jvg"/>
                             <constraint firstItem="XTt-42-UQg" firstAttribute="centerY" secondItem="ttC-Gb-3Xz" secondAttribute="centerY" id="EvJ-rX-zJ8"/>
                             <constraint firstItem="ttC-Gb-3Xz" firstAttribute="top" secondItem="luB-aW-cpK" secondAttribute="bottom" constant="35" id="F5b-nY-FsV"/>
+                            <constraint firstItem="LVc-gx-tRb" firstAttribute="centerX" secondItem="Bn6-6y-bud" secondAttribute="centerX" id="Fo6-nD-h4x"/>
                             <constraint firstItem="luB-aW-cpK" firstAttribute="top" secondItem="cJ0-uW-tm5" secondAttribute="top" constant="52" id="H8u-bS-3yF"/>
                             <constraint firstItem="cJ0-uW-tm5" firstAttribute="trailing" secondItem="IlN-sQ-WjT" secondAttribute="trailing" constant="5" id="JLu-Ce-2ut"/>
+                            <constraint firstItem="ASU-9P-mrO" firstAttribute="bottom" secondItem="2lp-X0-8Sf" secondAttribute="bottom" id="Mi3-0D-cem"/>
                             <constraint firstItem="jAD-3A-UKV" firstAttribute="leading" secondItem="lGj-AG-f4q" secondAttribute="leading" id="Ph1-o0-Gut"/>
                             <constraint firstItem="exd-mA-qBc" firstAttribute="centerY" secondItem="lGj-AG-f4q" secondAttribute="centerY" id="Rrq-hL-oJL"/>
                             <constraint firstItem="lGj-AG-f4q" firstAttribute="top" secondItem="ttC-Gb-3Xz" secondAttribute="bottom" constant="30" id="S0G-Dh-qm2"/>
@@ -331,16 +360,25 @@
                             <constraint firstItem="2lp-X0-8Sf" firstAttribute="leading" secondItem="cJ0-uW-tm5" secondAttribute="leading" constant="10" id="cpO-di-nph"/>
                             <constraint firstItem="jAD-3A-UKV" firstAttribute="top" secondItem="lGj-AG-f4q" secondAttribute="bottom" constant="30" id="gKh-PW-1FM"/>
                             <constraint firstItem="cJ0-uW-tm5" firstAttribute="trailing" secondItem="2lp-X0-8Sf" secondAttribute="trailing" constant="10" id="gsq-yT-hjk"/>
-                            <constraint firstItem="O5W-sV-gse" firstAttribute="centerY" secondItem="Bn6-6y-bud" secondAttribute="centerY" constant="191" id="jH0-fV-a4M"/>
+                            <constraint firstItem="LVc-gx-tRb" firstAttribute="top" secondItem="qpY-mA-gsf" secondAttribute="bottom" constant="25" id="j6R-YY-QZ9"/>
+                            <constraint firstItem="O5W-sV-gse" firstAttribute="centerY" secondItem="Bn6-6y-bud" secondAttribute="centerY" constant="250" id="jH0-fV-a4M"/>
                             <constraint firstItem="cJ0-uW-tm5" firstAttribute="trailing" secondItem="BU2-M6-fjF" secondAttribute="trailing" constant="56" id="jK2-VL-njY"/>
+                            <constraint firstItem="ASU-9P-mrO" firstAttribute="trailing" secondItem="2lp-X0-8Sf" secondAttribute="trailing" id="naU-Dr-JD7"/>
                             <constraint firstItem="BU2-M6-fjF" firstAttribute="centerY" secondItem="jAD-3A-UKV" secondAttribute="centerY" id="pzQ-3v-SWs"/>
                             <constraint firstItem="UIJ-rG-KbT" firstAttribute="centerY" secondItem="luB-aW-cpK" secondAttribute="centerY" id="rNk-76-8Jx"/>
-                            <constraint firstItem="2lp-X0-8Sf" firstAttribute="top" secondItem="qpY-mA-gsf" secondAttribute="bottom" constant="20" id="uVZ-yu-hK8"/>
+                            <constraint firstItem="ASU-9P-mrO" firstAttribute="top" secondItem="2lp-X0-8Sf" secondAttribute="top" id="tMR-Fn-PtN"/>
+                            <constraint firstItem="2lp-X0-8Sf" firstAttribute="top" secondItem="qpY-mA-gsf" secondAttribute="bottom" constant="80" id="uVZ-yu-hK8"/>
+                            <constraint firstItem="ASU-9P-mrO" firstAttribute="leading" secondItem="2lp-X0-8Sf" secondAttribute="leading" id="uuU-xR-qDk"/>
                             <constraint firstItem="IlN-sQ-WjT" firstAttribute="top" secondItem="9KI-ND-Cs5" secondAttribute="bottom" constant="15" id="w7Z-bt-q0j"/>
                             <constraint firstItem="luB-aW-cpK" firstAttribute="leading" secondItem="cJ0-uW-tm5" secondAttribute="leading" constant="38" id="yEF-Ni-dGQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cJ0-uW-tm5"/>
                     </view>
+                    <connections>
+                        <outlet property="broadcastProfile" destination="ASU-9P-mrO" id="5CE-kN-hQs"/>
+                        <outlet property="communicationProfile" destination="2lp-X0-8Sf" id="mlg-HA-fhK"/>
+                        <outlet property="videoProfileSeg" destination="IlN-sQ-WjT" id="iGS-cC-t26"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jjb-Vu-W7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

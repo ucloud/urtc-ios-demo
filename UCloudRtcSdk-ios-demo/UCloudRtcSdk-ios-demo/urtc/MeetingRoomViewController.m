@@ -62,19 +62,31 @@ static NSInteger kHorizontalCount = 3;
 }
 
 - (void)settingSDK:(NSDictionary *)setting{
-    
+    NSLog(@"setting==%@",setting);
     if (setting[@"isAutoPublish"]) {
         NSString * isAutoPublish = [NSString stringWithFormat:@"%@",setting[@"isAutoPublish"]];
         NSString * isAutoSubscribe = [NSString stringWithFormat:@"%@",setting[@"isAutoSubscribe"]];
         NSString * isOnlyAudio = [NSString stringWithFormat:@"%@",setting[@"isOnlyAudio"]];
         NSString * videoProfile = [NSString stringWithFormat:@"%@",setting[@"videoProfile"]];
         NSString * streamProfile = [NSString stringWithFormat:@"%@",setting[@"streamProfile"]];
+        NSString * roomType = [NSString stringWithFormat:@"%@",setting[@"roomType"]];
         NSString * isDebug = [NSString stringWithFormat:@"%@",setting[@"isDebug"]];
         self.manager.isAutoPublish = isAutoPublish.boolValue;
         self.manager.isAutoSubscribe = isAutoSubscribe.boolValue;
         self.manager.isOnlyAudio = isOnlyAudio.boolValue;
+        
         //设置是否开启日志
         [UCloudRtcEngine setLogEnable:isDebug.boolValue];
+        switch (roomType.integerValue) {
+            case 0:
+                self.manager.roomType = UCloudRtcEngineRoomType_Communicate;
+                break;
+            case 1:
+                self.manager.roomType = UCloudRtcEngineRoomType_Broadcast;
+                break;
+            default:
+                break;
+        }
         switch (videoProfile.integerValue) {
             case 0:
                 self.manager.videoProfile = UCloudRtcEngine_VideoProfile_180P;
@@ -96,13 +108,13 @@ static NSInteger kHorizontalCount = 3;
         }
         switch (streamProfile.integerValue) {
             case 0:
-                self.manager.streamProfile = UCloudRtcEngine_StreamProfileAll;
+                self.manager.streamProfile =UCloudRtcEngine_StreamProfileUpload ;
                 break;
             case 1:
-                self.manager.streamProfile = UCloudRtcEngine_StreamProfileUpload;
+                self.manager.streamProfile = UCloudRtcEngine_StreamProfileDownload;
                 break;
             case 2:
-                self.manager.streamProfile = UCloudRtcEngine_StreamProfileDownload;
+                self.manager.streamProfile = UCloudRtcEngine_StreamProfileAll;
                 break;
             default:
                 break;
@@ -127,13 +139,14 @@ static NSInteger kHorizontalCount = 3;
 
 //退出房间
 - (IBAction)leaveRoom:(id)sender {
-    if (_isConnected) {
+//    if (_isConnected) {
         [self showAlertWithMessage:@"您确定要退出房间吗" Sure:^{
             [self.manager leaveRoom];
+            [self dismissViewControllerAnimated:YES completion:^{}];
         }];
-    }else{
-        [self dismissViewControllerAnimated:YES completion:^{}];
-    }
+//    }else{
+//        
+//    }
 }
 
 
@@ -216,6 +229,7 @@ static NSInteger kHorizontalCount = 3;
 #pragma mark ------UCloudRtcEngineDelegate method-----
 -(void)uCloudRtcEngineDidJoinRoom:(NSMutableArray<UCloudRtcStream *> *)canSubStreamList{
     [self.view makeToast:@"加入房间成功" duration:1.0 position:CSToastPositionCenter];
+    self.isConnected = YES;
     canSubstreamList = canSubStreamList;
     //远端所有可订阅的流将在这里展示  仅在非自动订阅模式下 否则为空
     if (canSubStreamList.count > 0) {
@@ -332,6 +346,7 @@ static NSInteger kHorizontalCount = 3;
 }
 
 - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didRemoveStream:(UCloudRtcStream * _Nonnull)stream{
+    self.isConnected = YES;
     UCloudRtcStream *delete = [UCloudRtcStream new];
     for (UCloudRtcStream *obj in self.streamList) {
         if ([obj.streamId isEqualToString:stream.streamId]) {
@@ -403,6 +418,16 @@ static NSInteger kHorizontalCount = 3;
             NSLog(@"info:%@",info);
         }
     }];
+    if (self.bigScreenStream) {
+        [self.streamList replaceObjectAtIndex:indexPath.row withObject:self.bigScreenStream];
+    } else {
+        [self.streamList removeObject:stream];
+    }
+    
+    self.bigScreenStream = stream;
+    [self.listView reloadData];
+    
+    [stream renderOnView:self.localView];
 }
 
 

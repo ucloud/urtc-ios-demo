@@ -16,12 +16,18 @@ typedef NS_ENUM(NSInteger)
     
 }UCloudRtcEngineMode;
 
+typedef NS_ENUM(NSInteger)
+{
+    UCloudRtcEngineRoomType_Communicate = 0,//小班课 、视频会议  默认值
+    UCloudRtcEngineRoomType_Broadcast = 1,//大班课
+    
+}UCloudRtcEngineRoomType;
 
 typedef NS_ENUM(NSInteger)
 {
-    UCloudRtcEngine_StreamProfileAll = 0,            // 所有权限 默认值
-    UCloudRtcEngine_StreamProfileUpload = 1,          // 上传权限
-    UCloudRtcEngine_StreamProfileDownload = 2,          // 下载权限
+    UCloudRtcEngine_StreamProfileUpload = 0,            // 上传权限
+    UCloudRtcEngine_StreamProfileDownload = 1,          //下载权限
+    UCloudRtcEngine_StreamProfileAll= 2,               //所有权限 默认值
     
 } UCloudRtcEngineStreamProfile;
 
@@ -124,6 +130,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 
 /**本地流权限设置 默认:所有权限  必须在加入房间之前设置才会生效 否则采用默认值*/
 @property (nonatomic, assign) UCloudRtcEngineStreamProfile streamProfile;
+
+/**URTC 房间类型  默认是: 0  必须在加入房间之前设置才会生效 否则采用默认值*/
+@property (nonatomic, assign) UCloudRtcEngineRoomType roomType;
 
 /**是否开启免提*/
 @property (nonatomic, assign, readonly) BOOL isLoudSpeaker;

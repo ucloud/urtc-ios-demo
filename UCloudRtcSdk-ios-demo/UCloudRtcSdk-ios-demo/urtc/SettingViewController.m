@@ -10,6 +10,10 @@
 #import <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>
 
 @interface SettingViewController ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *videoProfileSeg;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *communicationProfile;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *broadcastProfile;
 
 @property (nonatomic , assign) BOOL isAutoPublish;//是否开启自动发布
 @property (nonatomic , assign) BOOL isAutoSubscribe;//是否开启自动订阅
@@ -17,7 +21,7 @@
 @property (nonatomic , assign) BOOL isOnlyAudio;//是否采用纯音频模式
 @property (nonatomic , assign) UCloudRtcEngineVideoProfile videoProfile;//视频分辨率
 @property (nonatomic , assign) UCloudRtcEngineStreamProfile streamProfile;//本地流权限
-
+@property (nonatomic , assign) UCloudRtcEngineRoomType roomType;//房间类型
 
 @end
 
@@ -29,8 +33,14 @@
     self.isAutoSubscribe = YES;
     self.isDebug = YES;
     self.isOnlyAudio = NO;
-    self.videoProfile = 0 ;
-    self.streamProfile = 0;
+    //默认为480*360
+    self.videoProfile = 1 ;
+    [self.videoProfileSeg setSelectedSegmentIndex:1];
+    //默认为全部权限
+    self.streamProfile = 2;
+    [self.communicationProfile setSelectedSegmentIndex:2];
+    
+    self.roomType = 0;
 }
 
 - (IBAction)autoPub:(UISwitch *)sender {
@@ -89,22 +99,58 @@
             break;
     }
 }
-//流权限设置
+
+- (IBAction)changeRoomType:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.roomType = UCloudRtcEngineRoomType_Communicate;
+            self.communicationProfile.hidden = NO;
+            self.broadcastProfile.hidden = YES;
+            break;
+        case 1:
+            self.roomType = UCloudRtcEngineRoomType_Broadcast;
+            self.communicationProfile.hidden = YES;
+            self.broadcastProfile.hidden = NO;
+            break;
+        default:
+            break;
+    }
+}
+
+
+//communication 流权限设置
 - (IBAction)selectedLimit:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
         case 0:
-            self.streamProfile = UCloudRtcEngine_StreamProfileAll;
-            break;
-        case 1:
             self.streamProfile = UCloudRtcEngine_StreamProfileUpload;
             break;
+        case 1:
+            self.streamProfile = UCloudRtcEngine_StreamProfileDownload;
+            break;
         case 2:
+            self.streamProfile = UCloudRtcEngine_StreamProfileAll;
+            break;
+        default:
+            break;
+    }
+}
+
+//broadcast 流权限k设置
+- (IBAction)broadcastLimit:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.streamProfile = UCloudRtcEngine_StreamProfileUpload;
+            break;
+        case 1:
             self.streamProfile = UCloudRtcEngine_StreamProfileDownload;
             break;
         default:
             break;
     }
 }
+
+
+
 
 - (IBAction)save:(id)sender {
     
@@ -116,6 +162,7 @@
                                      @"isOnlyAudio":@(self.isOnlyAudio),
                                      @"videoProfile":@(self.videoProfile),
                                      @"streamProfile":@(self.streamProfile),
+                                     @"roomType":@(self.roomType),
                                      };
         [[NSNotificationCenter defaultCenter] postNotificationName:@"doSetting" object:self userInfo:dictionary];
     }];
