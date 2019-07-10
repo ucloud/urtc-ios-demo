@@ -16,7 +16,6 @@
 
 @interface MeetingRoomViewController () <UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate,YBPopupMenuDelegate,MeetingRoomCellDelegate>
 {
-    NSMutableArray *streamTitleArray;
     NSMutableArray<UCloudRtcStream*> *canSubstreamList;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *listView;
@@ -43,7 +42,6 @@ static NSInteger kHorizontalCount = 3;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.isConnected = NO;
-    streamTitleArray = [NSMutableArray new];
     canSubstreamList = [NSMutableArray new];
     self.streamList = @[].mutableCopy;
     self.roomNameLabel.text = [NSString stringWithFormat:@"ROOM:%@",self.roomId];
@@ -170,8 +168,12 @@ static NSInteger kHorizontalCount = 3;
     [self presentViewController:alert animated:YES completion:nil];
 }
 - (IBAction)showSubscribeList:(UIButton *)sender {
-    if (streamTitleArray.count > 0) {
-        [YBPopupMenu showRelyOnView:sender titles:streamTitleArray icons:nil menuWidth:300 otherSettings:^(YBPopupMenu *popupMenu) {
+    if (canSubstreamList.count > 0) {
+        NSMutableArray *titleArray = [NSMutableArray new];
+        for (UCloudRtcStream *stream in canSubstreamList) {
+            [titleArray addObject:stream.userId];
+        }
+        [YBPopupMenu showRelyOnView:sender titles:titleArray icons:nil menuWidth:300 otherSettings:^(YBPopupMenu *popupMenu) {
             popupMenu.priorityDirection = YBPopupMenuPriorityDirectionBottom;
             popupMenu.borderWidth = 1;
             popupMenu.borderColor = [UIColor blueColor];
@@ -185,7 +187,6 @@ static NSInteger kHorizontalCount = 3;
     //手动订阅一条流  仅限于非自动订阅模式
     UCloudRtcStream  *stream = canSubstreamList[index];
     [canSubstreamList removeObjectAtIndex:index];
-    [streamTitleArray removeObjectAtIndex:index];
     [self.manager subscribeMethod:stream];
 }
 
@@ -230,14 +231,8 @@ static NSInteger kHorizontalCount = 3;
 -(void)uCloudRtcEngineDidJoinRoom:(NSMutableArray<UCloudRtcStream *> *)canSubStreamList{
     [self.view makeToast:@"加入房间成功" duration:1.0 position:CSToastPositionCenter];
     self.isConnected = YES;
-    canSubstreamList = canSubStreamList;
     //远端所有可订阅的流将在这里展示  仅在非自动订阅模式下 否则为空
-    if (canSubStreamList.count > 0) {
-        [streamTitleArray removeAllObjects];
-        for (UCloudRtcStream *stream in canSubStreamList) {
-            [streamTitleArray addObject:stream.streamId];
-        }
-    }
+    canSubstreamList = canSubStreamList;
 }
 
 //新成员加入房间
@@ -255,7 +250,6 @@ static NSInteger kHorizontalCount = 3;
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager newStreamHasJoinRoom:(UCloudRtcStream *)stream{
     [self.view makeToast:@"有新的流可以订阅" duration:1.5 position:CSToastPositionCenter];
     [canSubstreamList addObject:stream];
-    [streamTitleArray addObject:stream.streamId];
 }
 //非自动订阅模式 新流退出会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamHasLeaveRoom:(UCloudRtcStream *)stream{
@@ -268,14 +262,12 @@ static NSInteger kHorizontalCount = 3;
         }
     }
     [canSubstreamList removeObject:newS];
-    [streamTitleArray removeObject:stream.streamId];
 }
 
 //非自动订阅模式 订阅成功会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didSubscribe:(UCloudRtcStream *)stream{
     [self.view makeToast:@"订阅成功" duration:1.5 position:CSToastPositionCenter];
     [canSubstreamList removeObject:stream];
-    [streamTitleArray removeObject:stream.streamId];
      [self reloadVideos];
 }
 //非自动订阅模式 取消订阅成功会收到该回调
@@ -349,7 +341,7 @@ static NSInteger kHorizontalCount = 3;
     self.isConnected = YES;
     UCloudRtcStream *delete = [UCloudRtcStream new];
     for (UCloudRtcStream *obj in self.streamList) {
-        if ([obj.streamId isEqualToString:stream.streamId]) {
+        if ([obj.userId isEqualToString:stream.userId]) {
             delete = obj;
             break;
         }
@@ -406,6 +398,9 @@ static NSInteger kHorizontalCount = 3;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MeetingRoomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    for (UIView *view in cell.contentView.subviews) {
+        [view removeFromSuperview];
+    }
     [cell configureWithStream:self.streamList[indexPath.row]];
     cell.delegate = self;
     return cell;
@@ -449,7 +444,7 @@ static NSInteger kHorizontalCount = 3;
 }
 
 -(void)didMuteStream:(UCloudRtcStream *)stream muteVideo:(BOOL)mute{
-    [self.manager setRemoteStream:stream muteAudio:mute];
+    [self.manager setRemoteStream:stream muteVideo:mute];
 }
 
 @end

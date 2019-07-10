@@ -93,7 +93,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel newStreamHasJoinRoom:(UCloudRtcStream *_Nonnull)stream;
 
 ///**非自动订阅模式下 可订阅流退出*/
-//- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel streamHasLeaveRoom:(UCloudRtcStream *_Nonnull)stream;
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel streamHasLeaveRoom:(UCloudRtcStream *_Nonnull)stream;
 
 /**非自动订阅模式下 订阅成功的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didSubscribe:(UCloudRtcStream *_Nonnull)stream;

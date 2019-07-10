@@ -12,7 +12,6 @@
 
 @interface MeetingRoomCell ()
 @property (nonatomic, weak) UCloudRtcStream *stream;
-@property (weak, nonatomic) IBOutlet UILabel *streamLabel;
 @end
 
 @implementation MeetingRoomCell
@@ -27,11 +26,15 @@
 
 - (void)configureWithStream:(UCloudRtcStream *)stream {
     self.stream = stream;
-    
+    NSLog(@"stream === %@",stream);
     [stream renderOnView:self.contentView];
-    if (stream.streamId) {
-        self.streamLabel.text = [NSString stringWithFormat:@"id:%@",stream.streamId];
-        [self.contentView bringSubviewToFront:self.streamLabel];
+    if (stream.userId) {
+        UILabel *streamLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30)];
+        streamLabel.textColor = [UIColor whiteColor];
+        streamLabel.textAlignment = NSTextAlignmentCenter;
+        NSLog(@"id==%@",stream.userId);
+        streamLabel.text = [NSString stringWithFormat:@"id:%@",stream.userId];
+        [self.contentView addSubview:streamLabel];
         
         UIButton *audioBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 20, self.frame.size.height - 20, 20, 20)];
         [audioBtn setImage:[UIImage imageNamed:@"microphone.png"] forState:UIControlStateNormal];
