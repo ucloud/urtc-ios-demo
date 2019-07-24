@@ -18,7 +18,7 @@
 /**渲染到指定视图*/
 - (void)renderOnView:(UIView *)view;
 /**获取流状态信息*/
-- (void)getReportStates:(void (^)(UCloudRtcStreamStatsInfo *info))completion;
+- (NSMutableArray *)getReportStates;
 
 
 @end

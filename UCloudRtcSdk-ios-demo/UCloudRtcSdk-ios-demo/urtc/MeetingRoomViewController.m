@@ -372,7 +372,10 @@ static NSInteger kHorizontalCount = 3;
     }
 }
 
--(void)uCloudRtcEngine:(UCloudRtcEngine *)manager didReceiveStreamVolume:(NSArray<UCloudRtcStreamVolume *> *)volume{
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo *> * _Nonnull)status{
+    for (UCloudRtcStreamStatsInfo *info in status) {
+        NSLog(@"stream status info :%@",info);
+    }
 
 }
 
@@ -408,11 +411,6 @@ static NSInteger kHorizontalCount = 3;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     UCloudRtcStream *stream = self.streamList[indexPath.row];
-    [stream getReportStates:^(UCloudRtcStreamStatsInfo *info) {
-        if (info) {
-            NSLog(@"info:%@",info);
-        }
-    }];
     if (self.bigScreenStream) {
         [self.streamList replaceObjectAtIndex:indexPath.row withObject:self.bigScreenStream];
     } else {

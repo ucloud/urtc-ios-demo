@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
     UCloudRtcEnginePublishStatePublishStoped,
 };
 
-@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume;
+@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
 /**加入房间成功*/
@@ -101,8 +101,8 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 /**非自动订阅模式下 取消订阅成功的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didCancleSubscribe:(UCloudRtcStream *_Nonnull)stream;
 
-/**流 音量回调*/
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveStreamVolume:(NSArray<UCloudRtcStreamVolume*> *_Nonnull)volume;
+/**流 状态回调*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo*> *_Nonnull)status;
 
 /**流 连接失败*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager streamConnectionFailed:(NSString *_Nonnull)streamId;

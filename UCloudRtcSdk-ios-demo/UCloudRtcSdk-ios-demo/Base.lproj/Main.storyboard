@@ -299,8 +299,8 @@
                                     <constraint firstAttribute="height" constant="32" id="yc3-0o-pO6"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="上传"/>
-                                    <segment title="下载"/>
+                                    <segment title="老师"/>
+                                    <segment title="学生"/>
                                 </segments>
                                 <connections>
                                     <action selector="broadcastLimit:" destination="7ir-JH-Mvj" eventType="valueChanged" id="btP-l3-2Dv"/>
@@ -327,8 +327,8 @@
                                     <constraint firstAttribute="height" constant="27" id="Lf7-G2-7yc"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Communication"/>
-                                    <segment title="Broadcast"/>
+                                    <segment title="大班课"/>
+                                    <segment title="小班课"/>
                                 </segments>
                                 <connections>
                                     <action selector="changeRoomType:" destination="7ir-JH-Mvj" eventType="valueChanged" id="SPp-Rv-nxF"/>
