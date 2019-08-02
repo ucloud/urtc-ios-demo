@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
     UCloudRtcEnginePublishStatePublishStoped,
 };
 
-@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo;
+@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
 /**加入房间成功*/
@@ -141,14 +141,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 
 @property (nonatomic, readonly) UCloudRtcStream * _Nonnull localStream;
 
+@property (nonatomic, strong) UCloudRtcLog * _Nullable logger;
 
 
-/**
- @brief 是否开启日志
-
- @param enable 是否开启日志
- */
-+ (void)setLogEnable:(BOOL)enable;
 
 
 /**

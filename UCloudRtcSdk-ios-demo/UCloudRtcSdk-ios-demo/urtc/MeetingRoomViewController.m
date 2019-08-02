@@ -52,6 +52,8 @@ static NSInteger kHorizontalCount = 3;
     self.manager.delegate = self;
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
+    //设置日志级别
+    [self.manager.logger setLogLevel:LogLevel_DEBUG];
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
@@ -60,7 +62,6 @@ static NSInteger kHorizontalCount = 3;
 }
 
 - (void)settingSDK:(NSDictionary *)setting{
-    NSLog(@"setting==%@",setting);
     if (setting[@"isAutoPublish"]) {
         NSString * isAutoPublish = [NSString stringWithFormat:@"%@",setting[@"isAutoPublish"]];
         NSString * isAutoSubscribe = [NSString stringWithFormat:@"%@",setting[@"isAutoSubscribe"]];
@@ -73,8 +74,6 @@ static NSInteger kHorizontalCount = 3;
         self.manager.isAutoSubscribe = isAutoSubscribe.boolValue;
         self.manager.isOnlyAudio = isOnlyAudio.boolValue;
         
-        //设置是否开启日志
-        [UCloudRtcEngine setLogEnable:isDebug.boolValue];
         switch (roomType.integerValue) {
             case 0:
                 self.manager.roomType = UCloudRtcEngineRoomType_Communicate;
@@ -123,7 +122,7 @@ static NSInteger kHorizontalCount = 3;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    UCloudRtcLog(@"----didReceiveMemoryWarning");
+    NSLog(@"----didReceiveMemoryWarning");
 }
 
 - (void)viewDidAppear:(BOOL)animated {
