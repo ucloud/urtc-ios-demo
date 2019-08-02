@@ -53,7 +53,7 @@ static NSInteger kHorizontalCount = 3;
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
     //设置日志级别
-    [self.manager.logger setLogLevel:LogLevel_DEBUG];
+    [self.manager.logger setLogLevel:UCloudRtvLogLevel_DEBUG];
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
