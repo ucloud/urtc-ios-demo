@@ -78,13 +78,13 @@
 		
 		<option value="//api/name/currentVersion">+ currentVersion</option>
 		
-		<option value="//api/name/setLogEnable:">+ setLogEnable:</option>
-		
 	</optgroup>
 	
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/_registerNotifications">- _registerNotifications</option>
 		
 		<option value="//api/name/initWithUserId:appId:roomId:appKey:token:">- initWithUserId:appId:roomId:appKey:token:</option>
 		
@@ -108,17 +108,21 @@
 		
 		<option value="//api/name/setRemoteStream:muteVideo:">- setRemoteStream:muteVideo:</option>
 		
-		<option value="//api/name/signalingChannel:didReceiveStreamVolume:">- signalingChannel:didReceiveStreamVolume:</option>
-		
-		<option value="//api/name/signalingChannel:didSubscribe:">- signalingChannel:didSubscribe:</option>
+		<option value="//api/name/signalingChannel:didReceiveStreamStatus:">- signalingChannel:didReceiveStreamStatus:</option>
 		
 		<option value="//api/name/signalingChannel:error:">- signalingChannel:error:</option>
+		
+		<option value="//api/name/startRecord">- startRecord</option>
+		
+		<option value="//api/name/stopRecord">- stopRecord</option>
 		
 		<option value="//api/name/subscribeMethod:">- subscribeMethod:</option>
 		
 		<option value="//api/name/switchCamera">- switchCamera</option>
 		
 		<option value="//api/name/uCloudRtcEngine:newStreamHasJoinRoom:">- uCloudRtcEngine:newStreamHasJoinRoom:</option>
+		
+		<option value="//api/name/uCloudRtcEngine:streamHasLeaveRoom:">- uCloudRtcEngine:streamHasLeaveRoom:</option>
 		
 		<option value="//api/name/unPublish">- unPublish</option>
 		
@@ -520,59 +524,6 @@
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>是否开启免提</p>
 			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setLogEnable:" title="setLogEnable:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setLogEnable:">+&nbsp;setLogEnable:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>是否开启日志</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)setLogEnable:(BOOL)<em>enable</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enable</code></th>
-						<td><p>是否开启日志</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
 			
 
 			
@@ -1363,6 +1314,88 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/startRecord" title="startRecord"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startRecord">&ndash;&nbsp;startRecord</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>开始视频录制</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startRecord</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopRecord" title="stopRecord"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopRecord">&ndash;&nbsp;stopRecord</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>停止视频录制</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopRecord</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1372,6 +1405,52 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/_registerNotifications" title="_registerNotifications"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_registerNotifications">&ndash;&nbsp;_registerNotifications</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>/    _<a href="#//api/name/rtcLogger">rtcLogger</a>.severity = RTCFileLoggerSeverityVerbose;</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)_registerNotifications</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>/    _<a href="#//api/name/rtcLogger">rtcLogger</a>.severity = RTCFileLoggerSeverityVerbose;</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/verfyToken:" title="verfyToken:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/verfyToken:">&ndash;&nbsp;verfyToken:</a></code>
 </h3>
@@ -1510,8 +1589,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/signalingChannel:didSubscribe:" title="signalingChannel:didSubscribe:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/signalingChannel:didSubscribe:">&ndash;&nbsp;signalingChannel:didSubscribe:</a></code>
+	<a name="//api/name/uCloudRtcEngine:streamHasLeaveRoom:" title="uCloudRtcEngine:streamHasLeaveRoom:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngine:streamHasLeaveRoom:">&ndash;&nbsp;uCloudRtcEngine:streamHasLeaveRoom:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1526,7 +1605,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)signalingChannel:(UCloudRtcSignalingChannel *)<em>channel</em> didSubscribe:(UCloudRtcStream *)<em>stream</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)uCloudRtcEngine:(UCloudRtcEngine *)<em>channel</em> streamHasLeaveRoom:(UCloudRtcStream *)<em>stream</em></code></div>
 
 		    
 			
@@ -1602,8 +1681,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/signalingChannel:didReceiveStreamVolume:" title="signalingChannel:didReceiveStreamVolume:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/signalingChannel:didReceiveStreamVolume:">&ndash;&nbsp;signalingChannel:didReceiveStreamVolume:</a></code>
+	<a name="//api/name/signalingChannel:didReceiveStreamStatus:" title="signalingChannel:didReceiveStreamStatus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/signalingChannel:didReceiveStreamStatus:">&ndash;&nbsp;signalingChannel:didReceiveStreamStatus:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1618,7 +1697,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)signalingChannel:(UCloudRtcSignalingChannel *_Nonnull)<em>channel</em> didReceiveStreamVolume:(NSArray&lt;UCloudRtcStreamVolume*&gt; *_Nonnull)<em>volume</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)signalingChannel:(UCloudRtcSignalingChannel *_Nonnull)<em>channel</em> didReceiveStreamStatus:(NSArray&lt;UCloudRtcStreamStatsInfo*&gt; *_Nonnull)<em>status</em></code></div>
 
 		    
 			
@@ -1662,7 +1741,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 ucloud. All rights reserved. Updated: 2019-07-05</p>
+						<p class="copyright">Copyright &copy; 2019 ucloud. All rights reserved. Updated: 2019-08-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
