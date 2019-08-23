@@ -479,15 +479,41 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFc-k0-1NO">
-                                        <rect key="frame" x="157" y="5" width="100" height="30"/>
+                                        <rect key="frame" x="107" y="5" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Tgw-BS-YR3"/>
-                                            <constraint firstAttribute="width" constant="100" id="wFu-6Z-RVH"/>
+                                            <constraint firstAttribute="width" constant="200" id="wFu-6Z-RVH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXW-qP-kmx">
+                                        <rect key="frame" x="5" y="8" width="83" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="XSH-nK-Vcd"/>
+                                            <constraint firstAttribute="width" constant="83" id="Xzs-9D-fvx"/>
+                                        </constraints>
+                                        <state key="normal" title="开始录制">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startRecord:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="BsT-AS-j5R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="143-QU-z5E">
+                                        <rect key="frame" x="347" y="8" width="62" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="62" id="CFy-lP-BCh"/>
+                                            <constraint firstAttribute="height" constant="30" id="GXz-mH-9oH"/>
+                                        </constraints>
+                                        <state key="normal" title="结束录制">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopRecord:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="GUf-Kn-Lom"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4736064076" green="0.70945364239999997" blue="0.97650581599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -496,13 +522,17 @@
                                     <constraint firstItem="tFc-k0-1NO" firstAttribute="top" secondItem="1W9-c5-CU9" secondAttribute="top" constant="5" id="9AO-gE-L8r"/>
                                     <constraint firstItem="sua-FH-dF1" firstAttribute="centerY" secondItem="1W9-c5-CU9" secondAttribute="centerY" constant="12" id="Ebg-7O-miJ"/>
                                     <constraint firstItem="djO-kJ-QE1" firstAttribute="leading" secondItem="dUJ-XT-vUe" secondAttribute="trailing" constant="10" id="Fez-Bl-91S"/>
+                                    <constraint firstItem="143-QU-z5E" firstAttribute="top" secondItem="1W9-c5-CU9" secondAttribute="top" constant="8" id="JA0-8P-D3x"/>
                                     <constraint firstItem="djO-kJ-QE1" firstAttribute="top" secondItem="1W9-c5-CU9" secondAttribute="top" id="OWI-Gt-fcf"/>
+                                    <constraint firstAttribute="trailing" secondItem="143-QU-z5E" secondAttribute="trailing" constant="5" id="VXH-Hb-pwQ"/>
                                     <constraint firstItem="dUJ-XT-vUe" firstAttribute="centerY" secondItem="1W9-c5-CU9" secondAttribute="centerY" constant="12" id="WOp-hK-TxF"/>
                                     <constraint firstItem="sua-FH-dF1" firstAttribute="leading" secondItem="wNf-gH-LvC" secondAttribute="trailing" constant="30" id="WPD-ib-QBx"/>
+                                    <constraint firstItem="RXW-qP-kmx" firstAttribute="top" secondItem="1W9-c5-CU9" secondAttribute="top" constant="8" id="a11-Cp-JxC"/>
                                     <constraint firstAttribute="height" constant="80" id="adA-G0-XLx"/>
                                     <constraint firstItem="k0V-Fb-QsZ" firstAttribute="centerY" secondItem="1W9-c5-CU9" secondAttribute="centerY" constant="12" id="dTO-AR-VWK"/>
                                     <constraint firstItem="djO-kJ-QE1" firstAttribute="centerX" secondItem="1W9-c5-CU9" secondAttribute="centerX" id="fkw-Ak-NvP"/>
                                     <constraint firstItem="bws-E4-Cwe" firstAttribute="centerY" secondItem="1W9-c5-CU9" secondAttribute="centerY" constant="12" id="gGd-4g-qvA"/>
+                                    <constraint firstItem="RXW-qP-kmx" firstAttribute="leading" secondItem="1W9-c5-CU9" secondAttribute="leading" constant="5" id="kfM-h5-d32"/>
                                     <constraint firstItem="dUJ-XT-vUe" firstAttribute="leading" secondItem="f3A-yM-qEJ" secondAttribute="trailing" constant="30" id="qL7-Z9-ERY"/>
                                     <constraint firstItem="f3A-yM-qEJ" firstAttribute="leading" secondItem="bws-E4-Cwe" secondAttribute="trailing" constant="30" id="rD6-sU-POw"/>
                                     <constraint firstItem="wNf-gH-LvC" firstAttribute="centerY" secondItem="1W9-c5-CU9" secondAttribute="centerY" constant="15" id="rXE-EN-qGE"/>
@@ -579,6 +609,7 @@
                         <outlet property="localView" destination="2mz-0Y-8qF" id="ncc-05-vyb"/>
                         <outlet property="roomNameLabel" destination="tFc-k0-1NO" id="lei-cX-vor"/>
                         <outlet property="settingView" destination="1W9-c5-CU9" id="wSY-tn-tDl"/>
+                        <outlet property="startBtn" destination="RXW-qP-kmx" id="MBf-J7-gEW"/>
                         <outlet property="view" destination="gte-Y0-x3b" id="T4g-e8-k7D"/>
                     </connections>
                 </viewController>

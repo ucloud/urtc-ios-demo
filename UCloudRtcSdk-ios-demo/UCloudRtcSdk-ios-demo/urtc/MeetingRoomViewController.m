@@ -33,6 +33,14 @@
 @property (nonatomic, strong) UCloudRtcStream *bigScreenStream;
 
 @property (nonatomic, strong) YBPopupMenu *popupMenu;//可订阅流弹出视图
+
+//视频录制相关
+@property (nonatomic, assign) int seconds;
+@property (nonatomic, assign) int minutes;
+@property (nonatomic, assign) int hours;
+@property (nonatomic, strong) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UIButton *startBtn;
+
 @end
 
 static NSInteger kHorizontalCount = 3;
@@ -133,7 +141,47 @@ static NSInteger kHorizontalCount = 3;
     
 }
 
+//开始视频录制
+- (IBAction)startRecord:(UIButton *)sender {
+    if (![sender.titleLabel.text isEqualToString:@"开始录制"]) {
+        return;
+    }
+    [self.view makeToast:@"开始录制" duration:1.0 position:CSToastPositionCenter];
+    [self.manager startRecord];
+    self.hours = 0;
+    self.minutes = 0;
+    self.seconds = 0;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startTimer) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+//停止视频录制
+- (IBAction)stopRecord:(UIButton *)sender {
+    [self.manager stopRecord];
+    [self.view makeToast:@"停止录制" duration:1.0 position:CSToastPositionCenter];
+    [self.startBtn setTitle:@"开始录制" forState:UIControlStateNormal];
+    if (self.timer) {
+        if ([self.timer respondsToSelector:@selector(isValid)]){
+            if ([self.timer isValid]){
+                [self.timer invalidate];
+                self.timer = nil;
+            }
+        }
+    }
+}
 
+- (void)startTimer {
+    self.seconds++;
+    if (_seconds == 60) {
+        self.minutes++;
+        self.seconds = 0;
+    }
+    if (self.minutes == 60) {
+        self.hours++;
+        self.minutes = 0;
+    }
+    [self.startBtn setTitle:[NSString stringWithFormat:@"%.2d:%.2d:%.2d",_hours, _minutes, _seconds] forState:UIControlStateNormal];
+}
+                  
 //退出房间
 - (IBAction)leaveRoom:(id)sender {
 //    if (_isConnected) {

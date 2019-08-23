@@ -259,4 +259,16 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
  */
 - (void)setRemoteStream:(UCloudRtcStream *_Nonnull)stream muteAudio:(BOOL)isMute;
 
+
+/**
+ @brief 开始视频录制
+
+ */
+- (void)startRecord;
+
+/**
+ @brief 停止视频录制
+ 
+ */
+- (void)stopRecord;
 @end
