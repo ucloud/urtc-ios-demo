@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="WhQ-sa-hdF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000006" height="862"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户ID：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biE-em-BG9">
                                 <rect key="frame" x="20" y="184.5" width="68.5" height="20.5"/>
@@ -327,8 +327,8 @@
                                     <constraint firstAttribute="height" constant="27" id="Lf7-G2-7yc"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Communication"/>
-                                    <segment title="Broadcast"/>
+                                    <segment title="小班课"/>
+                                    <segment title="大班课"/>
                                 </segments>
                                 <connections>
                                     <action selector="changeRoomType:" destination="7ir-JH-Mvj" eventType="valueChanged" id="SPp-Rv-nxF"/>
