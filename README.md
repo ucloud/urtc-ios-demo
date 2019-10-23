@@ -68,30 +68,58 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
 ## 5.1 初始化 
 建议在初始化 App 的同时，初始化 SDK。
 ### 5.1.1 导入 SDK 头文件
-    <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>    
+    //objective-c
+    <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h> 
+    
+    //swift
+    import UCloudRtcSdk_ios
 ### 5.1.2. 设置 userId 和 roomId，获取AppID；
 ### 5.1.3 初始化UCloudRtcEngine 并设置代理以接收相关回调信息；
+    //objective-c
     UCloudRtcEngine *engine = [[UCloudRtcEngine alloc] initWithUserId:userId  appId:appId roomId:roomId]];
     engine.delegate = self;
+    
+     //swift
+     UCloudRtcEngine *engine = UCloudRtcEngine.init(userId:userId, appId: appId, roomId:roomId , appKey: appKey, token:token)
+     self.engine?.delegate = self
 ### 5.1.4 配置参数
 初始化完成后，即可调用 SDK相关接口，实现对应功能。使用之前需要对SDK进行相关设置，如果不设置也可以，系统将会采用默认值。
-
+    
+    //objective-c
     self.engine.isAutoPublish = YES;//加入房间后将自动发布本地音视频 默认为YES
     self.engine.isAutoSubscribe = YES;//加入房间后将自动订阅远端音视频 默认为YES
     self.engine.isOnlyAudio = NO;//将启用纯音频模式 默认为NO
     self.engine.isDebug = NO;//是否开启日志
     self.engine.videoProfile = UCloudRtcEngine_VideoProfile_360P_1;//设置视频分辨率
     self.engine.streamProfile = UCloudRtcEngine_StreamProfileAll;//设置流权限
+    
+    //swift
+    self.engine?.isAutoPublish = ture;//加入房间后将自动发布本地音视频 默认为YES
+    self.engine?.isAutoSubscribe = ture;//加入房间后将自动订阅远端音视频 默认为YES
+    self.engine?.isOnlyAudio = false;//将启用纯音频模式 默认为NO
+    self.engine?.isDebug = false;//是否开启日志
+    self.engine?.videoProfile = ._VideoProfile_360P_1;//设置视频分辨率
+    self.engine?.streamProfile = .streamProfileAll;//设置流权限
 ## 5.2 加入房间
+
+    //objective-c
     [self.engine joinRoomWithcompletionHandler:^(NSData *data, NSUrlResponse *response, NSError error) {
     }];
+    
+    //swift
+    self.engine?.joinRoomWithcompletionHandler({(data, response, error) -> Void in})
 ## 5.3 发布本地流
 * 自动发布模式下，joinRoom成功后，即可发布本地流，无需再次调用publish接口；
 * 手动发布模式下，joinRoom成功后，可通过下述接口发布本地流；
-    
+        
+        //objective-c
         [self.engine publish];
+        
+        //swift
+        self.engine?.publish()
 * 发布过程中可以监听以下事件获取发布状态，根据状态调用渲染或其他接口即可。
 
+        //objective-c
         - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState {
             switch (publishState) {
                         case UCloudRtcEnginePublishStateUnPublish:
@@ -126,21 +154,70 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
                         break;
                     }                               
                 }
+                
+        //swift
+        func uCloudRtcEngine(_ manager: UCloudRtcEngine, didChange publishState: UCloudRtcEnginePublishState) {
+            switch publishState {
+                case .unPublish:
+                    self.isConnected = false
+                case .publishing:
+                    CBToast.showToastAction(message: "正在发布...")
+                case .publishSucceed:
+                    CBToast.showToastAction(message: "发布成功")
+                    self.isConnected = true;
+                    self.bottomButton?.setTitle("发布成功", for: .normal)
+                case .republishing:
+                    self.bottomButton?.setTitle("正在重新发布...", for: .normal)
+                case .publishFailed:
+                    self.isConnected = false;
+                    CBToast.showToastAction(message: "开始发布")
+                case .publishStoped:
+                    self.isConnected = false;
+                    CBToast.showToastAction(message: "发布已停止")
+                    self.bottomButton?.setTitle("开始发布", for: .normal)
+                default:
+                break
+            }
+        }
 ## 5.4 取消发布本地流
+
+    //objective-c
     [self.engine unPublish];
+    
+    //swift
+    self.engine?.unPublish()
 ## 5.5 订阅远程流
 * 自动订阅模式下，joinRoom成功后，即可订阅远程流，无需再次调用subscribeMethod接口；\\
 * 手动订阅模式下，joinRoom成功后，可通过下述接口订阅远程流；\\
 
+        //objective-c
         [self.engine subscribeMethod:remoteStream];
+        
+        //swift
+        self.engine?.subscribeMethod(remoteStream)
 * 订阅成功，在回调事件中调用渲染接口即可。
 
+        //objective-c
         -(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didSubscribe:(UCloudRtcStream *)stream{
             [self reloadVideos];
         }
+        
+        //swift
+        func uCloudRtcEngine(_ channel: UCloudRtcEngine, didSubscribe stream: UCloudRtcStream) {
+            self.reloadVideos()
+        }
 ## 5.6 取消订阅远程流
+
+    //objective-c
     [self.engine unSubscribeMethod:remoteStream];
+    
+    //swift
+    self.engine?.unSubscribeMethod(remoteStream)
 ## 5.7 离开房间
-    [self.engine leaveRoom];    
+    //objective-c
+    [self.engine leaveRoom];   
+    
+    //swift
+    self.engine?.leaveRoom()
 ## 6.8 编译、运行，开始体验吧！
 
