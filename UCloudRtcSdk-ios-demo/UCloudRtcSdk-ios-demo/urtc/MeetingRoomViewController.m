@@ -147,7 +147,19 @@ static NSInteger kHorizontalCount = 3;
         return;
     }
     [self.view makeToast:@"开始录制" duration:1.0 position:CSToastPositionCenter];
-    [self.manager startRecord];
+    
+    //配置视频录制相关参数
+    UCloudRtcRecordConfig *recordConfig = [UCloudRtcRecordConfig new];
+    recordConfig.mainviewid = _userId;
+    recordConfig.mimetype = 3;
+    recordConfig.mainviewmt = 1;
+    recordConfig.bucket = @"urtc-test";
+    recordConfig.region = @"cn-bj";
+    recordConfig.watermarkpos = 1;
+    recordConfig.width = 360;
+    recordConfig.height = 480;
+    [self.manager startRecord:recordConfig];
+    
     self.hours = 0;
     self.minutes = 0;
     self.seconds = 0;
@@ -184,14 +196,10 @@ static NSInteger kHorizontalCount = 3;
                   
 //退出房间
 - (IBAction)leaveRoom:(id)sender {
-//    if (_isConnected) {
         [self showAlertWithMessage:@"您确定要退出房间吗" Sure:^{
             [self.manager leaveRoom];
             [self dismissViewControllerAnimated:YES completion:^{}];
         }];
-//    }else{
-//        
-//    }
 }
 
 
@@ -417,9 +425,13 @@ static NSInteger kHorizontalCount = 3;
     }
 }
 
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager startRecord:(NSDictionary *)recordResponse{
+    NSLog(@"视频录制回调:%@",recordResponse);
+}
+
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo *> * _Nonnull)status{
     for (UCloudRtcStreamStatsInfo *info in status) {
-        NSLog(@"stream status info :%@",info);
+//        NSLog(@"stream status info :%@",info);
     }
 
 }

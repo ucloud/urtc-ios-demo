@@ -94,9 +94,9 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
     self.engine.streamProfile = UCloudRtcEngine_StreamProfileAll;//设置流权限
     
     //swift
-    self.engine?.isAutoPublish = ture;//加入房间后将自动发布本地音视频 默认为YES
-    self.engine?.isAutoSubscribe = ture;//加入房间后将自动订阅远端音视频 默认为YES
-    self.engine?.isOnlyAudio = false;//将启用纯音频模式 默认为NO
+    self.engine?.isAutoPublish = ture;//加入房间后将自动发布本地音视频 默认为ture
+    self.engine?.isAutoSubscribe = ture;//加入房间后将自动订阅远端音视频 默认为ture
+    self.engine?.isOnlyAudio = false;//将启用纯音频模式 默认为false
     self.engine?.isDebug = false;//是否开启日志
     self.engine?.videoProfile = ._VideoProfile_360P_1;//设置视频分辨率
     self.engine?.streamProfile = .streamProfileAll;//设置流权限
@@ -213,11 +213,45 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
     
     //swift
     self.engine?.unSubscribeMethod(remoteStream)
-## 5.7 离开房间
+    
+## 5.7 开始视频录制
+    //objective-c
+    UCloudRtcRecordConfig *recordConfig = [UCloudRtcRecordConfig new];
+    recordConfig.mainviewid = userId;
+    recordConfig.mimetype = 3;
+    recordConfig.mainviewmt = 1;
+    recordConfig.bucket = @"urtc-test";
+    recordConfig.region = @"cn-bj";
+    recordConfig.watermarkpos = 1;
+    recordConfig.width = 360;
+    recordConfig.height = 480;
+    [self.engine startRecord:recordConfig];
+
+    //swift
+    let recordConfig = UCloudRtcRecordConfig.init()
+    recordConfig.mainviewid = userId;
+    recordConfig.mimetype = 3;
+    recordConfig.mainviewmt = 1;
+    recordConfig.bucket = "urtc-test";
+    recordConfig.region = "cn-bj";
+    recordConfig.watermarkpos = 1;
+    recordConfig.width = 360;
+    recordConfig.height = 480;
+    self.engine?.startRecord(recordConfig)
+
+## 5.8 停止视频录制
+    //objective-c
+    [self.manager stopRecord];
+    
+    //swift
+    self.manager?.stopRecord()
+    
+## 5.9 离开房间
     //objective-c
     [self.engine leaveRoom];   
     
     //swift
     self.engine?.leaveRoom()
-## 6.8 编译、运行，开始体验吧！
+    
+## 6.0 编译、运行，开始体验吧！
 

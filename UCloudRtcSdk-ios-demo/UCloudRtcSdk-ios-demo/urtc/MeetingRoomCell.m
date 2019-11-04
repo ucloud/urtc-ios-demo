@@ -26,13 +26,11 @@
 
 - (void)configureWithStream:(UCloudRtcStream *)stream {
     self.stream = stream;
-    NSLog(@"stream === %@",stream);
     [stream renderOnView:self.contentView];
     if (stream.userId) {
         UILabel *streamLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30)];
         streamLabel.textColor = [UIColor whiteColor];
         streamLabel.textAlignment = NSTextAlignmentCenter;
-        NSLog(@"id==%@",stream.userId);
         streamLabel.text = [NSString stringWithFormat:@"id:%@",stream.userId];
         [self.contentView addSubview:streamLabel];
         

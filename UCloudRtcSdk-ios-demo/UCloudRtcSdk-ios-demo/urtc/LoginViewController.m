@@ -71,7 +71,7 @@
 }
 
 - (NSString *)getUserId {
-   NSString* userId = [NSString stringWithFormat:@"%d",arc4random()%1000];
+   NSString* userId = [NSString stringWithFormat:@"ios_%d",arc4random()%1000];
     return userId;
 }
 
