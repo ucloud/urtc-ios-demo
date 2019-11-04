@@ -426,7 +426,7 @@ static NSInteger kHorizontalCount = 3;
 }
 
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager startRecord:(NSDictionary *)recordResponse{
-    NSLog(@"视频录制回调:%@",recordResponse);
+    [self.view makeToast:[NSString stringWithFormat:@"视频录制文件:%@",recordResponse[@"FileName"]] duration:3.0 position:CSToastPositionCenter];
 }
 
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo *> * _Nonnull)status{

@@ -415,7 +415,7 @@ class MeetingRoomViewController : UIViewController,UCloudRtcEngineDelegate,UICol
     
     /**开始视频录制的回调*/
     func uCloudRtcEngine(_ manager: UCloudRtcEngine, startRecord recordResponse: [AnyHashable : Any]) {
-        
+        CBToast.showToastAction(message: NSString(format: "视频录制文件:%@", recordResponse["FileName"] as! CVarArg))
     }
     
     

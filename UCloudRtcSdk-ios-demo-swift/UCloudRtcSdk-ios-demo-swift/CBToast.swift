@@ -48,7 +48,7 @@ class CBToast: NSObject {
     
     //默认显示消息-->center
     class func showToastAction(message : NSString) {
-        self.showToast(message: message, aLocationStr: "center", aShowTime: 2.0)
+        self.showToast(message: message, aLocationStr: "center", aShowTime: 3.0)
     }
  
     //显示消息
