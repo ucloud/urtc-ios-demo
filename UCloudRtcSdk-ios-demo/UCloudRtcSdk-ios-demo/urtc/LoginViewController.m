@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
-@property (nonatomic, assign) BOOL didEnterNextVC;
+
 @end
 
 @implementation LoginViewController
@@ -58,7 +58,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    self.didEnterNextVC = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -66,9 +65,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
+
 
 - (NSString *)getUserId {
    NSString* userId = [NSString stringWithFormat:@"ios_%d",arc4random()%1000];
@@ -94,12 +91,6 @@
     }
     [self.view endEditing:YES];
     
-    if (self.didEnterNextVC) {
-        return; //防止点击频率过快，多次push
-    }
-    
-    self.didEnterNextVC = YES;
-    
     //点击加入房间
     [self didEnterRoomWithUserId:self.userLabel.text appId:APP_ID roomId:roomName];
 }
@@ -117,7 +108,6 @@
         meeting.appKey = APP_KEY;
         meeting.token = TOKEN;
         meeting.engineSetting = self.engineSetting;
-        NSLog(@"meeting.engineSetting===%@",meeting.engineSetting);
         if (self.segment.selectedSegmentIndex == 0) {
             meeting.engineMode = UCloudRtcEngineModeTrival;
         }else{
