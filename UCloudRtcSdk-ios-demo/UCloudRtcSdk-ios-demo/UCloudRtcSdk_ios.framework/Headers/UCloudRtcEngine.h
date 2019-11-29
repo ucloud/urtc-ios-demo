@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
 /**加入房间成功*/
-- (void)uCloudRtcEngineDidJoinRoom:(NSMutableArray<UCloudRtcStream *> * _Nonnull)canSubStreamList;
+- (void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> * _Nonnull)canSubStreamList;
 /**退出房间*/
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *_Nonnull)manager;
 /**与房间的连接断开*/
@@ -147,7 +147,14 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 
 @property (nonatomic, strong) UCloudRtcLog * _Nullable logger;
 
+/**是否开启混音*/
+@property (nonatomic, assign) BOOL fileMix;
 
+/**混音文件路径*/
+@property (nonatomic, copy) NSString * _Nullable filePath;
+
+/**混音文件是否循环播放*/
+@property (nonatomic, assign) BOOL fileLoop;
 
 
 /**

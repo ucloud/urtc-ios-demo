@@ -34,4 +34,16 @@
 //录制视频的高
 @property (nonatomic, assign) NSInteger height;
 
+//是否均分 true (是) false(否)
+@property (nonatomic, assign) BOOL isaverage;
+
+//1 (时间水印) 、 2 (图片水印) 、 3（文字水印)
+@property (nonatomic, assign) NSInteger watertype;
+
+//watertype 2时代表图片水印url 、watertype 3代表水印文字
+@property (nonatomic, copy) NSString *waterurl;
+
+//模板 （1-9）
+@property (nonatomic, assign) NSInteger wtemplate;
+
 @end

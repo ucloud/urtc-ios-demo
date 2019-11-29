@@ -21,6 +21,7 @@
 		38DD7066235482F200E0FF90 /* MeetingRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD7064235482F200E0FF90 /* MeetingRoomCell.swift */; };
 		38DD7067235482F200E0FF90 /* MeetingRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DD7065235482F200E0FF90 /* MeetingRoomCell.xib */; };
 		38DD706A2355C7E300E0FF90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38DD70692355C7E300E0FF90 /* UIKit.framework */; };
+		38E35FCF238F7AF800997BE8 /* dy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38E35FCE238F7AF800997BE8 /* dy.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		38DD7064235482F200E0FF90 /* MeetingRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomCell.swift; sourceTree = "<group>"; };
 		38DD7065235482F200E0FF90 /* MeetingRoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeetingRoomCell.xib; sourceTree = "<group>"; };
 		38DD70692355C7E300E0FF90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		38E35FCE238F7AF800997BE8 /* dy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dy.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				38DD6FBB2351769800E0FF90 /* LaunchScreen.storyboard */,
 				38DD6FBE2351769800E0FF90 /* Info.plist */,
 				38DD6FC6235176F200E0FF90 /* UCloudRtcSdk-ios-demo-swift-Bridging-Header.h */,
+				38E35FCE238F7AF800997BE8 /* dy.mp3 */,
 			);
 			path = "UCloudRtcSdk-ios-demo-swift";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E35FCF238F7AF800997BE8 /* dy.mp3 in Resources */,
 				38DD6FBD2351769800E0FF90 /* LaunchScreen.storyboard in Resources */,
 				38DD6FBA2351769800E0FF90 /* Assets.xcassets in Resources */,
 				38DD7067235482F200E0FF90 /* MeetingRoomCell.xib in Resources */,
@@ -348,11 +352,12 @@
 					"$(PROJECT_DIR)/UCloudRtcSdk-ios-demo-swift",
 				);
 				INFOPLIST_FILE = "UCloudRtcSdk-ios-demo-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.UCloudRtcSdk-ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCloudRtcSdk-ios-demo-swift/UCloudRtcSdk-ios-demo-swift-Bridging-Header.h";
@@ -376,11 +381,12 @@
 					"$(PROJECT_DIR)/UCloudRtcSdk-ios-demo-swift",
 				);
 				INFOPLIST_FILE = "UCloudRtcSdk-ios-demo-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.UCloudRtcSdk-ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCloudRtcSdk-ios-demo-swift/UCloudRtcSdk-ios-demo-swift-Bridging-Header.h";

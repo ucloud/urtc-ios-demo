@@ -62,11 +62,19 @@ static NSInteger kHorizontalCount = 3;
     self.manager.engineMode = self.engineMode;
     //设置日志级别
     [self.manager.logger setLogLevel:UCloudRtcLogLevel_DEBUG];
+    //混音相关配置
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"dy" ofType:@"mp3"];
+    self.manager.fileMix = NO;
+    self.manager.fileLoop = YES;
+    self.manager.filePath = file;
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
     //加入房间
-    [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {}];
+    [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"joinRoomWithcompletionHandler:%@",dictionary);
+    }];
 }
 
 - (void)settingSDK:(NSDictionary *)setting{
@@ -156,8 +164,12 @@ static NSInteger kHorizontalCount = 3;
     recordConfig.bucket = @"urtc-test";
     recordConfig.region = @"cn-bj";
     recordConfig.watermarkpos = 1;
-    recordConfig.width = 360;
-    recordConfig.height = 480;
+    recordConfig.width = 480;
+    recordConfig.height = 640;
+    recordConfig.isaverage = YES;
+    recordConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";
+    recordConfig.watertype = 2;
+    recordConfig.wtemplate = 5;
     [self.manager startRecord:recordConfig];
     
     self.hours = 0;
@@ -264,8 +276,8 @@ static NSInteger kHorizontalCount = 3;
 }
 #pragma mark - 流
 //发布流
-- (IBAction)didPublishStreamAction:(id)sender {
-    if (self.isConnected) {
+- (IBAction)didPublishStreamAction:(UIButton *)sender {
+    if ([sender.titleLabel.text isEqualToString:@"发布成功"]) {
         [self showAlertWithMessage:@"您确定要取消发布吗" Sure:^{
             NSLog(@"取消发布");
             [self.manager unPublish];
@@ -281,7 +293,7 @@ static NSInteger kHorizontalCount = 3;
 
 
 #pragma mark ------UCloudRtcEngineDelegate method-----
--(void)uCloudRtcEngineDidJoinRoom:(NSMutableArray<UCloudRtcStream *> *)canSubStreamList{
+-(void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> *)canSubStreamList{
     [self.view makeToast:@"加入房间成功" duration:1.0 position:CSToastPositionCenter];
     self.isConnected = YES;
     //远端所有可订阅的流将在这里展示  仅在非自动订阅模式下 否则为空

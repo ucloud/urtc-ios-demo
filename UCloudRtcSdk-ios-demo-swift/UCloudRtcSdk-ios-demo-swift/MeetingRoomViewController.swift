@@ -57,13 +57,18 @@ class MeetingRoomViewController : UIViewController,UCloudRtcEngineDelegate,UICol
         self.manager?.delegate = self
         //指定SDK模式
         self.manager?.engineMode = self.engineMode!
+        //添加混淆相关配置
+        let filepath:NSString = Bundle.main.path(forResource: "dy", ofType: "mp3")! as NSString
+        self.manager?.fileMix = false;
+        self.manager?.fileLoop = true;
+        self.manager?.filePath = filepath as String;
+        
         //自定义配置
         if (self.engineSetting?.count != 0){
             self.settingSDK(self.engineSetting!)
         }
         //加入房间
-        self.manager?.joinRoomWithcompletionHandler({(data, response, error) -> Void in})
-        
+        self.manager?.joinRoomWithcompletionHandler({ (data, response, error) in});
         createCollectionView();
     }
     
@@ -145,6 +150,10 @@ class MeetingRoomViewController : UIViewController,UCloudRtcEngineDelegate,UICol
             recordConfig.watermarkpos = 1;
             recordConfig.width = 360;
             recordConfig.height = 480;
+            recordConfig.isaverage = true;
+            recordConfig.waterurl = "http://urtc-living-test.cn-bj.ufileos.com/test.png";
+            recordConfig.watertype = 2;
+            recordConfig.wtemplate = 5;
             self.manager?.startRecord(recordConfig)
             
             self.hours = 0
