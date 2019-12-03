@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "387805B122B8F2CF00E4FC74"
-               BuildableName = "UCloudRtcSdk-ios-demo.app"
+               BuildableName = "URTC-ios.app"
                BlueprintName = "UCloudRtcSdk-ios-demo"
                ReferencedContainer = "container:UCloudRtcSdk-ios-demo.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "387805B122B8F2CF00E4FC74"
-            BuildableName = "UCloudRtcSdk-ios-demo.app"
+            BuildableName = "URTC-ios.app"
             BlueprintName = "UCloudRtcSdk-ios-demo"
             ReferencedContainer = "container:UCloudRtcSdk-ios-demo.xcodeproj">
          </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "387805B122B8F2CF00E4FC74"
-            BuildableName = "UCloudRtcSdk-ios-demo.app"
+            BuildableName = "URTC-ios.app"
             BlueprintName = "UCloudRtcSdk-ios-demo"
             ReferencedContainer = "container:UCloudRtcSdk-ios-demo.xcodeproj">
          </BuildableReference>
@@ -98,7 +98,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "387805B122B8F2CF00E4FC74"
-            BuildableName = "UCloudRtcSdk-ios-demo.app"
+            BuildableName = "URTC-ios.app"
             BlueprintName = "UCloudRtcSdk-ios-demo"
             ReferencedContainer = "container:UCloudRtcSdk-ios-demo.xcodeproj">
          </BuildableReference>

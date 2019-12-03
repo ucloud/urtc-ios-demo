@@ -66,7 +66,7 @@ static NSInteger kHorizontalCount = 3;
     NSString *file = [[NSBundle mainBundle] pathForResource:@"dy" ofType:@"mp3"];
     self.manager.fileMix = NO;
     self.manager.fileLoop = YES;
-    self.manager.filePath = file;
+    self.manager.filePath = file? file : @"";
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
@@ -168,8 +168,8 @@ static NSInteger kHorizontalCount = 3;
     recordConfig.height = 640;
     recordConfig.isaverage = YES;
     recordConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";
-    recordConfig.watertype = 2;
-    recordConfig.wtemplate = 5;
+    recordConfig.watertype = 1;
+    recordConfig.wtemplate = 9;
     [self.manager startRecord:recordConfig];
     
     self.hours = 0;

@@ -152,8 +152,8 @@ class MeetingRoomViewController : UIViewController,UCloudRtcEngineDelegate,UICol
             recordConfig.height = 480;
             recordConfig.isaverage = true;
             recordConfig.waterurl = "http://urtc-living-test.cn-bj.ufileos.com/test.png";
-            recordConfig.watertype = 2;
-            recordConfig.wtemplate = 5;
+            recordConfig.watertype = 1;
+            recordConfig.wtemplate = 9;
             self.manager?.startRecord(recordConfig)
             
             self.hours = 0

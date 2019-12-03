@@ -227,7 +227,11 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
         recordConfig.watermarkpos = 1;     //水印的位置
         recordConfig.width = 360;          //录制视频的宽
         recordConfig.height = 480;         //录制视频的高
-        [self.engine startRecord:recordConfig];
+        recordConfig.isaverage = YES;      //是否均分
+        recordConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";//watertype 2时代表图片水印url 、watertype 3代表水印文字
+        recordConfig.watertype = 2;        //1 (时间水印) 、 2 (图片水印) 、 3（文字水印)
+        recordConfig.wtemplate = 5;        //模板
+        [self.engine startRecord:recordConfig];   
 
         //swift
         let recordConfig = UCloudRtcRecordConfig.init()
@@ -239,6 +243,10 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
         recordConfig.watermarkpos = 1;      //水印的位置
         recordConfig.width = 360;           //录制视频的宽
         recordConfig.height = 480;          //录制视频的高
+        recordConfig.isaverage = YES;       //是否均分
+        recordConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";//watertype 2时代表图片水印url 、watertype 3代表水印文字
+        recordConfig.watertype = 2;         //1 (时间水印) 、 2 (图片水印) 、 3（文字水印)
+        recordConfig.wtemplate = 5;         //模板
         self.engine?.startRecord(recordConfig)
 
 * 视频录制开始的回调方法会包含自动生成的视频录制文件存放地址，如下方式获取：
