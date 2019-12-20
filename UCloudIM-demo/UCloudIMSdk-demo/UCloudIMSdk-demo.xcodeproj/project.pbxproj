@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38769E0D239781F40099B0E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38769E0C239781F40099B0E1 /* AppDelegate.m */; };
+		38769E10239781F40099B0E1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38769E0F239781F40099B0E1 /* SceneDelegate.m */; };
+		38769E13239781F40099B0E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38769E12239781F40099B0E1 /* ViewController.m */; };
+		38769E16239781F40099B0E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38769E14239781F40099B0E1 /* Main.storyboard */; };
+		38769E18239781F90099B0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38769E17239781F90099B0E1 /* Assets.xcassets */; };
+		38769E1B239781F90099B0E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38769E19239781F90099B0E1 /* LaunchScreen.storyboard */; };
+		38769E1E239781F90099B0E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38769E1D239781F90099B0E1 /* main.m */; };
+		38769E622398DF480099B0E1 /* UCloudIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38769E602398DF2F0099B0E1 /* UCloudIMSdk.framework */; };
+		38769E632398DF480099B0E1 /* UCloudIMSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38769E602398DF2F0099B0E1 /* UCloudIMSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38769E69239A31040099B0E1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38769E68239A31040099B0E1 /* CFNetwork.framework */; };
+		38769E6B239A31260099B0E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38769E6A239A31260099B0E1 /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		38769E5223979A4C0099B0E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				38769E632398DF480099B0E1 /* UCloudIMSdk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		38769E08239781F40099B0E1 /* UIM-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIM-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38769E0B239781F40099B0E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		38769E0C239781F40099B0E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		38769E0E239781F40099B0E1 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		38769E0F239781F40099B0E1 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		38769E11239781F40099B0E1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		38769E12239781F40099B0E1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		38769E15239781F40099B0E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38769E17239781F90099B0E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38769E1A239781F90099B0E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38769E1C239781F90099B0E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38769E1D239781F90099B0E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		38769E602398DF2F0099B0E1 /* UCloudIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UCloudIMSdk.framework; sourceTree = "<group>"; };
+		38769E68239A31040099B0E1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		38769E6A239A31260099B0E1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38769E05239781F40099B0E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38769E6B239A31260099B0E1 /* Security.framework in Frameworks */,
+				38769E69239A31040099B0E1 /* CFNetwork.framework in Frameworks */,
+				38769E622398DF480099B0E1 /* UCloudIMSdk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38769DFF239781F40099B0E1 = {
+			isa = PBXGroup;
+			children = (
+				38769E0A239781F40099B0E1 /* UCloudIMSdk-demo */,
+				38769E09239781F40099B0E1 /* Products */,
+				38769E2B239793940099B0E1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		38769E09239781F40099B0E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38769E08239781F40099B0E1 /* UIM-demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38769E0A239781F40099B0E1 /* UCloudIMSdk-demo */ = {
+			isa = PBXGroup;
+			children = (
+				38769E602398DF2F0099B0E1 /* UCloudIMSdk.framework */,
+				38769E0B239781F40099B0E1 /* AppDelegate.h */,
+				38769E0C239781F40099B0E1 /* AppDelegate.m */,
+				38769E0E239781F40099B0E1 /* SceneDelegate.h */,
+				38769E0F239781F40099B0E1 /* SceneDelegate.m */,
+				38769E11239781F40099B0E1 /* ViewController.h */,
+				38769E12239781F40099B0E1 /* ViewController.m */,
+				38769E14239781F40099B0E1 /* Main.storyboard */,
+				38769E17239781F90099B0E1 /* Assets.xcassets */,
+				38769E19239781F90099B0E1 /* LaunchScreen.storyboard */,
+				38769E1C239781F90099B0E1 /* Info.plist */,
+				38769E1D239781F90099B0E1 /* main.m */,
+			);
+			path = "UCloudIMSdk-demo";
+			sourceTree = "<group>";
+		};
+		38769E2B239793940099B0E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38769E6A239A31260099B0E1 /* Security.framework */,
+				38769E68239A31040099B0E1 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38769E07239781F40099B0E1 /* UCloudIMSdk-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38769E21239781F90099B0E1 /* Build configuration list for PBXNativeTarget "UCloudIMSdk-demo" */;
+			buildPhases = (
+				38769E04239781F40099B0E1 /* Sources */,
+				38769E05239781F40099B0E1 /* Frameworks */,
+				38769E06239781F40099B0E1 /* Resources */,
+				38769E5223979A4C0099B0E1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UCloudIMSdk-demo";
+			productName = "UCloudIMSdk-demo";
+			productReference = 38769E08239781F40099B0E1 /* UIM-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38769E00239781F40099B0E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Tony;
+				TargetAttributes = {
+					38769E07239781F40099B0E1 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 38769E03239781F40099B0E1 /* Build configuration list for PBXProject "UCloudIMSdk-demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38769DFF239781F40099B0E1;
+			productRefGroup = 38769E09239781F40099B0E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38769E07239781F40099B0E1 /* UCloudIMSdk-demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38769E06239781F40099B0E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38769E1B239781F90099B0E1 /* LaunchScreen.storyboard in Resources */,
+				38769E18239781F90099B0E1 /* Assets.xcassets in Resources */,
+				38769E16239781F40099B0E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38769E04239781F40099B0E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38769E13239781F40099B0E1 /* ViewController.m in Sources */,
+				38769E0D239781F40099B0E1 /* AppDelegate.m in Sources */,
+				38769E1E239781F90099B0E1 /* main.m in Sources */,
+				38769E10239781F40099B0E1 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		38769E14239781F40099B0E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38769E15239781F40099B0E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		38769E19239781F90099B0E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38769E1A239781F90099B0E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38769E1F239781F90099B0E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		38769E20239781F90099B0E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		38769E22239781F90099B0E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B95PLC2A2S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCloudIMSdk-demo",
+				);
+				INFOPLIST_FILE = "UCloudIMSdk-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCloudIMSdk-demo",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "jing.cloud.UCloudIMSdk-demo";
+				PRODUCT_NAME = "UIM-demo";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		38769E23239781F90099B0E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B95PLC2A2S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCloudIMSdk-demo",
+				);
+				INFOPLIST_FILE = "UCloudIMSdk-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCloudIMSdk-demo",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "jing.cloud.UCloudIMSdk-demo";
+				PRODUCT_NAME = "UIM-demo";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38769E03239781F40099B0E1 /* Build configuration list for PBXProject "UCloudIMSdk-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38769E1F239781F90099B0E1 /* Debug */,
+				38769E20239781F90099B0E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38769E21239781F90099B0E1 /* Build configuration list for PBXNativeTarget "UCloudIMSdk-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38769E22239781F90099B0E1 /* Debug */,
+				38769E23239781F90099B0E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38769E00239781F40099B0E1 /* Project object */;
+}

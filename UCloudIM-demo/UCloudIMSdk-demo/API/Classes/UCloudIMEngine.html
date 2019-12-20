@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>UCloudIMEngine Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">UCloudIMSdk </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">ucloud</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedImEngine">+ sharedImEngine</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/applyCall:completionHandler:">- applyCall:completionHandler:</option>
+		
+		<option value="//api/name/authCall:completionHandler:">- authCall:completionHandler:</option>
+		
+		<option value="//api/name/banRoom:completionHandler:">- banRoom:completionHandler:</option>
+		
+		<option value="//api/name/connectCompletionHandler:">- connectCompletionHandler:</option>
+		
+		<option value="//api/name/cutOffConnect">- cutOffConnect</option>
+		
+		<option value="//api/name/disconnectCompletionHandler:">- disconnectCompletionHandler:</option>
+		
+		<option value="//api/name/getRoomInfo:completionHandler:">- getRoomInfo:completionHandler:</option>
+		
+		<option value="//api/name/getRoomMsg:completionHandler:">- getRoomMsg:completionHandler:</option>
+		
+		<option value="//api/name/getRoomUser:completionHandler:">- getRoomUser:completionHandler:</option>
+		
+		<option value="//api/name/joinRoom:completionHandler:">- joinRoom:completionHandler:</option>
+		
+		<option value="//api/name/pushAll:completionHandler:">- pushAll:completionHandler:</option>
+		
+		<option value="//api/name/pushBulletin:completionHandler:">- pushBulletin:completionHandler:</option>
+		
+		<option value="//api/name/pushCustomContent:completionHandler:">- pushCustomContent:completionHandler:</option>
+		
+		<option value="//api/name/pushCustomContentPeers:completionHandler:">- pushCustomContentPeers:completionHandler:</option>
+		
+		<option value="//api/name/pushRoom:completionHandler:">- pushRoom:completionHandler:</option>
+		
+		<option value="//api/name/replyCall:completionHandler:">- replyCall:completionHandler:</option>
+		
+		<option value="//api/name/startConnect">- startConnect</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">UCloudIMEngine Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>UCloudIMEngine.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedImEngine" title="sharedImEngine"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedImEngine">+&nbsp;sharedImEngine</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>初始化UCloudIMEngine</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (UCloudIMEngine *_Nonnull)sharedImEngine</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>UCloudIMEngine</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startConnect" title="startConnect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startConnect">&ndash;&nbsp;startConnect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>连接IM服务器</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startConnect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutOffConnect" title="cutOffConnect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutOffConnect">&ndash;&nbsp;cutOffConnect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>断开IM服务器</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cutOffConnect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/joinRoom:completionHandler:" title="joinRoom:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/joinRoom:completionHandler:">&ndash;&nbsp;joinRoom:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>创建或加入房间</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)joinRoom:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{&ldquo;UserType&rdquo;:&ldquo;admin&rdquo;     //admin:管理员；default：普通成员
+                    &ldquo;UserInfo&rdquo;:{}}
+                   }</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectCompletionHandler:" title="connectCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectCompletionHandler:">&ndash;&nbsp;connectCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>连接im
+&ldquo;ConnectType&rdquo;:&ldquo;Create&rdquo;    //Create:管理者（老师）连接房间的时候使用，学生不填}</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)connectCompletionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disconnectCompletionHandler:" title="disconnectCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disconnectCompletionHandler:">&ndash;&nbsp;disconnectCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>断连im</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disconnectCompletionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getRoomUser:completionHandler:" title="getRoomUser:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getRoomUser:completionHandler:">&ndash;&nbsp;getRoomUser:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>获取房间用户</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getRoomUser:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{&ldquo;RoomId&rdquo;: &ldquo;ddd&rdquo;}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pushRoom:completionHandler:" title="pushRoom:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pushRoom:completionHandler:">&ndash;&nbsp;pushRoom:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>推送信息</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pushRoom:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{&ldquo;UserId&rdquo;: &ldquo;dd&rdquo;, &ldquo;RoomId&rdquo;: &ldquo;ddd&rdquo;, &ldquo;Msg&rdquo;: &ldquo;哈哈哈哈哈&rdquo;}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pushAll:completionHandler:" title="pushAll:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pushAll:completionHandler:">&ndash;&nbsp;pushAll:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>推送广播</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pushAll:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{&ldquo;Msg&rdquo;: &ldquo;哈哈哈哈哈&rdquo;}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/banRoom:completionHandler:" title="banRoom:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/banRoom:completionHandler:">&ndash;&nbsp;banRoom:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>房间/成员禁言</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)banRoom:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{&ldquo;UserId&rdquo;: &ldquo;dd&rdquo;,&ldquo;RoomId&rdquo;: &ldquo;ddd&rdquo;}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/authCall:completionHandler:" title="authCall:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/authCall:completionHandler:">&ndash;&nbsp;authCall:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>房间连麦权限</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)authCall:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{&ldquo;UserId&rdquo;: &ldquo;dd&rdquo;,&ldquo;RoomId&rdquo;: &ldquo;ddd&rdquo;, &ldquo;Operation&rdquo;: &ldquo;open&rdquo; //open:开启；close：关闭}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applyCall:completionHandler:" title="applyCall:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applyCall:completionHandler:">&ndash;&nbsp;applyCall:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>连麦申请</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)applyCall:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{
+    RoomId      string
+    ReplyUserId string  //连麦接收人
+    Operation   string //apply:申请；cancel:取消
+}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/replyCall:completionHandler:" title="replyCall:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/replyCall:completionHandler:">&ndash;&nbsp;replyCall:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>连麦回复</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)replyCall:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{
+    RoomId      string
+    ReplyUserId string
+    Operation   string //agree:同意；refuse：拒绝
+}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getRoomInfo:completionHandler:" title="getRoomInfo:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getRoomInfo:completionHandler:">&ndash;&nbsp;getRoomInfo:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>获取房间信息</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getRoomInfo:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{
+    RoomId      string
+}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getRoomMsg:completionHandler:" title="getRoomMsg:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getRoomMsg:completionHandler:">&ndash;&nbsp;getRoomMsg:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>获取房间聊天记录</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getRoomMsg:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{
+    RoomId      string
+    StartTime   int64       //开始获取记录时间戳；0：获取全部
+}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pushBulletin:completionHandler:" title="pushBulletin:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pushBulletin:completionHandler:">&ndash;&nbsp;pushBulletin:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>发布公告 （公告信息可在获取房间信息中获取）（IMType类型值：IMBulletin）</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pushBulletin:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{
+    RoomId      string
+    Bulletin    string       //公告内容
+}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pushCustomContent:completionHandler:" title="pushCustomContent:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pushCustomContent:completionHandler:">&ndash;&nbsp;pushCustomContent:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>自定义消息</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pushCustomContent:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{
+    CustomType  string       //自定义消息类型，由客户自行定义，可代表不同类型自定义内容，如：广告，视频，游戏，推广。。。。
+    Content     string      //自定义消息内容
+}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pushCustomContentPeers:completionHandler:" title="pushCustomContentPeers:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pushCustomContentPeers:completionHandler:">&ndash;&nbsp;pushCustomContentPeers:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>点对点自定义消息</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pushCustomContentPeers:(NSDictionary *_Nonnull)<em>parameters</em> completionHandler:(void ( ^ _Nonnull ) ( NSData *_Nullable data , NSError *_Nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>{
+    CustomType  string       //自定义消息类型，由客户自行定义，可代表不同类型自定义内容，如：广告，视频，游戏，推广。。。。
+    Content     string      //自定义消息内容
+}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>callBackBlock</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudIMEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2019 ucloud. All rights reserved. Updated: 2019-12-20</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
