@@ -156,6 +156,8 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 /**混音文件是否循环播放*/
 @property (nonatomic, assign) BOOL fileLoop;
 
+/**视频编码格式 默认VP8 可选 VP8 || H264 */
+@property (nonatomic, copy) NSString * _Nullable videoDefaultCodec;
 
 /**
  @brief 返回SDK当前版本号

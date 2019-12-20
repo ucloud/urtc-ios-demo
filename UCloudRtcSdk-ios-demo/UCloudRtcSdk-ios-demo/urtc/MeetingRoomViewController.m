@@ -66,7 +66,9 @@ static NSInteger kHorizontalCount = 3;
     NSString *file = [[NSBundle mainBundle] pathForResource:@"dy" ofType:@"mp3"];
     self.manager.fileMix = NO;
     self.manager.fileLoop = YES;
-    self.manager.filePath = file? file : @"";
+    self.manager.filePath = file ? file : @"";
+
+    self.manager.videoDefaultCodec = @"H264";
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
@@ -514,4 +516,27 @@ static NSInteger kHorizontalCount = 3;
     [self.manager setRemoteStream:stream muteVideo:mute];
 }
 
+
+- (IBAction)cutImage:(id)sender {
+    [self getImageViewWithView:self.localView];
+}
+
+///截图
+- (void)getImageViewWithView:(UIView *)view{
+    
+    UIGraphicsBeginImageContext(view.frame.size);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
+    UIImage *image =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    /// 保存到本地相册
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+}
+
+- (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo{
+    if (error) {
+        NSLog(@"保存失败，请重试");
+    } else {
+        NSLog(@"保存成功");
+    }
+}
 @end

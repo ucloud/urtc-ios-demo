@@ -30,6 +30,10 @@
 		38780BF022C31B3800E4FC74 /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BEB22C31B3800E4FC74 /* YBPopupMenuPath.m */; };
 		38780BF122C31B3800E4FC74 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BED22C31B3800E4FC74 /* YBPopupMenu.m */; };
 		38E35FA5238BD3A700997BE8 /* dy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38E35FA4238BD3A700997BE8 /* dy.mp3 */; };
+		38ED8BAA23AC861500783B53 /* UCloudIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */; };
+		38ED8BAB23AC861500783B53 /* UCloudIMSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38ED8BAD23AC878200783B53 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BAC23AC878200783B53 /* Security.framework */; };
+		38ED8BAF23AC878700783B53 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BAE23AC878700783B53 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +44,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				383D0D8D22CCA7BA004DBE93 /* UCloudRtcSdk_ios.framework in Embed Frameworks */,
+				38ED8BAB23AC861500783B53 /* UCloudIMSdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +85,9 @@
 		38780BED22C31B3800E4FC74 /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
 		38780BEE22C31B3800E4FC74 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
 		38E35FA4238BD3A700997BE8 /* dy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dy.mp3; sourceTree = "<group>"; };
+		38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UCloudIMSdk.framework; path = "UCloudRtcSdk-ios-demo/UCloudIMSdk.framework"; sourceTree = "<group>"; };
+		38ED8BAC23AC878200783B53 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		38ED8BAE23AC878700783B53 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +95,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38ED8BAF23AC878700783B53 /* CFNetwork.framework in Frameworks */,
+				38ED8BAD23AC878200783B53 /* Security.framework in Frameworks */,
 				3878090722BB36CE00E4FC74 /* UIKit.framework in Frameworks */,
 				383D0D8C22CCA7BA004DBE93 /* UCloudRtcSdk_ios.framework in Frameworks */,
 				3878090522BB36A000E4FC74 /* OpenGLES.framework in Frameworks */,
 				3878090322BB369500E4FC74 /* GLKit.framework in Frameworks */,
 				3878090122BB368D00E4FC74 /* VideoToolbox.framework in Frameworks */,
+				38ED8BAA23AC861500783B53 /* UCloudIMSdk.framework in Frameworks */,
 				387808FF22BB368400E4FC74 /* libicucore.tbd in Frameworks */,
 				387808FD22BB367600E4FC74 /* libc++.tbd in Frameworks */,
 			);
@@ -119,6 +130,7 @@
 		387805A922B8F2CF00E4FC74 = {
 			isa = PBXGroup;
 			children = (
+				38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */,
 				383D0D8B22CCA7B9004DBE93 /* UCloudRtcSdk_ios.framework */,
 				387805B422B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo */,
 				387805B322B8F2CF00E4FC74 /* Products */,
@@ -156,6 +168,8 @@
 		387808FB22BB367500E4FC74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38ED8BAE23AC878700783B53 /* CFNetwork.framework */,
+				38ED8BAC23AC878200783B53 /* Security.framework */,
 				3878090622BB36CE00E4FC74 /* UIKit.framework */,
 				3878090422BB369F00E4FC74 /* OpenGLES.framework */,
 				3878090222BB369500E4FC74 /* GLKit.framework */,
