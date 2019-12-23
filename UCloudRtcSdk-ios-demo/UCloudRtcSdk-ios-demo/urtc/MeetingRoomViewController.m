@@ -57,7 +57,6 @@ static NSInteger kHorizontalCount = 3;
     
     //初始化engine
     self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
-    self.manager.delegate = self;
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
     //设置日志级别
@@ -67,8 +66,10 @@ static NSInteger kHorizontalCount = 3;
     self.manager.fileMix = NO;
     self.manager.fileLoop = YES;
     self.manager.filePath = file ? file : @"";
-
+    //设置视频编码格式
     self.manager.videoDefaultCodec = @"H264";
+    //设置代理
+    self.manager.delegate = self;
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
