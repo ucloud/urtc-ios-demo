@@ -57,7 +57,6 @@ static NSInteger kHorizontalCount = 3;
     
     //初始化engine
     self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
-    self.manager.delegate = self;
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
     //设置日志级别
@@ -66,7 +65,11 @@ static NSInteger kHorizontalCount = 3;
     NSString *file = [[NSBundle mainBundle] pathForResource:@"dy" ofType:@"mp3"];
     self.manager.fileMix = NO;
     self.manager.fileLoop = YES;
-    self.manager.filePath = file? file : @"";
+    self.manager.filePath = file ? file : @"";
+    //设置视频编码格式
+    self.manager.videoDefaultCodec = @"H264";
+    //设置代理
+    self.manager.delegate = self;
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
@@ -514,4 +517,27 @@ static NSInteger kHorizontalCount = 3;
     [self.manager setRemoteStream:stream muteVideo:mute];
 }
 
+
+- (IBAction)cutImage:(id)sender {
+    [self getImageViewWithView:self.localView];
+}
+
+///截图
+- (void)getImageViewWithView:(UIView *)view{
+    
+    UIGraphicsBeginImageContext(view.frame.size);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
+    UIImage *image =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    /// 保存到本地相册
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+}
+
+- (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo{
+    if (error) {
+        NSLog(@"保存失败，请重试");
+    } else {
+        NSLog(@"保存成功");
+    }
+}
 @end
