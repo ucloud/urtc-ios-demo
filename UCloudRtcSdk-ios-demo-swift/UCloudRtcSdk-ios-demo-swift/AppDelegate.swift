@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bugly
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+       // Get the default config
+        let config = BuglyConfig()
+        #if DEBUG
+        config.debugMode = true
+        #endif
+        config.reportLogLevel = BuglyLogLevel.verbose
+        config.blockMonitorEnable = true
+        config.channel = "URTC"
+        Bugly.start(withAppId: "e4c7206f7b", config: config)
+        
+        Bugly.setUserIdentifier(UIDevice.current.name)
+        
+        Bugly.setUserValue(ProcessInfo.processInfo.processName, forKey: "Process")
         return true
     }
 

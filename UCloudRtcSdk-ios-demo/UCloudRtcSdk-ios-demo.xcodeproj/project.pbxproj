@@ -29,6 +29,7 @@
 		38780BEF22C31B3800E4FC74 /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BEA22C31B3800E4FC74 /* YBRectConst.m */; };
 		38780BF022C31B3800E4FC74 /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BEB22C31B3800E4FC74 /* YBPopupMenuPath.m */; };
 		38780BF122C31B3800E4FC74 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BED22C31B3800E4FC74 /* YBPopupMenu.m */; };
+		388332CE23B0BDD5005DCB63 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388332CD23B0BDD5005DCB63 /* Bugly.framework */; };
 		38E35FA5238BD3A700997BE8 /* dy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38E35FA4238BD3A700997BE8 /* dy.mp3 */; };
 		38ED8BAA23AC861500783B53 /* UCloudIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */; };
 		38ED8BAB23AC861500783B53 /* UCloudIMSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -84,6 +85,7 @@
 		38780BEC22C31B3800E4FC74 /* YBRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRectConst.h; sourceTree = "<group>"; };
 		38780BED22C31B3800E4FC74 /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
 		38780BEE22C31B3800E4FC74 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
+		388332CD23B0BDD5005DCB63 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugly.framework; path = "UCloudRtcSdk-ios-demo/Bugly.framework"; sourceTree = "<group>"; };
 		38E35FA4238BD3A700997BE8 /* dy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dy.mp3; sourceTree = "<group>"; };
 		38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UCloudIMSdk.framework; path = "UCloudRtcSdk-ios-demo/UCloudIMSdk.framework"; sourceTree = "<group>"; };
 		38ED8BAC23AC878200783B53 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388332CE23B0BDD5005DCB63 /* Bugly.framework in Frameworks */,
 				38ED8BAF23AC878700783B53 /* CFNetwork.framework in Frameworks */,
 				38ED8BAD23AC878200783B53 /* Security.framework in Frameworks */,
 				3878090722BB36CE00E4FC74 /* UIKit.framework in Frameworks */,
@@ -168,6 +171,7 @@
 		387808FB22BB367500E4FC74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				388332CD23B0BDD5005DCB63 /* Bugly.framework */,
 				38ED8BAE23AC878700783B53 /* CFNetwork.framework */,
 				38ED8BAC23AC878200783B53 /* Security.framework */,
 				3878090622BB36CE00E4FC74 /* UIKit.framework */,
