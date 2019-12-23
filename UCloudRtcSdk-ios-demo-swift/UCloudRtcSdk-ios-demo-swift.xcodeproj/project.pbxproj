@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		384016322357219D000A80CC /* CBToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384016312357219D000A80CC /* CBToast.swift */; };
 		3840163423581AA9000A80CC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3840163323581AA9000A80CC /* SettingViewController.swift */; };
+		388332D423B0D097005DCB63 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388332D323B0D096005DCB63 /* Bugly.framework */; };
 		38DD6FB32351769800E0FF90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD6FB22351769800E0FF90 /* AppDelegate.swift */; };
 		38DD6FB52351769800E0FF90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD6FB42351769800E0FF90 /* ViewController.swift */; };
 		38DD6FB82351769800E0FF90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DD6FB62351769800E0FF90 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		384016312357219D000A80CC /* CBToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBToast.swift; sourceTree = "<group>"; };
 		3840163323581AA9000A80CC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		388332D323B0D096005DCB63 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugly.framework; path = "UCloudRtcSdk-ios-demo-swift/Bugly.framework"; sourceTree = "<group>"; };
 		38DD6FAF2351769700E0FF90 /* UCloudRtcSdk-ios-demo-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UCloudRtcSdk-ios-demo-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DD6FB22351769800E0FF90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DD6FB42351769800E0FF90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388332D423B0D097005DCB63 /* Bugly.framework in Frameworks */,
 				38DD706A2355C7E300E0FF90 /* UIKit.framework in Frameworks */,
 				38DD6FC5235176DA00E0FF90 /* UCloudRtcSdk_ios.framework in Frameworks */,
 				38DD6FCA2351770900E0FF90 /* UCloudRtcSdk_ios.framework in Frameworks */,
@@ -112,6 +115,7 @@
 		38DD70682355C7E200E0FF90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				388332D323B0D096005DCB63 /* Bugly.framework */,
 				38DD70692355C7E300E0FF90 /* UIKit.framework */,
 			);
 			name = Frameworks;
