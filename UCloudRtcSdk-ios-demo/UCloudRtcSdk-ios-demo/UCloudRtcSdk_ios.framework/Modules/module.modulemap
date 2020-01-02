@@ -1,0 +1,6 @@
+framework module UCloudRtcSdk_ios {
+  umbrella header "UCloudRtcSdk_ios.h"
+
+  export *
+  module * { export * }
+}
