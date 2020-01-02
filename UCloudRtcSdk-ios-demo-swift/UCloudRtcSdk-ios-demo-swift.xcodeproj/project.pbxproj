@@ -361,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.UCloudRtcSdk-ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCloudRtcSdk-ios-demo-swift/UCloudRtcSdk-ios-demo-swift-Bridging-Header.h";
@@ -390,7 +390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.UCloudRtcSdk-ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCloudRtcSdk-ios-demo-swift/UCloudRtcSdk-ios-demo-swift-Bridging-Header.h";
