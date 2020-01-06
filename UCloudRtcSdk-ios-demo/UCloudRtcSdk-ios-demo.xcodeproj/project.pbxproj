@@ -31,8 +31,6 @@
 		38780BF122C31B3800E4FC74 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BED22C31B3800E4FC74 /* YBPopupMenu.m */; };
 		388332CE23B0BDD5005DCB63 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388332CD23B0BDD5005DCB63 /* Bugly.framework */; };
 		38E35FA5238BD3A700997BE8 /* dy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38E35FA4238BD3A700997BE8 /* dy.mp3 */; };
-		38ED8BAA23AC861500783B53 /* UCloudIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */; };
-		38ED8BAB23AC861500783B53 /* UCloudIMSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38ED8BAD23AC878200783B53 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BAC23AC878200783B53 /* Security.framework */; };
 		38ED8BAF23AC878700783B53 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BAE23AC878700783B53 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +43,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				383D0D8D22CCA7BA004DBE93 /* UCloudRtcSdk_ios.framework in Embed Frameworks */,
-				38ED8BAB23AC861500783B53 /* UCloudIMSdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +84,6 @@
 		38780BEE22C31B3800E4FC74 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
 		388332CD23B0BDD5005DCB63 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugly.framework; path = "UCloudRtcSdk-ios-demo/Bugly.framework"; sourceTree = "<group>"; };
 		38E35FA4238BD3A700997BE8 /* dy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dy.mp3; sourceTree = "<group>"; };
-		38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UCloudIMSdk.framework; path = "UCloudRtcSdk-ios-demo/UCloudIMSdk.framework"; sourceTree = "<group>"; };
 		38ED8BAC23AC878200783B53 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		38ED8BAE23AC878700783B53 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -105,7 +101,6 @@
 				3878090522BB36A000E4FC74 /* OpenGLES.framework in Frameworks */,
 				3878090322BB369500E4FC74 /* GLKit.framework in Frameworks */,
 				3878090122BB368D00E4FC74 /* VideoToolbox.framework in Frameworks */,
-				38ED8BAA23AC861500783B53 /* UCloudIMSdk.framework in Frameworks */,
 				387808FF22BB368400E4FC74 /* libicucore.tbd in Frameworks */,
 				387808FD22BB367600E4FC74 /* libc++.tbd in Frameworks */,
 			);
@@ -133,7 +128,6 @@
 		387805A922B8F2CF00E4FC74 = {
 			isa = PBXGroup;
 			children = (
-				38ED8BA823AC860900783B53 /* UCloudIMSdk.framework */,
 				383D0D8B22CCA7B9004DBE93 /* UCloudRtcSdk_ios.framework */,
 				387805B422B8F2CF00E4FC74 /* UCloudRtcSdk-ios-demo */,
 				387805B322B8F2CF00E4FC74 /* Products */,
@@ -429,6 +423,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UCloudRtcSdk-ios-demo",
+					"$(PROJECT_DIR)-swift/UCloudRtcSdk-ios-demo-swift",
 				);
 				INFOPLIST_FILE = "UCloudRtcSdk-ios-demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -436,7 +431,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.urtc.ucloud.UCloudRtcSdk-ios-demo";
@@ -459,6 +454,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UCloudRtcSdk-ios-demo",
+					"$(PROJECT_DIR)-swift/UCloudRtcSdk-ios-demo-swift",
 				);
 				INFOPLIST_FILE = "UCloudRtcSdk-ios-demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -466,7 +462,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.urtc.ucloud.UCloudRtcSdk-ios-demo";

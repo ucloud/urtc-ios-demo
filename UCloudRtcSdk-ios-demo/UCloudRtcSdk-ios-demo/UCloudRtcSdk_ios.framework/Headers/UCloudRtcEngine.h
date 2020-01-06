@@ -284,4 +284,18 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
  
  */
 - (void)stopRecord;
+
+/**
+@brief 网络音频播放
+ 
+@param path 文件路径
+@param repeat 是否f循环播放
+*/
+- (void)startMediaPlay:(NSString *_Nonnull)path repeat:(BOOL)repeat;
+
+
+/**
+@brief 停止网络音频播放
+*/
+- (void)stopMediaPlay;
 @end
