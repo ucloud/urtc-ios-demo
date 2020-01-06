@@ -8,7 +8,6 @@
 
 #import "MeetingRoomViewController.h"
 #import "UIView+Toast.h"
-
 #import "MeetingRoomCell.h"
 #import "YBPopupMenu.h"
 
@@ -213,6 +212,7 @@ static NSInteger kHorizontalCount = 3;
 - (IBAction)leaveRoom:(id)sender {
         [self showAlertWithMessage:@"您确定要退出房间吗" Sure:^{
             [self.manager leaveRoom];
+            [self.manager stopMediaPlay];
             [self dismissViewControllerAnimated:YES completion:^{}];
         }];
 }
@@ -517,12 +517,12 @@ static NSInteger kHorizontalCount = 3;
     [self.manager setRemoteStream:stream muteVideo:mute];
 }
 
-
+///截图
 - (IBAction)cutImage:(id)sender {
     [self getImageViewWithView:self.localView];
 }
 
-///截图
+
 - (void)getImageViewWithView:(UIView *)view{
     
     UIGraphicsBeginImageContext(view.frame.size);
@@ -540,4 +540,17 @@ static NSInteger kHorizontalCount = 3;
         NSLog(@"保存成功");
     }
 }
+
+///播放/停止播放音频文件
+- (IBAction)mediaPlay:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        NSString *audioPath = @"http://urtcdemo.cn-bj.ufileos.com/dy.mp3";
+               [self.manager startMediaPlay:audioPath repeat:YES];
+    }else{
+        [self.manager stopMediaPlay];
+    }
+}
+
+
 @end

@@ -398,7 +398,7 @@
                                 <rect key="frame" x="0.0" y="80" width="414" height="712"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-bV-zFu">
-                                        <rect key="frame" x="343" y="261" width="56" height="30"/>
+                                        <rect key="frame" x="343" y="150" width="56" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="U6C-Jt-gpr"/>
                                             <constraint firstAttribute="height" constant="30" id="XMH-sW-CLR"/>
@@ -408,11 +408,24 @@
                                             <action selector="cutImage:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="DFF-bJ-HKm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-VC-lbs">
+                                        <rect key="frame" x="343" y="215" width="56" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="70h-2O-l1C"/>
+                                            <constraint firstAttribute="width" constant="56" id="Qui-aW-KVG"/>
+                                        </constraints>
+                                        <state key="normal" title="音效"/>
+                                        <connections>
+                                            <action selector="mediaPlay:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="1l4-Kq-P5g"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="mFY-VC-lbs" firstAttribute="top" secondItem="w7i-bV-zFu" secondAttribute="bottom" constant="35" id="FxB-JZ-bbf"/>
+                                    <constraint firstAttribute="trailing" secondItem="mFY-VC-lbs" secondAttribute="trailing" constant="15" id="Jdr-BL-Voj"/>
                                     <constraint firstAttribute="trailing" secondItem="w7i-bV-zFu" secondAttribute="trailing" constant="15" id="Oem-QL-iIo"/>
-                                    <constraint firstItem="w7i-bV-zFu" firstAttribute="top" secondItem="2mz-0Y-8qF" secondAttribute="top" constant="261" id="qNW-0o-LNx"/>
+                                    <constraint firstItem="w7i-bV-zFu" firstAttribute="top" secondItem="2mz-0Y-8qF" secondAttribute="top" constant="150" id="qNW-0o-LNx"/>
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1W9-c5-CU9" userLabel="settingView">
