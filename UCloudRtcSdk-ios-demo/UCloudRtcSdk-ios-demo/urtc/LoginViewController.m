@@ -48,6 +48,8 @@
            selector:@selector(doSetting:)
                name:@"doSetting"
              object:nil];
+    
+    
 }
 
 -(void)doSetting:(NSNotification*)noti{

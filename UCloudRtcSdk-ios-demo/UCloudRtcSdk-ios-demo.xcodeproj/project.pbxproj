@@ -30,6 +30,8 @@
 		38780BF022C31B3800E4FC74 /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BEB22C31B3800E4FC74 /* YBPopupMenuPath.m */; };
 		38780BF122C31B3800E4FC74 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 38780BED22C31B3800E4FC74 /* YBPopupMenu.m */; };
 		388332CE23B0BDD5005DCB63 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388332CD23B0BDD5005DCB63 /* Bugly.framework */; };
+		38BBAE3B23C5B8D20038CD86 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BBAE3A23C5B8D20038CD86 /* AVKit.framework */; };
+		38BBAE3E23C5B92B0038CD86 /* NativeMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BBAE3C23C5B92B0038CD86 /* NativeMediaViewController.m */; };
 		38E35FA5238BD3A700997BE8 /* dy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38E35FA4238BD3A700997BE8 /* dy.mp3 */; };
 		38ED8BAD23AC878200783B53 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BAC23AC878200783B53 /* Security.framework */; };
 		38ED8BAF23AC878700783B53 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8BAE23AC878700783B53 /* CFNetwork.framework */; };
@@ -83,6 +85,9 @@
 		38780BED22C31B3800E4FC74 /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
 		38780BEE22C31B3800E4FC74 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
 		388332CD23B0BDD5005DCB63 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugly.framework; path = "UCloudRtcSdk-ios-demo/Bugly.framework"; sourceTree = "<group>"; };
+		38BBAE3A23C5B8D20038CD86 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		38BBAE3C23C5B92B0038CD86 /* NativeMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeMediaViewController.m; sourceTree = "<group>"; };
+		38BBAE3D23C5B92B0038CD86 /* NativeMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeMediaViewController.h; sourceTree = "<group>"; };
 		38E35FA4238BD3A700997BE8 /* dy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dy.mp3; sourceTree = "<group>"; };
 		38ED8BAC23AC878200783B53 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		38ED8BAE23AC878700783B53 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -93,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BBAE3B23C5B8D20038CD86 /* AVKit.framework in Frameworks */,
 				388332CE23B0BDD5005DCB63 /* Bugly.framework in Frameworks */,
 				38ED8BAF23AC878700783B53 /* CFNetwork.framework in Frameworks */,
 				38ED8BAD23AC878200783B53 /* Security.framework in Frameworks */,
@@ -118,6 +124,8 @@
 				383D0D7E22CB6635004DBE93 /* SettingViewController.m */,
 				383D0D7922CB6635004DBE93 /* MeetingRoomViewController.h */,
 				383D0D7C22CB6635004DBE93 /* MeetingRoomViewController.m */,
+				38BBAE3D23C5B92B0038CD86 /* NativeMediaViewController.h */,
+				38BBAE3C23C5B92B0038CD86 /* NativeMediaViewController.m */,
 				383D0D7622CB6635004DBE93 /* MeetingRoomCell.h */,
 				383D0D7A22CB6635004DBE93 /* MeetingRoomCell.m */,
 				383D0D7D22CB6635004DBE93 /* MeetingRoomCell.xib */,
@@ -165,6 +173,7 @@
 		387808FB22BB367500E4FC74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38BBAE3A23C5B8D20038CD86 /* AVKit.framework */,
 				388332CD23B0BDD5005DCB63 /* Bugly.framework */,
 				38ED8BAE23AC878700783B53 /* CFNetwork.framework */,
 				38ED8BAC23AC878200783B53 /* Security.framework */,
@@ -271,6 +280,7 @@
 				38780BF122C31B3800E4FC74 /* YBPopupMenu.m in Sources */,
 				387805C522B8F2D300E4FC74 /* main.m in Sources */,
 				387805DC22B8F4BC00E4FC74 /* UIView+Toast.m in Sources */,
+				38BBAE3E23C5B92B0038CD86 /* NativeMediaViewController.m in Sources */,
 				38780BF022C31B3800E4FC74 /* YBPopupMenuPath.m in Sources */,
 				383D0D7F22CB6635004DBE93 /* LoginViewController.m in Sources */,
 				387805B722B8F2CF00E4FC74 /* AppDelegate.m in Sources */,

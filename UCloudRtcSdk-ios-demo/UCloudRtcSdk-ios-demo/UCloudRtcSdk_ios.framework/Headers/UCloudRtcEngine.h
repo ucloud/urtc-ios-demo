@@ -113,6 +113,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 /**开始视频录制的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager startRecord:(NSDictionary *_Nonnull)recordResponse;
 
+/**收到自定义消息的回调*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveCustomCommand:(NSString *_Nonnull)fromUserID  content:(NSString *_Nonnull)content;
+
 @end
 
 @interface UCloudRtcEngine : NSObject
@@ -158,6 +161,13 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 
 /**视频编码格式 默认VP8 可选 VP8 || H264 */
 @property (nonatomic, copy) NSString * _Nullable videoDefaultCodec;
+
+
+//本地视频录制参数
+@property (nonatomic, copy) NSString *videopath;//混音文件路径
+@property (nonatomic, copy) NSString *audiopath;//混音文件路径
+@property (nonatomic, copy) NSString *outputpath;//混音文件路径
+
 
 /**
  @brief 返回SDK当前版本号
@@ -286,6 +296,22 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 - (void)stopRecord;
 
 /**
+@brief 开始本地录制
+ 
+@param recordConfig 本地录制参数配置
+*/
+- (void)startNativeRecord:(NSDictionary *_Nonnull)recordConfig;
+
+/**
+@brief 停止本地录制
+
+*/
+- (void)stopNativeRecord;
+
+
+
+
+/**
 @brief 网络音频播放
  
 @param path 文件路径
@@ -298,4 +324,12 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 @brief 停止网络音频播放
 */
 - (void)stopMediaPlay;
+
+
+/**
+@brief 发送自定义消息
+ 
+@param customCommand 自定义消息内容
+*/
+- (void)sendCustomCommand:(NSString *_Nonnull)customCommand;
 @end

@@ -396,7 +396,50 @@
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mz-0Y-8qF" userLabel="本机视频">
                                 <rect key="frame" x="0.0" y="80" width="414" height="712"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34f-4h-Rdb">
+                                        <rect key="frame" x="286" y="341" width="123" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="123" id="iTK-kt-fEN"/>
+                                            <constraint firstAttribute="height" constant="30" id="yUv-BQ-NLa"/>
+                                        </constraints>
+                                        <state key="normal" title="查看本地录制视频"/>
+                                        <connections>
+                                            <segue destination="bQo-Xe-yUA" kind="show" id="KWd-xW-5ww"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qM-4t-Hn9">
+                                        <rect key="frame" x="286" y="280" width="109" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="109" id="4Ig-BH-vfD"/>
+                                            <constraint firstAttribute="height" constant="30" id="jay-I6-dNS"/>
+                                        </constraints>
+                                        <state key="normal" title="开始本地录制"/>
+                                        <connections>
+                                            <action selector="startNativeRecord:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="8WD-F5-mpE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGo-m1-gWC">
+                                        <rect key="frame" x="301" y="394" width="108" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="108" id="AMH-65-teb"/>
+                                            <constraint firstAttribute="height" constant="30" id="Ri7-9l-lEn"/>
+                                        </constraints>
+                                        <state key="normal" title="发送自定义消息"/>
+                                        <connections>
+                                            <action selector="sendCustomCommand:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="jqb-Tw-lbc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2qM-4t-Hn9" firstAttribute="top" secondItem="2mz-0Y-8qF" secondAttribute="top" constant="280" id="0ZX-if-Z5O"/>
+                                    <constraint firstAttribute="trailing" secondItem="34f-4h-Rdb" secondAttribute="trailing" constant="5" id="8vl-8L-oxS"/>
+                                    <constraint firstItem="bGo-m1-gWC" firstAttribute="top" secondItem="34f-4h-Rdb" secondAttribute="bottom" constant="23" id="Djg-HI-Dqb"/>
+                                    <constraint firstItem="34f-4h-Rdb" firstAttribute="top" secondItem="2mz-0Y-8qF" secondAttribute="top" constant="341" id="PAM-Tj-0gm"/>
+                                    <constraint firstAttribute="trailing" secondItem="2qM-4t-Hn9" secondAttribute="trailing" constant="19" id="PSF-iB-wCf"/>
+                                    <constraint firstAttribute="trailing" secondItem="bGo-m1-gWC" secondAttribute="trailing" constant="5" id="ZV4-El-2TB"/>
+                                </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1W9-c5-CU9" userLabel="settingView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -639,7 +682,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRT-lj-xcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="-58"/>
+            <point key="canvasLocation" x="1718.840579710145" y="-58.258928571428569"/>
+        </scene>
+        <!--Native Media View Controller-->
+        <scene sceneID="20E-A1-xp7">
+            <objects>
+                <viewController id="bQo-Xe-yUA" customClass="NativeMediaViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bNR-OZ-GWF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG8-vi-ent">
+                                <rect key="frame" x="26" y="45" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="rNr-d1-1IE" kind="unwind" unwindAction="unwindSegueBack:" id="Sv7-tY-CpG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="g09-97-8mi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rM9-WP-7nS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5w-8I-ooX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rNr-d1-1IE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2493" y="-58"/>
         </scene>
     </scenes>
     <resources>
