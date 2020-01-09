@@ -48,7 +48,7 @@
     config.blockMonitorTimeout = 1.5;
     
     // Set the app channel to deployment
-    config.channel = @"Bugly";
+    config.channel = @"URTC";
     
     config.delegate = self;
     

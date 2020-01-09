@@ -11,8 +11,6 @@
 #import "MeetingRoomCell.h"
 #import "YBPopupMenu.h"
 
-
-
 @interface MeetingRoomViewController () <UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate,YBPopupMenuDelegate,MeetingRoomCellDelegate>
 {
     NSMutableArray<UCloudRtcStream*> *canSubstreamList;
@@ -61,12 +59,18 @@ static NSInteger kHorizontalCount = 3;
     //设置日志级别
     [self.manager.logger setLogLevel:UCloudRtcLogLevel_DEBUG];
     //混音相关配置
-    NSString *file = [[NSBundle mainBundle] pathForResource:@"dy" ofType:@"mp3"];
-    self.manager.fileMix = NO;
-    self.manager.fileLoop = YES;
-    self.manager.filePath = file ? file : @"";
-    //设置视频编码格式
-    self.manager.videoDefaultCodec = @"H264";
+//    NSString *file = [[NSBundle mainBundle] pathForResource:@"dy" ofType:@"mp3"];
+//    self.manager.fileMix = NO;
+//    self.manager.fileLoop = YES;
+//    self.manager.filePath = file ? file : @"";
+//
+//    self.manager.videopath = @"aaa";
+//    self.manager.audiopath = @"bbb";
+//    NSString *tmpDir = NSTemporaryDirectory();
+//    self.manager.outputpath = [tmpDir substringToIndex:tmpDir.length-1];
+//
+//    //设置视频编码格式
+//    self.manager.videoDefaultCodec = @"H264";
     //设置代理
     self.manager.delegate = self;
     //配置SDK
@@ -305,6 +309,7 @@ static NSInteger kHorizontalCount = 3;
 
 //新成员加入房间
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager memberDidJoinRoom:(NSDictionary *)memberInfo{
+    NSLog(@"memberInfo==%@",memberInfo);
     NSString *message = [NSString stringWithFormat:@"用户:%@ 加入房间",memberInfo[@"user_id"]];
     [self.view makeToast:message duration:1.5 position:CSToastPositionCenter];
 }
@@ -444,6 +449,10 @@ static NSInteger kHorizontalCount = 3;
     [self.view makeToast:[NSString stringWithFormat:@"视频录制文件:%@",recordResponse[@"FileName"]] duration:3.0 position:CSToastPositionCenter];
 }
 
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager receiveCustomCommand:(NSString *)fromUserID content:(NSString *)content{
+    [self.view makeToast:[NSString stringWithFormat:@"%@:%@",fromUserID,content] duration:3.0 position:CSToastPositionCenter];
+}
+
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo *> * _Nonnull)status{
     for (UCloudRtcStreamStatsInfo *info in status) {
 //        NSLog(@"stream status info :%@",info);
@@ -552,5 +561,22 @@ static NSInteger kHorizontalCount = 3;
     }
 }
 
+///开始/停止本地录制
+- (IBAction)startNativeRecord:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        [self.manager startNativeRecord:@{}];
+        [sender setTitle:@"停止本地录制" forState:UIControlStateSelected];
+    }else{
+        [self.manager stopNativeRecord];
+        [sender setTitle:@"开始本地录制" forState:UIControlStateNormal];
+    }
+}
+- (IBAction)sendCustomCommand:(UIButton *)sender {
+    [self.manager sendCustomCommand:@"Hello World"];
+}
 
+- (IBAction)unwindSegueBack:(UIStoryboardSegue *)segue {
+    
+}
 @end

@@ -1,6 +1,0 @@
-framework module UCloudIMSdk {
-  umbrella header "UCloudIMSdk.h"
-
-  export *
-  module * { export * }
-}
