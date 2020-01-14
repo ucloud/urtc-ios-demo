@@ -53,7 +53,10 @@ static NSInteger kHorizontalCount = 3;
     [self.listView registerNib:[UINib nibWithNibName:@"MeetingRoomCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     
     //初始化engine
-    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
+//    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
+    self.manager = [[UCloudRtcEngine alloc]initWithAppID:self.appId appKey:self.appKey completionBlock:^(int errorCode) {
+//        NSLog(@"errorCode==%d",errorCode);
+    }];
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
     //设置日志级别
@@ -66,20 +69,25 @@ static NSInteger kHorizontalCount = 3;
 //
 //    self.manager.videopath = @"aaa";
 //    self.manager.audiopath = @"bbb";
-//    NSString *tmpDir = NSTemporaryDirectory();
-//    self.manager.outputpath = [tmpDir substringToIndex:tmpDir.length-1];
+    NSString *tmpDir = NSTemporaryDirectory();
+    self.manager.outputpath = [tmpDir substringToIndex:tmpDir.length-1];
+    self.manager.openNativeRecord = YES;
 //
 //    //设置视频编码格式
-//    self.manager.videoDefaultCodec = @"H264";
+    self.manager.videoDefaultCodec = @"H264";
     //设置代理
     self.manager.delegate = self;
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
-    //加入房间
-    [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        NSLog(@"joinRoomWithcompletionHandler:%@",dictionary);
+//    //加入房间
+//    [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+//        NSLog(@"joinRoomWithcompletionHandler:%@",dictionary);
+//    }];
+    [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
+        NSLog(@"response:%@",response);
+        NSLog(@"errorCode:%d",errorCode);
     }];
 }
 
@@ -149,7 +157,7 @@ static NSInteger kHorizontalCount = 3;
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    [self.manager setPreviewMode:UCloudRtcVideoViewModeScaleAspectFit];
     [self.manager setLocalPreview:self.localView];
     self.bigScreenStream = self.manager.localStream;
     
@@ -309,7 +317,6 @@ static NSInteger kHorizontalCount = 3;
 
 //新成员加入房间
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager memberDidJoinRoom:(NSDictionary *)memberInfo{
-    NSLog(@"memberInfo==%@",memberInfo);
     NSString *message = [NSString stringWithFormat:@"用户:%@ 加入房间",memberInfo[@"user_id"]];
     [self.view makeToast:message duration:1.5 position:CSToastPositionCenter];
 }
@@ -360,8 +367,7 @@ static NSInteger kHorizontalCount = 3;
 - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamPublishSucceed:(NSString *)streamId {
 
 }
-
-- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState {
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState localStream:(UCloudRtcStream * _Nullable)localStream{
     switch (publishState) {
         case UCloudRtcEnginePublishStateUnPublish:
             self.isConnected = NO;
@@ -485,7 +491,8 @@ static NSInteger kHorizontalCount = 3;
     for (UIView *view in cell.contentView.subviews) {
         [view removeFromSuperview];
     }
-    [cell configureWithStream:self.streamList[indexPath.row]];
+    UCloudRtcStream *stream = self.streamList[indexPath.row];
+    [cell configureWithStream:stream];
     cell.delegate = self;
     return cell;
 }

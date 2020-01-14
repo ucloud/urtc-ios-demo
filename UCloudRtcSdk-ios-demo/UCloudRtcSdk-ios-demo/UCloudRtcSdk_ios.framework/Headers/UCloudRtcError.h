@@ -19,10 +19,13 @@ typedef NS_ENUM(NSInteger,UCloudRtcErrorType) {
     UCloudRtcErrorTypePublishStreamFail = 5007, //发布失败
     UCloudRtcErrorTypePublishStreamTimeout = 5008, //发布超时
     
+    UCloudRtcErrorTypeSDKInitField = 5104, //SDK初始化失败
     UCloudRtcErrorTypeParameterInvalid = 5100, //初始化参数错误
     UCloudRtcErrorTypeRecordInvalid = 5101, //视频录制服务未开启
     UCloudRtcErrorTypeWhiteBoardInvalid = 5102, //白板服务未开启
     UCloudRtcErrorTypeIMInvalid = 5103, //IM服务未开启
+    UCloudRtcErrorTypeJoinRoomField = 5105, //加入房间失败
+    
     
     
 };
