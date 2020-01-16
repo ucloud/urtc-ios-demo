@@ -12,8 +12,12 @@
 #import "MeetingRoomViewController.h"
 
 //线上
-#define APP_ID @"URtc-h4r1txxy"
-#define APP_KEY @"9129304dbf8c5c4bf68d70824462409f"
+//#define APP_ID @"URtc-h4r1txxy"
+//#define APP_KEY @"9129304dbf8c5c4bf68d70824462409f"
+
+#define APP_ID @"urtc-bim12pqf"
+#define APP_KEY @"38d14894db7e1ef7c902f6548da0e560"
+
 //pre 测试
 //#define APP_ID @""
 //#define APP_KEY @""

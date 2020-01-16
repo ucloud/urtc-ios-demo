@@ -57,6 +57,8 @@ static NSInteger kHorizontalCount = 3;
     self.manager = [[UCloudRtcEngine alloc]initWithAppID:self.appId appKey:self.appKey completionBlock:^(int errorCode) {
 //        NSLog(@"errorCode==%d",errorCode);
     }];
+    //设置远端视频渲染模式
+    [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFill];
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
     //设置日志级别

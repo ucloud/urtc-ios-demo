@@ -273,6 +273,13 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
  */
 - (void)setPreviewMode:(UCloudRtcVideoViewMode)previewMode;
 
+/**
+ @brief 设置远程视频视图的模式
+
+ @param remoteViewMode 远程画面渲染模式
+ */
+- (void)setRemoteViewMode:(UCloudRtcVideoViewMode)remoteViewMode;
+
 
 /**
  @brief 切换本地摄像头
