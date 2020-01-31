@@ -88,6 +88,10 @@ static NSInteger kHorizontalCount = 3;
 //        NSLog(@"joinRoomWithcompletionHandler:%@",dictionary);
 //    }];
     [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
+        NSLog(@"[urtc] joinRoomWithRoomId succesfully");
+        [self.manager.localStream renderOnView:self.localView];
+        [self.manager publish];
+        
         NSLog(@"response:%@",response);
         NSLog(@"errorCode:%d",errorCode);
     }];
@@ -300,7 +304,6 @@ static NSInteger kHorizontalCount = 3;
             [self.manager unPublish];
         }];
     } else {
-        
         [self.manager.localStream renderOnView:self.localView];
         [self.manager publish];
         self.bigScreenStream = self.manager.localStream;
@@ -313,8 +316,6 @@ static NSInteger kHorizontalCount = 3;
 -(void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> *)canSubStreamList{
     [self.view makeToast:@"加入房间成功" duration:1.0 position:CSToastPositionCenter];
     self.isConnected = YES;
-    //远端所有可订阅的流将在这里展示  仅在非自动订阅模式下 否则为空
-    canSubstreamList = canSubStreamList;
 }
 
 //新成员加入房间
@@ -332,6 +333,7 @@ static NSInteger kHorizontalCount = 3;
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager newStreamHasJoinRoom:(UCloudRtcStream *)stream{
     [self.view makeToast:@"有新的流可以订阅" duration:1.5 position:CSToastPositionCenter];
     [canSubstreamList addObject:stream];
+    [self.manager subscribeMethod:stream];
 }
 //非自动订阅模式 新流退出会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamHasLeaveRoom:(UCloudRtcStream *)stream{
@@ -346,17 +348,6 @@ static NSInteger kHorizontalCount = 3;
     [canSubstreamList removeObject:newS];
 }
 
-//非自动订阅模式 订阅成功会收到该回调
--(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didSubscribe:(UCloudRtcStream *)stream{
-    [self.view makeToast:@"订阅成功" duration:1.5 position:CSToastPositionCenter];
-    [canSubstreamList removeObject:stream];
-     [self reloadVideos];
-}
-//非自动订阅模式 取消订阅成功会收到该回调
--(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didCancleSubscribe:(UCloudRtcStream *)stream{
-    [self.view makeToast:@"可订阅的流离开" duration:1.5 position:CSToastPositionCenter];
-}
-
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *)manager {
     [self.view makeToast:@"退出房间" duration:1.5 position:CSToastPositionCenter];
     [self dismissViewControllerAnimated:YES completion:^{}];
@@ -369,7 +360,7 @@ static NSInteger kHorizontalCount = 3;
 - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamPublishSucceed:(NSString *)streamId {
 
 }
-- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState localStream:(UCloudRtcStream * _Nullable)localStream{
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState{
     switch (publishState) {
         case UCloudRtcEnginePublishStateUnPublish:
             self.isConnected = NO;

@@ -65,7 +65,7 @@
                                     <action selector="didLoginAction:" destination="OoW-Zh-ITg" eventType="touchUpInside" id="brE-yN-xnA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="95211_2020-01-15_5e1eeb1a8edbc879dd069ec1" placeholder="请输入房间号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adg-wm-1ic">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入房间号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adg-wm-1ic">
                                 <rect key="frame" x="77" y="331" width="260" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Afv-B1-xUO"/>

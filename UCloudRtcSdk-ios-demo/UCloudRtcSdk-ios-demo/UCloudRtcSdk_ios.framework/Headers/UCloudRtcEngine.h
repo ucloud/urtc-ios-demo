@@ -76,16 +76,19 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 @class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
-/**加入房间成功*/
-- (void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> * _Nonnull)canSubStreamList;
+
+///**加入房间成功*/
+//- (void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> * _Nonnull)canSubStreamList;
+
 /**退出房间*/
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *_Nonnull)manager;
+
 /**与房间的连接断开*/
 - (void)uCloudRtcEngineDisconnectRoom:(UCloudRtcEngine *_Nonnull)manager;
 
 
 /**发布状态的变化*/
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState localStream:(UCloudRtcStream *_Nullable)localStream;
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState;
 
 /**收到远程流*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveRemoteStream:(UCloudRtcStream *_Nonnull)stream;
@@ -106,11 +109,11 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 ///**非自动订阅模式下 可订阅流退出*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel streamHasLeaveRoom:(UCloudRtcStream *_Nonnull)stream;
 
-/**非自动订阅模式下 订阅成功的回调  已废弃*/
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didSubscribe:(UCloudRtcStream *_Nonnull)stream;
-
-/**非自动订阅模式下 取消订阅成功的回调  已废弃*/
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didCancleSubscribe:(UCloudRtcStream *_Nonnull)stream;
+///**非自动订阅模式下 订阅成功的回调  已废弃*/
+//- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didSubscribe:(UCloudRtcStream *_Nonnull)stream;
+//
+///**非自动订阅模式下 取消订阅成功的回调  已废弃*/
+//- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didCancleSubscribe:(UCloudRtcStream *_Nonnull)stream;
 
 /**流 状态回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo*> *_Nonnull)status;
