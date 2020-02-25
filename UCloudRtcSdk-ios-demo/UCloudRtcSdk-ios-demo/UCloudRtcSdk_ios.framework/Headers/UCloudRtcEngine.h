@@ -130,6 +130,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 /**收到自定义消息的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveCustomCommand:(NSString *_Nonnull)fromUserID  content:(NSString *_Nonnull)content;
 
+/**远端视频关闭的回调*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel remoteVideoMute:(BOOL)remoteVideoMute;
+
 @end
 
 @interface UCloudRtcEngine : NSObject

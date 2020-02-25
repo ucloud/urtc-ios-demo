@@ -58,7 +58,7 @@ static NSInteger kHorizontalCount = 3;
 //        NSLog(@"errorCode==%d",errorCode);
     }];
     //设置远端视频渲染模式
-    [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFill];
+    [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFit];
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
     //设置日志级别
@@ -456,7 +456,6 @@ static NSInteger kHorizontalCount = 3;
     for (UCloudRtcStreamStatsInfo *info in status) {
 //        NSLog(@"stream status info :%@",info);
     }
-
 }
 
 - (void)reloadVideos {
