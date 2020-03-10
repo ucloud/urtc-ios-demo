@@ -133,6 +133,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 /**远端视频关闭的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel remoteVideoMute:(BOOL)remoteVideoMute;
 
+/**媒体播放器播放结束的回调*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel mediaPlayerOnPlayEnd:(BOOL)isEnd;
+
 @end
 
 @interface UCloudRtcEngine : NSObject
@@ -377,6 +380,31 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 */
 - (void)stopMediaPlay;
 
+/**
+@brief 暂停网络音频播放
+*/
+- (void)pauseMediaPlay;
+
+
+/**
+@brief 恢复网络音频播放
+*/
+- (void)resumeMediaPlay;
+
+/**
+@brief 获取音效文件播放音量
+ 
+@return 音效文件播放音量
+*/
+- (double)getMediaVolume;
+
+/**
+@brief 设置音效文件播放音量
+ 
+@param volume 音效文件播放音量
+@return 设置结果
+*/
+- (int)setMediaVolume:(double)volume;
 
 /**
 @brief 发送自定义消息

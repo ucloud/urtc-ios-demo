@@ -54,9 +54,9 @@ static NSInteger kHorizontalCount = 3;
     
     //初始化engine
 //    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
-    self.manager = [[UCloudRtcEngine alloc]initWithAppID:self.appId appKey:self.appKey completionBlock:^(int errorCode) {
-//        NSLog(@"errorCode==%d",errorCode);
-    }];
+    
+    //初始化engine
+    self.manager = [[UCloudRtcEngine alloc]initWithAppID:self.appId appKey:self.appKey completionBlock:^(int errorCode) {}];
     //设置远端视频渲染模式
     [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFit];
     //指定SDK模式
@@ -560,11 +560,18 @@ static NSInteger kHorizontalCount = 3;
     }
 }
 
+
+
 ///开始/停止本地录制
 - (IBAction)startNativeRecord:(UIButton *)sender {
     sender.selected = !sender.selected;
     if (sender.selected) {
-        [self.manager startNativeRecord:@{}];
+        NSString *tmpDir = NSTemporaryDirectory();
+        NSString *mp4OutPutPath = [tmpDir substringToIndex:tmpDir.length-1];
+        [self.manager startNativeRecord:@{
+            @"recordOutPut":mp4OutPutPath,
+            @"fileName":@"recordTest",
+        }];
         [sender setTitle:@"停止本地录制" forState:UIControlStateSelected];
     }else{
         [self.manager stopNativeRecord];
@@ -577,5 +584,11 @@ static NSInteger kHorizontalCount = 3;
 
 - (IBAction)unwindSegueBack:(UIStoryboardSegue *)segue {
     
+}
+
+
+#pragma mark mediaPlayerDelegate
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)channel mediaPlayerOnPlayEnd:(BOOL)isEnd{
+    NSLog(@"音频播放结束");
 }
 @end

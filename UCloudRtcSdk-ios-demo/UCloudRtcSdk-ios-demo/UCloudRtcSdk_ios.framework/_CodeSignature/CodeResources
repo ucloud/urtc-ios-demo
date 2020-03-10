@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/UCloudRtcEngine.h</key>
 		<data>
-		rsXEZWGb//n9eQ0rXl+TQnoW760=
+		y24kLmxwUmH2B1mK00aQBzI+v/Y=
 		</data>
 		<key>Headers/UCloudRtcError.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XZPtSHnzBzZ6w/yvFT5wqZUSaoc=
+		fShwCKH//Cnz/Ix9mscwQhNU71k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,11 +55,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rsXEZWGb//n9eQ0rXl+TQnoW760=
+			y24kLmxwUmH2B1mK00aQBzI+v/Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ld35/ePZYaOHaYn/jS3jEjID/XOMLE4DguALLGIGsso=
+			LqSwsTUkvkLV1uceNlwc9/1/e1ua+I2XcgH4i1KzB1c=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcError.h</key>
