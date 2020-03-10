@@ -10,7 +10,7 @@
 
 
 
-@interface MeetingRoomCell ()
+@interface MeetingRoomCell ()<UCloudRtcRenderDelegate>
 @property (nonatomic, weak) UCloudRtcStream *stream;
 @end
 
@@ -26,6 +26,7 @@
 
 - (void)configureWithStream:(UCloudRtcStream *)stream {
     self.stream = stream;
+    stream.delegate = self;
     [stream renderOnView:self.contentView];
     if (stream.userId) {
         UILabel *streamLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30)];
@@ -67,5 +68,10 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(didMuteStream:muteVideo:)]) {
         [self.delegate didMuteStream:self.stream muteVideo:btn.selected];
     }
+}
+
+#pragma mark --UCloudRtcRenderDelegate
+- (void)uCloudRtcRenderVideoFirstFrame:(NSString *)streamID{
+    NSLog(@"首帧渲染完成通知:流ID:%@",streamID);
 }
 @end

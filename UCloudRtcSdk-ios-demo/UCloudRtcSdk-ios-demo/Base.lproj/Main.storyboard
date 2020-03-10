@@ -65,7 +65,7 @@
                                     <action selector="didLoginAction:" destination="OoW-Zh-ITg" eventType="touchUpInside" id="brE-yN-xnA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adg-wm-1ic">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入房间号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adg-wm-1ic">
                                 <rect key="frame" x="77" y="331" width="260" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Afv-B1-xUO"/>
@@ -394,7 +394,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mz-0Y-8qF" userLabel="本机视频">
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="2mz-0Y-8qF" userLabel="本机视频">
                                 <rect key="frame" x="0.0" y="80" width="414" height="712"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34f-4h-Rdb">
@@ -692,16 +692,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG8-vi-ent">
-                                <rect key="frame" x="26" y="45" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG8-vi-ent">
+                                <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Vl-io-H8u"/>
+                                    <constraint firstAttribute="width" constant="50" id="ZJT-70-B9F"/>
+                                </constraints>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="rNr-d1-1IE" kind="unwind" unwindAction="unwindSegueBack:" id="Sv7-tY-CpG"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FG8-vi-ent" firstAttribute="top" secondItem="g09-97-8mi" secondAttribute="top" constant="5" id="v5B-KT-wuj"/>
+                            <constraint firstItem="FG8-vi-ent" firstAttribute="leading" secondItem="g09-97-8mi" secondAttribute="leading" constant="5" id="yfe-sJ-xb2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g09-97-8mi"/>
                     </view>
                     <navigationItem key="navigationItem" id="rM9-WP-7nS"/>

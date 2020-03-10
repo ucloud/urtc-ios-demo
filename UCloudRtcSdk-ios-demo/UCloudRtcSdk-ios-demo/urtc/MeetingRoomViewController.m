@@ -53,7 +53,12 @@ static NSInteger kHorizontalCount = 3;
     [self.listView registerNib:[UINib nibWithNibName:@"MeetingRoomCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     
     //初始化engine
-    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
+//    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
+    
+    //初始化engine
+    self.manager = [[UCloudRtcEngine alloc]initWithAppID:self.appId appKey:self.appKey completionBlock:^(int errorCode) {}];
+    //设置远端视频渲染模式
+    [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFit];
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
     //设置日志级别
@@ -66,20 +71,29 @@ static NSInteger kHorizontalCount = 3;
 //
 //    self.manager.videopath = @"aaa";
 //    self.manager.audiopath = @"bbb";
-//    NSString *tmpDir = NSTemporaryDirectory();
-//    self.manager.outputpath = [tmpDir substringToIndex:tmpDir.length-1];
+    NSString *tmpDir = NSTemporaryDirectory();
+    self.manager.outputpath = [tmpDir substringToIndex:tmpDir.length-1];
+    self.manager.openNativeRecord = YES;
 //
 //    //设置视频编码格式
-//    self.manager.videoDefaultCodec = @"H264";
+    self.manager.videoDefaultCodec = @"H264";
     //设置代理
     self.manager.delegate = self;
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
-    //加入房间
-    [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        NSLog(@"joinRoomWithcompletionHandler:%@",dictionary);
+//    //加入房间
+//    [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+//        NSLog(@"joinRoomWithcompletionHandler:%@",dictionary);
+//    }];
+    [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
+        NSLog(@"[urtc] joinRoomWithRoomId succesfully");
+        [self.manager.localStream renderOnView:self.localView];
+        [self.manager publish];
+        
+        NSLog(@"response:%@",response);
+        NSLog(@"errorCode:%d",errorCode);
     }];
 }
 
@@ -149,7 +163,7 @@ static NSInteger kHorizontalCount = 3;
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    [self.manager setPreviewMode:UCloudRtcVideoViewModeScaleAspectFit];
     [self.manager setLocalPreview:self.localView];
     self.bigScreenStream = self.manager.localStream;
     
@@ -290,7 +304,6 @@ static NSInteger kHorizontalCount = 3;
             [self.manager unPublish];
         }];
     } else {
-        
         [self.manager.localStream renderOnView:self.localView];
         [self.manager publish];
         self.bigScreenStream = self.manager.localStream;
@@ -303,13 +316,10 @@ static NSInteger kHorizontalCount = 3;
 -(void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> *)canSubStreamList{
     [self.view makeToast:@"加入房间成功" duration:1.0 position:CSToastPositionCenter];
     self.isConnected = YES;
-    //远端所有可订阅的流将在这里展示  仅在非自动订阅模式下 否则为空
-    canSubstreamList = canSubStreamList;
 }
 
 //新成员加入房间
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager memberDidJoinRoom:(NSDictionary *)memberInfo{
-    NSLog(@"memberInfo==%@",memberInfo);
     NSString *message = [NSString stringWithFormat:@"用户:%@ 加入房间",memberInfo[@"user_id"]];
     [self.view makeToast:message duration:1.5 position:CSToastPositionCenter];
 }
@@ -323,6 +333,7 @@ static NSInteger kHorizontalCount = 3;
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager newStreamHasJoinRoom:(UCloudRtcStream *)stream{
     [self.view makeToast:@"有新的流可以订阅" duration:1.5 position:CSToastPositionCenter];
     [canSubstreamList addObject:stream];
+    [self.manager subscribeMethod:stream];
 }
 //非自动订阅模式 新流退出会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamHasLeaveRoom:(UCloudRtcStream *)stream{
@@ -337,17 +348,6 @@ static NSInteger kHorizontalCount = 3;
     [canSubstreamList removeObject:newS];
 }
 
-//非自动订阅模式 订阅成功会收到该回调
--(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didSubscribe:(UCloudRtcStream *)stream{
-    [self.view makeToast:@"订阅成功" duration:1.5 position:CSToastPositionCenter];
-    [canSubstreamList removeObject:stream];
-     [self reloadVideos];
-}
-//非自动订阅模式 取消订阅成功会收到该回调
--(void)uCloudRtcEngine:(UCloudRtcEngine *)channel didCancleSubscribe:(UCloudRtcStream *)stream{
-    [self.view makeToast:@"可订阅的流离开" duration:1.5 position:CSToastPositionCenter];
-}
-
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *)manager {
     [self.view makeToast:@"退出房间" duration:1.5 position:CSToastPositionCenter];
     [self dismissViewControllerAnimated:YES completion:^{}];
@@ -360,8 +360,7 @@ static NSInteger kHorizontalCount = 3;
 - (void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamPublishSucceed:(NSString *)streamId {
 
 }
-
-- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState {
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState{
     switch (publishState) {
         case UCloudRtcEnginePublishStateUnPublish:
             self.isConnected = NO;
@@ -457,7 +456,6 @@ static NSInteger kHorizontalCount = 3;
     for (UCloudRtcStreamStatsInfo *info in status) {
 //        NSLog(@"stream status info :%@",info);
     }
-
 }
 
 - (void)reloadVideos {
@@ -485,7 +483,8 @@ static NSInteger kHorizontalCount = 3;
     for (UIView *view in cell.contentView.subviews) {
         [view removeFromSuperview];
     }
-    [cell configureWithStream:self.streamList[indexPath.row]];
+    UCloudRtcStream *stream = self.streamList[indexPath.row];
+    [cell configureWithStream:stream];
     cell.delegate = self;
     return cell;
 }
@@ -561,11 +560,18 @@ static NSInteger kHorizontalCount = 3;
     }
 }
 
+
+
 ///开始/停止本地录制
 - (IBAction)startNativeRecord:(UIButton *)sender {
     sender.selected = !sender.selected;
     if (sender.selected) {
-        [self.manager startNativeRecord:@{}];
+        NSString *tmpDir = NSTemporaryDirectory();
+        NSString *mp4OutPutPath = [tmpDir substringToIndex:tmpDir.length-1];
+        [self.manager startNativeRecord:@{
+            @"recordOutPut":mp4OutPutPath,
+            @"fileName":@"recordTest",
+        }];
         [sender setTitle:@"停止本地录制" forState:UIControlStateSelected];
     }else{
         [self.manager stopNativeRecord];
@@ -578,5 +584,11 @@ static NSInteger kHorizontalCount = 3;
 
 - (IBAction)unwindSegueBack:(UIStoryboardSegue *)segue {
     
+}
+
+
+#pragma mark mediaPlayerDelegate
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)channel mediaPlayerOnPlayEnd:(BOOL)isEnd{
+    NSLog(@"音频播放结束");
 }
 @end

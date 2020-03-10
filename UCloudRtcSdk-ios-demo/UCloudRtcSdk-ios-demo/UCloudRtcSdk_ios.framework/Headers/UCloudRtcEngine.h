@@ -62,13 +62,27 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
     UCloudRtcEnginePublishStatePublishStoped,
 };
 
+/** 本地预览视频视图的模式 */
+typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
+    /** 等比缩放，可能有黑边 */
+    UCloudRtcVideoViewModeScaleAspectFit     = 0,
+    /** 等比缩放填充整View，可能有部分被裁减 */
+    UCloudRtcVideoViewModeScaleAspectFill    = 1,
+    /** 填充整个View */
+    UCloudRtcVideoViewModeScaleToFill        = 2,
+};
+
+
 @class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
-/**加入房间成功*/
-- (void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> * _Nonnull)canSubStreamList;
+
+///**加入房间成功*/
+//- (void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> * _Nonnull)canSubStreamList;
+
 /**退出房间*/
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *_Nonnull)manager;
+
 /**与房间的连接断开*/
 - (void)uCloudRtcEngineDisconnectRoom:(UCloudRtcEngine *_Nonnull)manager;
 
@@ -95,11 +109,11 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 ///**非自动订阅模式下 可订阅流退出*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel streamHasLeaveRoom:(UCloudRtcStream *_Nonnull)stream;
 
-/**非自动订阅模式下 订阅成功的回调*/
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didSubscribe:(UCloudRtcStream *_Nonnull)stream;
-
-/**非自动订阅模式下 取消订阅成功的回调*/
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didCancleSubscribe:(UCloudRtcStream *_Nonnull)stream;
+///**非自动订阅模式下 订阅成功的回调  已废弃*/
+//- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didSubscribe:(UCloudRtcStream *_Nonnull)stream;
+//
+///**非自动订阅模式下 取消订阅成功的回调  已废弃*/
+//- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didCancleSubscribe:(UCloudRtcStream *_Nonnull)stream;
 
 /**流 状态回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo*> *_Nonnull)status;
@@ -115,6 +129,12 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 
 /**收到自定义消息的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveCustomCommand:(NSString *_Nonnull)fromUserID  content:(NSString *_Nonnull)content;
+
+/**远端视频关闭的回调*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel remoteVideoMute:(BOOL)remoteVideoMute;
+
+/**媒体播放器播放结束的回调*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel mediaPlayerOnPlayEnd:(BOOL)isEnd;
 
 @end
 
@@ -164,8 +184,8 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 
 
 //本地视频录制参数
-@property (nonatomic, copy) NSString *videopath;//混音文件路径
-@property (nonatomic, copy) NSString *audiopath;//混音文件路径
+@property (nonatomic, assign) BOOL openNativeRecord;//是否开启本地录制
+
 @property (nonatomic, copy) NSString *outputpath;//混音文件路径
 
 
@@ -188,6 +208,14 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
  */
 - (instancetype _Nonnull )initWithUserId:(NSString *_Nonnull)userId appId:(NSString *_Nonnull)appId roomId:(NSString *_Nonnull)roomId appKey:(NSString *_Nullable)appKey token:(NSString *_Nullable)token;
 
+/**
+@brief 初始化UCloudRtcEngine
+@param appId 分配得到的应用ID
+@param appKey 分配得到的appkey
+@return UCloudRtcEngine
+*/
+- (instancetype _Nonnull )initWithAppID:(NSString *_Nonnull)appId appKey:(NSString *_Nullable)appKey completionBlock:(void (^_Nonnull)(int errorCode))completion;
+
 
 /**
  @brief 加入房间
@@ -195,6 +223,18 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
  @param completion completion
  */
 - (void)joinRoomWithcompletionHandler:(void (^_Nonnull)(NSData * _Nonnull data, NSURLResponse * _Nonnull response, NSError * _Nonnull error))completion;
+
+
+/**
+@brief 加入房间
+ 
+@param roomId 即将加入的房间ID
+@param userId 当前用户的ID
+@param token  生成的token
+@param completion completion
+*/
+- (void)joinRoomWithRoomId:(NSString *_Nonnull)roomId userId:(NSString *_Nonnull)userId token:(NSString *_Nullable)token completionHandler:(void (^_Nonnull)(NSDictionary * _Nonnull response,int errorCode))completion;
+
 
 /**
  @brief 退出房间
@@ -233,6 +273,21 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
  @param preview 本地画面即将渲染到的目标视图
  */
 - (void)setLocalPreview:(UIView *_Nonnull)preview;
+
+
+/**
+ @brief 设置本地预览视频视图的模式
+
+ @param previewMode 本地画面渲染模式
+ */
+- (void)setPreviewMode:(UCloudRtcVideoViewMode)previewMode;
+
+/**
+ @brief 设置远程视频视图的模式
+
+ @param remoteViewMode 远程画面渲染模式
+ */
+- (void)setRemoteViewMode:(UCloudRtcVideoViewMode)remoteViewMode;
 
 
 /**
@@ -315,7 +370,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 @brief 网络音频播放
  
 @param path 文件路径
-@param repeat 是否f循环播放
+@param repeat 是否循环播放
 */
 - (void)startMediaPlay:(NSString *_Nonnull)path repeat:(BOOL)repeat;
 
@@ -325,6 +380,31 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 */
 - (void)stopMediaPlay;
 
+/**
+@brief 暂停网络音频播放
+*/
+- (void)pauseMediaPlay;
+
+
+/**
+@brief 恢复网络音频播放
+*/
+- (void)resumeMediaPlay;
+
+/**
+@brief 获取音效文件播放音量
+ 
+@return 音效文件播放音量
+*/
+- (double)getMediaVolume;
+
+/**
+@brief 设置音效文件播放音量
+ 
+@param volume 音效文件播放音量
+@return 设置结果
+*/
+- (int)setMediaVolume:(double)volume;
 
 /**
 @brief 发送自定义消息
