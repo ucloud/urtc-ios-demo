@@ -90,7 +90,7 @@ static NSInteger kHorizontalCount = 3;
     [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
         NSLog(@"[urtc] joinRoomWithRoomId succesfully");
         [self.manager.localStream renderOnView:self.localView];
-        [self.manager publish];
+//        [self.manager publish];
         
         NSLog(@"response:%@",response);
         NSLog(@"errorCode:%d",errorCode);
