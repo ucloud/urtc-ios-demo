@@ -568,10 +568,7 @@ static NSInteger kHorizontalCount = 3;
     if (sender.selected) {
         NSString *tmpDir = NSTemporaryDirectory();
         NSString *mp4OutPutPath = [tmpDir substringToIndex:tmpDir.length-1];
-        [self.manager startNativeRecord:@{
-            @"recordOutPut":mp4OutPutPath,
-            @"fileName":@"recordTest",
-        }];
+        [self.manager startNativeReord];
         [sender setTitle:@"停止本地录制" forState:UIControlStateSelected];
     }else{
         [self.manager stopNativeRecord];

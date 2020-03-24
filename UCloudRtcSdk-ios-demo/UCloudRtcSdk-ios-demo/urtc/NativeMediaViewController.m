@@ -20,7 +20,7 @@
     [super viewDidLoad];
 //        self.videoUrl =  [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"];
         NSString *tmpDir = NSTemporaryDirectory();
-        self.videoUrl = [NSString stringWithFormat:@"%@record.mp4",tmpDir];
+        self.videoUrl = [NSString stringWithFormat:@"%@test.mp4",tmpDir];
         NSLog(@"self.videoUrl==%@",self.videoUrl);
 //        self.videoUrl = @"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
         /*
