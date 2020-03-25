@@ -441,14 +441,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
-				ONLY_ACTIVE_ARCH = NO;
+				MARKETING_VERSION = 1.5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.urtc.ucloud.UCloudRtcSdk-ios-demo";
 				PRODUCT_NAME = "URTC-ios";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 armv7s arm64e armv7";
 			};
 			name = Debug;
 		};
@@ -472,14 +472,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.urtc.ucloud.UCloudRtcSdk-ios-demo";
 				PRODUCT_NAME = "URTC-ios";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 armv7s arm64e armv7";
 			};
 			name = Release;
 		};

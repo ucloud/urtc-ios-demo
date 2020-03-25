@@ -351,11 +351,11 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 - (void)stopRecord;
 
 /**
-@brief 开始本地录制
+ @brief 本地视频录制
  
-@param recordConfig 本地录制参数配置
-*/
-- (void)startNativeRecord:(NSDictionary *_Nonnull)recordConfig;
+ @discussion 会根据你选择的视频分辨率进行录制，默认是 480 X 360
+ */
+- (void)startNativeReord;
 
 /**
 @brief 停止本地录制
@@ -412,4 +412,36 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 @param customCommand 自定义消息内容
 */
 - (void)sendCustomCommand:(NSString *_Nonnull)customCommand;
+
+
+/**
+ @brief 停止音频播放
+ 
+ @discussion 停止的是远端音频播放
+ 
+ */
+- (void)stopAudioPlay;
+
+/**
+ @brief 开始音频播放
+ 
+ @discussion 开始的是远端音频播放
+ 
+ */
+- (void)startAudioPlay;
+
+
+/**
+ @brief 停止音视频的采集和播放
+ 
+ @discussion 如果你的应用没有后台模式，那么当点击home键应用退到后台时，可以调用此方法停止音频和视频的采集以及远端音频的播放。
+ */
+- (void)stopAVCollectionAndPaly;
+
+/**
+ @brief 开始音频的采集和播放
+ 
+ @discussion 和上面的`- (void)stopAVCollectionAndPaly`方法对应，当app重新进入活跃状态时，调用该方法恢复本地音视频的采集和远端音频的播放。
+ */
+- (void)startAVCollectionAndPaly;
 @end

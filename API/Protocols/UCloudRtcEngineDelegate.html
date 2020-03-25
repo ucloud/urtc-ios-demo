@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">UCloudRtcSdk_ios </a>
+				<a href="../index.html">API </a>
 			</h1>
 
 			<p id="developer-home">
@@ -58,17 +58,15 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/uCloudRtcEngine:didCancleSubscribe:">- uCloudRtcEngine:didCancleSubscribe:</option>
-		
 		<option value="//api/name/uCloudRtcEngine:didChangePublishState:">- uCloudRtcEngine:didChangePublishState:</option>
 		
 		<option value="//api/name/uCloudRtcEngine:didReceiveStreamStatus:">- uCloudRtcEngine:didReceiveStreamStatus:</option>
 		
 		<option value="//api/name/uCloudRtcEngine:didRemoveStream:">- uCloudRtcEngine:didRemoveStream:</option>
 		
-		<option value="//api/name/uCloudRtcEngine:didSubscribe:">- uCloudRtcEngine:didSubscribe:</option>
-		
 		<option value="//api/name/uCloudRtcEngine:error:">- uCloudRtcEngine:error:</option>
+		
+		<option value="//api/name/uCloudRtcEngine:mediaPlayerOnPlayEnd:">- uCloudRtcEngine:mediaPlayerOnPlayEnd:</option>
 		
 		<option value="//api/name/uCloudRtcEngine:memberDidJoinRoom:">- uCloudRtcEngine:memberDidJoinRoom:</option>
 		
@@ -76,15 +74,17 @@
 		
 		<option value="//api/name/uCloudRtcEngine:newStreamHasJoinRoom:">- uCloudRtcEngine:newStreamHasJoinRoom:</option>
 		
+		<option value="//api/name/uCloudRtcEngine:receiveCustomCommand:content:">- uCloudRtcEngine:receiveCustomCommand:content:</option>
+		
 		<option value="//api/name/uCloudRtcEngine:receiveRemoteStream:">- uCloudRtcEngine:receiveRemoteStream:</option>
+		
+		<option value="//api/name/uCloudRtcEngine:remoteVideoMute:">- uCloudRtcEngine:remoteVideoMute:</option>
 		
 		<option value="//api/name/uCloudRtcEngine:startRecord:">- uCloudRtcEngine:startRecord:</option>
 		
 		<option value="//api/name/uCloudRtcEngine:streamConnectionFailed:">- uCloudRtcEngine:streamConnectionFailed:</option>
 		
 		<option value="//api/name/uCloudRtcEngine:streamHasLeaveRoom:">- uCloudRtcEngine:streamHasLeaveRoom:</option>
-		
-		<option value="//api/name/uCloudRtcEngineDidJoinRoom:streamList:">- uCloudRtcEngineDidJoinRoom:streamList:</option>
 		
 		<option value="//api/name/uCloudRtcEngineDidLeaveRoom:">- uCloudRtcEngineDidLeaveRoom:</option>
 		
@@ -132,52 +132,6 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/uCloudRtcEngineDidJoinRoom:streamList:" title="uCloudRtcEngineDidJoinRoom:streamList:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngineDidJoinRoom:streamList:">&ndash;&nbsp;uCloudRtcEngineDidJoinRoom:streamList:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>加入房间成功</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)uCloudRtcEngineDidJoinRoom:(BOOL)<em>succeed</em> streamList:(NSMutableArray&lt;UCloudRtcStream*&gt; *_Nonnull)<em>canSubStreamList</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>加入房间成功</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/uCloudRtcEngineDidLeaveRoom:" title="uCloudRtcEngineDidLeaveRoom:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngineDidLeaveRoom:">&ndash;&nbsp;uCloudRtcEngineDidLeaveRoom:</a></code>
 </h3>
@@ -592,98 +546,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/uCloudRtcEngine:didSubscribe:" title="uCloudRtcEngine:didSubscribe:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngine:didSubscribe:">&ndash;&nbsp;uCloudRtcEngine:didSubscribe:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>非自动订阅模式下 订阅成功的回调</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)<em>channel</em> didSubscribe:(UCloudRtcStream *_Nonnull)<em>stream</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>非自动订阅模式下 订阅成功的回调</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/uCloudRtcEngine:didCancleSubscribe:" title="uCloudRtcEngine:didCancleSubscribe:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngine:didCancleSubscribe:">&ndash;&nbsp;uCloudRtcEngine:didCancleSubscribe:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>非自动订阅模式下 取消订阅成功的回调</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)<em>channel</em> didCancleSubscribe:(UCloudRtcStream *_Nonnull)<em>stream</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>非自动订阅模式下 取消订阅成功的回调</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/uCloudRtcEngine:didReceiveStreamStatus:" title="uCloudRtcEngine:didReceiveStreamStatus:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngine:didReceiveStreamStatus:">&ndash;&nbsp;uCloudRtcEngine:didReceiveStreamStatus:</a></code>
 </h3>
@@ -867,6 +729,144 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/uCloudRtcEngine:receiveCustomCommand:content:" title="uCloudRtcEngine:receiveCustomCommand:content:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngine:receiveCustomCommand:content:">&ndash;&nbsp;uCloudRtcEngine:receiveCustomCommand:content:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>收到自定义消息的回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)<em>manager</em> receiveCustomCommand:(NSString *_Nonnull)<em>fromUserID</em> content:(NSString *_Nonnull)<em>content</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>收到自定义消息的回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uCloudRtcEngine:remoteVideoMute:" title="uCloudRtcEngine:remoteVideoMute:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngine:remoteVideoMute:">&ndash;&nbsp;uCloudRtcEngine:remoteVideoMute:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>远端视频关闭的回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)<em>channel</em> remoteVideoMute:(BOOL)<em>remoteVideoMute</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>远端视频关闭的回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uCloudRtcEngine:mediaPlayerOnPlayEnd:" title="uCloudRtcEngine:mediaPlayerOnPlayEnd:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uCloudRtcEngine:mediaPlayerOnPlayEnd:">&ndash;&nbsp;uCloudRtcEngine:mediaPlayerOnPlayEnd:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>媒体播放器播放结束的回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)<em>channel</em> mediaPlayerOnPlayEnd:(BOOL)<em>isEnd</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>媒体播放器播放结束的回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -882,7 +882,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 ucloud. All rights reserved. Updated: 2019-12-03</p>
+						<p class="copyright">Copyright &copy; 2020 ucloud. All rights reserved. Updated: 2020-03-25</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
