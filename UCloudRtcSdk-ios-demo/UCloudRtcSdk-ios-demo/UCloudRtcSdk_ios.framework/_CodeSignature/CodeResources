@@ -4,13 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		LXBurl/EJVh/TvxIa2kmNJfGjl8=
+		</data>
 		<key>Headers/UCloudRtcEngine.h</key>
 		<data>
-		R7kqNWFZTyO3cj30h6hgrh570u4=
+		Xakt2eObGFIpBZlIVZ8BTtPg04o=
 		</data>
 		<key>Headers/UCloudRtcError.h</key>
 		<data>
-		PyVZWsIH0590GZoqyz/OP6gd/KY=
+		Lttes32qYLsqhXi3RodkD8EJ1PQ=
 		</data>
 		<key>Headers/UCloudRtcLog.h</key>
 		<data>
@@ -55,22 +59,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			R7kqNWFZTyO3cj30h6hgrh570u4=
+			Xakt2eObGFIpBZlIVZ8BTtPg04o=
 			</data>
 			<key>hash2</key>
 			<data>
-			0+4dYS9bTsyWHMyx1XhU948yRd+41Jg8i6KVW4hoXq8=
+			fbg0rwFgrBUN/wE7mbAjB9IYRUVK33vPa0B+Q/DPun4=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcError.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PyVZWsIH0590GZoqyz/OP6gd/KY=
+			Lttes32qYLsqhXi3RodkD8EJ1PQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			8432J98X1ufBclsHqNHF6vwTLYBEai/KHeNA+fQGig0=
+			wg0pBk+P9TO4ErTsG84/HbvAi8KpGQ4FHZjphUFUQoA=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcLog.h</key>

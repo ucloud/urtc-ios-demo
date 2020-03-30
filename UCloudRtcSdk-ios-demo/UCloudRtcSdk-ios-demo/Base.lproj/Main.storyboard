@@ -299,6 +299,7 @@
                                 <segments>
                                     <segment title="上传"/>
                                     <segment title="下载"/>
+                                    <segment title="全部"/>
                                 </segments>
                                 <connections>
                                     <action selector="broadcastLimit:" destination="7ir-JH-Mvj" eventType="valueChanged" id="btP-l3-2Dv"/>

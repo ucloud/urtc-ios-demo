@@ -15,8 +15,8 @@
 #define APP_ID @"URtc-h4r1txxy"
 #define APP_KEY @"9129304dbf8c5c4bf68d70824462409f"
 
-//#define APP_ID @"urtc-bim12pqf"
-//#define APP_KEY @"38d14894db7e1ef7c902f6548da0e560"
+//#define APP_ID @"urtc-l0n5arlm"
+//#define APP_KEY @"be1fa6d3e0783a852211ac587b8ae6b9"
 
 //pre 测试
 //#define APP_ID @""

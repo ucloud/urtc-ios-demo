@@ -62,6 +62,14 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
     UCloudRtcEnginePublishStatePublishStoped,
 };
 
+typedef NS_ENUM(NSInteger, UCloudRtcConnectState) {
+    UCloudRtcConnectStateDisConnect,//连接断开
+    UCloudRtcConnectStateConnecting,//连接中
+    UCloudRtcConnectStateConnected,//连接成功
+    UCloudRtcConnectStateConnectFailed,//连接失败
+    UCloudRtcConnectStateReConnected//重连成功
+};
+
 /** 本地预览视频视图的模式 */
 typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
     /** 等比缩放，可能有黑边 */
@@ -136,6 +144,8 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 /**媒体播放器播放结束的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel mediaPlayerOnPlayEnd:(BOOL)isEnd;
 
+/**网络连接状态变化的回调*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager connectState:(UCloudRtcConnectState)connectState;
 @end
 
 @interface UCloudRtcEngine : NSObject
@@ -188,6 +198,11 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 
 @property (nonatomic, copy) NSString *outputpath;//混音文件路径
 
+/**断网重连次数 默认为：10次 */
+@property (nonatomic, assign) NSInteger reConnectTimes;
+
+/**重连时间间隔，默认60秒钟*/
+@property(nonatomic, assign) NSInteger overTime;
 
 /**
  @brief 返回SDK当前版本号

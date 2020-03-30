@@ -53,9 +53,6 @@ static NSInteger kHorizontalCount = 3;
     [self.listView registerNib:[UINib nibWithNibName:@"MeetingRoomCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     
     //初始化engine
-//    self.manager = [[UCloudRtcEngine alloc] initWithUserId:self.userId appId:self.appId roomId:self.roomId appKey:self.appKey token:self.token];
-    
-    //初始化engine
     self.manager = [[UCloudRtcEngine alloc]initWithAppID:self.appId appKey:self.appKey completionBlock:^(int errorCode) {}];
     //设置远端视频渲染模式
     [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFit];
@@ -74,26 +71,19 @@ static NSInteger kHorizontalCount = 3;
     NSString *tmpDir = NSTemporaryDirectory();
     self.manager.outputpath = [tmpDir substringToIndex:tmpDir.length-1];
     self.manager.openNativeRecord = YES;
-//
-//    //设置视频编码格式
+
+    self.manager.reConnectTimes = 10;
+    self.manager.overTime = 60;
+    
+    //设置视频编码格式
     self.manager.videoDefaultCodec = @"H264";
     //设置代理
     self.manager.delegate = self;
     //配置SDK
     [self settingSDK:self.engineSetting];
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
-//    //加入房间
-//    [self.manager joinRoomWithcompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//        NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-//        NSLog(@"joinRoomWithcompletionHandler:%@",dictionary);
-//    }];
+    //加入房间
     [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
-        NSLog(@"[urtc] joinRoomWithRoomId succesfully");
-        [self.manager.localStream renderOnView:self.localView];
-//        [self.manager publish];
-        
-        NSLog(@"response:%@",response);
-        NSLog(@"errorCode:%d",errorCode);
     }];
 }
 
@@ -454,8 +444,13 @@ static NSInteger kHorizontalCount = 3;
 
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo *> * _Nonnull)status{
     for (UCloudRtcStreamStatsInfo *info in status) {
-//        NSLog(@"stream status info :%@",info);
+        NSLog(@"stream status info :%@",info);
     }
+}
+
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager connectState:(UCloudRtcConnectState)connectState{
+    NSLog(@"重连成功");
+    [self reloadVideos];
 }
 
 - (void)reloadVideos {

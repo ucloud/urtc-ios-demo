@@ -144,6 +144,9 @@
         case 1:
             self.streamProfile = UCloudRtcEngine_StreamProfileDownload;
             break;
+        case 2:
+            self.streamProfile = UCloudRtcEngine_StreamProfileAll;
+            break;
         default:
             break;
     }
