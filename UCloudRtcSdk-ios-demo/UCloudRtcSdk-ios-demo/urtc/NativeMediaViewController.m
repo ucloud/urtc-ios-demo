@@ -21,8 +21,9 @@
 //        self.videoUrl =  [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"];
         NSString *tmpDir = NSTemporaryDirectory();
         self.videoUrl = [NSString stringWithFormat:@"%@record.mp4",tmpDir];
+//            self.videoUrl = @"http://player.youku.com/embed/XMTI3NjA0MDk2MA==";
         NSLog(@"self.videoUrl==%@",self.videoUrl);
-//        self.videoUrl = @"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+
         /*
          因为是 http 的链接，所以要去 info.plist里面设置
          App Transport Security Settings

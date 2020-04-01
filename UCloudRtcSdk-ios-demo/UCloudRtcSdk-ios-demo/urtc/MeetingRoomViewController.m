@@ -338,6 +338,13 @@ static NSInteger kHorizontalCount = 3;
     [canSubstreamList removeObject:newS];
 }
 
+-(void)localAudioVolumeChange:(int)volume{
+    NSLog(@"本地音频音量为:%d",volume);
+}
+-(void)remoteAudioVolumeChange:(int)volume userID:(NSString *)uId{
+    NSLog(@"远端流：%@ 音频音量为：%d",uId,volume);
+}
+
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *)manager {
     [self.view makeToast:@"退出房间" duration:1.5 position:CSToastPositionCenter];
     [self dismissViewControllerAnimated:YES completion:^{}];

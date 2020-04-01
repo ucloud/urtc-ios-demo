@@ -146,6 +146,23 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 
 /**网络连接状态变化的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager connectState:(UCloudRtcConnectState)connectState;
+/**
+ @brief 监听本地采集的音频音量变化，范围是(0-500)
+ @discussion 该值不是真正的系统音量值，只是反映音量变化的一个指标
+ 
+ @param volume 音量值
+ */
+- (void)localAudioVolumeChange:(int)volume;
+
+/**
+ @brief 监听远端流音频音量变化，范围是(0-500)
+ @discussion 该值只是反映音量变化的一个指标
+ 
+ @param volume 音量值
+ @param uId  userid
+ */
+- (void)remoteAudioVolumeChange:(int)volume userID:(NSString *_Nonnull)uId;
+
 @end
 
 @interface UCloudRtcEngine : NSObject
