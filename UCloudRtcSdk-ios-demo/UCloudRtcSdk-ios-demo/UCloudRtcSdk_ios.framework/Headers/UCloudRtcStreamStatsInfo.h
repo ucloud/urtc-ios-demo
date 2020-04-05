@@ -14,7 +14,7 @@
 
 @property(nonatomic, strong) NSString *userId;
 
-@property(nonatomic, assign) double volume;
+@property(nonatomic, assign) NSInteger volume;
 @property (nonatomic, assign) NSInteger fps;
 @property (nonatomic, assign) NSInteger bitrate;
 @property (nonatomic, assign) NSInteger frameRate;

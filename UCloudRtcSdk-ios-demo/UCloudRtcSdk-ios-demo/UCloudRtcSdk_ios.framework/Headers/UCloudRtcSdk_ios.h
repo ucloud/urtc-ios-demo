@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-// In this header, you should import all the public headers of your framework using statements like #import <UCloudRtcSdk_ios/PublicHeader.h>
-
 #import <UCloudRtcSdk_ios/UCloudRtcEngine.h>
 #import <UCloudRtcSdk_ios/UCloudRtcStream.h>
 #import <UCloudRtcSdk_ios/UCloudRtcStreamStatsInfo.h>

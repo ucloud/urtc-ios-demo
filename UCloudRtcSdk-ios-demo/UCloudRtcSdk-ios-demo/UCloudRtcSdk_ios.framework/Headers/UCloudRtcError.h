@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcErrorType) {
     UCloudRtcErrorTypeCreateRoomFail = 5004, //创建房间失败
     UCloudRtcErrorTypeNotJoinRoom = 5005, //未加入房间
     UCloudRtcErrorTypeJoinRoomFail = 5006, //加入房间失败
+    UCloudRtcErrorTypeLeaveRoomField = 5010, //离开房间失败
     UCloudRtcErrorTypePublishStreamFail = 5007, //发布失败
     UCloudRtcErrorTypePublishStreamTimeout = 5008, //发布超时
     UCloudRtcErrorTypeStreamProfileError = 5009, //权限错误
@@ -25,7 +26,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcErrorType) {
     UCloudRtcErrorTypeRecordInvalid = 5101, //视频录制服务未开启
     UCloudRtcErrorTypeWhiteBoardInvalid = 5102, //白板服务未开启
     UCloudRtcErrorTypeIMInvalid = 5103, //IM服务未开启
-    UCloudRtcErrorTypeJoinRoomField = 5105, //加入房间失败
+    
     
     
     

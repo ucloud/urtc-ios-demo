@@ -10,11 +10,11 @@
 		</data>
 		<key>Headers/UCloudRtcEngine.h</key>
 		<data>
-		THMjOHVAnu641mKxz3X0vVgIrwE=
+		Xakt2eObGFIpBZlIVZ8BTtPg04o=
 		</data>
 		<key>Headers/UCloudRtcError.h</key>
 		<data>
-		Lttes32qYLsqhXi3RodkD8EJ1PQ=
+		Susp/ibkUbnchO1orneb1856Pi8=
 		</data>
 		<key>Headers/UCloudRtcLog.h</key>
 		<data>
@@ -26,15 +26,15 @@
 		</data>
 		<key>Headers/UCloudRtcSdk_ios.h</key>
 		<data>
-		N/vFLlCM9dA7sFhkE75wfxSYCsE=
+		eT3M1DBFVmuDYY3iFR1NxdmRqck=
 		</data>
 		<key>Headers/UCloudRtcStream.h</key>
 		<data>
-		/hOj97+RMnAEp0/lnm2IJtWPP1o=
+		DbBsRhdPygKgdNiq4jg+TN9E9fc=
 		</data>
 		<key>Headers/UCloudRtcStreamStatsInfo.h</key>
 		<data>
-		F1lpW0pyEkuHCnQtam16o9uQ4rc=
+		M/6pe74y+JdDZmvhWKdtFAQYTzw=
 		</data>
 		<key>Headers/UCloudRtcStreamVolume.h</key>
 		<data>
@@ -59,22 +59,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			THMjOHVAnu641mKxz3X0vVgIrwE=
+			Xakt2eObGFIpBZlIVZ8BTtPg04o=
 			</data>
 			<key>hash2</key>
 			<data>
-			6tJVD/gsFlHwDsJ7iWuOfXc218ea+hkYiYq9QG18R88=
+			fbg0rwFgrBUN/wE7mbAjB9IYRUVK33vPa0B+Q/DPun4=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcError.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Lttes32qYLsqhXi3RodkD8EJ1PQ=
+			Susp/ibkUbnchO1orneb1856Pi8=
 			</data>
 			<key>hash2</key>
 			<data>
-			wg0pBk+P9TO4ErTsG84/HbvAi8KpGQ4FHZjphUFUQoA=
+			A4JZpkioHwX4jBhDZWFip5FPBizGuYRMyAf1aeShm14=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcLog.h</key>
@@ -103,33 +103,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			N/vFLlCM9dA7sFhkE75wfxSYCsE=
+			eT3M1DBFVmuDYY3iFR1NxdmRqck=
 			</data>
 			<key>hash2</key>
 			<data>
-			khixcLTMH0/Bw5VJ/nc0hKK9po6uXUHGyDbDkyUb6+Y=
+			3IwVXNcS3EWjI2l4YhmwFxE0NBumM8gMXsKoFE02w5A=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcStream.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/hOj97+RMnAEp0/lnm2IJtWPP1o=
+			DbBsRhdPygKgdNiq4jg+TN9E9fc=
 			</data>
 			<key>hash2</key>
 			<data>
-			B0yj4BKB/ZSnU+bc3LYf5yEFTGxVjgpZLlRZ5OdwMyg=
+			Q0gsmac6Pr26n/wY5po6KxTtSYfRBz1NDSfuM0O7MCs=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcStreamStatsInfo.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F1lpW0pyEkuHCnQtam16o9uQ4rc=
+			M/6pe74y+JdDZmvhWKdtFAQYTzw=
 			</data>
 			<key>hash2</key>
 			<data>
-			bYkj4oQ7lvLr0XBhrYc1TKIrjyauw1TkCUESs9mvJsM=
+			Ebk/4yv1PFkDk1PCIAeWBAo1zsJGMrkLZd/QyJ+DGXM=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcStreamVolume.h</key>

@@ -72,8 +72,8 @@ static NSInteger kHorizontalCount = 3;
     self.manager.outputpath = [tmpDir substringToIndex:tmpDir.length-1];
     self.manager.openNativeRecord = YES;
 
-    self.manager.reConnectTimes = 10;
-    self.manager.overTime = 60;
+    self.manager.reConnectTimes = 30;
+    self.manager.overTime = 10;
     
     //设置视频编码格式
     self.manager.videoDefaultCodec = @"H264";
@@ -271,6 +271,7 @@ static NSInteger kHorizontalCount = 3;
 
 - (IBAction)didSwitchCameraAction:(id)sender {
     [self.manager switchCamera];
+    
 }
 - (IBAction)didSetMicrophoneMuteAction:(UIButton *)sender {
     sender.selected = !sender.selected;
@@ -370,6 +371,7 @@ static NSInteger kHorizontalCount = 3;
             self.isConnected = YES;
             [self.view makeToast:@"发布成功" duration:1.5 position:CSToastPositionCenter];
             [self.bottomButton setTitle:@"发布成功" forState:UIControlStateNormal];
+            [self.manager openCamera:NO];
         }
             break;
         case UCloudRtcEnginePublishStateRepublishing: {
