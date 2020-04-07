@@ -371,7 +371,7 @@ static NSInteger kHorizontalCount = 3;
             self.isConnected = YES;
             [self.view makeToast:@"发布成功" duration:1.5 position:CSToastPositionCenter];
             [self.bottomButton setTitle:@"发布成功" forState:UIControlStateNormal];
-            [self.manager openCamera:NO];
+//            [self.manager openCamera:NO];
         }
             break;
         case UCloudRtcEnginePublishStateRepublishing: {
