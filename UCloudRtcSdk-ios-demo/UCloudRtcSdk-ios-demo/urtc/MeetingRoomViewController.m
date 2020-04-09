@@ -371,6 +371,7 @@ static NSInteger kHorizontalCount = 3;
             self.isConnected = YES;
             [self.view makeToast:@"发布成功" duration:1.5 position:CSToastPositionCenter];
             [self.bottomButton setTitle:@"发布成功" forState:UIControlStateNormal];
+//            [self.manager openCamera:YES];
 //            [self.manager openCamera:NO];
         }
             break;
@@ -572,7 +573,7 @@ static NSInteger kHorizontalCount = 3;
     if (sender.selected) {
         NSString *tmpDir = NSTemporaryDirectory();
         NSString *mp4OutPutPath = [tmpDir substringToIndex:tmpDir.length-1];
-        [self.manager startNativeReord];
+        [self.manager startNativeRecord];
         [sender setTitle:@"停止本地录制" forState:UIControlStateSelected];
     }else{
         [self.manager stopNativeRecord];

@@ -370,7 +370,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
  
  @discussion 会根据你选择的视频分辨率进行录制，默认是 480 X 360
  */
-- (void)startNativeReord;
+- (void)startNativeRecord;
 
 /**
 @brief 停止本地录制
