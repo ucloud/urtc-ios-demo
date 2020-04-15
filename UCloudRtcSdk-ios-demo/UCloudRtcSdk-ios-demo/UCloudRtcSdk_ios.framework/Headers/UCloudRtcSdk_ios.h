@@ -15,4 +15,4 @@
 #import <UCloudRtcSdk_ios/UCloudRtcLog.h>
 #import <UCloudRtcSdk_ios/UCloudRtcStreamVolume.h>
 #import <UCloudRtcSdk_ios/UCloudRtcRecordConfig.h>
-
+#import <UCloudRtcSdk_ios/UCloudRtcMixConfig.h>

@@ -253,16 +253,21 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 
 /**
  @brief 退出房间
+
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)leaveRoom;
+- (int)leaveRoom;
 
 /**
  @brief 手动发布
+ 
  */
 - (void)publish;
 
+
 /**
  @brief 取消发布
+ 
  */
 - (void)unPublish;
 
@@ -286,53 +291,61 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
  @brief 设置本地的预览画面
 
  @param preview 本地画面即将渲染到的目标视图
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)setLocalPreview:(UIView *_Nonnull)preview;
+- (int)setLocalPreview:(UIView *_Nonnull)preview;
 
 
 /**
  @brief 设置本地预览视频视图的模式
 
  @param previewMode 本地画面渲染模式
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)setPreviewMode:(UCloudRtcVideoViewMode)previewMode;
+- (int)setPreviewMode:(UCloudRtcVideoViewMode)previewMode;
 
 /**
  @brief 设置远程视频视图的模式
 
  @param remoteViewMode 远程画面渲染模式
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)setRemoteViewMode:(UCloudRtcVideoViewMode)remoteViewMode;
+- (int)setRemoteViewMode:(UCloudRtcVideoViewMode)remoteViewMode;
 
 
 /**
  @brief 切换本地摄像头
+ 
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)switchCamera;
+- (int)switchCamera;
 
 
 /**
  @brief 设置本地流是否静音
 
  @param isMute 是否禁用
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)setMute:(BOOL)isMute;
+- (int)setMute:(BOOL)isMute;
 
 
 /**
  @brief 设置本地流是否禁用视频
 
  @param isOpen 是否开启
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)openCamera:(BOOL)isOpen;
+- (int)openCamera:(BOOL)isOpen;
 
 
 /**
  @brief 开启免提
 
  @param isOpen 是否开启
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)openLoudspeaker:(BOOL)isOpen;
+- (int)openLoudspeaker:(BOOL)isOpen;
 
 
 /**
@@ -340,8 +353,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 
  @param stream 目标远端流
  @param isMute 是否禁用视频
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)setRemoteStream:(UCloudRtcStream *_Nonnull)stream muteVideo:(BOOL)isMute;
+- (int)setRemoteStream:(UCloudRtcStream *_Nonnull)stream muteVideo:(BOOL)isMute;
 
 
 /**
@@ -349,34 +363,39 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 
  @param stream 目标远端流
  @param isMute 是否禁用音频频
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)setRemoteStream:(UCloudRtcStream *_Nonnull)stream muteAudio:(BOOL)isMute;
+- (int)setRemoteStream:(UCloudRtcStream *_Nonnull)stream muteAudio:(BOOL)isMute;
 
 
 /**
  @brief 开始视频录制
-
+ 
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)startRecord:(UCloudRtcRecordConfig *_Nonnull)recordConfig;
+- (int)startRecord:(UCloudRtcRecordConfig *_Nonnull)recordConfig;
 
 /**
  @brief 停止视频录制
  
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)stopRecord;
+- (int)stopRecord;
 
 /**
  @brief 本地视频录制
  
  @discussion 会根据你选择的视频分辨率进行录制，默认是 480 X 360
+ @return 0: 方法调用成功  < 0: 方法调用失败
  */
-- (void)startNativeRecord;
+- (int)startNativeRecord;
 
 /**
 @brief 停止本地录制
 
+@return 0: 方法调用成功  < 0: 方法调用失败
 */
-- (void)stopNativeRecord;
+- (int)stopNativeRecord;
 
 
 
@@ -386,25 +405,32 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
  
 @param path 文件路径
 @param repeat 是否循环播放
+@return 0: 方法调用成功  < 0: 方法调用失败
 */
-- (void)startMediaPlay:(NSString *_Nonnull)path repeat:(BOOL)repeat;
+- (int)startMediaPlay:(NSString *_Nonnull)path repeat:(BOOL)repeat;
 
 
 /**
 @brief 停止网络音频播放
+ 
+@return 0: 方法调用成功  < 0: 方法调用失败
 */
-- (void)stopMediaPlay;
+- (int)stopMediaPlay;
 
 /**
 @brief 暂停网络音频播放
+ 
+@return 0: 方法调用成功  < 0: 方法调用失败
 */
-- (void)pauseMediaPlay;
+- (int)pauseMediaPlay;
 
 
 /**
 @brief 恢复网络音频播放
+ 
+@return 0: 方法调用成功  < 0: 方法调用失败
 */
-- (void)resumeMediaPlay;
+- (int)resumeMediaPlay;
 
 /**
 @brief 获取音效文件播放音量
@@ -417,7 +443,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 @brief 设置音效文件播放音量
  
 @param volume 音效文件播放音量
-@return 设置结果
+@return 设置结果 0: 方法调用成功  < 0: 方法调用失败
 */
 - (int)setMediaVolume:(double)volume;
 
@@ -425,15 +451,15 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 @brief 发送自定义消息
  
 @param customCommand 自定义消息内容
+@return 0: 方法调用成功  < 0: 方法调用失败
 */
-- (void)sendCustomCommand:(NSString *_Nonnull)customCommand;
+- (int)sendCustomCommand:(NSString *_Nonnull)customCommand;
 
 
 /**
  @brief 停止音频播放
  
  @discussion 停止的是远端音频播放
- 
  */
 - (void)stopAudioPlay;
 
@@ -459,4 +485,13 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
  @discussion 和上面的`- (void)stopAVCollectionAndPaly`方法对应，当app重新进入活跃状态时，调用该方法恢复本地音视频的采集和远端音频的播放。
  */
 - (void)startAVCollectionAndPaly;
+
+
+/**
+@brief 销毁引擎
+ 
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)distory;
+
 @end
