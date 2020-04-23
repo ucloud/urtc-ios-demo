@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/UCloudRtcEngine.h</key>
 		<data>
-		krOy5VZpjZ0yxuR+jI/Xs3gdj4I=
+		eopA1ZGOhQyj8et+IRC3y9rrYKs=
 		</data>
 		<key>Headers/UCloudRtcError.h</key>
 		<data>
@@ -18,7 +18,11 @@
 		</data>
 		<key>Headers/UCloudRtcMixConfig.h</key>
 		<data>
-		FX6fnv4LRyQKEx7jJTgpLMT5HyY=
+		JSNzJs19Wy50/OeHTBVRwHq40IE=
+		</data>
+		<key>Headers/UCloudRtcMixStopConfig.h</key>
+		<data>
+		qd9go/NIqB2aNPMKMdUoGDpVwMY=
 		</data>
 		<key>Headers/UCloudRtcRecordConfig.h</key>
 		<data>
@@ -26,7 +30,7 @@
 		</data>
 		<key>Headers/UCloudRtcSdk_ios.h</key>
 		<data>
-		Eo+cJreqUDLsLBQLhtO3f1dd+Js=
+		xIfQ7V9FY0cFyTJUkDn7FdVtm5Q=
 		</data>
 		<key>Headers/UCloudRtcStream.h</key>
 		<data>
@@ -42,7 +46,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/JCNbcxn/DjmaKNQDzopcVt+tu4=
+		cTW9hu3f0ri4sReKhGdtNS/7tfI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -59,11 +63,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			krOy5VZpjZ0yxuR+jI/Xs3gdj4I=
+			eopA1ZGOhQyj8et+IRC3y9rrYKs=
 			</data>
 			<key>hash2</key>
 			<data>
-			4oRDttob7Hg3IKmBUxLBUuoc7wThf7hcVIn/UkrILhk=
+			gUlNZSmp37VE6OQT5gp5zWVsNItMIsFIPIdlrDGOH+M=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcError.h</key>
@@ -92,11 +96,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FX6fnv4LRyQKEx7jJTgpLMT5HyY=
+			JSNzJs19Wy50/OeHTBVRwHq40IE=
 			</data>
 			<key>hash2</key>
 			<data>
-			gzyZdYo4ppNhwS/clSs7aEHXpvWKVp2+21VW+gIlD0k=
+			q7QNUEk51j2vQnYxhPoizXdhfsUZu02Nd89qHol4iRY=
+			</data>
+		</dict>
+		<key>Headers/UCloudRtcMixStopConfig.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qd9go/NIqB2aNPMKMdUoGDpVwMY=
+			</data>
+			<key>hash2</key>
+			<data>
+			bJV2rKGfAvzlBKsQD9JZ51VHarfB+/ZyOfIR4AUqGvQ=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcRecordConfig.h</key>
@@ -114,11 +129,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Eo+cJreqUDLsLBQLhtO3f1dd+Js=
+			xIfQ7V9FY0cFyTJUkDn7FdVtm5Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			Pd3GFh1iLWoJi5KpAxG9DsSEEKinh5Zd+qWkfKJhD3Y=
+			aOgxeIYt0Zz0xtE+x7mVPJOSoAmzEg54BXNx1PryvX8=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcStream.h</key>

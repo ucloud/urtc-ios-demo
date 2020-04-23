@@ -646,6 +646,46 @@
                                     <action selector="mediaPlay:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="1l4-Kq-P5g"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbn-3C-1IX">
+                                <rect key="frame" x="20" y="216" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="开始转推/录制"/>
+                                <connections>
+                                    <action selector="startMix:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="Qr6-ij-RxP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6b-W8-tDt">
+                                <rect key="frame" x="20" y="270" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="停止转推/录制"/>
+                                <connections>
+                                    <action selector="stopMix:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="K0U-6P-lde"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xl-Su-n4g">
+                                <rect key="frame" x="20" y="312" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="查询转推/录制"/>
+                                <connections>
+                                    <action selector="queryMix:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="QZ7-NJ-79D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgB-nH-Mme">
+                                <rect key="frame" x="20" y="406" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="删除转推/录制"/>
+                                <connections>
+                                    <action selector="deleteMix:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="1vJ-nC-RYb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSH-Qp-qGz">
+                                <rect key="frame" x="20" y="361" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="添加转推/录制"/>
+                                <connections>
+                                    <action selector="addMixStream:" destination="Cd5-wo-8pJ" eventType="touchUpInside" id="usC-9k-1H9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

@@ -25,9 +25,9 @@ typedef NS_ENUM(NSInteger)
 
 typedef NS_ENUM(NSInteger)
 {
-    UCloudRtcEngine_StreamProfileUpload = 0,            // 上传权限
-    UCloudRtcEngine_StreamProfileDownload = 1,          //下载权限
-    UCloudRtcEngine_StreamProfileAll= 2,               //所有权限 默认值
+    UCloudRtcEngine_StreamProfileUpload = 0,// 上传权限
+    UCloudRtcEngine_StreamProfileDownload = 1,//下载权限
+    UCloudRtcEngine_StreamProfileAll= 2,//所有权限 默认值
     
 } UCloudRtcEngineStreamProfile;
 
@@ -35,13 +35,13 @@ typedef NS_ENUM(NSInteger)
 typedef NS_ENUM(NSInteger)
 {
     
-    UCloudRtcEngine_VideoProfile_180P = 0,            // 240*180  100 --- 200 15
-    UCloudRtcEngine_VideoProfile_360P_1 = 1,          // 480*360  100 -- 300 15   默认值
-    UCloudRtcEngine_VideoProfile_360P_2 = 2,          // 640*360  100 -- 400 20
+    UCloudRtcEngine_VideoProfile_180P = 0,// 240*180  100 --- 200 15
+    UCloudRtcEngine_VideoProfile_360P_1 = 1,// 480*360  100 -- 300 15   默认值
+    UCloudRtcEngine_VideoProfile_360P_2 = 2,// 640*360  100 -- 400 20
     
-    UCloudRtcEngine_VideoProfile_480P = 3,           // 640*480  100 -- 500 20
-    UCloudRtcEngine_VideoProfile_720P = 4,           // 1280*720 300 -- 1000 30
-//    UCloudRtcEngine_VideoProfile_1080P = 5,          // 1920*1080 500 -- 1000 30
+    UCloudRtcEngine_VideoProfile_480P = 3,// 640*480  100 -- 500 20
+    UCloudRtcEngine_VideoProfile_720P = 4,// 1280*720 300 -- 1000 30
+//    UCloudRtcEngine_VideoProfile_1080P = 5,// 1920*1080 500 -- 1000 30
     
 } UCloudRtcEngineVideoProfile;
 
@@ -81,71 +81,130 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 };
 
 
-@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig;
+@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig,UCloudRtcMixConfig,UCloudRtcMixStopConfig;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
+/**
+@brief 退出房间的回调
 
-///**加入房间成功*/
-//- (void)uCloudRtcEngineDidJoinRoom:(BOOL)succeed streamList:(NSMutableArray<UCloudRtcStream *> * _Nonnull)canSubStreamList;
-
-/**退出房间*/
+@discussion 该方法是在调用退出房间：-leaveRoom方法后会收到的d回调通知。
+*/
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *_Nonnull)manager;
 
-/**与房间的连接断开*/
-- (void)uCloudRtcEngineDisconnectRoom:(UCloudRtcEngine *_Nonnull)manager;
 
-
-/**发布状态的变化*/
+/**
+@brief 发布状态的变化
+@param publishState 发布状态：UCloudRtcEnginePublishState
+@discussion 该方法是本地流发布过程中,发布状态变化的回调。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState;
 
-/**收到远程流*/
+/**
+@brief 收到远程流
+@param stream 远端流对象
+@discussion 当成功订阅远程流时会收到该回调。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveRemoteStream:(UCloudRtcStream *_Nonnull)stream;
 
-/**远程流断开(本地移除对应的流)*/
+/**
+@brief 远程流断开
+@param stream 远端流对象
+@discussion 当取消订阅远程流或远程流退出房间时会收到该回调。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didRemoveStream:(UCloudRtcStream *_Nonnull)stream;
 
 
-/**新成员加入*/
+/**
+@brief 新成员加入
+@param memberInfo 新成员信息
+@discussion 当新用户加入房间会收到该回调 注：可能同时收到该回调和可订阅流加入的回调。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager memberDidJoinRoom:(NSDictionary *_Nonnull)memberInfo;
 
-/**成员退出*/
+/**
+@brief 成员退出
+@param memberInfo 成员信息
+@discussion 当用户退出房间会收到该回调 注：可能同时收到该回调和可订阅流退出的回调。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager memberDidLeaveRoom:(NSDictionary *_Nonnull)memberInfo;
 
-/**非自动订阅模式下 可订阅流加入*/
+/**
+@brief 手动订阅模式下 可订阅流加入
+@param stream 流对象
+@discussion 手动订阅模式下,当有新的流加入房间会收到该回调 注：该流需要客户端主动发起订阅。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel newStreamHasJoinRoom:(UCloudRtcStream *_Nonnull)stream;
 
-///**非自动订阅模式下 可订阅流退出*/
+/**
+@brief 手动订阅模式下 可订阅流退出
+@param stream 流对象
+@discussion 手动订阅模式下,当有未订阅过的流退出房间会收到该回调。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel streamHasLeaveRoom:(UCloudRtcStream *_Nonnull)stream;
 
-///**非自动订阅模式下 订阅成功的回调  已废弃*/
-//- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didSubscribe:(UCloudRtcStream *_Nonnull)stream;
-//
-///**非自动订阅模式下 取消订阅成功的回调  已废弃*/
-//- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel didCancleSubscribe:(UCloudRtcStream *_Nonnull)stream;
-
-/**流 状态回调*/
+/**
+@brief 流状态回调
+@param status 流状态信息
+@discussion 流状态信息包含音频轨道和视频轨道的数据信息。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo*> *_Nonnull)status;
 
-/**流 连接失败*/
+/***/
+/**
+@brief 流连接失败的回调
+@param streamId 流ID
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager streamConnectionFailed:(NSString *_Nonnull)streamId;
 
-/**错误的回调*/
+/**
+@brief 错误的回调
+@param error 错误信息
+@discussion 当方式错误是会收到该回调。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager error:(UCloudRtcError *_Nonnull)error;
 
-/**开始视频录制的回调*/
+/**
+@brief 开始视频录制的回调
+@param recordResponse 回调信息
+@discussion 开启云端录制服务成功时会收到该回调，回调信息里面包含录制生成的视频文件的文件名。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager startRecord:(NSDictionary *_Nonnull)recordResponse;
 
-/**收到自定义消息的回调*/
+/**
+@brief 收到自定义消息的回调
+@param fromUserID 发送自定义消息的用户ID
+@param content 消息内容
+@discussion 接收到服务端转发过来的自定义消息。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveCustomCommand:(NSString *_Nonnull)fromUserID  content:(NSString *_Nonnull)content;
 
-/**远端视频关闭的回调*/
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel remoteVideoMute:(BOOL)remoteVideoMute;
+/**
+@brief 远端音视频禁用或打开的回调
+@param remoteMuteInfo 回调信息:用户ID、是否禁用、轨道类型
+@discussion 当远端用户禁用/打开摄像头/麦克风时会收到该回调。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel remoteMute:(NSDictionary *_Nonnull)remoteMuteInfo;
 
-/**媒体播放器播放结束的回调*/
+/**
+@brief 媒体播放器播放结束的回调
+@param isEnd 是否播放结束
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)channel mediaPlayerOnPlayEnd:(BOOL)isEnd;
 
-/**网络连接状态变化的回调*/
+/**
+@brief 网络连接状态变化
+@param connectState UCloudRtcConnectState 网络连接状态
+@discussion 当网络连接状态发生变化时会收到该回调。
+*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager connectState:(UCloudRtcConnectState)connectState;
+
+/**
+@brief 与房间的连接断开
+@discussion 当连接断开时会收到该回调。
+*/
+- (void)uCloudRtcEngineDisconnectRoom:(UCloudRtcEngine *_Nonnull)manager;
+
+
 @end
 
 @interface UCloudRtcEngine : NSObject
@@ -196,7 +255,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 //本地视频录制参数
 @property (nonatomic, assign) BOOL openNativeRecord;//是否开启本地录制
 
-@property (nonatomic, copy) NSString *outputpath;//混音文件路径
+@property (nonatomic, copy) NSString *_Nullable outputpath;//混音文件路径
 
 /**断网重连次数 默认为：10次 */
 @property (nonatomic, assign) NSInteger reConnectTimes;
@@ -213,7 +272,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 
 
 /**
- @brief 初始化UCloudRtcEngine
+ @brief 初始化UCloudRtcEngine  已弃用
  @param userId 当前用户的ID
  @param appId 分配得到的应用ID
  @param roomId 即将加入的房间ID
@@ -233,7 +292,7 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 
 
 /**
- @brief 加入房间
+ @brief 加入房间 已弃用
 
  @param completion completion
  */
@@ -493,5 +552,47 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 @return 0: 方法调用成功  < 0: 方法调用失败
 */
 - (int)distory;
+
+
+
+/**转推/录制/转推和录制/更新设置相关方法*/
+/**
+@brief 开始
+
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)startMix:(UCloudRtcMixConfig *_Nonnull)mixConfig;
+
+/**
+@brief 停止
+
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)stopMix:(UCloudRtcMixStopConfig *_Nonnull)mixConfig;
+
+
+/**
+@brief 查询
+
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)queryMix;
+
+
+/**
+@brief 添加流
+
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)addMixStream:(NSArray *_Nonnull)streams;
+
+
+/**
+@brief 删除流
+
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)deleteMixStream:(NSArray *_Nonnull)streams;
+
 
 @end

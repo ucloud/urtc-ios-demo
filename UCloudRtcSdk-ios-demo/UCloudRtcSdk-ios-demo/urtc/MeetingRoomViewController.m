@@ -84,6 +84,7 @@ static NSInteger kHorizontalCount = 3;
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
     //加入房间
     [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
+        [self.manager startAVCollectionAndPaly];
     }];
 }
 
@@ -221,6 +222,7 @@ static NSInteger kHorizontalCount = 3;
         [self showAlertWithMessage:@"您确定要退出房间吗" Sure:^{
             [self.manager leaveRoom];
             [self.manager stopMediaPlay];
+            [self.manager stopAVCollectionAndPaly];
             [self dismissViewControllerAnimated:YES completion:^{}];
         }];
 }
@@ -324,7 +326,7 @@ static NSInteger kHorizontalCount = 3;
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager newStreamHasJoinRoom:(UCloudRtcStream *)stream{
     [self.view makeToast:@"有新的流可以订阅" duration:1.5 position:CSToastPositionCenter];
     [canSubstreamList addObject:stream];
-    [self.manager subscribeMethod:stream];
+//    [self.manager subscribeMethod:stream];
 }
 //非自动订阅模式 新流退出会收到该回调
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager streamHasLeaveRoom:(UCloudRtcStream *)stream{
@@ -346,6 +348,9 @@ static NSInteger kHorizontalCount = 3;
     NSLog(@"远端流：%@ 音频音量为：%d",uId,volume);
 }
 
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)channel remoteMute:(NSDictionary *)remoteMuteInfo{
+    NSLog(@"remoteMuteInfo==%@",remoteMuteInfo);
+}
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *)manager {
     [self.view makeToast:@"退出房间" duration:1.5 position:CSToastPositionCenter];
     [self dismissViewControllerAnimated:YES completion:^{}];
@@ -371,8 +376,6 @@ static NSInteger kHorizontalCount = 3;
             self.isConnected = YES;
             [self.view makeToast:@"发布成功" duration:1.5 position:CSToastPositionCenter];
             [self.bottomButton setTitle:@"发布成功" forState:UIControlStateNormal];
-//            [self.manager openCamera:YES];
-//            [self.manager openCamera:NO];
         }
             break;
         case UCloudRtcEnginePublishStateRepublishing: {
@@ -593,4 +596,60 @@ static NSInteger kHorizontalCount = 3;
 - (void)uCloudRtcEngine:(UCloudRtcEngine *)channel mediaPlayerOnPlayEnd:(BOOL)isEnd{
     NSLog(@"音频播放结束");
 }
+
+#pragma mark 旁路推流相关接口
+//开始旁路推流
+- (IBAction)startMix:(id)sender{
+    UCloudRtcMixConfig *mixConfig = [UCloudRtcMixConfig new];
+    mixConfig.type = 1;
+    mixConfig.streams = @[];
+    mixConfig.pushurl = @[@"rtmp://rtcpush.ugslb.com/rtclive/URtc-h4r1txxy12111151yketwz111"];
+    mixConfig.layout = 1;
+    mixConfig.layouts = @[];
+    mixConfig.bgColor = @{@"r": @200,@"g": @100, @"b": @50};
+    mixConfig.bitrate = 600;
+    mixConfig.framerate = 50;
+    mixConfig.videocodec = @"H264";
+    mixConfig.qualitylevel = @"CB";
+    mixConfig.audiocodec = @"aac";
+    mixConfig.mainviewtype = 1;
+    mixConfig.width = 640;
+    mixConfig.height = 720;
+    mixConfig.bucket = @"urtc-test";
+    mixConfig.region =@"cn-bj";
+    mixConfig.watertype = 1;
+    mixConfig.waterpos = 1;
+    mixConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";
+    mixConfig.mimetype = 0;
+    mixConfig.addstreammode = 1;
+    [self.manager startMix:mixConfig];
+}
+
+//结束旁路推流
+- (IBAction)stopMix:(id)sender{
+    UCloudRtcMixStopConfig *mixStopConfig = [UCloudRtcMixStopConfig new];
+    mixStopConfig.type = 1;
+    mixStopConfig.pushurl = @[@"rtmp://rtcpush.ugslb.com/rtclive/URtc-h4r1txxy12111151yketwz111"];
+    [self.manager stopMix: mixStopConfig];
+}
+
+//查询旁路推流
+- (IBAction)queryMix:(id)sender{
+    [self.manager queryMix];
+    
+}
+
+//添加旁路推流
+- (IBAction)addMixStream:(id)sender{
+    NSArray *streams = @[];
+    [self.manager addMixStream:streams];
+}
+
+//删除旁路推流
+- (IBAction)deleteMix:(id)sender{
+    NSArray *streams = @[];
+    [self.manager deleteMixStream:streams];
+}
+
+
 @end

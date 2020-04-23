@@ -7,62 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-@interface UCloudRtcMixSubConfig : NSObject
-
-//如果type选1或3需要指定转推地址
-@property (nonatomic, copy) NSString *pushurl;
-
-//1 流式(均分)布局, 2 讲课模式，主讲人占大部分屏幕，其他人小屏居于右侧或底部 3 自定义布局 4 定制讲课模式 5 定制均分模式
-@property (nonatomic, assign) NSInteger layout;
-
-//可选多布局,如果layouts已经有值会忽略layout的设置，update的时候可以使用layout指定更新到哪种布局  [4,5,6]
-@property (nonatomic, strong) NSArray *layouts;
-
-//如果layout选3，自定义布局填在custom里，格式参照RFC5707 Media Server Markup Language (MSML)
-/*
- [
-     {
-         "region": [
-             {
-                 "id": "1",
-                 "shape": "rectangle",
-                 "area": {
-                     "left": "0",
-                     "top": "0",
-                     "width": "1",
-                     "height": "1"
-                 }
-             }
-         ]
-     },
-     {
-         "region": [
-             {
-                 "id": "1",
-                 "shape": "rectangle",
-                 "area": {
-                     "left": "0",
-                     "top": "1/4",
-                     "width": "1/2",
-                     "height": "1/2"
-                 }
-             },
-             {
-                 "id": "2",
-                 "shape": "rectangle",
-                 "area": {
-                     "left": "1/2",
-                     "top": "1/4",
-                     "width": "1/2",
-                     "height": "1/2"
-                 }
-             }
-         ]
-     }
-]
-*/
-@property (nonatomic, strong) NSArray *custom;
-@end
 
 @interface UCloudRtcMixConfig : NSObject
 
@@ -72,6 +16,18 @@
 //streams 如果指定了用户，则只添加该用户的指定流，新加入的流处理由addstreammode参数决定 [{"user_id": "u616","media_type": 1 //1 摄像头  2 桌面},{}]
 @property (nonatomic, strong) NSArray *streams;
 
+//如果type选1或3需要指定转推地址
+@property (nonatomic, copy) NSArray *pushurl;
+
+//1 流式(均分)布局, 2 讲课模式，主讲人占大部分屏幕，其他人小屏居于右侧或底部 3 自定义布局 4 定制讲课模式 5 定制均分模式
+@property (nonatomic, assign) NSInteger layout;
+
+//可选多布局,如果layouts已经有值会忽略layout的设置，update的时候可以使用layout指定更新到哪种布局 [4,5,6]
+@property (nonatomic, strong) NSArray *layouts;
+  
+//如果layout选3，自定义布局填在custom里，格式参照RFC5707 Media Server Markup Language (MSML)
+@property (nonatomic, strong) NSArray *custom;
+           
 //bgColor :{"r": 0,"g": 0, "b": 0}
 @property (nonatomic, strong) NSDictionary *bgColor;
 
