@@ -70,6 +70,17 @@ typedef NS_ENUM(NSInteger, UCloudRtcConnectState) {
     UCloudRtcConnectStateReConnected//重连成功
 };
 
+/** 网络质量*/
+typedef NS_ENUM(NSInteger, UCloudRtcNetworkQuality) {
+    UCloudRtcNetworkQualityUnknown,     // 网络质量未知
+    UCloudRtcNetworkQualityExcellent,   // 网络质量优秀
+    UCloudRtcNetworkQualityGood,        // 网络质量良好
+    UCloudRtcNetworkQualityPoor,        // 网络质量一般
+    UCloudRtcNetworkQualityPoorer,      // 网络质量较差
+    UCloudRtcNetworkQualityPoorest,     // 网络质量糟糕
+    UCloudRtcNetworkQualityDisconnect   // 网络连接已断开
+};
+
 /** 本地预览视频视图的模式 */
 typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
     /** 等比缩放，可能有黑边 */
@@ -148,6 +159,15 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 @discussion 流状态信息包含音频轨道和视频轨道的数据信息。
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo*> *_Nonnull)status;
+
+/**
+@brief 通话中每个用户的网络上下行质量报告回调
+@param userId       用户 ID
+@param txQuality 该用户的上行网络质量
+@param rxQuality 该用户的下行网络质量
+@discussion 流状态信息包含音频轨道和视频轨道的数据信息。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager networkQuality:(NSString *)userId txQuality:(UCloudRtcNetworkQuality)txQuality rxQuality:(UCloudRtcNetworkQuality)rxQuality;
 
 /***/
 /**
@@ -263,6 +283,8 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 /**重连时间间隔，默认60秒钟*/
 @property(nonatomic, assign) NSInteger overTime;
 
+/**是否开启网络质量监控，默认开启*/
+@property(nonatomic, assign) BOOL isTrackNetQuality;
 /**
  @brief 返回SDK当前版本号
 

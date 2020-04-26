@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">API </a>
+				<a href="../index.html">UCloudRtcSdk_ios </a>
 			</h1>
 
 			<p id="developer-home">
@@ -70,6 +70,12 @@
 		
 		<option value="//api/name/isOnlyAudio">isOnlyAudio</option>
 		
+		<option value="//api/name/isTrackNetQuality">isTrackNetQuality</option>
+		
+		<option value="//api/name/overTime">overTime</option>
+		
+		<option value="//api/name/reConnectTimes">reConnectTimes</option>
+		
 		<option value="//api/name/remoteVideoViewMode">remoteVideoViewMode</option>
 		
 		<option value="//api/name/roomType">roomType</option>
@@ -100,6 +106,12 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/addMixStream:">- addMixStream:</option>
+		
+		<option value="//api/name/deleteMixStream:">- deleteMixStream:</option>
+		
+		<option value="//api/name/distory">- distory</option>
+		
 		<option value="//api/name/getMediaVolume">- getMediaVolume</option>
 		
 		<option value="//api/name/initWithAppID:appKey:completionBlock:">- initWithAppID:appKey:completionBlock:</option>
@@ -119,6 +131,8 @@
 		<option value="//api/name/pauseMediaPlay">- pauseMediaPlay</option>
 		
 		<option value="//api/name/publish">- publish</option>
+		
+		<option value="//api/name/queryMix">- queryMix</option>
 		
 		<option value="//api/name/resumeMediaPlay">- resumeMediaPlay</option>
 		
@@ -142,6 +156,8 @@
 		
 		<option value="//api/name/signalingChannel:error:">- signalingChannel:error:</option>
 		
+		<option value="//api/name/signalingChannel:networkQuality:txQuality:rxQuality:">- signalingChannel:networkQuality:txQuality:rxQuality:</option>
+		
 		<option value="//api/name/signalingChannel:newStreamHasJoinRoom:">- signalingChannel:newStreamHasJoinRoom:</option>
 		
 		<option value="//api/name/signalingChannel:streamHasLeaveRoom:">- signalingChannel:streamHasLeaveRoom:</option>
@@ -152,9 +168,11 @@
 		
 		<option value="//api/name/startMediaPlay:repeat:">- startMediaPlay:repeat:</option>
 		
-		<option value="//api/name/startNativeRecord:">- startNativeRecord:</option>
+		<option value="//api/name/startMix:">- startMix:</option>
 		
-		<option value="//api/name/startNativeReord">- startNativeReord</option>
+		<option value="//api/name/startNativeRecord">- startNativeRecord</option>
+		
+		<option value="//api/name/startNativeRecord:">- startNativeRecord:</option>
 		
 		<option value="//api/name/startRecord:">- startRecord:</option>
 		
@@ -163,6 +181,8 @@
 		<option value="//api/name/stopAudioPlay">- stopAudioPlay</option>
 		
 		<option value="//api/name/stopMediaPlay">- stopMediaPlay</option>
+		
+		<option value="//api/name/stopMix:">- stopMix:</option>
 		
 		<option value="//api/name/stopNativeRecord">- stopNativeRecord</option>
 		
@@ -772,6 +792,144 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/reConnectTimes" title="reConnectTimes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reConnectTimes">&nbsp;&nbsp;reConnectTimes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>断网重连次数 默认为：10次</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger reConnectTimes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>断网重连次数 默认为：10次</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overTime" title="overTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overTime">&nbsp;&nbsp;overTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>重连时间间隔，默认60秒钟</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger overTime</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>重连时间间隔，默认60秒钟</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isTrackNetQuality" title="isTrackNetQuality"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isTrackNetQuality">&nbsp;&nbsp;isTrackNetQuality</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>是否开启网络质量监控，默认开启</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isTrackNetQuality</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>是否开启网络质量监控，默认开启</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/currentVersion" title="currentVersion"></a>
 	<h3 class="method-title"><code><a href="#//api/name/currentVersion">+&nbsp;currentVersion</a></code>
 </h3>
@@ -829,7 +987,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>初始化UCloudRtcEngine</p>
+				<p>初始化UCloudRtcEngine  已弃用</p>
 			</div>
 			
 		    
@@ -970,7 +1128,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>加入房间</p>
+				<p>加入房间 已弃用</p>
 			</div>
 			
 		    
@@ -1096,11 +1254,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)leaveRoom</code></div>
+			<div class="method-subsection method-declaration"><code>- (int)leaveRoom</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1325,7 +1488,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setLocalPreview:(UIView *_Nonnull)<em>preview</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)setLocalPreview:(UIView *_Nonnull)<em>preview</em></code></div>
 
 		    
 			
@@ -1342,6 +1505,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1378,7 +1546,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setPreviewMode:(UCloudRtcVideoViewMode)<em>previewMode</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)setPreviewMode:(UCloudRtcVideoViewMode)<em>previewMode</em></code></div>
 
 		    
 			
@@ -1395,6 +1563,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1431,7 +1604,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setRemoteViewMode:(UCloudRtcVideoViewMode)<em>remoteViewMode</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)setRemoteViewMode:(UCloudRtcVideoViewMode)<em>remoteViewMode</em></code></div>
 
 		    
 			
@@ -1448,6 +1621,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1484,11 +1662,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)switchCamera</code></div>
+			<div class="method-subsection method-declaration"><code>- (int)switchCamera</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1525,7 +1708,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setMute:(BOOL)<em>isMute</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)setMute:(BOOL)<em>isMute</em></code></div>
 
 		    
 			
@@ -1542,6 +1725,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1578,7 +1766,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)openCamera:(BOOL)<em>isOpen</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)openCamera:(BOOL)<em>isOpen</em></code></div>
 
 		    
 			
@@ -1595,6 +1783,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1631,7 +1824,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)openLoudspeaker:(BOOL)<em>isOpen</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)openLoudspeaker:(BOOL)<em>isOpen</em></code></div>
 
 		    
 			
@@ -1648,6 +1841,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1684,7 +1882,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setRemoteStream:(UCloudRtcStream *_Nonnull)<em>stream</em> muteVideo:(BOOL)<em>isMute</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)setRemoteStream:(UCloudRtcStream *_Nonnull)<em>stream</em> muteVideo:(BOOL)<em>isMute</em></code></div>
 
 		    
 			
@@ -1706,6 +1904,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1742,7 +1945,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setRemoteStream:(UCloudRtcStream *_Nonnull)<em>stream</em> muteAudio:(BOOL)<em>isMute</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)setRemoteStream:(UCloudRtcStream *_Nonnull)<em>stream</em> muteAudio:(BOOL)<em>isMute</em></code></div>
 
 		    
 			
@@ -1764,6 +1967,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1800,11 +2008,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)startRecord:(UCloudRtcRecordConfig *_Nonnull)<em>recordConfig</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)startRecord:(UCloudRtcRecordConfig *_Nonnull)<em>recordConfig</em></code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1841,11 +2054,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)stopRecord</code></div>
+			<div class="method-subsection method-declaration"><code>- (int)stopRecord</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1866,8 +2084,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/startNativeReord" title="startNativeReord"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startNativeReord">&ndash;&nbsp;startNativeReord</a></code>
+	<a name="//api/name/startNativeRecord" title="startNativeRecord"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startNativeRecord">&ndash;&nbsp;startNativeRecord</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1882,11 +2100,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)startNativeReord</code></div>
+			<div class="method-subsection method-declaration"><code>- (int)startNativeRecord</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1928,11 +2151,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)stopNativeRecord</code></div>
+			<div class="method-subsection method-declaration"><code>- (int)stopNativeRecord</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -1969,7 +2197,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)startMediaPlay:(NSString *_Nonnull)<em>path</em> repeat:(BOOL)<em>repeat</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)startMediaPlay:(NSString *_Nonnull)<em>path</em> repeat:(BOOL)<em>repeat</em></code></div>
 
 		    
 			
@@ -1991,6 +2219,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -2027,11 +2260,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)stopMediaPlay</code></div>
+			<div class="method-subsection method-declaration"><code>- (int)stopMediaPlay</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -2068,11 +2306,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)pauseMediaPlay</code></div>
+			<div class="method-subsection method-declaration"><code>- (int)pauseMediaPlay</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -2109,11 +2352,16 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)resumeMediaPlay</code></div>
+			<div class="method-subsection method-declaration"><code>- (int)resumeMediaPlay</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -2216,7 +2464,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>设置结果</p>
+				<p>设置结果 0: 方法调用成功  &lt; 0: 方法调用失败</p>
 			</div>
 			
 
@@ -2254,7 +2502,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)sendCustomCommand:(NSString *_Nonnull)<em>customCommand</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (int)sendCustomCommand:(NSString *_Nonnull)<em>customCommand</em></code></div>
 
 		    
 			
@@ -2271,6 +2519,11 @@
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
 			
 
 			
@@ -2459,6 +2712,282 @@
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>和上面的<code>- (void)</code>stopAVCollectionAndPaly<code></code>方法对应，当app重新进入活跃状态时，调用该方法恢复本地音视频的采集和远端音频的播放。</p>
 			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/distory" title="distory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/distory">&ndash;&nbsp;distory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>销毁引擎</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)distory</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startMix:" title="startMix:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startMix:">&ndash;&nbsp;startMix:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>开始</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)startMix:(UCloudRtcMixConfig *_Nonnull)<em>mixConfig</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopMix:" title="stopMix:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopMix:">&ndash;&nbsp;stopMix:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>停止</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)stopMix:(UCloudRtcMixStopConfig *_Nonnull)<em>mixConfig</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/queryMix" title="queryMix"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queryMix">&ndash;&nbsp;queryMix</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>查询</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)queryMix</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addMixStream:" title="addMixStream:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addMixStream:">&ndash;&nbsp;addMixStream:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>添加流</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)addMixStream:(NSArray *_Nonnull)<em>streams</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteMixStream:" title="deleteMixStream:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteMixStream:">&ndash;&nbsp;deleteMixStream:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>删除流</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)deleteMixStream:(NSArray *_Nonnull)<em>streams</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>0: 方法调用成功  &lt; 0: 方法调用失败</p>
+			</div>
+			
+
+			
+
 			
 
 			
@@ -2719,7 +3248,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>流 音量回调</p>
+				<p>流 状态回调</p>
 			</div>
 			
 		    
@@ -2736,7 +3265,80 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>流 音量回调</p>
+				<p>流 状态回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudRtcEngine.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/signalingChannel:networkQuality:txQuality:rxQuality:" title="signalingChannel:networkQuality:txQuality:rxQuality:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/signalingChannel:networkQuality:txQuality:rxQuality:">&ndash;&nbsp;signalingChannel:networkQuality:txQuality:rxQuality:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>网络质量回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)signalingChannel:(UCloudRtcSignalingChannel *)<em>channel</em> networkQuality:(NSString *)<em>userId</em> txQuality:(UCloudRtcNetworkQuality)<em>txQuality</em> rxQuality:(UCloudRtcNetworkQuality)<em>rxQuality</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>channel</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userId</code></th>
+						<td><p><a href="#//api/name/userId">userId</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>txQuality</code></th>
+						<td><p>上行</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rxQuality</code></th>
+						<td><p>下行</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>网络质量回调</p>
 			</div>
 			
 
@@ -2960,7 +3562,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 ucloud. All rights reserved. Updated: 2020-03-25</p>
+						<p class="copyright">Copyright &copy; 2020 ucloud. All rights reserved. Updated: 2020-04-26</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

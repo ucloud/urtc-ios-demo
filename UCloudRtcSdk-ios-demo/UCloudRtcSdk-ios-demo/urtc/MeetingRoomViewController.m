@@ -60,6 +60,7 @@ static NSInteger kHorizontalCount = 3;
     self.manager.engineMode = self.engineMode;
     //设置日志级别
     [self.manager.logger setLogLevel:UCloudRtcLogLevel_DEBUG];
+//    self.manager.isTrackNetQuality = YES;
     //混音相关配置
 //    NSString *file = [[NSBundle mainBundle] pathForResource:@"dy" ofType:@"mp3"];
 //    self.manager.fileMix = NO;
@@ -84,7 +85,6 @@ static NSInteger kHorizontalCount = 3;
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
     //加入房间
     [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
-        [self.manager startAVCollectionAndPaly];
     }];
 }
 
@@ -464,6 +464,62 @@ static NSInteger kHorizontalCount = 3;
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager connectState:(UCloudRtcConnectState)connectState{
     NSLog(@"重连成功");
     [self reloadVideos];
+}
+
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager networkQuality:(NSString *)userId txQuality:(UCloudRtcNetworkQuality)txQuality rxQuality:(UCloudRtcNetworkQuality)rxQuality {
+    NSString *txQualityStr;
+    NSString *rxQualityStr;
+    switch (txQuality) {
+        case UCloudRtcNetworkQualityUnknown:
+            txQualityStr = @"未知";
+            break;
+        case UCloudRtcNetworkQualityExcellent:
+            txQualityStr = @"优秀";
+            break;
+        case UCloudRtcNetworkQualityGood:
+            txQualityStr = @"良好";
+            break;
+        case UCloudRtcNetworkQualityPoor:
+            txQualityStr = @"一般";
+            break;
+        case UCloudRtcNetworkQualityPoorer:
+            txQualityStr = @"较差";
+            break;
+        case UCloudRtcNetworkQualityPoorest:
+            txQualityStr = @"糟糕";
+            break;
+        case UCloudRtcNetworkQualityDisconnect:
+            txQualityStr = @"连接断开";
+            break;
+        default:
+            break;
+    }
+   switch (rxQuality) {
+        case UCloudRtcNetworkQualityUnknown:
+            rxQualityStr = @"未知";
+            break;
+        case UCloudRtcNetworkQualityExcellent:
+            rxQualityStr = @"优秀";
+            break;
+        case UCloudRtcNetworkQualityGood:
+            rxQualityStr = @"良好";
+            break;
+        case UCloudRtcNetworkQualityPoor:
+            rxQualityStr = @"一般";
+            break;
+        case UCloudRtcNetworkQualityPoorer:
+            rxQualityStr = @"较差";
+            break;
+        case UCloudRtcNetworkQualityPoorest:
+            rxQualityStr = @"糟糕";
+            break;
+        case UCloudRtcNetworkQualityDisconnect:
+           txQualityStr = @"连接断开";
+           break;
+        default:
+            break;
+    }
+    NSLog(@"userId:%@, 上行网络质量:%@，下行网络质量:%@",userId, txQualityStr, rxQualityStr);
 }
 
 - (void)reloadVideos {

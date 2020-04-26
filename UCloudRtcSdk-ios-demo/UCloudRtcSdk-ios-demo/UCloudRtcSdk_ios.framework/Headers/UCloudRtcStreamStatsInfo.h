@@ -22,8 +22,10 @@
 @property (nonatomic, assign) NSInteger lost;
 @property (nonatomic, assign) NSInteger rtt;
 @property (nonatomic, assign) NSInteger height;
+@property (nonatomic, assign) NSInteger jitter;
 @property (nonatomic, assign) NSInteger delay;
 @property (nonatomic, strong) NSString *mime;
 @property (nonatomic, strong) NSString *codec;
 @property (nonatomic, strong) NSString *trackType;//区分音频h轨道 、视频轨道
+@property (nonatomic, strong) NSString *type;//区分ssrc：上行send、下行recv
 @end
