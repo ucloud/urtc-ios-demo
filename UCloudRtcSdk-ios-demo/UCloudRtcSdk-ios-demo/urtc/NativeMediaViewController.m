@@ -20,7 +20,7 @@
     [super viewDidLoad];
 //        self.videoUrl =  [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"];
         NSString *tmpDir = NSTemporaryDirectory();
-        self.videoUrl = [NSString stringWithFormat:@"%@record.mp4",tmpDir];
+        self.videoUrl = [NSString stringWithFormat:@"%@test.mp4",tmpDir];
 //            self.videoUrl = @"http://player.youku.com/embed/XMTI3NjA0MDk2MA==";
         NSLog(@"self.videoUrl==%@",self.videoUrl);
 

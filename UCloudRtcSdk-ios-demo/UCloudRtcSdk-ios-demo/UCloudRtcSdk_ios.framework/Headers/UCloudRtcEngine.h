@@ -90,7 +90,15 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
     /** 填充整个View */
     UCloudRtcVideoViewModeScaleToFill        = 2,
 };
-
+/** 本地预览视频视图镜像模式*/
+typedef NS_ENUM(NSUInteger, UCloudRtcVideoMirrorMode) {
+    /** 默认模式，根据系统处理*/
+    UCloudRtcVideoMirrorModeAuto = 0,
+    /** 打开镜像 */
+    UCloudRtcVideoMirrorModeEnabled = 1,
+    /** 关闭镜像 */
+    UCloudRtcVideoMirrorModeDisabled = 2,
+};
 
 @class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig,UCloudRtcMixConfig,UCloudRtcMixStopConfig;
 @protocol UCloudRtcEngineDelegate <NSObject>
@@ -285,6 +293,8 @@ typedef NS_ENUM(NSInteger,UCloudRtcVideoViewMode) {
 
 /**是否开启网络质量监控，默认开启*/
 @property(nonatomic, assign) BOOL isTrackNetQuality;
+/** 本地预览视图镜像模式 */
+@property(nonatomic, assign) UCloudRtcVideoMirrorMode mirrorMode;
 /**
  @brief 返回SDK当前版本号
 

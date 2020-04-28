@@ -297,7 +297,6 @@ static NSInteger kHorizontalCount = 3;
             [self.manager unPublish];
         }];
     } else {
-        [self.manager.localStream renderOnView:self.localView];
         [self.manager publish];
         self.bigScreenStream = self.manager.localStream;
     }
