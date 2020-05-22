@@ -489,8 +489,6 @@ typedef NS_ENUM(NSUInteger, UCloudRtcVideoMirrorMode) {
 - (int)stopNativeRecord;
 
 
-
-
 /**
 @brief 网络音频播放
  
@@ -626,5 +624,9 @@ typedef NS_ENUM(NSUInteger, UCloudRtcVideoMirrorMode) {
 */
 - (int)deleteMixStream:(NSArray *_Nonnull)streams;
 
+/**
+@brief 本地视频流截图
+*/
+- (void)captuerVideoImage:(void(^_Nullable)(UIImage *_Nullable))captureImage;
 
 @end

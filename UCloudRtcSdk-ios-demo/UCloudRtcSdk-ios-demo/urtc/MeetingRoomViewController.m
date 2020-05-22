@@ -595,13 +595,12 @@ static NSInteger kHorizontalCount = 3;
 
 
 - (void)getImageViewWithView:(UIView *)view{
-    
-    UIGraphicsBeginImageContext(view.frame.size);
-    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
-    UIImage *image =  UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    /// 保存到本地相册
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+    [self.manager captuerVideoImage:^(UIImage * _Nullable image) {
+        if (image) {
+            /// 保存到本地相册
+            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+        }
+    }];
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo{

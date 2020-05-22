@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    UCloudRtcStreamMediaTypeVideo,
+    UCloudRtcStreamMediaTypeScreen,
+} UCloudRtcStreamMediaType;
+
 @protocol UCloudRtcRenderDelegate <NSObject>
 /**
  远端视频渲染首帧通知
@@ -27,6 +32,7 @@
 @property (nonatomic, readonly) NSString *streamId;
 @property(nonatomic, readonly) NSString *userId;
 @property(nonatomic, assign) BOOL hasSubscribe;//是否被当前用户订阅
+@property(nonatomic, assign) UCloudRtcStreamMediaType mediaType;//流类型：音视频、桌面
 
 /**渲染到指定视图*/
 - (void)renderOnView:(UIView *)view;
