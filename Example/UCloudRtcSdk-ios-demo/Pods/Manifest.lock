@@ -1,0 +1,16 @@
+PODS:
+  - UCloudRtcSdk (1.5.6)
+
+DEPENDENCIES:
+  - UCloudRtcSdk (from `../../`)
+
+EXTERNAL SOURCES:
+  UCloudRtcSdk:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  UCloudRtcSdk: 35ba58600b4690cbb9b2d06aa53f85041c62b7c7
+
+PODFILE CHECKSUM: ef6460b083218716a02f20ba3580d8d113be325e
+
+COCOAPODS: 1.6.0
