@@ -187,7 +187,7 @@
 				387805AF22B8F2CF00E4FC74 /* Frameworks */,
 				387805B022B8F2CF00E4FC74 /* Resources */,
 				387805E122B9CA2E00E4FC74 /* Embed Frameworks */,
-				E921BD643A0B80BD20CAFFD7 /* [CP] Embed Pods Frameworks */,
+				DFA9654B6B1D4721BE8ECB2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,22 +268,17 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E921BD643A0B80BD20CAFFD7 /* [CP] Embed Pods Frameworks */ = {
+		DFA9654B6B1D4721BE8ECB2E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdk-ios-demo/Pods-UCloudRtcSdk-ios-demo-frameworks.sh",
-				"${PODS_ROOT}/../../../UCloudRtcSdk/Frameworks/UCloudRtcSdk_ios.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdk-ios-demo/Pods-UCloudRtcSdk-ios-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UCloudRtcSdk_ios.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdk-ios-demo/Pods-UCloudRtcSdk-ios-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

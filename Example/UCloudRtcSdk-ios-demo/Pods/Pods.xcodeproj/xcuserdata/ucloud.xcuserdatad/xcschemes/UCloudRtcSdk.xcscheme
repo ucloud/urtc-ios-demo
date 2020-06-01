@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7466A92B8CDB83EBEBCE6C54733B4600"
+               BlueprintIdentifier = "1286F201D25AD2EA6ADD7E4590FD23A6"
                BuildableName = "UCloudRtcSdk"
                BlueprintName = "UCloudRtcSdk"
                ReferencedContainer = "container:Pods.xcodeproj">

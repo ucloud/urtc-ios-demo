@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A51E89C4B453B08DC3B75360F5624331"
+               BlueprintIdentifier = "AAEAF5E0807D9F4C84147EB1E47FF19D"
                BuildableName = "Pods_UCloudRtcSdk_ios_demo.framework"
                BlueprintName = "Pods-UCloudRtcSdk-ios-demo"
                ReferencedContainer = "container:Pods.xcodeproj">

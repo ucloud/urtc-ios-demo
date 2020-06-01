@@ -65,16 +65,61 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
 提供云端存储空间及海量数据的处理能力，提供高可用的技术和高稳定的平台
 
 # 5 快速使用
-## 5.1 初始化 
+
+##  5.1 导入SDK
+### 5.1.1 使用 CocoaPods 自动集成
+``` 
+pod 'UCloudRtcSdk'
+  platform :ios, '9.0'
+  source 'https://github.com/CocoaPods/Specs.git'
+  target 'Your App' do
+  	use_frameworks!
+  	pod 'UCloudRtcSdk'
+end
+```
+### 5.1.2 手动导入 SDK 
+> 手动导入
+
+```
+Add Files to "Your targets" -> [`pwd`/UCloudRtcSdk/Framework/UCloudRtcSdk_ios.framework]
+```
+
+> 添加系统依赖库
+
+```
+进入 TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content 菜单
+点击 +，分别添加 CFNetwork.framework, Security.framework, OpenGLES.framework, GLKit.framework, VideoToolbox.framework和libicucore.tdb，libc++.tdb
+```
+### 5.1.3 工程配置
+> Enable Bitcode
+
+```
+TARGETS > Project Name > Build Settings > Enable Bitcode 设置为No
+```
+ 
+> 多媒体权限
+
+```
+	<key>NSCameraUsageDescription</key>
+	<string>需要访问你的摄像头</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>需要访问你的麦克风</string>
+```
+ 
+
+## 5.2 初始化 
 建议在初始化 App 的同时，初始化 SDK。
-### 5.1.1 导入 SDK 头文件
+
+
+
+### 5.2.1 导入 SDK 头文件
     //objective-c
     <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h> 
     
     //swift
     import UCloudRtcSdk_ios
-### 5.1.2. 设置 userId 和 roomId，获取AppID；
-### 5.1.3 初始化UCloudRtcEngine 并设置代理以接收相关回调信息；
+### 5.2.2. 设置 userId 和 roomId，获取AppID；
+### 5.2.3 初始化UCloudRtcEngine 并设置代理以接收相关回调信息；
     //objective-c
     UCloudRtcEngine *engine = [[UCloudRtcEngine alloc] initWithUserId:userId  appId:appId roomId:roomId]];
     engine.delegate = self;
@@ -82,7 +127,7 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
      //swift
      UCloudRtcEngine *engine = UCloudRtcEngine.init(userId:userId, appId: appId, roomId:roomId , appKey: appKey, token:token)
      self.engine?.delegate = self
-### 5.1.4 配置参数
+### 5.2.4 配置参数
 初始化完成后，即可调用 SDK相关接口，实现对应功能。使用之前需要对SDK进行相关设置，如果不设置也可以，系统将会采用默认值。
     
     //objective-c
@@ -100,7 +145,7 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
     self.engine?.isDebug = false;//是否开启日志
     self.engine?.videoProfile = ._VideoProfile_360P_1;//设置视频分辨率
     self.engine?.streamProfile = .streamProfileAll;//设置流权限
-## 5.2 加入房间
+## 5.3 加入房间
 
     //objective-c
     [self.engine joinRoomWithcompletionHandler:^(NSData *data, NSUrlResponse *response, NSError error) {
@@ -108,7 +153,7 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
     
     //swift
     self.engine?.joinRoomWithcompletionHandler({(data, response, error) -> Void in})
-## 5.3 发布本地流
+## 5.4 发布本地流
 * 自动发布模式下，joinRoom成功后，即可发布本地流，无需再次调用publish接口；
 * 手动发布模式下，joinRoom成功后，可通过下述接口发布本地流；
         
@@ -179,14 +224,14 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
                 break
             }
         }
-## 5.4 取消发布本地流
+## 5.5 取消发布本地流
 
     //objective-c
     [self.engine unPublish];
     
     //swift
     self.engine?.unPublish()
-## 5.5 订阅远程流
+## 5.6 订阅远程流
 * 自动订阅模式下，joinRoom成功后，即可订阅远程流，无需再次调用subscribeMethod接口；\\
 * 手动订阅模式下，joinRoom成功后，可通过下述接口订阅远程流；\\
 
@@ -206,7 +251,7 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
         func uCloudRtcEngine(_ channel: UCloudRtcEngine, didSubscribe stream: UCloudRtcStream) {
             self.reloadVideos()
         }
-## 5.6 取消订阅远程流
+## 5.7 取消订阅远程流
 
     //objective-c
     [self.engine unSubscribeMethod:remoteStream];
@@ -214,7 +259,7 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
     //swift
     self.engine?.unSubscribeMethod(remoteStream)
     
-## 5.7 开始视频录制
+## 5.8 开始视频录制
 * 配置视频录制相关参数，开始视频录制
 
         //objective-c
@@ -261,14 +306,14 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
             CBToast.showToastAction(message: NSString(format: "视频录制文件:%@", recordResponse["FileName"] as! CVarArg))
         }  
 
-## 5.8 停止视频录制
+## 5.9 停止视频录制
     //objective-c
     [self.manager stopRecord];
     
     //swift
     self.manager?.stopRecord()
     
-## 5.9 离开房间
+## 5.10 离开房间
     //objective-c
     [self.engine leaveRoom];   
     
