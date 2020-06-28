@@ -54,6 +54,8 @@ static NSInteger kHorizontalCount = 3;
     
     //初始化engine
     self.manager = [[UCloudRtcEngine alloc]initWithAppID:self.appId appKey:self.appKey completionBlock:^(int errorCode) {}];
+    //设置本地视频渲染模式
+    [self.manager setPreviewMode:(UCloudRtcVideoViewModeScaleToFill)];
     //设置远端视频渲染模式
     [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFit];
     //指定SDK模式
