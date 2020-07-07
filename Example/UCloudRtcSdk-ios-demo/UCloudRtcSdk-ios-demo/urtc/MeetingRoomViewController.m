@@ -57,7 +57,7 @@ static NSInteger kHorizontalCount = 3;
     //设置本地视频渲染模式
     [self.manager setPreviewMode:(UCloudRtcVideoViewModeScaleToFill)];
     //设置远端视频渲染模式
-    [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFit];
+    [self.manager setRemoteViewMode:UCloudRtcVideoViewModeScaleAspectFill];
     //指定SDK模式
     self.manager.engineMode = self.engineMode;
     //设置日志级别
@@ -88,6 +88,8 @@ static NSInteger kHorizontalCount = 3;
     //加入房间
     [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
     }];
+    [self.manager setLocalPreview:self.localView];
+
 }
 
 - (void)settingSDK:(NSDictionary *)setting{
@@ -156,8 +158,6 @@ static NSInteger kHorizontalCount = 3;
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.manager setPreviewMode:UCloudRtcVideoViewModeScaleAspectFit];
-    [self.manager setLocalPreview:self.localView];
     self.bigScreenStream = self.manager.localStream;
     
 }
@@ -565,6 +565,9 @@ static NSInteger kHorizontalCount = 3;
     self.bigScreenStream = stream;
     [self.listView reloadData];
     
+    for (UIView *v in self.localView.subviews) {
+        [v removeFromSuperview];
+    }
     [stream renderOnView:self.localView];
 }
 

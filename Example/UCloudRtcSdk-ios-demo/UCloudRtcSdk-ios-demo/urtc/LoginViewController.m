@@ -11,16 +11,12 @@
 #import <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>
 #import "MeetingRoomViewController.h"
 
-//线上
-#define APP_ID @"URtc-h4r1txxy"
-#define APP_KEY @"9129304dbf8c5c4bf68d70824462409f"
 
-//#define APP_ID @"urtc-l0n5arlm"
-//#define APP_KEY @"be1fa6d3e0783a852211ac587b8ae6b9"
+// 控台：https://passport.ucloud.cn/?service=https://console.ucloud.cn/urtc/manage#login#login
+#error  app_id and app_key are required！
+#define APP_ID @""
+#define APP_KEY @""
 
-//pre 测试
-//#define APP_ID @""
-//#define APP_KEY @""
 #define TOKEN @""
 
 @interface LoginViewController ()
