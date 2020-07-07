@@ -61,8 +61,10 @@ class ViewController: UIViewController {
             let meeting = segue.destination as! MeetingRoomViewController
             meeting.userId = self.userLabel?.text as NSString?
             meeting.roomId = self.userTextField?.text as NSString?
-            meeting.appId = "URtc-h4r1txxy"
-            meeting.appKey = "9129304dbf8c5c4bf68d70824462409f"
+            // 控台：https://passport.ucloud.cn/?service=https://console.ucloud.cn/urtc/manage#login#login
+            #error("app_id and app_key are required！")
+            meeting.appId = ""
+            meeting.appKey = ""
             meeting.token = ""
             meeting.engineSetting = self.engineSetting!
             if self.segment!.selectedSegmentIndex == 0 {
