@@ -10,7 +10,7 @@
 #import "UIView+Toast.h"
 #import "MeetingRoomCell.h"
 #import "YBPopupMenu.h"
-
+#import <AVFoundation/AVFoundation.h>
 @interface MeetingRoomViewController () <UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate,YBPopupMenuDelegate,MeetingRoomCellDelegate>
 {
     NSMutableArray<UCloudRtcStream*> *canSubstreamList;
@@ -51,6 +51,7 @@ static NSInteger kHorizontalCount = 3;
     self.streamList = @[].mutableCopy;
     self.roomNameLabel.text = [NSString stringWithFormat:@"ROOM:%@",self.roomId];
     [self.listView registerNib:[UINib nibWithNibName:@"MeetingRoomCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    
     
     //初始化engine
     self.manager = [[UCloudRtcEngine alloc]initWithAppID:self.appId appKey:self.appKey completionBlock:^(int errorCode) {}];

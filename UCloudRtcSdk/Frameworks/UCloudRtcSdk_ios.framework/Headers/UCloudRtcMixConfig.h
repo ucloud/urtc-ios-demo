@@ -80,6 +80,8 @@
 //1自动 2手动 默认自动
 @property (nonatomic, assign) NSInteger addstreammode;
 
+//缺省不要配置这个参数，如果配置了这个参数，如果该用户的所有推流结束，则录制或者转推任务都会立刻结束
+@property (nonatomic, copy) NSString *keyuser;
 @end
 
 

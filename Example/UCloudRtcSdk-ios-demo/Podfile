@@ -3,8 +3,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
 target 'UCloudRtcSdk-ios-demo' do
   use_frameworks!
-#  pod 'UCloudRtcSdk', :path => '../../'
-  pod 'UCloudRtcSdk'
+  pod 'UCloudRtcSdk', :path => '../../'
+#  pod 'UCloudRtcSdk'
   # Pods for UCloudRtcSdk-ios-demo
 
 end

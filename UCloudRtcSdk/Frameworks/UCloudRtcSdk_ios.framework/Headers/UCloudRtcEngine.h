@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger)
     
     UCloudRtcEngine_VideoProfile_480P = 3,// 640*480  100 -- 500 20
     UCloudRtcEngine_VideoProfile_720P = 4,// 1280*720 300 -- 1000 30
-//    UCloudRtcEngine_VideoProfile_1080P = 5,// 1920*1080 500 -- 1000 30
+    UCloudRtcEngine_VideoProfile_1080P = 5,// 1920*1080 500 -- 1500 30
     
 } UCloudRtcEngineVideoProfile;
 
@@ -98,6 +98,12 @@ typedef NS_ENUM(NSUInteger, UCloudRtcVideoMirrorMode) {
     UCloudRtcVideoMirrorModeEnabled = 1,
     /** 关闭镜像 */
     UCloudRtcVideoMirrorModeDisabled = 2,
+};
+/** 视频采集旋转方向，与 UIInterfaceOrientation方向一致*/
+typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
+    UCloudRtcOrientationModeAdaptive,
+    UCloudRtcOrientationModeLandscapeLeft,
+    UCloudRtcOrientationModeLandscapeRight,
 };
 
 @class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig,UCloudRtcMixConfig,UCloudRtcMixStopConfig;
@@ -249,6 +255,12 @@ typedef NS_ENUM(NSUInteger, UCloudRtcVideoMirrorMode) {
 /**是否开启纯音频模式  默认否: NO  必须在加入房间之前设置才会生效 否则采用默认值*/
 @property (nonatomic, assign) BOOL isOnlyAudio;
 
+/**是否开启音频  默认否: YES  必须在加入房间之前设置才会生效 否则采用默认值*/
+@property (nonatomic, assign) BOOL enableLocalVideo;
+/**是否开启视频  默认否: YES  必须在加入房间之前设置才会生效 否则采用默认值*/
+@property (nonatomic, assign) BOOL enableLocalAudio;
+
+
 /**视频分辨率设置 默认:480*360  必须在加入房间之前设置才会生效 否则采用默认值*/
 @property (nonatomic, assign) UCloudRtcEngineVideoProfile videoProfile;
 
@@ -285,16 +297,18 @@ typedef NS_ENUM(NSUInteger, UCloudRtcVideoMirrorMode) {
 
 @property (nonatomic, copy) NSString *_Nullable outputpath;//混音文件路径
 
-/**断网重连次数 默认为：10次 */
+/**断网重连次数 默认为：60次 */
 @property (nonatomic, assign) NSInteger reConnectTimes;
 
-/**重连时间间隔，默认60秒钟*/
+/**重连时间间隔，默认5秒钟*/
 @property(nonatomic, assign) NSInteger overTime;
 
 /**是否开启网络质量监控，默认开启*/
 @property(nonatomic, assign) BOOL isTrackNetQuality;
 /** 本地预览视图镜像模式 */
 @property(nonatomic, assign) UCloudRtcVideoMirrorMode mirrorMode;
+/** 视频采集旋转方向 */
+@property(nonatomic, assign) UCloudRtcOrientationMode orientationMode ;
 /**
  @brief 返回SDK当前版本号
 

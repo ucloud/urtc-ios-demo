@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/UCloudRtcEngine.h</key>
 		<data>
-		E6KLH4cw5IWK0b+8G5xNTQ7WIZY=
+		43vLks2Re6cTiq020h5N8IJTzAc=
 		</data>
 		<key>Headers/UCloudRtcError.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/UCloudRtcMixConfig.h</key>
 		<data>
-		JSNzJs19Wy50/OeHTBVRwHq40IE=
+		ZPWsiPgK+2wzPaU9kETGpUT4ks8=
 		</data>
 		<key>Headers/UCloudRtcMixStopConfig.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/UCloudRtcStream.h</key>
 		<data>
-		G0OigpB6aHJZE3FqrHDxAr6Yc78=
+		mQ5jNaAMFgWzlHlMO9H6e9WYSaI=
 		</data>
 		<key>Headers/UCloudRtcStreamStatsInfo.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lg6K7ae0YOYkPRZCdxdzSb0G/ag=
+		HuOXxWilCmvknjpTTVz6UyfmyPI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,11 +63,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			E6KLH4cw5IWK0b+8G5xNTQ7WIZY=
+			43vLks2Re6cTiq020h5N8IJTzAc=
 			</data>
 			<key>hash2</key>
 			<data>
-			g8t1SKz95yj49I8uxqHUfaKvYPqWrTtu2BalDS/vzOU=
+			8JrlTQ8WO+Ms+6geE8KNWDd0iIoQNn+aGHXZyqPCMVs=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcError.h</key>
@@ -96,11 +96,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JSNzJs19Wy50/OeHTBVRwHq40IE=
+			ZPWsiPgK+2wzPaU9kETGpUT4ks8=
 			</data>
 			<key>hash2</key>
 			<data>
-			q7QNUEk51j2vQnYxhPoizXdhfsUZu02Nd89qHol4iRY=
+			RHOr5i4IVa1CUEuY5JER7WJkVlPnxQO4Z8ZffcV+EH4=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcMixStopConfig.h</key>
@@ -140,11 +140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			G0OigpB6aHJZE3FqrHDxAr6Yc78=
+			mQ5jNaAMFgWzlHlMO9H6e9WYSaI=
 			</data>
 			<key>hash2</key>
 			<data>
-			6aIKROHXxHM1C2FCFE1unJuZD8bJh71fxYo1Z81YhiI=
+			5/VND4mouS1LMJGo1OMv3SfCeP6pzpeUaAssqHA9Swc=
 			</data>
 		</dict>
 		<key>Headers/UCloudRtcStreamStatsInfo.h</key>
