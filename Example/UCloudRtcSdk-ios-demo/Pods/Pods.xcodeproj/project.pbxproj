@@ -38,20 +38,17 @@
 		03ED2163B4E9ADD5307F7A126A20C302 /* Pods-UCloudRtcSdk-ios-demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UCloudRtcSdk-ios-demo-frameworks.sh"; sourceTree = "<group>"; };
 		0B8DFAD3F4940B4A8724E85306D83DDC /* Pods-UCloudRtcSdk-ios-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UCloudRtcSdk-ios-demo-dummy.m"; sourceTree = "<group>"; };
 		128D6598ED7A205099A8DFD2256FA11D /* Pods-UCloudRtcSdk-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdk-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
-		167D4386ADF6060E12F996744347243C /* UCloudRtcSdk_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UCloudRtcSdk_ios.framework; path = UCloudRtcSdk/Frameworks/UCloudRtcSdk_ios.framework; sourceTree = "<group>"; };
 		16A41A7BA68D7A71531C91E572D16F6B /* Pods-UCloudRtcSdk-ios-demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdk-ios-demo-Info.plist"; sourceTree = "<group>"; };
-		21097D5C0040C9505F61C160ABB7A5AB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		357BD583E1C41EF45C53A1B6C8948A1C /* Pods-UCloudRtcSdk-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdk-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		68DC5720791A2A477ADC337D666BF029 /* UCloudRtcSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCloudRtcSdk.debug.xcconfig; sourceTree = "<group>"; };
 		879D358D5CE29EFC16590CAE3F2EC62C /* Pods-UCloudRtcSdk-ios-demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UCloudRtcSdk-ios-demo.modulemap"; sourceTree = "<group>"; };
-		8933114D145A72AE99F732D4F4A2C80F /* UCloudRtcSdk.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = UCloudRtcSdk.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		8E92DC51E5FDB83E3A22D454487A155C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		94207615BDFD8A11E599E8717A9E9A5A /* Pods-UCloudRtcSdk-ios-demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UCloudRtcSdk-ios-demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5331A56A4898C05E87563331253663D /* Pods-UCloudRtcSdk-ios-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdk-ios-demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		D3A6D9A80B2944E05AEA869DC031BDE7 /* UCloudRtcSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCloudRtcSdk.release.xcconfig; sourceTree = "<group>"; };
-		EA00FCE3004288E2DC62D52E0913F91B /* UCloudRtcSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCloudRtcSdk.debug.xcconfig; sourceTree = "<group>"; };
 		EA252C54DC94EED2F1D363060635485E /* Pods-UCloudRtcSdk-ios-demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UCloudRtcSdk-ios-demo-umbrella.h"; sourceTree = "<group>"; };
+		ED40FC6C19645ED7F39950319A19E321 /* UCloudRtcSdk_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UCloudRtcSdk_ios.framework; path = UCloudRtcSdk/Frameworks/UCloudRtcSdk_ios.framework; sourceTree = "<group>"; };
+		F686FEF7376AAE0777526DE19B8C681D /* UCloudRtcSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCloudRtcSdk.release.xcconfig; sourceTree = "<group>"; };
 		FB58CEC7E2993FB2FCAFE298F607D6FD /* Pods_UCloudRtcSdk_ios_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UCloudRtcSdk_ios_demo.framework; path = "Pods-UCloudRtcSdk-ios-demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -67,26 +64,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0467DC18CD827A64A438924E8BE17236 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				8E92DC51E5FDB83E3A22D454487A155C /* LICENSE */,
-				21097D5C0040C9505F61C160ABB7A5AB /* README.md */,
-				8933114D145A72AE99F732D4F4A2C80F /* UCloudRtcSdk.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		076A3FF10D0EBB25B5490BABC5C2FE26 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EA00FCE3004288E2DC62D52E0913F91B /* UCloudRtcSdk.debug.xcconfig */,
-				D3A6D9A80B2944E05AEA869DC031BDE7 /* UCloudRtcSdk.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/UCloudRtcSdk-ios-demo/Pods/Target Support Files/UCloudRtcSdk";
-			sourceTree = "<group>";
-		};
 		18D2D7CE822F33CB215B4210E5F04530 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,23 +72,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		708C973F341543B2F15F826A1E415A6B /* Frameworks */ = {
+		4ABA92209892B67B8A5D163A4C25F641 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				167D4386ADF6060E12F996744347243C /* UCloudRtcSdk_ios.framework */,
+				BF0FADEDDC562164560172AF8239D2B7 /* UCloudRtcSdk */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		8E0974E96B3EC0E5C40E62CA70D14034 /* UCloudRtcSdk */ = {
+		98CD2C9308C5164B5C04C9392E5827B9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				708C973F341543B2F15F826A1E415A6B /* Frameworks */,
-				0467DC18CD827A64A438924E8BE17236 /* Pod */,
-				076A3FF10D0EBB25B5490BABC5C2FE26 /* Support Files */,
+				68DC5720791A2A477ADC337D666BF029 /* UCloudRtcSdk.debug.xcconfig */,
+				F686FEF7376AAE0777526DE19B8C681D /* UCloudRtcSdk.release.xcconfig */,
 			);
-			name = UCloudRtcSdk;
-			path = ../../..;
+			name = "Support Files";
+			path = "../Target Support Files/UCloudRtcSdk";
 			sourceTree = "<group>";
 		};
 		B1280D11C51C176566A23D00D4DA1C2C /* Targets Support Files */ = {
@@ -122,6 +98,16 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		BF0FADEDDC562164560172AF8239D2B7 /* UCloudRtcSdk */ = {
+			isa = PBXGroup;
+			children = (
+				F027CB84F636819BDA66B46083CC5604 /* Frameworks */,
+				98CD2C9308C5164B5C04C9392E5827B9 /* Support Files */,
+			);
+			name = UCloudRtcSdk;
+			path = UCloudRtcSdk;
+			sourceTree = "<group>";
+		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,20 +116,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C8540C06F0AA32129C4C60A197861E1B /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8E0974E96B3EC0E5C40E62CA70D14034 /* UCloudRtcSdk */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				C8540C06F0AA32129C4C60A197861E1B /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				4ABA92209892B67B8A5D163A4C25F641 /* Pods */,
 				18D2D7CE822F33CB215B4210E5F04530 /* Products */,
 				B1280D11C51C176566A23D00D4DA1C2C /* Targets Support Files */,
 			);
@@ -153,6 +131,14 @@
 			isa = PBXGroup;
 			children = (
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F027CB84F636819BDA66B46083CC5604 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED40FC6C19645ED7F39950319A19E321 /* UCloudRtcSdk_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -268,7 +254,7 @@
 /* Begin XCBuildConfiguration section */
 		445D333F88CD3E0ED0C7906D431102A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3A6D9A80B2944E05AEA869DC031BDE7 /* UCloudRtcSdk.release.xcconfig */;
+			baseConfigurationReference = F686FEF7376AAE0777526DE19B8C681D /* UCloudRtcSdk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -285,7 +271,7 @@
 		};
 		4BCA59DA8EE69D1D8D6D781F9382CFF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA00FCE3004288E2DC62D52E0913F91B /* UCloudRtcSdk.debug.xcconfig */;
+			baseConfigurationReference = 68DC5720791A2A477ADC337D666BF029 /* UCloudRtcSdk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
