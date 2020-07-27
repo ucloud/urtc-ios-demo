@@ -88,6 +88,7 @@ static NSInteger kHorizontalCount = 3;
     NSLog(@"sdk版本号：%@",[UCloudRtcEngine currentVersion]);
     //加入房间
     [self.manager joinRoomWithRoomId:self.roomId userId:self.userId token:@"" completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
+        NSLog(@"-----join room :%@", response);
     }];
     [self.manager setLocalPreview:self.localView];
 
