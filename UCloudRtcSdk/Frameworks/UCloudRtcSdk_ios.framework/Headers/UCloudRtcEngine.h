@@ -34,15 +34,13 @@ typedef NS_ENUM(NSInteger)
 
 typedef NS_ENUM(NSInteger)
 {
-    
-    UCloudRtcEngine_VideoProfile_180P = 0,// 240*180  100 --- 200 15
-    UCloudRtcEngine_VideoProfile_360P_1 = 1,// 480*360  100 -- 300 15   默认值
-    UCloudRtcEngine_VideoProfile_360P_2 = 2,// 640*360  100 -- 400 20
-    
-    UCloudRtcEngine_VideoProfile_480P = 3,// 640*480  100 -- 500 20
-    UCloudRtcEngine_VideoProfile_720P = 4,// 1280*720 300 -- 1000 30
-    UCloudRtcEngine_VideoProfile_1080P = 5,// 1920*1080 500 -- 1500 30
-    
+    UCloudRtcEngine_VideoProfile_180P_1 = 0, // 分辨率:240*180,  码率范围:100-200kpbs, 帧率:15fps
+    UCloudRtcEngine_VideoProfile_180P_2 = 1, // 分辨率:320*180,  码率范围:100-200kpbs, 帧率:15fps
+    UCloudRtcEngine_VideoProfile_360P_1 = 2, // 分辨率:480*360,  码率范围:100-300kpbs, 帧率:15fps(默认值)
+    UCloudRtcEngine_VideoProfile_360P_2 = 3, // 分辨率:640*360,  码率范围:100-400kpbs, 帧率:20fps
+    UCloudRtcEngine_VideoProfile_480P = 4,   // 分辨率:640*480,  码率范围:100-500kpbs, 帧率:20fps
+    UCloudRtcEngine_VideoProfile_720P = 5,   // 分辨率:1280*720, 码率范围:300-1000kpbs,帧率:30fps
+    UCloudRtcEngine_VideoProfile_1080P = 6,  // 分辨率:1920*1080,码率范围:500-1500kpbs,帧率:30fps
 } UCloudRtcEngineVideoProfile;
 
 typedef NS_ENUM(NSInteger,UCloudRtcEngineErrorType) {
@@ -61,6 +59,12 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
     UCloudRtcEnginePublishStatePublishFailed,
     UCloudRtcEnginePublishStatePublishStoped,
 };
+// 流媒体类型
+typedef NS_ENUM(NSInteger, UCloudRtcStreamMediaType) {
+    UCloudRtcStreamMediaTypeCamera = 1,  // 摄像头
+    UCloudRtcStreamMediaTypeScreen = 2, // 桌面
+} ;
+
 
 typedef NS_ENUM(NSInteger, UCloudRtcConnectState) {
     UCloudRtcConnectStateDisConnect,//连接断开
@@ -106,7 +110,15 @@ typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
     UCloudRtcOrientationModeLandscapeRight,
 };
 
-@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig,UCloudRtcMixConfig,UCloudRtcMixStopConfig;
+//0或者1退出不重连 2退出重连并使用原服务器列表 3退出并重连网关
+/**强制用户退出或者重连*/
+typedef NS_ENUM(NSUInteger, UCloudRtcKickOffType) {
+    UCloudRtcKickOffTypeExit = 1,                 // 退出不重连
+    UCloudRtcKickOffTypeRejoin = 2,               // 退出后再使用原服务器列表重连
+    UCloudRtcKickOffTypeRejoinWithNewServer = 3,  // 退出后再使用新服务器列表重连
+};
+
+@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig,UCloudRtcMixConfig,UCloudRtcMixStopConfig,UCloudRtcAudioStats;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
 /**
@@ -123,6 +135,16 @@ typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
 @discussion 该方法是本地流发布过程中,发布状态变化的回调。
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState;
+
+
+
+/**
+@brief 发布状态的变化
+@param publishState 发布状态：UCloudRtcEnginePublishState
+@param mediaType 媒体类型：摄像头、桌面
+@discussion 该方法是本地流发布过程中,发布状态变化的回调。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState mediaType:(UCloudRtcStreamMediaType)mediaType ;
 
 /**
 @brief 收到远程流
@@ -173,6 +195,13 @@ typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
 @discussion 流状态信息包含音频轨道和视频轨道的数据信息。
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo*> *_Nonnull)status;
+
+/**
+@brief 音量回调
+@param audioStatus 音量信息
+@discussion 200ms回调一次音量信息，如果存在多个远端用户200ms内会被触发多次。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveAudioStatus:(UCloudRtcAudioStats *_Nonnull)audioStatus;
 
 /**
 @brief 通话中每个用户的网络上下行质量报告回调
@@ -255,9 +284,10 @@ typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
 /**是否开启纯音频模式  默认否: NO  必须在加入房间之前设置才会生效 否则采用默认值*/
 @property (nonatomic, assign) BOOL isOnlyAudio;
 
-/**是否开启音频  默认否: YES  必须在加入房间之前设置才会生效 否则采用默认值*/
-@property (nonatomic, assign) BOOL enableLocalVideo;
 /**是否开启视频  默认否: YES  必须在加入房间之前设置才会生效 否则采用默认值*/
+@property (nonatomic, assign) BOOL enableLocalVideo;
+
+/**是否开启音频  默认否: YES  必须在加入房间之前设置才会生效 否则采用默认值*/
 @property (nonatomic, assign) BOOL enableLocalAudio;
 
 
@@ -276,6 +306,7 @@ typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
 @property (nonatomic, weak) id <UCloudRtcEngineDelegate> _Nullable delegate;
 
 @property (nonatomic, readonly) UCloudRtcStream * _Nonnull localStream;
+@property (nonatomic, readonly) UCloudRtcStream * _Nonnull screenStream;
 
 @property (nonatomic, strong) UCloudRtcLog * _Nullable logger;
 
@@ -305,6 +336,10 @@ typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
 
 /**是否开启网络质量监控，默认开启*/
 @property(nonatomic, assign) BOOL isTrackNetQuality;
+
+/**是否开启音量监控,200ms回调一次所有流的音量，默认关闭*/
+@property(nonatomic, assign) BOOL isTrackVolume;
+
 /** 本地预览视图镜像模式 */
 @property(nonatomic, assign) UCloudRtcVideoMirrorMode mirrorMode;
 /** 视频采集旋转方向 */
@@ -364,17 +399,30 @@ typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
 - (int)leaveRoom;
 
 /**
- @brief 手动发布
+ @brief 手动发布摄像头
  
  */
 - (void)publish;
 
 
 /**
- @brief 取消发布
+ @brief 取消发布摄像头
  
  */
 - (void)unPublish;
+
+/**
+ @brief 手动发布
+ 
+ @param mediaType 流媒体类型:摄像头、桌面
+*/
+- (void)publishWithMediaType:(UCloudRtcStreamMediaType)mediaType;
+/**
+ @brief 取消发布
+ 
+ @param mediaType 流媒体类型:摄像头、桌面
+*/
+- (void)unpublishWithMediaType:(UCloudRtcStreamMediaType)mediaType;
 
 /**
  @brief 手动订阅
@@ -472,6 +520,15 @@ typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
  */
 - (int)setRemoteStream:(UCloudRtcStream *_Nonnull)stream muteAudio:(BOOL)isMute;
 
+
+/**
+@brief 依据type类型，强制users下线/重连操作
+
+@param users 用户ID列表[用户id]
+@param type 强制下线类型
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)kickOffUsers:(NSArray *)users type:(UCloudRtcKickOffType)type;
 
 /**
  @brief 开始视频录制

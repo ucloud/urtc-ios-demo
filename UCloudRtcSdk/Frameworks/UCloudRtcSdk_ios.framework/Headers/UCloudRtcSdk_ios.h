@@ -11,6 +11,7 @@
 #import "UCloudRtcEngine.h"
 #import "UCloudRtcStream.h"
 #import "UCloudRtcStreamStatsInfo.h"
+#import "UCloudRtcAudioStats.h"
 #import "UCloudRtcError.h"
 #import "UCloudRtcLog.h"
 #import "UCloudRtcStreamVolume.h"

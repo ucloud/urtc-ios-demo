@@ -1,16 +1,16 @@
 PODS:
-  - UCloudRtcSdk (1.5.7.1)
+  - UCloudRtcSdk (1.5.8)
 
 DEPENDENCIES:
-  - UCloudRtcSdk
+  - UCloudRtcSdk (from `../../`)
 
-SPEC REPOS:
-  trunk:
-    - UCloudRtcSdk
+EXTERNAL SOURCES:
+  UCloudRtcSdk:
+    :path: "../../"
 
 SPEC CHECKSUMS:
-  UCloudRtcSdk: 7936d2772c8d1b07617abb2e20c1bd2a5b0901c2
+  UCloudRtcSdk: 177cf9a3fd2c7780eed9f30c7f500924c880c2bb
 
-PODFILE CHECKSUM: 8a9284f828fa0413f5bd01604ceffa261a436d4f
+PODFILE CHECKSUM: 4459f15d5de5ab78fb06332b83017e48f6716c9f
 
 COCOAPODS: 1.9.3

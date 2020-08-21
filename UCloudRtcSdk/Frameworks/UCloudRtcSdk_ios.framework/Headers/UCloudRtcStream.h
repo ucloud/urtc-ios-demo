@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UCloudRtcEngine.h"
 
-typedef enum : NSUInteger {
-    UCloudRtcStreamMediaTypeVideo,
-    UCloudRtcStreamMediaTypeScreen,
-} UCloudRtcStreamMediaType;
 
 @protocol UCloudRtcRenderDelegate <NSObject>
 /**
@@ -24,13 +21,19 @@ typedef enum : NSUInteger {
 @end
 
 
-@class UCloudRtcStreamStatsInfo,UIView;
+@class UCloudRtcStreamStatsInfo,UCloudRtcAudioStats;
 
 @interface UCloudRtcStream : NSObject
 
 @property (nonatomic, weak) id <UCloudRtcRenderDelegate> delegate;
 @property (nonatomic, readonly) NSString *streamId;
 @property(nonatomic, readonly) NSString *userId;
+/// 是否有视频
+@property (nonatomic, assign) BOOL video;
+/// 是否有音频
+@property (nonatomic, assign) BOOL audio;
+@property (nonatomic, assign) BOOL mutevideo;
+@property (nonatomic, assign) BOOL muteaudio;
 @property(nonatomic, assign) BOOL hasSubscribe;//是否被当前用户订阅
 @property(nonatomic, assign) UCloudRtcStreamMediaType mediaType;//流类型：音视频、桌面
 /// 是否订阅视频（自动订阅：取决于对端流是否有视频；手动订阅：依据场景设置是否订阅）
@@ -43,5 +46,7 @@ typedef enum : NSUInteger {
 /**获取流状态信息*/
 - (NSMutableArray *)getReportStates:(NSString *)userId;
 
+/** 获取音量*/
+- (UCloudRtcAudioStats *)getAudioLevel;
 
 @end

@@ -21,6 +21,8 @@
 @property (nonatomic, assign) NSInteger width;
 @property (nonatomic, assign) NSInteger lost;
 @property (nonatomic, assign) NSInteger rtt;
+@property (nonatomic, assign) NSInteger connRtt;
+
 @property (nonatomic, assign) NSInteger height;
 @property (nonatomic, assign) NSInteger jitter;
 @property (nonatomic, assign) NSInteger delay;
@@ -37,5 +39,5 @@
 @property (nonatomic, assign) NSInteger audioInputLevel;//采集音频幅度
 @property (nonatomic, assign) NSInteger audioOutputLevel;// 播放音频幅度
 
-@property (nonatomic, strong) NSString *type;//区分ssrc：上行send、下行recv
+@property (nonatomic, strong) NSString *type;//区分ssrc：上行send、下行recv、googCandidatePair
 @end
