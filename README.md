@@ -139,6 +139,9 @@ TARGETS > Project Name > Build Settings > Enable Bitcode 设置为No
     self.engine.isDebug = NO;//是否开启日志
     self.engine.videoProfile = UCloudRtcEngine_VideoProfile_360P_1;//设置视频分辨率
     self.engine.streamProfile = UCloudRtcEngine_StreamProfileAll;//设置流权限
+    self.engine.isTrackVolume = YES// 开启音量检测，默认为NO
+    
+
     
     //swift
     self.engine?.isAutoPublish = ture;//加入房间后将自动发布本地音视频 默认为ture

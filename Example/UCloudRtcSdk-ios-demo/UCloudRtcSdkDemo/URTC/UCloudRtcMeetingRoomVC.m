@@ -239,6 +239,8 @@ static NSString *roomCellId = @"roomCellId";
     _rtcEngine.videoDefaultCodec = @"H264";
     // 设置视频分辨率
     _rtcEngine.videoProfile = UCloudRtcEngine_VideoProfile_480P;
+    // 是否开启音量检测，默认NO
+//    _rtcEngine.isTrackVolume = YES;
     // 设置代理
     _rtcEngine.delegate = self;
     // 加入房间
@@ -439,7 +441,10 @@ static NSString *roomCellId = @"roomCellId";
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager connectState:(UCloudRtcConnectState)connectState {
 
 }
-
+/**音量回调 200ms一次：设置isTrackVolume=YES时可以接收各路流的音量*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didReceiveAudioStatus:(UCloudRtcAudioStats *)audioStatus {
+    
+}
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager networkQuality:(NSString *)userId txQuality:(UCloudRtcNetworkQuality)txQuality rxQuality:(UCloudRtcNetworkQuality)rxQuality{
     if ([userId isEqualToString:self.userId]) {
         if (txQuality == UCloudRtcNetworkQualityDisconnect) {
