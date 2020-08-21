@@ -82,7 +82,7 @@
 		386EF9DA244FDF1800629CD4 /* UCloudRtcRoomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UCloudRtcRoomCell.h; sourceTree = "<group>"; };
 		386EF9DB244FDF1800629CD4 /* UCloudRtcRoomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UCloudRtcRoomCell.m; sourceTree = "<group>"; };
 		386EF9DC244FDF1800629CD4 /* UCloudRtcRoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UCloudRtcRoomCell.xib; sourceTree = "<group>"; };
-		3878ABE6244D473900968064 /* UCloudRtcSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCloudRtcSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3878ABE6244D473900968064 /* URTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3878ABE9244D473900968064 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3878ABEA244D473900968064 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3878ABEC244D473900968064 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		3878ABE7244D473900968064 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3878ABE6244D473900968064 /* UCloudRtcSdkDemo.app */,
+				3878ABE6244D473900968064 /* URTC.app */,
 				3878AC01244D473900968064 /* UCloudRtcSdkDemoTests.xctest */,
 				3878AC0C244D473900968064 /* UCloudRtcSdkDemoUITests.xctest */,
 			);
@@ -314,7 +314,7 @@
 				3878ABE3244D473900968064 /* Frameworks */,
 				3878ABE4244D473900968064 /* Resources */,
 				38A0EC5B24A1F05C00EEDFE4 /* Embed Frameworks */,
-				44EA55B3CFFF437D941DE6BF /* [CP] Embed Pods Frameworks */,
+				107281A3FA64EB60BB93127C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,7 +322,7 @@
 			);
 			name = UCloudRtcSdkDemo;
 			productName = UCloudRtcSdkDemo;
-			productReference = 3878ABE6244D473900968064 /* UCloudRtcSdkDemo.app */;
+			productReference = 3878ABE6244D473900968064 /* URTC.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3878AC00244D473900968064 /* UCloudRtcSdkDemoTests */ = {
@@ -437,7 +437,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		44EA55B3CFFF437D941DE6BF /* [CP] Embed Pods Frameworks */ = {
+		107281A3FA64EB60BB93127C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -685,12 +685,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/UCloudRtcSdkDemo/UCloudRtcSdk-ios/RTC/lib",
 				);
+				MARKETING_VERSION = 1.5.8;
 				OTHER_LDFLAGS = (
 					"-licucore",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.UCloudRtcSdk-ios-demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = URTC;
 				PROVISIONING_PROFILE_SPECIFIER = common;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -719,12 +720,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/UCloudRtcSdkDemo/UCloudRtcSdk-ios/RTC/lib",
 				);
+				MARKETING_VERSION = 1.5.8;
 				OTHER_LDFLAGS = (
 					"-licucore",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.UCloudRtcSdk-ios-demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = URTC;
 				PROVISIONING_PROFILE_SPECIFIER = common;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

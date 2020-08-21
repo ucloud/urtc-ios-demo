@@ -629,25 +629,30 @@ static NSString *roomCellId = @"roomCellId";
 //UI动画
 - (void)tapLocalView{
     if (_topConstraints.constant == 0.0) {
-        [UIView animateWithDuration:1.0
+        [UIView animateWithDuration:.25
                          animations:^{
             
             self->_topConstraints.constant = - k_StatusBarAndNavigationBarHeight;
+            [self.view layoutIfNeeded];
         }];
     }else{
-        [UIView animateWithDuration:1.0 animations:^{
+        [UIView animateWithDuration:.25 animations:^{
             self->_topConstraints.constant = 0.0;
+            [self.view layoutIfNeeded];
         }];
     }
     if (_bottomConstraints.constant == HOME_INDICATOR_HEIGHT) {
-        [UIView animateWithDuration:1.0 animations:^{
+        [UIView animateWithDuration:.25 animations:^{
             self->_bottomConstraints.constant =  -68 + HOME_INDICATOR_HEIGHT;
+            [self.view layoutIfNeeded];
         }];
     }else{
-        [UIView animateWithDuration:1.0 animations:^{
+        [UIView animateWithDuration:.25 animations:^{
             self->_bottomConstraints.constant = HOME_INDICATOR_HEIGHT;
+            [self.view layoutIfNeeded];
         }];
     }
+
 }
 
 - (void)dealloc {

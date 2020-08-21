@@ -32,7 +32,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 {
     self = [super initWithFrame:CGRectMake(0, 0, k_ScreenWidth, k_ScreenHeight)];
     if (self) {
-        _frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, titles.count * 44);
+        _frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, titles.count * 44 + 10);
        _menuViewOffsetTop = _menuViewOffsetTop < k_StatusBarAndNavigationBarHeight ? k_StatusBarAndNavigationBarHeight : _menuViewOffsetTop;
         _triangleOffsetLeft = left;
         _menuViewOffsetTop = top;
