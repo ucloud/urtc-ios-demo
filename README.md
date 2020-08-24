@@ -95,10 +95,12 @@ Add Files to "Your targets" -> [`pwd`/UCloudRtcSdk/Framework/UCloudRtcSdk_ios.fr
 ### 5.1.3 工程配置
 > Enable Bitcode
 
+- 低于v1.5.7（包含）版本：
 ```
-TARGETS > Project Name > Build Settings > Enable Bitcode 设置为No
+TARGETS > Project Name > Build Settings > Enable Bitcode 设置为No；
 ```
- 
+- v1.5.8及以后版本支持Bitcode
+
 > 多媒体权限
 
 ```
