@@ -18,4 +18,4 @@
 #import "UCloudRtcRecordConfig.h"
 #import "UCloudRtcMixConfig.h"
 #import "UCloudRtcMixStopConfig.h"
-
+#import "UCloudRtcVideoFrame.h"

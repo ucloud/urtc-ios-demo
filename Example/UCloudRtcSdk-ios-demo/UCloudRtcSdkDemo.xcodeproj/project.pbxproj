@@ -43,6 +43,9 @@
 		38A0EC6E24AC69CF00EEDFE4 /* MLMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0EC6824AC69CE00EEDFE4 /* MLMenuCell.m */; };
 		38A0EC7224AC8C5900EEDFE4 /* NativeMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0EC7024AC8C5900EEDFE4 /* NativeMediaViewController.m */; };
 		38A0EC7324AC8C5900EEDFE4 /* NativeMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A0EC7124AC8C5900EEDFE4 /* NativeMediaViewController.xib */; };
+		38E56E3425008E20002F49EC /* URTCFileCaptureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E56E3325008E20002F49EC /* URTCFileCaptureController.m */; };
+		38E56E372500902B002F49EC /* URTCResolutionChoosePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E56E362500902B002F49EC /* URTCResolutionChoosePicker.m */; };
+		38E56E3925009122002F49EC /* test480.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 38E56E3825009122002F49EC /* test480.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +135,11 @@
 		38A0EC6F24AC8C5900EEDFE4 /* NativeMediaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeMediaViewController.h; sourceTree = "<group>"; };
 		38A0EC7024AC8C5900EEDFE4 /* NativeMediaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeMediaViewController.m; sourceTree = "<group>"; };
 		38A0EC7124AC8C5900EEDFE4 /* NativeMediaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeMediaViewController.xib; sourceTree = "<group>"; };
+		38E56E3225008E1F002F49EC /* URTCFileCaptureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URTCFileCaptureController.h; sourceTree = "<group>"; };
+		38E56E3325008E20002F49EC /* URTCFileCaptureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URTCFileCaptureController.m; sourceTree = "<group>"; };
+		38E56E352500902A002F49EC /* URTCResolutionChoosePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URTCResolutionChoosePicker.h; sourceTree = "<group>"; };
+		38E56E362500902B002F49EC /* URTCResolutionChoosePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URTCResolutionChoosePicker.m; sourceTree = "<group>"; };
+		38E56E3825009122002F49EC /* test480.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test480.mp4; sourceTree = "<group>"; };
 		3B4303A99697AEEF4B8EDE9A /* Pods-UCloudRtcSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCloudRtcSdkDemo.debug.xcconfig"; path = "Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4C3CBD14D840EE5637EC44 /* Pods_UCloudRtcSdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCloudRtcSdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABC55186A69BBAF228666DA /* Pods-UCloudRtcSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCloudRtcSdkDemo.release.xcconfig"; path = "Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +243,10 @@
 		3878AC28244D758200968064 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				38E56E3225008E1F002F49EC /* URTCFileCaptureController.h */,
+				38E56E3325008E20002F49EC /* URTCFileCaptureController.m */,
+				38E56E352500902A002F49EC /* URTCResolutionChoosePicker.h */,
+				38E56E362500902B002F49EC /* URTCResolutionChoosePicker.m */,
 				3814CDD924B6E5AF0039DAF9 /* URTCRecodView.h */,
 				3814CDDA24B6E5AF0039DAF9 /* URTCRecodView.m */,
 				3814CDD824B6E5AF0039DAF9 /* URTCRecodView.xib */,
@@ -257,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				3878AC49244D97BC00968064 /* dy.mp3 */,
+				38E56E3825009122002F49EC /* test480.mp4 */,
 				38A0EC6F24AC8C5900EEDFE4 /* NativeMediaViewController.h */,
 				38A0EC7024AC8C5900EEDFE4 /* NativeMediaViewController.m */,
 				38A0EC7124AC8C5900EEDFE4 /* NativeMediaViewController.xib */,
@@ -411,6 +424,7 @@
 			files = (
 				3814CDDB24B6E5AF0039DAF9 /* URTCRecodView.xib in Resources */,
 				3878AC4A244D97BC00968064 /* dy.mp3 in Resources */,
+				38E56E3925009122002F49EC /* test480.mp4 in Resources */,
 				3878ABF9244D473900968064 /* LaunchScreen.storyboard in Resources */,
 				3878ABF6244D473900968064 /* Assets.xcassets in Resources */,
 				3878ABF4244D473900968064 /* Main.storyboard in Resources */,
@@ -494,10 +508,12 @@
 				3878AC3F244D7A3600968064 /* UCloudRtcSettingVC.m in Sources */,
 				3878ABFC244D473900968064 /* main.m in Sources */,
 				3878ABEE244D473900968064 /* SceneDelegate.m in Sources */,
+				38E56E372500902B002F49EC /* URTCResolutionChoosePicker.m in Sources */,
 				38A0EC5E24A1F8B500EEDFE4 /* CLSlider.m in Sources */,
 				3878AC20244D64CE00968064 /* UCloudRtcTextField.m in Sources */,
 				38A0EC6E24AC69CF00EEDFE4 /* MLMenuCell.m in Sources */,
 				3878AC26244D74AD00968064 /* UCloudRtcMeetingRoomVC.m in Sources */,
+				38E56E3425008E20002F49EC /* URTCFileCaptureController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,10 +683,11 @@
 			baseConfigurationReference = 3B4303A99697AEEF4B8EDE9A /* Pods-UCloudRtcSdkDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UCloudRtcSdkDemo",
@@ -702,10 +719,11 @@
 			baseConfigurationReference = DABC55186A69BBAF228666DA /* Pods-UCloudRtcSdkDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UCloudRtcSdkDemo",

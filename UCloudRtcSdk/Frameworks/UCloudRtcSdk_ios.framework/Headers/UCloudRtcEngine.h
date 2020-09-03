@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import <AVFoundation/AVFoundation.h>
 typedef NS_ENUM(NSInteger)
 {
     UCloudRtcEngineModeNormal = 0,//正式
@@ -118,7 +118,15 @@ typedef NS_ENUM(NSUInteger, UCloudRtcKickOffType) {
     UCloudRtcKickOffTypeRejoinWithNewServer = 3,  // 退出后再使用新服务器列表重连
 };
 
-@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig,UCloudRtcMixConfig,UCloudRtcMixStopConfig,UCloudRtcAudioStats;
+/** 自定义视频采集的视频方向*/
+typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
+  UCloudRtcVideoRotation_0 = 0,
+  UCloudRtcVideoRotation_90 = 90,
+  UCloudRtcVideoRotation_180 = 180,
+  UCloudRtcVideoRotation_270 = 270,
+};
+
+@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig,UCloudRtcMixConfig,UCloudRtcMixStopConfig,UCloudRtcAudioStats,UCloudRtcVideoFrame;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
 /**
@@ -344,6 +352,18 @@ typedef NS_ENUM(NSUInteger, UCloudRtcKickOffType) {
 @property(nonatomic, assign) UCloudRtcVideoMirrorMode mirrorMode;
 /** 视频采集旋转方向 */
 @property(nonatomic, assign) UCloudRtcOrientationMode orientationMode ;
+/**
+ *使用外部视频源，默认是NO，
+ *当设置为YES时，本地摄像头将不再采集视频数据，
+ *视频数据由用户自行上传，
+ */
+@property(nonatomic, assign) BOOL enableExtendVideoCapture;
+
+/**
+* 使用外部视频源，配置视频信息，
+*不设置时，默认使用源视频信息；加入房间前设置
+*/
+@property(nonatomic, strong) UCloudRtcVideoFrame * _Nullable extendVideoFrame;
 /**
  @brief 返回SDK当前版本号
 
@@ -699,5 +719,13 @@ typedef NS_ENUM(NSUInteger, UCloudRtcKickOffType) {
 @brief 本地视频流截图
 */
 - (void)captuerVideoImage:(void(^_Nullable)(UIImage *_Nullable))captureImage;
+
+/**
+ *@brief 上传自定义视频
+ *@param pixelBuffer 每帧图片信息
+ *@param timestamp 每帧对应的时间
+ *@param rotation 旋转方向
+*/
+- (void)publishPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer timestamp:(CMTime)timestamp rotation:(UCloudRtcVideoRotation)rotation;
 
 @end

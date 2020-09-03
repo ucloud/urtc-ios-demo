@@ -13,6 +13,9 @@
 #import "NativeMediaViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "URTCRecodView.h"
+#import "URTCFileCaptureController.h"
+#import "URTCResolutionChoosePicker.h"
+
 
 // 判断iPhoneX
 // 判断是否是ipad
@@ -37,11 +40,12 @@
 #define  k_StatusBarAndNavigationBarHeight   (k_StatusBarHeight + k_NavigationBarHeight)
 // home indicator
 #define HOME_INDICATOR_HEIGHT ((iPhoneX == YES || IS_IPHONE_Xr == YES || IS_IPHONE_Xs == YES || IS_IPHONE_Xs_Max == YES || IS_IPHONE_11 == YES || IS_IPHONE_11_Pro == YES || IS_IPHONE_11_Pro_Max == YES) ? -34 : 0)
-@interface UCloudRtcMeetingRoomVC ()<UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface UCloudRtcMeetingRoomVC ()<UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate, URTCFileCaptureControllerDelegate>
 {
     NSMutableArray<UCloudRtcStream*> *_canSubstreamList;
     AVAudioRecorder *recorder;
     NSTimer *levelTimer;
+    URTCFileCaptureController *_fileCaptureController;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *roomIdLB;
@@ -222,7 +226,7 @@ static NSString *roomCellId = @"roomCellId";
     _rtcEngine.mirrorMode = UCloudRtcVideoMirrorModeDisabled;
     //设置远端渲染模式
     [_rtcEngine setRemoteViewMode:(UCloudRtcVideoViewModeScaleAspectFit)];
-    [_rtcEngine setPreviewMode:(UCloudRtcVideoViewModeScaleAspectFill)];
+    [_rtcEngine setPreviewMode:(UCloudRtcVideoViewModeScaleAspectFit)];
     
     // 本地录制文件输出路径
     NSString *tempDir = NSTemporaryDirectory();
@@ -241,6 +245,13 @@ static NSString *roomCellId = @"roomCellId";
     _rtcEngine.videoProfile = UCloudRtcEngine_VideoProfile_480P;
     // 是否开启音量检测，默认NO
 //    _rtcEngine.isTrackVolume = YES;
+    // 开启自定义视频源,默认为NO
+//    _rtcEngine.enableExtendVideoCapture = YES;
+    if (_rtcEngine.enableExtendVideoCapture) {
+        // 用户自行设置要发送的视频数据
+        [self createFileCapture];// 测试
+    }
+    
     // 设置代理
     _rtcEngine.delegate = self;
     // 加入房间
@@ -248,7 +259,18 @@ static NSString *roomCellId = @"roomCellId";
         
     }];
     //添加本地预览
-    [_rtcEngine setLocalPreview:_localPreview];
+//    [_rtcEngine setLocalPreview:_localPreview];
+}
+
+/// 自定义视频源（从文件读取视频上传）
+- (void)createFileCapture {
+    _fileCaptureController = [URTCFileCaptureController new];
+    [_fileCaptureController startCapturingFromFileNamed:@"test480.mp4" onError:^(NSString * _Nonnull error) {
+        if (error) {
+            NSLog(@"%@",error);
+        }
+    }];
+    _fileCaptureController.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -260,6 +282,9 @@ static NSString *roomCellId = @"roomCellId";
 /// @param sender btn
 - (IBAction)leaveRoom:(UIButton *)sender {
     [_rtcEngine leaveRoom];
+    if (_fileCaptureController) {
+        [_fileCaptureController stopCapture];
+    }
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
@@ -389,6 +414,68 @@ static NSString *roomCellId = @"roomCellId";
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didReceiveStreamStatus:(NSArray<UCloudRtcStreamStatsInfo*> *_Nonnull)status {
 }
 
+- (void)uCloudRtcEngine:(UCloudRtcEngine *)manager didChangePublishState:(UCloudRtcEnginePublishState)publishState mediaType:(UCloudRtcStreamMediaType)mediaType {
+    NSString *titile = @"";
+    NSString *tips = @"";
+    switch (publishState) {
+        case UCloudRtcEnginePublishStateUnPublish:
+            titile = @"未发布";
+            tips = @"未发布";
+            break;
+        case UCloudRtcEnginePublishStatePublishing: {
+            titile = @"发布中...";
+            tips = @"发布中...";
+            break;
+        }
+            
+        case UCloudRtcEnginePublishStatePublishSucceed:{
+            titile = @"取消发布";
+            tips = @"发布成功";
+            if (mediaType == UCloudRtcStreamMediaTypeScreen) {
+                // FIXME: screen
+                
+            } else {
+                [self.rtcEngine.localStream renderOnView:_localPreview];
+            }
+            break;
+        }
+        case UCloudRtcEnginePublishStateRepublishing: {
+            titile = tips = @"正在重新发布...";
+            break;
+        }
+        case UCloudRtcEnginePublishStatePublishFailed: {
+            titile = @"重新发布";
+            tips = @"发布失败";
+            break;
+        }
+        case UCloudRtcEnginePublishStatePublishStoped: {
+            titile = @"重新发布";
+            tips = @"发布已停止";
+            if (mediaType == UCloudRtcStreamMediaTypeScreen) {
+
+            }
+            break;
+        }
+        default:
+            break;
+    }
+
+    [self.view makeToast:tips duration:1.5 position:CSToastPositionCenter];
+    NSLog(@"didChangePublishState:%@",tips);
+    // FIXME:screen
+//    [self didChangePublishStateWithMediaType:mediaType tittle:titile];
+}
+
+- (void)didChangePublishStateWithMediaType:(UCloudRtcStreamMediaType)mediaType tittle:(NSString *)title {
+    switch (mediaType) {
+        case UCloudRtcStreamMediaTypeCamera:
+            break;
+        case UCloudRtcStreamMediaTypeScreen:
+            break;
+        default:
+            break;
+    }
+}
 /**流 连接失败*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager streamConnectionFailed:(NSString *_Nonnull)streamId {
 
@@ -653,6 +740,14 @@ static NSString *roomCellId = @"roomCellId";
         }];
     }
 
+}
+
+#pragma mark-- 自定义视频源采集回调
+- (void)capturer:(URTCFileCaptureController *)fileCaptureController didCaptureVideoPixelBufferRef:(CVPixelBufferRef)pixelBufferRef timestamp:(CMTime)timestamp {
+    if (self.rtcEngine.enableExtendVideoCapture) {
+        [self.rtcEngine publishPixelBuffer:pixelBufferRef timestamp:timestamp rotation:(UCloudRtcVideoRotation_0)];
+    }
+    
 }
 
 - (void)dealloc {
