@@ -7,8 +7,8 @@ target 'UCloudRtcSdkDemo' do
 #  pod 'UCloudRtcSdk'
 
 #local
- pod 'UCloudRtcSdk', :path => '../../'
+# pod 'UCloudRtcSdk', :path => '../../'
 
 #specify version
-# pod 'UCloudRtcSdk', '~> 1.6.0'
+  pod 'UCloudRtcSdk', '~> 1.6.0'
 end
