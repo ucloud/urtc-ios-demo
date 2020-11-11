@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2623F4B61036E0473AE8E820 /* Pods_UCloudRtcSdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4C3CBD14D840EE5637EC44 /* Pods_UCloudRtcSdkDemo.framework */; };
 		3814CDDB24B6E5AF0039DAF9 /* URTCRecodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3814CDD824B6E5AF0039DAF9 /* URTCRecodView.xib */; };
 		3814CDDC24B6E5AF0039DAF9 /* URTCRecodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3814CDDA24B6E5AF0039DAF9 /* URTCRecodView.m */; };
+		3843C9A82512212000DDCCE4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3843C9A72512212000DDCCE4 /* libz.tbd */; };
+		385C2696255BA1FE00088BF6 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 385C2695255BA1FE00088BF6 /* libbz2.tbd */; };
+		385C2698255BA21400088BF6 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 385C2697255BA21400088BF6 /* libiconv.tbd */; };
+		385C2699255BA23800088BF6 /* Pods_UCloudRtcSdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4C3CBD14D840EE5637EC44 /* Pods_UCloudRtcSdkDemo.framework */; };
 		386EF9DD244FDF1800629CD4 /* UCloudRtcRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386EF9DB244FDF1800629CD4 /* UCloudRtcRoomCell.m */; };
 		386EF9DE244FDF1800629CD4 /* UCloudRtcRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386EF9DC244FDF1800629CD4 /* UCloudRtcRoomCell.xib */; };
 		3878ABEB244D473900968064 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878ABEA244D473900968064 /* AppDelegate.m */; };
@@ -65,23 +68,13 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		38A0EC5B24A1F05C00EEDFE4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		3814CDD824B6E5AF0039DAF9 /* URTCRecodView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = URTCRecodView.xib; sourceTree = "<group>"; };
 		3814CDD924B6E5AF0039DAF9 /* URTCRecodView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URTCRecodView.h; sourceTree = "<group>"; };
 		3814CDDA24B6E5AF0039DAF9 /* URTCRecodView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URTCRecodView.m; sourceTree = "<group>"; };
+		3843C9A72512212000DDCCE4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		385C2695255BA1FE00088BF6 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		385C2697255BA21400088BF6 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		386EF9DA244FDF1800629CD4 /* UCloudRtcRoomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UCloudRtcRoomCell.h; sourceTree = "<group>"; };
 		386EF9DB244FDF1800629CD4 /* UCloudRtcRoomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UCloudRtcRoomCell.m; sourceTree = "<group>"; };
 		386EF9DC244FDF1800629CD4 /* UCloudRtcRoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UCloudRtcRoomCell.xib; sourceTree = "<group>"; };
@@ -150,6 +143,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385C2698255BA21400088BF6 /* libiconv.tbd in Frameworks */,
+				385C2696255BA1FE00088BF6 /* libbz2.tbd in Frameworks */,
+				3843C9A82512212000DDCCE4 /* libz.tbd in Frameworks */,
 				3878AC47244D975E00968064 /* Bugly.framework in Frameworks */,
 				3878AC5D244D9B1E00968064 /* UIKit.framework in Frameworks */,
 				3878AC5B244D9AF400968064 /* libicucore.tbd in Frameworks */,
@@ -159,8 +155,8 @@
 				3878AC4D244D9A6400968064 /* VideoToolbox.framework in Frameworks */,
 				3878AC53244D9A9E00968064 /* GLKit.framework in Frameworks */,
 				3878AC5A244D9AE000968064 /* Security.framework in Frameworks */,
+				385C2699255BA23800088BF6 /* Pods_UCloudRtcSdkDemo.framework in Frameworks */,
 				3878AC51244D9A9500968064 /* CFNetwork.framework in Frameworks */,
-				2623F4B61036E0473AE8E820 /* Pods_UCloudRtcSdkDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +288,9 @@
 		3878AC4B244D9A6400968064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				385C2697255BA21400088BF6 /* libiconv.tbd */,
+				385C2695255BA1FE00088BF6 /* libbz2.tbd */,
+				3843C9A72512212000DDCCE4 /* libz.tbd */,
 				3878AC5C244D9B1E00968064 /* UIKit.framework */,
 				3878AC59244D9AE000968064 /* Security.framework */,
 				3878AC57244D9AD200968064 /* OpenGLES.framework */,
@@ -326,8 +325,7 @@
 				3878ABE2244D473900968064 /* Sources */,
 				3878ABE3244D473900968064 /* Frameworks */,
 				3878ABE4244D473900968064 /* Resources */,
-				38A0EC5B24A1F05C00EEDFE4 /* Embed Frameworks */,
-				107281A3FA64EB60BB93127C /* [CP] Embed Pods Frameworks */,
+				E5B9A9A58A9A57BB5888649A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -451,23 +449,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		107281A3FA64EB60BB93127C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BE31777EBF81AD7CE162A85B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,6 +469,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5B9A9A58A9A57BB5888649A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -685,7 +683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -698,19 +696,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/UCloudRtcSdkDemo/UCloudRtcSdk-ios/RTC/lib",
-				);
-				MARKETING_VERSION = 1.5.8;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.6.0;
 				OTHER_LDFLAGS = (
-					"-licucore",
+					"$(inherited)",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.urtcdemo;
 				PRODUCT_NAME = URTC;
 				PROVISIONING_PROFILE_SPECIFIER = common;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7s armv7 arm64e";
 			};
 			name = Debug;
 		};
@@ -721,7 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -734,19 +730,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/UCloudRtcSdkDemo/UCloudRtcSdk-ios/RTC/lib",
-				);
-				MARKETING_VERSION = 1.5.8;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.6.0;
 				OTHER_LDFLAGS = (
-					"-licucore",
+					"$(inherited)",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.urtcdemo;
 				PRODUCT_NAME = URTC;
 				PROVISIONING_PROFILE_SPECIFIER = common;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7s armv7 arm64e";
 			};
 			name = Release;
 		};

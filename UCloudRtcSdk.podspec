@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "UCloudRtcSdk"
-  spec.version      = "1.5.9"
+  spec.version      = "1.6.0"
   spec.summary      = "Real-time audio and video calling with UCloudRtcSdk"
 
   spec.description  = <<-DESC
@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "9.0"
   spec.source       = { :git => "https://github.com/ucloud/urtc-ios-demo.git", :tag => "#{spec.version}" }
   spec.frameworks = "CFNetwork", "Security", "OpenGLES", "GLKit", "VideoToolbox"
-  spec.libraries = "icucore", "c++"
+  spec.libraries = "icucore", "c++", "bz2", "z", "iconv"
   spec.vendored_frameworks = 'UCloudRtcSdk/Frameworks/*.framework'
 
 end

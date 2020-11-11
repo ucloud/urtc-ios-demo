@@ -502,13 +502,6 @@ static NSString *roomCellId = @"roomCellId";
     }
 }
 
-/**开始视频录制的回调*/
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager startRecord:(NSDictionary *_Nonnull)recordResponse {
-    [self.view makeToast:[NSString stringWithFormat:@"视频录制文件:%@",recordResponse[@"FileName"]] duration:3.0 position:CSToastPositionCenter];
-}
-
-
-
 /**收到自定义消息的回调*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveCustomCommand:(NSString *_Nonnull)fromUserID  content:(NSString *_Nonnull)content {
 
@@ -551,6 +544,44 @@ static NSString *roomCellId = @"roomCellId";
         }
     }
 }
+
+
+/**
+@brief 开始录制、转推的回调
+@param mixReponse 回调信息
+@discussion 开启云端转推录制服务成功时会收到该回调，回调信息里面包含录制生成的视频文件的文件名；手动添加流到录制、转推中，也会在该代理方法中回调。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager startMix:(UCloudRtcMixResponse *_Nonnull)mixReponse {
+    [self.view makeToast:[NSString stringWithFormat:@"视频录制文件:%@",mixReponse.filename] duration:3.0 position:CSToastPositionCenter];
+    NSLog(@"录制、转推的文件：%@",mixReponse.filename);
+    //    录制地址拼接：
+    //    http://"bucket存储空间名称.region地域.ufileos.com"/"file_name".mp4
+}
+/**
+@brief 停止录制、转推的回调
+@discussion 停止录制、转推的回调。
+*/
+- (void)uCloudRtcEngineDidStopMix:(UCloudRtcEngine *_Nonnull)manager {
+    NSLog(@"停止转推、录制");
+}
+/**
+@brief 删除录制、转推中指定的流回调
+@param mixId 录制任务id
+@discussion mixId。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager deleteMixStream:(NSString *_Nullable)mixId {
+    
+}
+/**
+@brief 查询录制、转推的信息
+@param response 回调信息
+@discussion 查询录制、转推的信息，response包含type、mixId、filename。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager queryMix:(UCloudRtcMixResponse *_Nullable)response {
+    
+}
+
+
 
 - (void)setupTopMenu{//@"旁路推流",@"push"
     NSArray *titles = @[@"云端录制",@"开始本地录制",@"结束本地录制",@"播放录制视频",@"截图"];
@@ -632,22 +663,26 @@ static NSString *roomCellId = @"roomCellId";
         _recordView.layer.masksToBounds = YES;
         _recordView.layer.cornerRadius = 22.f;
         _recordView.frame = CGRectMake(20, 120, 125, 44);
+        __weak typeof(self) weakSelf = self;
         _recordView.didSelectBlock = ^(URTCRecordViewStatus status) {
             switch (status) {
                 case URTCRecordViewStatus_Start:
                     NSLog(@"start cloud record.");
-                    [self record];
+                    [weakSelf record];
                     break;
                 case URTCRecordViewStatus_Stop:
                     NSLog(@"stop cloud record.");
-                    [self->_rtcEngine stopRecord];
+                    UCloudRtcMixStopConfig *stopConfig = [UCloudRtcMixStopConfig new];
+                    stopConfig.type = UCloudRtcMixConfigTypeRecord;
+                    [weakSelf.rtcEngine stopMix:stopConfig];
                     break;
-                case URTCRecordViewStatus_Close:
-                    NSLog(@"close");
-                    self->_recordView = nil;
-                    break;
-                default:
-                    break;
+//                case URTCRecordViewStatus_Close:
+//                    NSLog(@"close");
+//                    self->_recordView = nil;
+//                    break;
+    //                default:
+    //
+    //                    break;
             }
         };
         [self.view addSubview:_recordView];
@@ -657,20 +692,24 @@ static NSString *roomCellId = @"roomCellId";
 //配置云端录制相关参数
 - (void)record{
     //配置视频录制相关参数
-    UCloudRtcRecordConfig *recordConfig = [UCloudRtcRecordConfig new];
-    recordConfig.mainviewid = _userId;
-    recordConfig.mimetype = 3;
-    recordConfig.mainviewmt = 1;
+    UCloudRtcMixConfig *recordConfig = [UCloudRtcMixConfig new];
+    recordConfig.type = UCloudRtcMixConfigTypeRecord;
+    recordConfig.streams = @[];
+    recordConfig.mainviewuid = _userId;
+//    recordConfig.mimetype = 3;
+//    recordConfig.mainviewtype = 1;
     recordConfig.bucket = @"urtc-test";
     recordConfig.region = @"cn-bj";
-    recordConfig.watermarkpos = 1;
+//    recordConfig.waterpos = 1;
     recordConfig.width = 480;
     recordConfig.height = 640;
-    recordConfig.isaverage = YES;
-    recordConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";
-    recordConfig.watertype = 1;
-    recordConfig.wtemplate = 9;
-    [_rtcEngine startRecord:recordConfig];
+//    recordConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";
+//    recordConfig.watertype = 1;
+//    录制地址
+//    http://"bucket存储空间名称.region地域.ufileos.com"/"file_name".mp4
+//    http://urtc-test.cn-bj.ufileos.com/000099_URtc-h4r1txxy_rtc1605079948.mp4
+    
+    [_rtcEngine startMix:recordConfig];
 }
 #pragma mark-- CollectionView
 

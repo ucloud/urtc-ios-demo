@@ -126,7 +126,7 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
   UCloudRtcVideoRotation_270 = 270,
 };
 
-@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcRecordConfig,UCloudRtcMixConfig,UCloudRtcMixStopConfig,UCloudRtcAudioStats,UCloudRtcVideoFrame;
+@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcMixConfig, UCloudRtcMixResponse,UCloudRtcMixStopConfig,UCloudRtcAudioStats,UCloudRtcVideoFrame;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
 /**
@@ -235,11 +235,36 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager error:(UCloudRtcError *_Nonnull)error;
 
 /**
-@brief 开始视频录制的回调
+@brief 开始录制、转推的回调 《 废弃 》
 @param recordResponse 回调信息
 @discussion 开启云端录制服务成功时会收到该回调，回调信息里面包含录制生成的视频文件的文件名。
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager startRecord:(NSDictionary *_Nonnull)recordResponse;
+
+/**
+@brief 开始录制、转推的回调
+@param mixReponse 回调信息
+@discussion 开启云端转推录制服务成功时会收到该回调，回调信息里面包含录制生成的视频文件的文件名；手动添加流到录制、转推中，也会在该代理方法中回调。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager startMix:(UCloudRtcMixResponse *_Nonnull)mixReponse;
+/**
+@brief 停止录制、转推的回调
+@discussion 停止录制、转推的回调。
+*/
+- (void)uCloudRtcEngineDidStopMix:(UCloudRtcEngine *_Nonnull)manager;
+/**
+@brief 删除录制、转推中指定的流回调
+@param mixId 录制任务id
+@discussion mixId。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager deleteMixStream:(NSString *_Nullable)mixId;
+/**
+@brief 查询录制、转推的信息
+@param response 回调信息
+@discussion 查询录制、转推的信息，response包含type、mixId、filename。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager queryMix:(UCloudRtcMixResponse *_Nullable)response;
+
 
 /**
 @brief 收到自定义消息的回调
@@ -551,20 +576,6 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
 - (int)kickOffUsers:(NSArray *)users type:(UCloudRtcKickOffType)type;
 
 /**
- @brief 开始视频录制
- 
- @return 0: 方法调用成功  < 0: 方法调用失败
- */
-- (int)startRecord:(UCloudRtcRecordConfig *_Nonnull)recordConfig;
-
-/**
- @brief 停止视频录制
- 
- @return 0: 方法调用成功  < 0: 方法调用失败
- */
-- (int)stopRecord;
-
-/**
  @brief 本地视频录制
  
  @discussion 会根据你选择的视频分辨率进行录制，默认是 480 X 360
@@ -716,9 +727,16 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
 - (int)deleteMixStream:(NSArray *_Nonnull)streams;
 
 /**
-@brief 本地视频流截图
+@brief 本地视频流截图（该方法将废弃，v1.5.9后请使用“snapshotWithStream: completion:”）
 */
 - (void)captuerVideoImage:(void(^_Nullable)(UIImage *_Nullable))captureImage;
+/**
+ *@brief 视频快照
+ *@param stream 该流对象的快照，可以是本地流和远端流
+ *@param complete 快照回调
+*/
+- (void)snapshotWithStream:(UCloudRtcStream *_Nonnull)stream completion:(void(^_Nullable)(UIImage *_Nullable))complete;
+
 
 /**
  *@brief 上传自定义视频
