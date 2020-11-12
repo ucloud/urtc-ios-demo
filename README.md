@@ -76,7 +76,8 @@ pod 'UCloudRtcSdk'
   source 'https://github.com/CocoaPods/Specs.git'
   target 'Your App' do
   	use_frameworks!
-  	pod 'UCloudRtcSdk'
+  	#pod 'UCloudRtcSdk'
+	pod 'UCloudRtcSdk', '~> 1.6.0'
 end
 ```
 ### 5.1.2 手动导入 SDK 
