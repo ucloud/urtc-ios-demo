@@ -256,7 +256,12 @@ static NSString *roomCellId = @"roomCellId";
     _rtcEngine.delegate = self;
     // 加入房间
     [_rtcEngine joinRoomWithRoomId:_roomId userId:_userId token:_token completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
-        
+        NSLog(@"----加入房间---:%@",response);
+        if ([[response valueForKey:@"isRejoin"] boolValue]) {
+           NSLog(@"-----重连-----");
+        } else {
+           NSLog(@"-----首次-----");
+        }
     }];
     //添加本地预览
 //    [_rtcEngine setLocalPreview:_localPreview];
@@ -672,9 +677,12 @@ static NSString *roomCellId = @"roomCellId";
                     break;
                 case URTCRecordViewStatus_Stop:
                     NSLog(@"stop cloud record.");
-                    UCloudRtcMixStopConfig *stopConfig = [UCloudRtcMixStopConfig new];
-                    stopConfig.type = UCloudRtcMixConfigTypeRecord;
-                    [weakSelf.rtcEngine stopMix:stopConfig];
+                    // 停止录制
+                    [weakSelf.rtcEngine stopRecord];
+                    
+                    // 停止旁路推流
+//                    [weakSelf.rtcEngine stopRelay:nil];
+
                     break;
 //                case URTCRecordViewStatus_Close:
 //                    NSLog(@"close");
@@ -691,25 +699,37 @@ static NSString *roomCellId = @"roomCellId";
 
 //配置云端录制相关参数
 - (void)record{
-    //配置视频录制相关参数
-    UCloudRtcMixConfig *recordConfig = [UCloudRtcMixConfig new];
-    recordConfig.type = UCloudRtcMixConfigTypeRecord;
-    recordConfig.streams = @[];
-    recordConfig.mainviewuid = _userId;
-//    recordConfig.mimetype = 3;
-//    recordConfig.mainviewtype = 1;
-    recordConfig.bucket = @"urtc-test";
-    recordConfig.region = @"cn-bj";
-//    recordConfig.waterpos = 1;
-    recordConfig.width = 480;
-    recordConfig.height = 640;
-//    recordConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";
-//    recordConfig.watertype = 1;
+    UCloudRtcMixConfig *mixConfig = [UCloudRtcMixConfig new];
+    //配置视频录制相关参数UCloudRtcMixConfig *mixConfig = [UCloudRtcMixConfig new];
+    mixConfig.streams = @[];
+//    mixConfig.pushurl = @[@"rtmp://rtcpush.ugslb.com/rtclive/URtc-h4r1txxy12111151yketwz111"];
+    mixConfig.layout = 1;
+    mixConfig.layouts = @[];
+    mixConfig.bgColor = @{@"r": @200,@"g": @100, @"b": @50};
+    mixConfig.bitrate = 600;
+    mixConfig.framerate = 15;
+    mixConfig.videocodec = @"h264";
+    mixConfig.qualitylevel = @"CB";
+    mixConfig.audiocodec = @"aac";
+    mixConfig.mainviewtype = 1;
+    mixConfig.mainviewuid = self.userId;
+    mixConfig.width = 640;
+    mixConfig.height = 480;
+    mixConfig.bucket = @"urtc-test";
+    mixConfig.region =@"cn-bj";
+    mixConfig.watertype = 1;
+    mixConfig.waterpos = 1;
+    mixConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";
+    mixConfig.mimetype = 0;
+    mixConfig.addstreammode = 1;
+    // 云端录制
+    [self.rtcEngine startRecord:mixConfig];
+    // 旁路推流
+//    [self.rtcEngine startRelay:mixConfig];
 //    录制地址
 //    http://"bucket存储空间名称.region地域.ufileos.com"/"file_name".mp4
 //    http://urtc-test.cn-bj.ufileos.com/000099_URtc-h4r1txxy_rtc1605079948.mp4
     
-    [_rtcEngine startMix:recordConfig];
 }
 #pragma mark-- CollectionView
 

@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcErrorType) {
     UCloudRtcErrorTypePublishStreamFail = 5007, //发布失败
     UCloudRtcErrorTypePublishStreamTimeout = 5008, //发布超时
     UCloudRtcErrorTypeStreamProfileError = 5009, //权限错误
+    UCloudRtcErrorTypeMuteFail = 5010, //mute操作失败
+    UCloudRtcErrorTypePushAndRecordError = 5011 , //转推录制失败
+    UCloudRtcErrorTypeQueryMixError = 5012 , //转推录制失败
     
     UCloudRtcErrorTypeSDKInitField = 5104, //SDK初始化失败
     UCloudRtcErrorTypeParameterInvalid = 5100, //初始化参数错误

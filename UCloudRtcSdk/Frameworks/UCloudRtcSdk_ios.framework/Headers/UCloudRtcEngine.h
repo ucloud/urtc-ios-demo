@@ -126,16 +126,43 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
   UCloudRtcVideoRotation_270 = 270,
 };
 
-@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcMixConfig, UCloudRtcMixResponse,UCloudRtcMixStopConfig,UCloudRtcAudioStats,UCloudRtcVideoFrame;
+
+
+//
+typedef NS_ENUM(NSInteger, UCloudRtcMixState) {
+    UCloudRtcMixStateStart,     // 开始转推/录制/开始更新
+    UCloudRtcMixStateSuccess,   // 录制、转推、更新任务成功
+    UCloudRtcMixStateUpdate,    // 更新
+    UCloudRtcMixStateStop,      // 停止
+    UCloudRtcMixStateStartFailed,    // 开始任务失败
+    UCloudRtcMixStateStopFailed,    // 停止任务失败
+    UCloudRtcMixStateUpdateFailed,    // 更新任务失败
+    UCloudRtcMixStateFailed,    // 录制和转推过程中任务失败
+
+};
+typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
+    UCloudRtcLeaveRoomReasonActive,     // 主动离开
+    UCloudRtcLeaveRoomReasonForced,     // 被强制离开(被人强制踢出房间)
+    UCloudRtcLeaveRoomReasonNoResponse, // 没有响应自动离开（如断线时间超过上限后，会回调离开房间的通知）
+};
+
+
+@class UCloudRtcEngine,UCloudRtcStream,UCloudRtcError,UCloudRtcRoomStream,UCloudRtcStreamVolume,UCloudRtcStreamStatsInfo,UCloudRtcLog,UCloudRtcMixConfig, UCloudRtcMixResponse,UCloudRtcRecordResponse, UCloudRtcRelayResponse,UCloudRtcAudioStats,UCloudRtcVideoFrame;
 @protocol UCloudRtcEngineDelegate <NSObject>
 @optional
 /**
-@brief 退出房间的回调
+@brief 退出房间的回调 （1.6.1后废弃，使用“uCloudRtcEngine: didLeaveRoomWithReason:”）
 
 @discussion 该方法是在调用退出房间：-leaveRoom方法后会收到的d回调通知。
 */
 - (void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *_Nonnull)manager;
 
+/**
+@brief 退出房间的回调
+
+@discussion 该方法是在调用退出房间：-leaveRoom方法后会收到的d回调通知。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didLeaveRoomWithReason:(UCloudRtcLeaveRoomReason)reason;
 
 /**
 @brief 发布状态的变化
@@ -246,14 +273,12 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
 @param mixReponse 回调信息
 @discussion 开启云端转推录制服务成功时会收到该回调，回调信息里面包含录制生成的视频文件的文件名；手动添加流到录制、转推中，也会在该代理方法中回调。
 */
-- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager startMix:(UCloudRtcMixResponse *_Nonnull)mixReponse;
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didChangeRecordState:(UCloudRtcMixState)mixState response:(UCloudRtcMixResponse *_Nullable)recordResponse ;
+
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didChangeRelayState:(UCloudRtcMixState)mixState response:(UCloudRtcMixResponse *_Nullable)relayResponse;
+
 /**
-@brief 停止录制、转推的回调
-@discussion 停止录制、转推的回调。
-*/
-- (void)uCloudRtcEngineDidStopMix:(UCloudRtcEngine *_Nonnull)manager;
-/**
-@brief 删除录制、转推中指定的流回调
+@brief 删除录制、转推中指定的流回调 （已废弃）
 @param mixId 录制任务id
 @discussion mixId。
 */
@@ -685,24 +710,42 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
 */
 - (int)distory;
 
-
-
-/**转推/录制/转推和录制/更新设置相关方法*/
 /**
-@brief 开始
-
+@brief 录制
+@discussion 开启录制任务
+@param mixConfig 构建录制的模型，bucket、region必须设置
 @return 0: 方法调用成功  < 0: 方法调用失败
 */
-- (int)startMix:(UCloudRtcMixConfig *_Nonnull)mixConfig;
+- (int)startRecord:(UCloudRtcMixConfig *_Nonnull)mixConfig;
 
 /**
 @brief 停止
 
 @return 0: 方法调用成功  < 0: 方法调用失败
 */
-- (int)stopMix:(UCloudRtcMixStopConfig *_Nonnull)mixConfig;
+- (int)stopRecord;
+/**
+@brief 转推
+@discussion 添加、删除流时，设置streams为更改后的全量列表
+@param mixConfig 构建转推、录制的模型
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)startRelay:(UCloudRtcMixConfig *_Nonnull)mixConfig;
 
 
+/**
+@brief 停止
+
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)stopRelay:(NSArray *_Nullable)pushUrls;
+/**
+@brief 更新转推、录制
+@discussion 转推和录制使用同一个模板 ，若转推和录制同时进行时，则会同时更新转推和录制； 添加、删除流时，设置streams为更改后的全量列表
+@param mixConfig 构建转推、录制的模型
+@return 0: 方法调用成功  < 0: 方法调用失败
+*/
+- (int)updateMixConfig:(UCloudRtcMixConfig *_Nonnull)mixConfig;
 /**
 @brief 查询
 
@@ -712,7 +755,7 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
 
 
 /**
-@brief 添加流
+@brief 添加流 （已弃用，使用 "startMix:"，UCloudRtcMixStopConfig的streams全量列表 ）
 
 @return 0: 方法调用成功  < 0: 方法调用失败
 */
@@ -720,7 +763,7 @@ typedef NS_ENUM(NSInteger, UCloudRtcVideoRotation) {
 
 
 /**
-@brief 删除流
+@brief 删除流 （（已弃用，使用 "startMix:"，UCloudRtcMixStopConfig的streams全量列表）
 
 @return 0: 方法调用成功  < 0: 方法调用失败
 */

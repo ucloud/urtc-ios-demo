@@ -9,23 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "UCloudRtcEngine.h"
 
-typedef enum : NSUInteger {
-    UCloudRtcMixConfigTypePush = 1,
-    UCloudRtcMixConfigTypeRecord,
-    UCloudRtcMixConfigTypePushAndRecord,
-    UCloudRtcMixConfigTypeUpdate,
-} UCloudRtcMixConfigType;
-
 @interface UCloudRtcMixConfig : NSObject
 
-//1 转推 2 录制 3 转推和录制 4 更新设置
-@property (nonatomic, assign) UCloudRtcMixConfigType type;
+// bucket
+@property (nonatomic, copy) NSString *bucket;
+// region
+@property (nonatomic, copy) NSString *region;
+
+@property (nonatomic, copy) NSArray *pushurl;
+
 
 //streams 如果指定了用户，则只添加该用户的指定流，新加入的流处理由addstreammode参数决定 [{"user_id": "u616","media_type": 1 //1 摄像头  2 桌面},{}]
 @property (nonatomic, strong) NSArray *streams;
-
-//如果type选1或3需要指定转推地址
-@property (nonatomic, copy) NSArray *pushurl;
 
 //更新layout时使用，指定切换到的layout最大用户数，如果不指定，使用实时推流的用户数
 @property (nonatomic, assign) NSInteger layoutUserlimit;
@@ -69,12 +64,6 @@ typedef enum : NSUInteger {
 //录制视频的高 默认：480
 @property (nonatomic, assign) NSInteger height;
 
-// bucket
-@property (nonatomic, copy) NSString *bucket;
-
-// region
-@property (nonatomic, copy) NSString *region;
-
 //0 (无水印) 1 (时间水印) 、 2 (图片水印) 、 3（文字水印)
 @property (nonatomic, assign) NSInteger watertype;
 
@@ -97,18 +86,10 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) NSTimeInterval taskTimeout;
 @end
 
-
-
 /// 转推录制回调结果
 @interface UCloudRtcMixResponse : NSObject
-@property (nonatomic, assign) UCloudRtcMixConfigType type;
-@property (nonatomic, copy) NSString *filename;
-
 @property (nonatomic, copy) NSString *mixId;
-// bucket
-@property (nonatomic, copy) NSString *bucket;
-// region
-@property (nonatomic, copy) NSString *region;
-
-@property (nonatomic, copy) NSArray *pushurl;
+@property (nonatomic, copy) NSString *filename;  // 录制任务时，取该值
+@property (nonatomic, copy) NSArray *pushurl;   // 转推任务时，取该值
 @end
+

@@ -16,5 +16,4 @@
 #import "UCloudRtcLog.h"
 #import "UCloudRtcStreamVolume.h"
 #import "UCloudRtcMixConfig.h"
-#import "UCloudRtcMixStopConfig.h"
 #import "UCloudRtcVideoFrame.h"
