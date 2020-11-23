@@ -320,6 +320,13 @@ typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager connectState:(UCloudRtcConnectState)connectState;
 
 /**
+@brief 重连房间时回调
+@discussion 当连接失败后会尝试重连，开始重连房间时回调。
+*/
+- (void)uCloudRtcEngineRejoiningRoom:(UCloudRtcEngine *_Nonnull)manager;
+
+
+/**
 @brief 与房间的连接断开
 @discussion 当连接断开时会收到该回调。
 */
