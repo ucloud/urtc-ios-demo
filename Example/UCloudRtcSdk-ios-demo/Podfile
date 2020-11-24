@@ -10,5 +10,5 @@ target 'UCloudRtcSdkDemo' do
 # pod 'UCloudRtcSdk', :path => '../../'
 
 #specify version
-  pod 'UCloudRtcSdk', '~> 1.6.3'
+  pod 'UCloudRtcSdk', '~> 1.6.4'
 end

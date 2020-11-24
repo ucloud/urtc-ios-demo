@@ -254,6 +254,7 @@ static NSString *roomCellId = @"roomCellId";
     
     // 设置代理
     _rtcEngine.delegate = self;
+    
     // 加入房间
     [_rtcEngine joinRoomWithRoomId:_roomId userId:_userId token:_token completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
         NSLog(@"----加入房间---:%@",response);
