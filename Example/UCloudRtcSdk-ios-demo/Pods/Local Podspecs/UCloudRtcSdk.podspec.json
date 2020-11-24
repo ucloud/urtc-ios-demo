@@ -1,6 +1,6 @@
 {
   "name": "UCloudRtcSdk",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "summary": "Real-time audio and video calling with UCloudRtcSdk",
   "description": "By installing the URTC SDK, you can quickly build multi-person audio and video calls, one-to-many or many-to-many real-time interaction",
   "homepage": "https://github.com/ucloud/urtc-ios-demo",
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/ucloud/urtc-ios-demo.git",
-    "tag": "1.6.4"
+    "tag": "1.6.5"
   },
   "frameworks": [
     "CFNetwork",

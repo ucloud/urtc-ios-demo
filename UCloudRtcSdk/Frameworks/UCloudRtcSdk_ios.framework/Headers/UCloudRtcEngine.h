@@ -624,7 +624,7 @@ typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
 
 
 /**
-@brief 网络音频播放
+@brief 音频播放
  
 @param path 文件路径
 @param repeat 是否循环播放
@@ -634,14 +634,14 @@ typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
 
 
 /**
-@brief 停止网络音频播放
+@brief 停止音频播放
  
 @return 0: 方法调用成功  < 0: 方法调用失败
 */
 - (int)stopMediaPlay;
 
 /**
-@brief 暂停网络音频播放
+@brief 暂停音频播放
  
 @return 0: 方法调用成功  < 0: 方法调用失败
 */
@@ -649,7 +649,7 @@ typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
 
 
 /**
-@brief 恢复网络音频播放
+@brief 恢复音频播放
  
 @return 0: 方法调用成功  < 0: 方法调用失败
 */
