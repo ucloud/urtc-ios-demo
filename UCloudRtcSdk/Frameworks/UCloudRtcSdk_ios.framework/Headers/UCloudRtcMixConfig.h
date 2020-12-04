@@ -11,11 +11,12 @@
 
 @interface UCloudRtcMixConfig : NSObject
 
-// bucket
+// 录制文件bucket
 @property (nonatomic, copy) NSString *bucket;
-// region
+// 录制文件region
 @property (nonatomic, copy) NSString *region;
 
+// 转推地址数组
 @property (nonatomic, copy) NSArray *pushurl;
 
 
