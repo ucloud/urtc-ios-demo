@@ -1,4 +1,4 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../../UCloudRtcSdk/Frameworks"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/UCloudRtcSdk/UCloudRtcSdk/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_LDFLAGS = $(inherited) -l"bz2" -l"c++" -l"iconv" -l"icucore" -l"z" -framework "CFNetwork" -framework "GLKit" -framework "OpenGLES" -framework "Security" -framework "UCloudRtcSdk_ios" -framework "VideoToolbox"
