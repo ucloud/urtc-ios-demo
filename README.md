@@ -77,7 +77,7 @@ pod 'UCloudRtcSdk'
   target 'Your App' do
   	use_frameworks!
   	#pod 'UCloudRtcSdk'
-	pod 'UCloudRtcSdk', '~> 1.6.0'
+	pod 'UCloudRtcSdk', '~> 1.6.5'
 end
 ```
 ### 5.1.2 手动导入 SDK 
