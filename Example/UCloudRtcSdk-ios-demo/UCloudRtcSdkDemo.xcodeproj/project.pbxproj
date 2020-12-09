@@ -685,7 +685,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UCloudRtcSdkDemo",
@@ -706,7 +706,7 @@
 				PRODUCT_NAME = URTC;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7s armv7 arm64e";
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -719,7 +719,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UCloudRtcSdkDemo",
@@ -740,7 +740,7 @@
 				PRODUCT_NAME = URTC;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7s armv7 arm64e";
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};
