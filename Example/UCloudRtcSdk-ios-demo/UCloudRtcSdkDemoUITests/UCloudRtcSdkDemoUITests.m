@@ -2,8 +2,7 @@
 //  UCloudRtcSdkDemoUITests.m
 //  UCloudRtcSdkDemoUITests
 //
-//  Created by ucloud on 2020/4/20.
-//  Copyright © 2020 ucloud. All rights reserved.
+//  Created by ucloud on 2020/12/22.
 //
 
 #import <XCTest/XCTest.h>
@@ -39,7 +38,7 @@
 - (void)testLaunchPerformance {
     if (@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)) {
         // This measures how long it takes to launch your application.
-        [self measureWithMetrics:@[XCTOSSignpostMetric.applicationLaunchMetric] block:^{
+        [self measureWithMetrics:@[[[XCTApplicationLaunchMetric alloc] init]] block:^{
             [[[XCUIApplication alloc] init] launch];
         }];
     }

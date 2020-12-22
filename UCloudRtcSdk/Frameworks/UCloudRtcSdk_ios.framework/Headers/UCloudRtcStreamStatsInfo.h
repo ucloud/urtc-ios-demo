@@ -31,13 +31,7 @@
 @property (nonatomic, strong) NSString *trackType;//区分音频h轨道 、视频轨道
 @property (nonatomic, strong) NSString *type;//区分ssrc：上行send、下行recv、googCandidatePair、VideoBwe
 
-// 博学
-@property (nonatomic, assign) double totalAudioEnergy;//总音频发送量
-@property (nonatomic, assign) double googPreemptiveExpandRate;//伸缩抢占率
-@property (nonatomic, assign) NSInteger audioInputLevel;//采集音频幅度
-@property (nonatomic, assign) NSInteger audioOutputLevel;// 播放音频幅度
-
-// 立飞
+// v3.0 logup
 /** VideoBwe >>>*/
 @property (nonatomic, assign) NSInteger googActualEncBitrate;//当前估算的发送或者接收码率(kbps)（"ab"）
 @property (nonatomic, assign) NSInteger googRetransmitBitrate;//kbps（"rb"）
@@ -55,9 +49,12 @@
 
 /** video >>>*/
 @property (nonatomic, assign) NSInteger googFrameRateReceived;//编码或者解码帧率 （"frr"）
+@property (nonatomic, assign) NSInteger googFrameRateSent;//编码或者解码帧率 （"frr"）发送端实际发送的帧率，根据当前网络会进行动态调整
+
 @property (nonatomic, assign) NSInteger googDecodeMs;//解码耗时 （"dms"）
 @property (nonatomic, assign) NSInteger googAvgEncodeMs;//编码平均耗时 （"ems"）
 @property (nonatomic, assign) NSInteger googInterframeDelayMax;//接收 帧内最大delay （"ifd"）
+@property (nonatomic, assign) NSInteger googEncodeUsagePercent;//编码cpu 占比 （0--100） （"eup"）发送端（平均每帧编码时间）／（平均每帧采集时间），反应编码效率
 
 
 

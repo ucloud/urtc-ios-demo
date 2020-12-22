@@ -8,8 +8,8 @@
 
 #import "UCloudRtcMeetingRoomVC.h"
 #import "UCloudRtcRoomCell.h"
-#import "UIView+Toast.h"
 #import "MLMenuView.h"
+#import "UIView+Toast.h"
 #import "NativeMediaViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "URTCRecodView.h"
@@ -252,10 +252,13 @@ static NSString *roomCellId = @"roomCellId";
         [self createFileCapture];// 测试
     }
     
+    //添加本地预览
+    [_rtcEngine setLocalPreview:_localPreview];
+
     // 设置代理
     _rtcEngine.delegate = self;
     
-    // 加入房间
+        // 加入房间
     [_rtcEngine joinRoomWithRoomId:_roomId userId:_userId token:_token completionHandler:^(NSDictionary * _Nonnull response, int errorCode) {
         NSLog(@"----加入房间---:%@",response);
         if ([[response valueForKey:@"isRejoin"] boolValue]) {
@@ -264,8 +267,8 @@ static NSString *roomCellId = @"roomCellId";
            NSLog(@"-----首次-----");
         }
     }];
-    //添加本地预览
-//    [_rtcEngine setLocalPreview:_localPreview];
+    
+
 }
 
 /// 自定义视频源（从文件读取视频上传）
@@ -364,10 +367,19 @@ static NSString *roomCellId = @"roomCellId";
 
 /**收到远程流*/
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveRemoteStream:(UCloudRtcStream *_Nonnull)stream {
+    
+    
     if (stream) {
+        UCloudRtcStream *delStream;
+        for (UCloudRtcStream *temp  in _remoteStreamList) {
+            if ([temp.userId isEqualToString:stream.userId] && temp.mediaType == stream.mediaType) {
+                delStream =temp;
+            }
+        }
+        [_remoteStreamList removeObject:delStream];
         [_remoteStreamList addObject:stream];
+        [_collectionView reloadData];
     }
-    [_collectionView reloadData];
 }
 
 /**远程流断开(本地移除对应的流)*/
@@ -441,7 +453,7 @@ static NSString *roomCellId = @"roomCellId";
                 // FIXME: screen
                 
             } else {
-                [self.rtcEngine.localStream renderOnView:_localPreview];
+//                [self.rtcEngine.localStream renderOnView:_localPreview];
             }
             break;
         }

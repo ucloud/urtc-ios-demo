@@ -9,15 +9,14 @@
 #import "ViewController.h"
 #import "UCloudRtcTextField.h"
 #import "UCloudRtcMeetingRoomVC.h"
-#import "UCloudRtcSettingVC.h"
 #import "UIView+Toast.h"
+#import "UCloudRtcSettingVC.h"
 #import <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>
 
 //线上
-//#error 在[UCloud 控制台](https://console.ucloud.cn/urtc/manage)， 创建URTC应用，得到 appId 和 appKey
+#error 在[UCloud 控制台](https://console.ucloud.cn/urtc/manage)， 创建URTC应用，得到 appId 和 appKey
 #define APP_ID @""
 #define APP_KEY @""
-
 
 
 #define TOKEN @""

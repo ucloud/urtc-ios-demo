@@ -1,14 +1,20 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '9.0'
- source 'https://github.com/CocoaPods/Specs.git'
+# platform :ios, '9.0'
+
 target 'UCloudRtcSdkDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-#  pod 'UCloudRtcSdk'
+ pod 'UCloudRtcSdk', :path => '../../'
 
-#local
- #pod 'UCloudRtcSdk', :path => '../../'
+  # Pods for UCloudRtcSdkDemo
 
-#specify version
-  pod 'UCloudRtcSdk', '~> 1.6.7'
+  target 'UCloudRtcSdkDemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'UCloudRtcSdkDemoUITests' do
+    # Pods for testing
+  end
+
 end

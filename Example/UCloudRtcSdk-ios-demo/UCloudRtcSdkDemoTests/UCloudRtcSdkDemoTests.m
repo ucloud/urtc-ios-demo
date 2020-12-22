@@ -2,8 +2,7 @@
 //  UCloudRtcSdkDemoTests.m
 //  UCloudRtcSdkDemoTests
 //
-//  Created by ucloud on 2020/4/20.
-//  Copyright © 2020 ucloud. All rights reserved.
+//  Created by ucloud on 2020/12/22.
 //
 
 #import <XCTest/XCTest.h>
