@@ -23,6 +23,9 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios
   spec.ios.deployment_target = "9.0"
   spec.source       = { :git => "https://github.com/ucloud/urtc-ios-demo.git", :tag => "#{spec.version}" }
+  spec.xcconfig = {
+    'VALID_ARCHS' =>  'arm64 armv7 x86_64',
+   }
   spec.frameworks = "CFNetwork", "Security", "OpenGLES", "GLKit", "VideoToolbox"
   spec.libraries = "icucore", "c++", "bz2", "z", "iconv"
   spec.vendored_frameworks = 'UCloudRtcSdk/Frameworks/*.framework'
