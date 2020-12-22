@@ -18,6 +18,9 @@
     "git": "https://github.com/ucloud/urtc-ios-demo.git",
     "tag": "1.6.8"
   },
+  "xcconfig": {
+    "VALID_ARCHS": "arm64 armv7 x86_64"
+  },
   "frameworks": [
     "CFNetwork",
     "Security",
