@@ -223,7 +223,7 @@ static NSString *roomCellId = @"roomCellId";
     //设置视频分辨率
     _rtcEngine.videoProfile = videoProfile;
     //设置本地镜像
-    _rtcEngine.mirrorMode = UCloudRtcVideoMirrorModeDisabled;
+    _rtcEngine.mirrorMode = UCloudRtcVideoMirrorModeEnabled;
     //设置远端渲染模式
     [_rtcEngine setRemoteViewMode:(UCloudRtcVideoViewModeScaleAspectFit)];
     [_rtcEngine setPreviewMode:(UCloudRtcVideoViewModeScaleAspectFill)];
@@ -253,7 +253,7 @@ static NSString *roomCellId = @"roomCellId";
     }
     
     //添加本地预览
-    [_rtcEngine setLocalPreview:_localPreview];
+//    [_rtcEngine setLocalPreview:_localPreview];
 
     // 设置代理
     _rtcEngine.delegate = self;
@@ -453,7 +453,7 @@ static NSString *roomCellId = @"roomCellId";
                 // FIXME: screen
                 
             } else {
-//                [self.rtcEngine.localStream renderOnView:_localPreview];
+                [self.rtcEngine.localStream renderOnView:_localPreview];
             }
             break;
         }
@@ -636,12 +636,12 @@ static NSString *roomCellId = @"roomCellId";
 
 //本地流截图
 - (void)cutLocalVideoImage{
-    [_rtcEngine captuerVideoImage:^(UIImage * _Nullable image) {
+    [_rtcEngine snapshotWithStream:self.rtcEngine.localStream completion:^(UIImage * _Nullable image) {
         if (image) {
             /// 保存到本地相册
             UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
         }
-    }];
+    }];;
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo{

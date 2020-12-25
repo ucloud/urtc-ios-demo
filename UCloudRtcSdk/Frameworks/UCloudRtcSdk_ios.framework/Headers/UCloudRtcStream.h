@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "UCloudRtcEngine.h"
 
-
 @protocol UCloudRtcRenderDelegate <NSObject>
 /**
  远端视频渲染首帧通知
