@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "UCloudRtcSdk"
-  spec.version      = "1.7.0"
+  spec.version      = "1.7.1"
   spec.summary      = "Real-time audio and video calling with UCloudRtcSdk"
 
   spec.description  = <<-DESC
@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
   spec.xcconfig = {
     'VALID_ARCHS' =>  'arm64 armv7 x86_64',
    }
-  spec.frameworks = "CFNetwork", "Security", "OpenGLES", "GLKit", "VideoToolbox"
+  spec.frameworks = "CFNetwork", "Security", "OpenGLES", "GLKit", "VideoToolbox", "Metal", "MetalKit"
   spec.libraries = "icucore", "c++", "bz2", "z", "iconv"
   spec.vendored_frameworks = 'UCloudRtcSdk/Frameworks/*.framework'
 
