@@ -189,24 +189,36 @@ typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager receiveRemoteStream:(UCloudRtcStream *_Nonnull)stream;
 
 /**
-@brief 远程流断开
+@brief 远程流断开 【v1.7.2 增加"uCloudRtcEngine: didUnsubscribeStream"和"uCloudRtcEngine: removeRemoteStream", 分开处理取消订阅远程流和远程流断开回调】;
 @param stream 远端流对象
 @discussion 当取消订阅远程流或远程流退出房间时会收到该回调。
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didRemoveStream:(UCloudRtcStream *_Nonnull)stream;
+/**
+@brief 取消订阅远程流  v1.7.2
+@param stream 远端流对象
+@discussion 当取消订阅远程流时会收到该回调。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didUnsubscribeStream:(UCloudRtcStream *_Nonnull)stream;
 
+/**
+@brief 远程流断开 v1.7.2
+@param stream 远端流对象
+@discussion 当远程流退出房间时会收到该回调。
+*/
+- (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager removeRemoteStream:(UCloudRtcStream *_Nonnull)stream;
 
 /**
 @brief 新成员加入
 @param memberInfo 新成员信息
-@discussion 当新用户加入房间会收到该回调 注：可能同时收到该回调和可订阅流加入的回调。
+@discussion 当新用户加入房间会收到该回调
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager memberDidJoinRoom:(NSDictionary *_Nonnull)memberInfo;
 
 /**
 @brief 成员退出
 @param memberInfo 成员信息
-@discussion 当用户退出房间会收到该回调 注：可能同时收到该回调和可订阅流退出的回调。
+@discussion 当用户退出房间会收到该回调
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager memberDidLeaveRoom:(NSDictionary *_Nonnull)memberInfo;
 
@@ -711,7 +723,7 @@ typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
 
 
 /**
-@brief 销毁引擎
+@brief 销毁引擎 [ v1.7.2废弃]
  
 @return 0: 方法调用成功  < 0: 方法调用失败
 */

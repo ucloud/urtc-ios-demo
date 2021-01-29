@@ -20,6 +20,10 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1.2</string>
+	<key>NSCameraUsageDescription</key>
+	<string>通话摄像机权限</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>通话需要麦克风权限</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
