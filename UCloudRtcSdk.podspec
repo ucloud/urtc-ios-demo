@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "UCloudRtcSdk"
-  spec.version      = "1.7.2"
+  spec.version      = "1.7.3"
   spec.summary      = "Real-time audio and video calling with UCloudRtcSdk"
 
   spec.description  = <<-DESC
