@@ -39,6 +39,8 @@
 @property(nonatomic, assign) BOOL isSubscribeVideo;
 /// 是否订阅音频（自动订阅：取决于对端流是否有音频；手动订阅：依据场景设置是否订阅）
 @property(nonatomic, assign) BOOL isSubscribeAudio;
+/// 远端流渲染模式
+@property (nonatomic, assign) UCloudRtcVideoViewMode remoteVideoViewMode;
 
 /**渲染到指定视图*/
 - (void)renderOnView:(UIView *)view;

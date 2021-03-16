@@ -547,7 +547,7 @@ typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
 - (int)setPreviewMode:(UCloudRtcVideoViewMode)previewMode;
 
 /**
- @brief 设置远程视频视图的模式
+ @brief 设置远程视频视图的模式 [v1.7.5废弃，通过流属性remoteVideoViewMode，单独为每条流设置填充模式]
 
  @param remoteViewMode 远程画面渲染模式
  @return 0: 方法调用成功  < 0: 方法调用失败
