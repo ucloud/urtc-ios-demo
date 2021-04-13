@@ -105,9 +105,9 @@ typedef NS_ENUM(NSUInteger, UCloudRtcVideoMirrorMode) {
 };
 /** 视频采集旋转方向，与 UIInterfaceOrientation方向一致*/
 typedef NS_ENUM(NSUInteger, UCloudRtcOrientationMode) {
-    UCloudRtcOrientationModeAdaptive,
-    UCloudRtcOrientationModeLandscapeLeft,
-    UCloudRtcOrientationModeLandscapeRight,
+    UCloudRtcOrientationModeAdaptive,//自适应布局（默认）
+    UCloudRtcOrientationModeFixedLandscape,//横屏布局
+    UCloudRtcOrientationModeFixedPortrait,//竖屏布局
 };
 
 //0或者1退出不重连 2退出重连并使用原服务器列表 3退出并重连网关
@@ -204,7 +204,7 @@ typedef NS_ENUM(NSInteger, UCloudRtcLeaveRoomReason) {
 /**
 @brief 远程流断开 v1.7.2
 @param stream 远端流对象
-@discussion 当远程流退出房间时会收到该回调。
+@discussion 当远程流取消发布或者退出房间时会收到该回调。
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager removeRemoteStream:(UCloudRtcStream *_Nonnull)stream;
 
