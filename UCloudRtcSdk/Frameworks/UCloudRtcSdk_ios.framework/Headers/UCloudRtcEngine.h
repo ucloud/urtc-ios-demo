@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger)
 
 typedef NS_ENUM(NSInteger)
 {
-    UCloudRtcEngine_StreamProfileUpload = 0,// 上传权限
+    UCloudRtcEngine_StreamProfileUpload = 0,// 上传权限(v1.7.8后上传权限可以订阅远端流)
     UCloudRtcEngine_StreamProfileDownload = 1,//下载权限
     UCloudRtcEngine_StreamProfileAll= 2,//所有权限 默认值
     

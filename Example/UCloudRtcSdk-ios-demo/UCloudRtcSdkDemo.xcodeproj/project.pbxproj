@@ -293,7 +293,6 @@
 				38FDC39F2591A23A00767A0A /* Sources */,
 				38FDC3A02591A23A00767A0A /* Frameworks */,
 				38FDC3A12591A23A00767A0A /* Resources */,
-				3ED1FCF9D4136A72DE9D1CA8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,7 +330,6 @@
 				38FDC3C52591A23C00767A0A /* Sources */,
 				38FDC3C62591A23C00767A0A /* Frameworks */,
 				38FDC3C72591A23C00767A0A /* Resources */,
-				172BD63A84ABAE9E5CD74EE0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,23 +416,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		172BD63A84ABAE9E5CD74EE0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		24EE19C44E7848BBDF65BA67 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -499,23 +480,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3ED1FCF9D4136A72DE9D1CA8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -750,7 +714,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.UCloudRtcSdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = common;
+				PROVISIONING_PROFILE_SPECIFIER = wildcard;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -797,7 +761,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.UCloudRtcSdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = common;
+				PROVISIONING_PROFILE_SPECIFIER = wildcard;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

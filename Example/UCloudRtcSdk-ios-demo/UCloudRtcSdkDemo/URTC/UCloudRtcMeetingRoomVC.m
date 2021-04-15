@@ -243,6 +243,7 @@ static NSString *roomCellId = @"roomCellId";
     _rtcEngine.videoDefaultCodec = @"H264";
     // 设置视频分辨率
     _rtcEngine.videoProfile = UCloudRtcEngine_VideoProfile_480P;
+//    _rtcEngine.streamProfile = UCloudRtcEngine_StreamProfileUpload;
     // 是否开启音量检测，默认NO
 //    _rtcEngine.isTrackVolume = YES;
     // 开启自定义视频源,默认为NO

@@ -6,89 +6,58 @@
 	objectVersion = 51;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		1286F201D25AD2EA6ADD7E4590FD23A6 /* UCloudRtcSdk */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 43090A5B27AC4A1C5AC19B5C9BB67FF4 /* Build configuration list for PBXAggregateTarget "UCloudRtcSdk" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = UCloudRtcSdk;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		05116E9BBF83A5DF05BD1629A4FD1062 /* Pods-UCloudRtcSdkDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 861C3248669630A365C1FC55F37A0AA6 /* Pods-UCloudRtcSdkDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E0FED8BF1D773798209761155FA449F /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F512416C32EA77F21E34F40D64C563 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m */; };
-		5F780DB2BE8BE4B00668045AD0CB9B64 /* Pods-UCloudRtcSdkDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 135157BF85F7500F66F375FD4BF7AA2F /* Pods-UCloudRtcSdkDemo-dummy.m */; };
-		66AD93C2E0C0073FCDCF80686F88CE50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		686024AA885AEB0F8D82B11618F1F1F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		8FF222998888597D70A842C1E9C574FD /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF12BD43434B6A50C07F4BDCF363BB7D /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05116E9BBF83A5DF05BD1629A4FD1062 /* Pods-UCloudRtcSdkDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 769B1FC8FD3F7B40BC54932C1543244A /* Pods-UCloudRtcSdkDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30FAB1D266E650347657506C285FCCB9 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D47486E4DE9D2423A71398671B0186B /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m */; };
+		828FFE17EC7ED9147A98C9F1C9A90AD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		844A21BD093EBADEA56880F4958DF7C6 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94C10574DA268BD104C7B8812BFBC56F /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9BDFD6623A47AAD0824C2C377E819AA /* Pods-UCloudRtcSdkDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69C66F99969170F1A03AC8736EDB65 /* Pods-UCloudRtcSdkDemo-dummy.m */; };
 		C74FB9EC68F599839A9AA7EC9BC37437 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		C887558527A10E2B192F13F8B080DFCC /* Pods-UCloudRtcSdkDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B60A3F73EB7476C00C52B3A9AAF0881 /* Pods-UCloudRtcSdkDemoTests-dummy.m */; };
-		DAF205B8A96A199FC83B1724B7544F6E /* Pods-UCloudRtcSdkDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D3F239495068EB4D72120F1830A1CCA /* Pods-UCloudRtcSdkDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C887558527A10E2B192F13F8B080DFCC /* Pods-UCloudRtcSdkDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A6BA03F24FA55364180F83051E9125 /* Pods-UCloudRtcSdkDemoTests-dummy.m */; };
+		DD7798D520AF29664E6683B31A819705 /* Pods-UCloudRtcSdkDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09A548E284E06EEEC4C497C7E8DD9231 /* Pods-UCloudRtcSdkDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFB9F4E15D22C00C30A977214E0047D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DCA6E560CF92744E5FE0117E189B7013 /* PBXContainerItemProxy */ = {
+		457DDFE57919EA0C835681C285DF98E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B021036825D601866D6A27743D94F053;
 			remoteInfo = "Pods-UCloudRtcSdkDemo";
 		};
-		F541F0B44992ED3EB9E0197E52C476DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1286F201D25AD2EA6ADD7E4590FD23A6;
-			remoteInfo = UCloudRtcSdk;
-		};
-		F8751D5371288707C470F93AE9023516 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1286F201D25AD2EA6ADD7E4590FD23A6;
-			remoteInfo = UCloudRtcSdk;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06F0240B3B6A7BE852CF5F182D3E6AF0 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-frameworks.sh"; sourceTree = "<group>"; };
-		135157BF85F7500F66F375FD4BF7AA2F /* Pods-UCloudRtcSdkDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UCloudRtcSdkDemo-dummy.m"; sourceTree = "<group>"; };
-		2C8367339F4B980A5BF4558E5B4830B5 /* Pods-UCloudRtcSdkDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UCloudRtcSdkDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		09A548E284E06EEEC4C497C7E8DD9231 /* Pods-UCloudRtcSdkDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UCloudRtcSdkDemo-umbrella.h"; sourceTree = "<group>"; };
+		23BA10D6B91415B730A5D28EC5F7EB09 /* Pods-UCloudRtcSdkDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		29FD49CDEC37479548C2517EECB1D052 /* Pods-UCloudRtcSdkDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UCloudRtcSdkDemo.modulemap"; sourceTree = "<group>"; };
+		324C13C33860CB68CD9522EF76CB0350 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap"; sourceTree = "<group>"; };
+		34A6BA03F24FA55364180F83051E9125 /* Pods-UCloudRtcSdkDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UCloudRtcSdkDemoTests-dummy.m"; sourceTree = "<group>"; };
 		379EF151E084D12E344034CA2214FDA5 /* Pods_UCloudRtcSdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UCloudRtcSdkDemo.framework; path = "Pods-UCloudRtcSdkDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3848D99D74804641934DB5E3DFB341DC /* Pods-UCloudRtcSdkDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UCloudRtcSdkDemoTests.modulemap"; sourceTree = "<group>"; };
-		3D3F239495068EB4D72120F1830A1CCA /* Pods-UCloudRtcSdkDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UCloudRtcSdkDemo-umbrella.h"; sourceTree = "<group>"; };
-		41F512416C32EA77F21E34F40D64C563 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m"; sourceTree = "<group>"; };
-		43861C42250ACAFCAE3DE0F2625C089F /* Pods-UCloudRtcSdkDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemo-Info.plist"; sourceTree = "<group>"; };
 		43D66B87D0A6D962D3A458E0D962C75D /* Pods_UCloudRtcSdkDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UCloudRtcSdkDemoTests.framework; path = "Pods-UCloudRtcSdkDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A8DECB6A24F30FB7AFB94E6D99AD20D /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		52B26DC005573BF81A56B8A9D01E2288 /* Pods-UCloudRtcSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
-		60C52812051D5A7404BC2FBF91463F09 /* Pods-UCloudRtcSdkDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UCloudRtcSdkDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		63B195AFEC1570F16BCF0EBFCE4396FB /* Pods-UCloudRtcSdkDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UCloudRtcSdkDemo-frameworks.sh"; sourceTree = "<group>"; };
-		68DC5720791A2A477ADC337D666BF029 /* UCloudRtcSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCloudRtcSdk.debug.xcconfig; sourceTree = "<group>"; };
+		47461D45F30660D2A6FB6965E94CD557 /* Pods-UCloudRtcSdkDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4B951688FD745BC997A16B5D2782DADE /* Pods-UCloudRtcSdkDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UCloudRtcSdkDemoTests.modulemap"; sourceTree = "<group>"; };
+		4DF88BA27854667A5BFC51DA032F6688 /* Pods-UCloudRtcSdkDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UCloudRtcSdkDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4F7959DA5F8437D8EB44AD91855375DE /* Pods-UCloudRtcSdkDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UCloudRtcSdkDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		54FD2375C806695E2FF75B23989AB6E4 /* Pods-UCloudRtcSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7B4EBA8A21EBC1FE044E6E388571BD12 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		861C3248669630A365C1FC55F37A0AA6 /* Pods-UCloudRtcSdkDemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UCloudRtcSdkDemoTests-umbrella.h"; sourceTree = "<group>"; };
-		87B668E48A3574CC4109923B3527B40B /* Pods-UCloudRtcSdkDemoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemoTests-Info.plist"; sourceTree = "<group>"; };
-		8EADF732637C67B59016210DFD2B371F /* Pods-UCloudRtcSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		9152977B90700930EE416121BA6BCD90 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap"; sourceTree = "<group>"; };
-		9B60A3F73EB7476C00C52B3A9AAF0881 /* Pods-UCloudRtcSdkDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UCloudRtcSdkDemoTests-dummy.m"; sourceTree = "<group>"; };
+		769B1FC8FD3F7B40BC54932C1543244A /* Pods-UCloudRtcSdkDemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UCloudRtcSdkDemoTests-umbrella.h"; sourceTree = "<group>"; };
+		8E2A5E431052C224B495C75E30BC8154 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist"; sourceTree = "<group>"; };
+		8FE9162CC4997F8C21166D5448FFD1C1 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		94C10574DA268BD104C7B8812BFBC56F /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h"; sourceTree = "<group>"; };
+		97084B96CD502B317B96FC9E77A17A77 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		9D47486E4DE9D2423A71398671B0186B /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AF12BD43434B6A50C07F4BDCF363BB7D /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h"; sourceTree = "<group>"; };
-		BB046D42F3124C2DFC39D72DE8553E0E /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A219154601552B9038494F6141B6A02F /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A5203CF6B95C0AB92F1A4F4A4637D3BD /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBECC185C40429D66355D8F5E307EEF0 /* Pods_UCloudRtcSdkDemo_UCloudRtcSdkDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UCloudRtcSdkDemo_UCloudRtcSdkDemoUITests.framework; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C296C74B7DF8120E5088520F14C8C793 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		C50376D3A5317855F7E0FA7A01637E70 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		D61BB9517FC4DBB5A7E9F53A6A9E678F /* Pods-UCloudRtcSdkDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UCloudRtcSdkDemo.modulemap"; sourceTree = "<group>"; };
-		DB04946A76744083D96DCCB815C74218 /* Pods-UCloudRtcSdkDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		E72F75A10FBFD9DB678274F50C4D6795 /* Pods-UCloudRtcSdkDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E9AAF937F9565C79816F217F85CCDFE7 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist"; sourceTree = "<group>"; };
-		ED40FC6C19645ED7F39950319A19E321 /* UCloudRtcSdk_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UCloudRtcSdk_ios.framework; path = UCloudRtcSdk/Frameworks/UCloudRtcSdk_ios.framework; sourceTree = "<group>"; };
-		F686FEF7376AAE0777526DE19B8C681D /* UCloudRtcSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCloudRtcSdk.release.xcconfig; sourceTree = "<group>"; };
-		FFF6EE7E8126CAF3839CF60B0761334B /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BF710D4D6EB3CC764C94350987444791 /* Pods-UCloudRtcSdkDemoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemoTests-Info.plist"; sourceTree = "<group>"; };
+		C1D7FFDD4A81360B15D859BED6F038A6 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C5803D323885ABADC54996447DEC8B4D /* Pods-UCloudRtcSdkDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UCloudRtcSdkDemo-Info.plist"; sourceTree = "<group>"; };
+		D6692FE70A4A8B9CCCB61676447B6C3B /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E487CB4326B67A353110E81E7C79D95A /* Pods-UCloudRtcSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UCloudRtcSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		ED69C66F99969170F1A03AC8736EDB65 /* Pods-UCloudRtcSdkDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UCloudRtcSdkDemo-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,31 +69,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82E58EAB8F9073B6B74547451EE6F7CA /* Frameworks */ = {
+		78F1DE0FB7324193BDED5A04DB3A92A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				686024AA885AEB0F8D82B11618F1F1F4 /* Foundation.framework in Frameworks */,
+				EFB9F4E15D22C00C30A977214E0047D0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAD7A1D74031C7705115D74EEA81F8CE /* Frameworks */ = {
+		FF64F9C46B50E3D353D4B4B991A85651 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66AD93C2E0C0073FCDCF80686F88CE50 /* Foundation.framework in Frameworks */,
+				828FFE17EC7ED9147A98C9F1C9A90AD6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4ABA92209892B67B8A5D163A4C25F641 /* Pods */ = {
+		1BD5BA00C3F5CA5AA0D37FEB3E19E199 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BF0FADEDDC562164560172AF8239D2B7 /* UCloudRtcSdk */,
+				324C13C33860CB68CD9522EF76CB0350 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap */,
+				8FE9162CC4997F8C21166D5448FFD1C1 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.markdown */,
+				A219154601552B9038494F6141B6A02F /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.plist */,
+				9D47486E4DE9D2423A71398671B0186B /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m */,
+				8E2A5E431052C224B495C75E30BC8154 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist */,
+				94C10574DA268BD104C7B8812BFBC56F /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h */,
+				A5203CF6B95C0AB92F1A4F4A4637D3BD /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */,
+				C1D7FFDD4A81360B15D859BED6F038A6 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */,
 			);
-			name = Pods;
+			name = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests";
+			path = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests";
+			sourceTree = "<group>";
+		};
+		36761CD2A52D036B518FF6C44513CB04 /* Pods-UCloudRtcSdkDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B951688FD745BC997A16B5D2782DADE /* Pods-UCloudRtcSdkDemoTests.modulemap */,
+				4F7959DA5F8437D8EB44AD91855375DE /* Pods-UCloudRtcSdkDemoTests-acknowledgements.markdown */,
+				47461D45F30660D2A6FB6965E94CD557 /* Pods-UCloudRtcSdkDemoTests-acknowledgements.plist */,
+				34A6BA03F24FA55364180F83051E9125 /* Pods-UCloudRtcSdkDemoTests-dummy.m */,
+				BF710D4D6EB3CC764C94350987444791 /* Pods-UCloudRtcSdkDemoTests-Info.plist */,
+				769B1FC8FD3F7B40BC54932C1543244A /* Pods-UCloudRtcSdkDemoTests-umbrella.h */,
+				D6692FE70A4A8B9CCCB61676447B6C3B /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */,
+				97084B96CD502B317B96FC9E77A17A77 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */,
+			);
+			name = "Pods-UCloudRtcSdkDemoTests";
+			path = "Target Support Files/Pods-UCloudRtcSdkDemoTests";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -135,84 +128,30 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		63D70B7A549BC0C594814093D86063AE /* Targets Support Files */ = {
+		6A1084EE885E26393962EFDB6A20BB02 /* Pods-UCloudRtcSdkDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6C4BBB685A7FE00BE681F786CCF22F5C /* Pods-UCloudRtcSdkDemo */,
-				76BDE3E923343C3D63A4CE31CFF8CDD3 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests */,
-				B25D11FE3E733E2C5A9C88B95CAEC368 /* Pods-UCloudRtcSdkDemoTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		6C4BBB685A7FE00BE681F786CCF22F5C /* Pods-UCloudRtcSdkDemo */ = {
-			isa = PBXGroup;
-			children = (
-				D61BB9517FC4DBB5A7E9F53A6A9E678F /* Pods-UCloudRtcSdkDemo.modulemap */,
-				2C8367339F4B980A5BF4558E5B4830B5 /* Pods-UCloudRtcSdkDemo-acknowledgements.markdown */,
-				DB04946A76744083D96DCCB815C74218 /* Pods-UCloudRtcSdkDemo-acknowledgements.plist */,
-				135157BF85F7500F66F375FD4BF7AA2F /* Pods-UCloudRtcSdkDemo-dummy.m */,
-				63B195AFEC1570F16BCF0EBFCE4396FB /* Pods-UCloudRtcSdkDemo-frameworks.sh */,
-				43861C42250ACAFCAE3DE0F2625C089F /* Pods-UCloudRtcSdkDemo-Info.plist */,
-				3D3F239495068EB4D72120F1830A1CCA /* Pods-UCloudRtcSdkDemo-umbrella.h */,
-				8EADF732637C67B59016210DFD2B371F /* Pods-UCloudRtcSdkDemo.debug.xcconfig */,
-				52B26DC005573BF81A56B8A9D01E2288 /* Pods-UCloudRtcSdkDemo.release.xcconfig */,
+				29FD49CDEC37479548C2517EECB1D052 /* Pods-UCloudRtcSdkDemo.modulemap */,
+				4DF88BA27854667A5BFC51DA032F6688 /* Pods-UCloudRtcSdkDemo-acknowledgements.markdown */,
+				23BA10D6B91415B730A5D28EC5F7EB09 /* Pods-UCloudRtcSdkDemo-acknowledgements.plist */,
+				ED69C66F99969170F1A03AC8736EDB65 /* Pods-UCloudRtcSdkDemo-dummy.m */,
+				C5803D323885ABADC54996447DEC8B4D /* Pods-UCloudRtcSdkDemo-Info.plist */,
+				09A548E284E06EEEC4C497C7E8DD9231 /* Pods-UCloudRtcSdkDemo-umbrella.h */,
+				E487CB4326B67A353110E81E7C79D95A /* Pods-UCloudRtcSdkDemo.debug.xcconfig */,
+				54FD2375C806695E2FF75B23989AB6E4 /* Pods-UCloudRtcSdkDemo.release.xcconfig */,
 			);
 			name = "Pods-UCloudRtcSdkDemo";
 			path = "Target Support Files/Pods-UCloudRtcSdkDemo";
 			sourceTree = "<group>";
 		};
-		76BDE3E923343C3D63A4CE31CFF8CDD3 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests */ = {
+		BE480D38D3879C8777C6E6133289C478 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9152977B90700930EE416121BA6BCD90 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap */,
-				4A8DECB6A24F30FB7AFB94E6D99AD20D /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.markdown */,
-				C296C74B7DF8120E5088520F14C8C793 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-acknowledgements.plist */,
-				41F512416C32EA77F21E34F40D64C563 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m */,
-				06F0240B3B6A7BE852CF5F182D3E6AF0 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-frameworks.sh */,
-				E9AAF937F9565C79816F217F85CCDFE7 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist */,
-				AF12BD43434B6A50C07F4BDCF363BB7D /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h */,
-				FFF6EE7E8126CAF3839CF60B0761334B /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */,
-				7B4EBA8A21EBC1FE044E6E388571BD12 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */,
+				6A1084EE885E26393962EFDB6A20BB02 /* Pods-UCloudRtcSdkDemo */,
+				1BD5BA00C3F5CA5AA0D37FEB3E19E199 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests */,
+				36761CD2A52D036B518FF6C44513CB04 /* Pods-UCloudRtcSdkDemoTests */,
 			);
-			name = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests";
-			path = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests";
-			sourceTree = "<group>";
-		};
-		98CD2C9308C5164B5C04C9392E5827B9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				68DC5720791A2A477ADC337D666BF029 /* UCloudRtcSdk.debug.xcconfig */,
-				F686FEF7376AAE0777526DE19B8C681D /* UCloudRtcSdk.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/UCloudRtcSdk";
-			sourceTree = "<group>";
-		};
-		B25D11FE3E733E2C5A9C88B95CAEC368 /* Pods-UCloudRtcSdkDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				3848D99D74804641934DB5E3DFB341DC /* Pods-UCloudRtcSdkDemoTests.modulemap */,
-				60C52812051D5A7404BC2FBF91463F09 /* Pods-UCloudRtcSdkDemoTests-acknowledgements.markdown */,
-				E72F75A10FBFD9DB678274F50C4D6795 /* Pods-UCloudRtcSdkDemoTests-acknowledgements.plist */,
-				9B60A3F73EB7476C00C52B3A9AAF0881 /* Pods-UCloudRtcSdkDemoTests-dummy.m */,
-				87B668E48A3574CC4109923B3527B40B /* Pods-UCloudRtcSdkDemoTests-Info.plist */,
-				861C3248669630A365C1FC55F37A0AA6 /* Pods-UCloudRtcSdkDemoTests-umbrella.h */,
-				BB046D42F3124C2DFC39D72DE8553E0E /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */,
-				C50376D3A5317855F7E0FA7A01637E70 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */,
-			);
-			name = "Pods-UCloudRtcSdkDemoTests";
-			path = "Target Support Files/Pods-UCloudRtcSdkDemoTests";
-			sourceTree = "<group>";
-		};
-		BF0FADEDDC562164560172AF8239D2B7 /* UCloudRtcSdk */ = {
-			isa = PBXGroup;
-			children = (
-				F027CB84F636819BDA66B46083CC5604 /* Frameworks */,
-				98CD2C9308C5164B5C04C9392E5827B9 /* Support Files */,
-			);
-			name = UCloudRtcSdk;
-			path = UCloudRtcSdk;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -220,9 +159,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				4ABA92209892B67B8A5D163A4C25F641 /* Pods */,
 				F46E633B44EBB1D93A99FC10F90A1308 /* Products */,
-				63D70B7A549BC0C594814093D86063AE /* Targets Support Files */,
+				BE480D38D3879C8777C6E6133289C478 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,14 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F027CB84F636819BDA66B46083CC5604 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				ED40FC6C19645ED7F39950319A19E321 /* UCloudRtcSdk_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -255,19 +185,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2EE07345794C6A3FAEEEF85FA4987A47 /* Headers */ = {
+		8597FFE3CC9104D988E4A7A62E2FD3CC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF205B8A96A199FC83B1724B7544F6E /* Pods-UCloudRtcSdkDemo-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D192E591C44662E26D9C4BED37BA656 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8FF222998888597D70A842C1E9C574FD /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h in Headers */,
+				844A21BD093EBADEA56880F4958DF7C6 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,22 +201,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFDA514FB15B8A4A9284C7A82324686A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7798D520AF29664E6683B31A819705 /* Pods-UCloudRtcSdkDemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B021036825D601866D6A27743D94F053 /* Pods-UCloudRtcSdkDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75BE2F701BEDBC2773781B2532708B7B /* Build configuration list for PBXNativeTarget "Pods-UCloudRtcSdkDemo" */;
+			buildConfigurationList = 4A9FE0453373A33262EFFF53EC2431DC /* Build configuration list for PBXNativeTarget "Pods-UCloudRtcSdkDemo" */;
 			buildPhases = (
-				2EE07345794C6A3FAEEEF85FA4987A47 /* Headers */,
-				85E115CEF55958C3FAD0F10DC976E24A /* Sources */,
-				DAD7A1D74031C7705115D74EEA81F8CE /* Frameworks */,
-				0AE82FECCAD2FC33F13A07ED6843E39F /* Resources */,
+				DFDA514FB15B8A4A9284C7A82324686A /* Headers */,
+				CC326FB23020515206671A531CF9BBCB /* Sources */,
+				78F1DE0FB7324193BDED5A04DB3A92A7 /* Frameworks */,
+				87C4CD718687FF0544B0458A48F35EE5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DA71F5F3B6ACE5DBDB70FC0FA54F33F9 /* PBXTargetDependency */,
 			);
 			name = "Pods-UCloudRtcSdkDemo";
 			productName = "Pods-UCloudRtcSdkDemo";
@@ -313,7 +242,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				E89B07AF98841B72051AFE30945BE78D /* PBXTargetDependency */,
+				4ED854C84B24F4B9115E03AE81D27A8E /* PBXTargetDependency */,
 			);
 			name = "Pods-UCloudRtcSdkDemoTests";
 			productName = "Pods-UCloudRtcSdkDemoTests";
@@ -322,17 +251,16 @@
 		};
 		C927A98596C814B44CCA419C09D7F9F3 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75F7F6BF43F3889CD7BA2FDED3D988AA /* Build configuration list for PBXNativeTarget "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests" */;
+			buildConfigurationList = 7D0256D457699711572CAEC537864DC6 /* Build configuration list for PBXNativeTarget "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests" */;
 			buildPhases = (
-				4D192E591C44662E26D9C4BED37BA656 /* Headers */,
-				72E297B6238585160216B56D448B1B37 /* Sources */,
-				82E58EAB8F9073B6B74547451EE6F7CA /* Frameworks */,
-				9C67A2404CE5C8886F0F5222BF034D8F /* Resources */,
+				8597FFE3CC9104D988E4A7A62E2FD3CC /* Headers */,
+				E3EDA5E5610E09D81EC8A7B858DB9713 /* Sources */,
+				FF64F9C46B50E3D353D4B4B991A85651 /* Frameworks */,
+				CF20E9747BEB91D9F0B166CEEC91831B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BA8EEB216EC7695FD2C29E098602C629 /* PBXTargetDependency */,
 			);
 			name = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests";
 			productName = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests";
@@ -364,19 +292,11 @@
 				B021036825D601866D6A27743D94F053 /* Pods-UCloudRtcSdkDemo */,
 				C927A98596C814B44CCA419C09D7F9F3 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests */,
 				B0B23F69C9A01CA98DB73D77F9725D96 /* Pods-UCloudRtcSdkDemoTests */,
-				1286F201D25AD2EA6ADD7E4590FD23A6 /* UCloudRtcSdk */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0AE82FECCAD2FC33F13A07ED6843E39F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		15FCAE8DAF94E994F0BCDC2680DBE4FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,7 +304,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C67A2404CE5C8886F0F5222BF034D8F /* Resources */ = {
+		87C4CD718687FF0544B0458A48F35EE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF20E9747BEB91D9F0B166CEEC91831B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -394,22 +321,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		72E297B6238585160216B56D448B1B37 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1E0FED8BF1D773798209761155FA449F /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		85E115CEF55958C3FAD0F10DC976E24A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F780DB2BE8BE4B00668045AD0CB9B64 /* Pods-UCloudRtcSdkDemo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8F06C473F96E1CFB01B348DB55B78F45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,30 +329,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC326FB23020515206671A531CF9BBCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BDFD6623A47AAD0824C2C377E819AA /* Pods-UCloudRtcSdkDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3EDA5E5610E09D81EC8A7B858DB9713 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30FAB1D266E650347657506C285FCCB9 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BA8EEB216EC7695FD2C29E098602C629 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = UCloudRtcSdk;
-			target = 1286F201D25AD2EA6ADD7E4590FD23A6 /* UCloudRtcSdk */;
-			targetProxy = F8751D5371288707C470F93AE9023516 /* PBXContainerItemProxy */;
-		};
-		DA71F5F3B6ACE5DBDB70FC0FA54F33F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = UCloudRtcSdk;
-			target = 1286F201D25AD2EA6ADD7E4590FD23A6 /* UCloudRtcSdk */;
-			targetProxy = F541F0B44992ED3EB9E0197E52C476DC /* PBXContainerItemProxy */;
-		};
-		E89B07AF98841B72051AFE30945BE78D /* PBXTargetDependency */ = {
+		4ED854C84B24F4B9115E03AE81D27A8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-UCloudRtcSdkDemo";
 			target = B021036825D601866D6A27743D94F053 /* Pods-UCloudRtcSdkDemo */;
-			targetProxy = DCA6E560CF92744E5FE0117E189B7013 /* PBXContainerItemProxy */;
+			targetProxy = 457DDFE57919EA0C835681C285DF98E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1C6796C8C82380C5C9692584BD9633A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5203CF6B95C0AB92F1A4F4A4637D3BD /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -508,9 +459,9 @@
 			};
 			name = Debug;
 		};
-		5726ED38D40BF82FEC6E4D9B1C7AE45C /* Debug */ = {
+		727FB77C2C87B56B85699E6890CE2475 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EADF732637C67B59016210DFD2B371F /* Pods-UCloudRtcSdkDemo.debug.xcconfig */;
+			baseConfigurationReference = E487CB4326B67A353110E81E7C79D95A /* Pods-UCloudRtcSdkDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -544,9 +495,9 @@
 			};
 			name = Debug;
 		};
-		89F98667C42A752A70B35DBB085C844A /* Debug */ = {
+		9227AFBD0C565BDDF04193008A22743A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFF6EE7E8126CAF3839CF60B0761334B /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */;
+			baseConfigurationReference = 54FD2375C806695E2FF75B23989AB6E4 /* Pods-UCloudRtcSdkDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -557,7 +508,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -566,7 +517,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -575,14 +526,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		95F6D8E6450DA7B8DDBCD1F6E61FADAA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB046D42F3124C2DFC39D72DE8553E0E /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */;
+			baseConfigurationReference = D6692FE70A4A8B9CCCB61676447B6C3B /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -616,9 +568,9 @@
 			};
 			name = Debug;
 		};
-		974C936504FAAB150182AAB1FCDCF3EE /* Release */ = {
+		AE9399EDE99E966A2604D0FF72FB39D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52B26DC005573BF81A56B8A9D01E2288 /* Pods-UCloudRtcSdkDemo.release.xcconfig */;
+			baseConfigurationReference = C1D7FFDD4A81360B15D859BED6F038A6 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -629,7 +581,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -638,7 +590,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -715,63 +667,9 @@
 			};
 			name = Release;
 		};
-		D3BA3A320951C88792A3FFFD7E7E9DDD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B4EBA8A21EBC1FE044E6E388571BD12 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EE62EE33EC675864C164D551C3C64590 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F686FEF7376AAE0777526DE19B8C681D /* UCloudRtcSdk.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		F2BCCBC1CE8BB9FB86FA60CA4FB35C07 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C50376D3A5317855F7E0FA7A01637E70 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */;
+			baseConfigurationReference = 97084B96CD502B317B96FC9E77A17A77 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -806,34 +704,9 @@
 			};
 			name = Release;
 		};
-		FFB731BB0C552038A8969FE31D7E1A1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68DC5720791A2A477ADC337D666BF029 /* UCloudRtcSdk.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43090A5B27AC4A1C5AC19B5C9BB67FF4 /* Build configuration list for PBXAggregateTarget "UCloudRtcSdk" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FFB731BB0C552038A8969FE31D7E1A1B /* Debug */,
-				EE62EE33EC675864C164D551C3C64590 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -843,20 +716,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75BE2F701BEDBC2773781B2532708B7B /* Build configuration list for PBXNativeTarget "Pods-UCloudRtcSdkDemo" */ = {
+		4A9FE0453373A33262EFFF53EC2431DC /* Build configuration list for PBXNativeTarget "Pods-UCloudRtcSdkDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5726ED38D40BF82FEC6E4D9B1C7AE45C /* Debug */,
-				974C936504FAAB150182AAB1FCDCF3EE /* Release */,
+				727FB77C2C87B56B85699E6890CE2475 /* Debug */,
+				9227AFBD0C565BDDF04193008A22743A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75F7F6BF43F3889CD7BA2FDED3D988AA /* Build configuration list for PBXNativeTarget "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests" */ = {
+		7D0256D457699711572CAEC537864DC6 /* Build configuration list for PBXNativeTarget "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				89F98667C42A752A70B35DBB085C844A /* Debug */,
-				D3BA3A320951C88792A3FFFD7E7E9DDD /* Release */,
+				1C6796C8C82380C5C9692584BD9633A2 /* Debug */,
+				AE9399EDE99E966A2604D0FF72FB39D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
