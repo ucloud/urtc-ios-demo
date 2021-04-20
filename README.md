@@ -1,6 +1,13 @@
 # urtc-ios-demo
 urtc iOS 端demo
 
+> UCloudRtcSdk_iOS下载
+
+- [UCloudRtcSdk_iOS-1.8.0](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.0.zip)
+
+- [UCloudRtcSdk_iOS-1.7.9](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.7.9.zip)
+
+
 # 1 描述
 UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时音视频 SDK，支持iOS 8.0及以上系统，提供了音视频通话基础功能，提供灵活的接口，支持高度定制以及二次开发。<br/><br/>
 在[UCloud 控制台](https://console.ucloud.cn/urtc/manage)， 创建URTC应用，得到 appId 和 appKey。
