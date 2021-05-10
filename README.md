@@ -1,7 +1,18 @@
 # urtc-ios-demo
 urtc iOS 端demo
 
+> 运行demo
+
+```
+cd  [path]/urtc-ios-demo/Example/UCloudRtcSdk-ios-demo
+
+pod install
+
+打开UCloudRtcSdkDemo.xcworkspace
+```
+
 > UCloudRtcSdk_iOS下载
+- [UCloudRtcSdk_iOS-1.8.1](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.1.zip)
 
 - [UCloudRtcSdk_iOS-1.8.0](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.0.zip)
 
