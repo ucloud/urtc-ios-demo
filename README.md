@@ -12,6 +12,9 @@ pod install
 ```
 
 > UCloudRtcSdk_iOS下载
+
+- [UCloudRtcSdk_iOS-1.8.2](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.2.zip)
+
 - [UCloudRtcSdk_iOS-1.8.1](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.1.zip)
 
 - [UCloudRtcSdk_iOS-1.8.0](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.0.zip)

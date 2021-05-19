@@ -22,12 +22,11 @@ Pod::Spec.new do |spec|
   spec.author             = { "ucloudyj" => "yj.wang@ucloud.cn" }
   spec.platform     = :ios
   spec.ios.deployment_target = "9.0"
-  spec.source       = { "http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.2.zip" }
-
+  spec.source       = { "http": "http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.2.zip" }
 
    
   spec.xcconfig = {
-    'VALID_ARCHS' =>  'arm64 armv7 x86_64',
+    'VALID_ARCHS' =>  'arm64 armv7 x86_64'
    }
   spec.frameworks = "CFNetwork", "Security", "OpenGLES", "GLKit", "VideoToolbox", "Metal", "MetalKit"
   spec.libraries = "icucore", "c++", "bz2", "z", "iconv"
