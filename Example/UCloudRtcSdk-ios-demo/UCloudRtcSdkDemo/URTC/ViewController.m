@@ -15,8 +15,8 @@
 
 //线上
 //#error 在[UCloud 控制台](https://console.ucloud.cn/urtc/manage)， 创建URTC应用，得到 appId 和 appKey
-//#define APP_ID @""
-//#define APP_KEY @""
+#define APP_ID <#APP_ID #>
+#define APP_KEY <#APP_KEY#>
 
 
 #define TOKEN @""
@@ -38,6 +38,12 @@
     [self setupUI];
     
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog(@"viewDidAppear");
 }
 
 - (IBAction)joinRoom:(UIButton *)sender {

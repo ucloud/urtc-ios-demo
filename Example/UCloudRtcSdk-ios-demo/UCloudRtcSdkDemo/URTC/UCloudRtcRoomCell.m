@@ -14,6 +14,7 @@
 
 @implementation UCloudRtcRoomCell
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -26,6 +27,8 @@
     sender.selected = !sender.isSelected;
     self.muteComplete(_stream, 1, sender.isSelected);
 }
+
+
 
 - (void)setStream:(UCloudRtcStream *)stream {
     _stream = stream;

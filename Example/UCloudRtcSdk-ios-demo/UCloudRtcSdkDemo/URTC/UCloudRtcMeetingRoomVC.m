@@ -71,8 +71,13 @@
 @end
 
 static NSString *roomCellId = @"roomCellId";
+
+
 @implementation UCloudRtcMeetingRoomVC
 
+-(void)dealloc{
+    NSLog(@"----%@ dealloc------",self);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -97,18 +102,24 @@ static NSString *roomCellId = @"roomCellId";
 
 
 - (void)setupTimer {
+    
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(startTimer) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
     __block int count = 0;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(_timer, DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    __weak typeof(self) wself = self;
     dispatch_source_set_event_handler(_timer, ^{
         count ++;
         int seconds = count % 60;
         int minutes = (count / 60) % 60;
         int hours = count / 3600;
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.liveTimeLB.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
+            wself.liveTimeLB.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
         });
+        NSLog(@"---------%@", [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds]);
     });
     dispatch_resume(_timer);
     
@@ -130,6 +141,21 @@ static NSString *roomCellId = @"roomCellId";
         recorder.meteringEnabled = YES;
         [recorder record];
         levelTimer = [NSTimer scheduledTimerWithTimeInterval: 0.3 target: self selector: @selector(levelTimerCallback:) userInfo: nil repeats: YES];
+    }
+}
+
+/**
+ * 移除定时器
+ */
+- (void)removeTimer {
+    if (_timer) {
+        dispatch_source_cancel(_timer);
+        _timer = nil;
+    }
+    
+    if ([levelTimer isValid]){
+        [levelTimer invalidate];
+        levelTimer = nil;
     }
 }
 
@@ -291,7 +317,9 @@ static NSString *roomCellId = @"roomCellId";
 /// 退出房间
 /// @param sender btn
 - (IBAction)leaveRoom:(UIButton *)sender {
+    [self removeTimer];
     [_rtcEngine leaveRoom];
+    
     if (_fileCaptureController) {
         [_fileCaptureController stopCapture];
     }
@@ -394,6 +422,7 @@ static NSString *roomCellId = @"roomCellId";
     }
     [_remoteStreamList removeObject:delete];
     [_collectionView reloadData];
+    
 }
 
 /**新成员加入*/
@@ -823,7 +852,5 @@ static NSString *roomCellId = @"roomCellId";
     
 }
 
-- (void)dealloc {
-    NSLog(@"-%@- dealloc", self);
-}
+
 @end
