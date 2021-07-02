@@ -40,12 +40,14 @@
 #define  k_StatusBarAndNavigationBarHeight   (k_StatusBarHeight + k_NavigationBarHeight)
 // home indicator
 #define HOME_INDICATOR_HEIGHT ((iPhoneX == YES || IS_IPHONE_Xr == YES || IS_IPHONE_Xs == YES || IS_IPHONE_Xs_Max == YES || IS_IPHONE_11 == YES || IS_IPHONE_11_Pro == YES || IS_IPHONE_11_Pro_Max == YES) ? -34 : 0)
-@interface UCloudRtcMeetingRoomVC ()<UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate, URTCFileCaptureControllerDelegate>
+@interface UCloudRtcMeetingRoomVC ()<UCloudRtcEngineDelegate, UICollectionViewDataSource, UICollectionViewDelegate, URTCFileCaptureControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 {
     NSMutableArray<UCloudRtcStream*> *_canSubstreamList;
     AVAudioRecorder *recorder;
     NSTimer *levelTimer;
     URTCFileCaptureController *_fileCaptureController;
+    dispatch_queue_t _queue;
+
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *roomIdLB;
@@ -68,6 +70,16 @@
 @property (nonatomic, strong) NSMutableArray *collectionViewRenderList;//collectionview渲染列表
 @property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, strong) URTCRecodView *recordView;
+
+// AVCaptureSession对象来执行输入设备和输出设备之间的数据传递
+@property (nonatomic, strong)AVCaptureSession *session;
+
+// AVCaptureDeviceInput对象是输入流
+@property (nonatomic, strong)AVCaptureDeviceInput *videoInput;
+
+@property (nonatomic, strong) AVCaptureVideoDataOutput *videoDataOutput;
+
+@property (nonatomic, strong) AVCaptureConnection *videoConnection;
 @end
 
 static NSString *roomCellId = @"roomCellId";
@@ -119,7 +131,6 @@ static NSString *roomCellId = @"roomCellId";
         dispatch_async(dispatch_get_main_queue(), ^{
             wself.liveTimeLB.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
         });
-        NSLog(@"---------%@", [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds]);
     });
     dispatch_resume(_timer);
     
@@ -273,10 +284,10 @@ static NSString *roomCellId = @"roomCellId";
     // 是否开启音量检测，默认NO
 //    _rtcEngine.isTrackVolume = YES;
     // 开启自定义视频源,默认为NO
-//    _rtcEngine.enableExtendVideoCapture = YES;
+    _rtcEngine.enableExtendVideoCapture = YES;
     if (_rtcEngine.enableExtendVideoCapture) {
         // 用户自行设置要发送的视频数据
-        [self createFileCapture];// 测试
+        [self createExtendVideoCapture:YES];// 测试
     }
     
     //添加本地预览
@@ -322,6 +333,9 @@ static NSString *roomCellId = @"roomCellId";
     
     if (_fileCaptureController) {
         [_fileCaptureController stopCapture];
+    }
+    if (self.session && self.session.isRunning) {
+        [self stopLocalCapture];
     }
     [self dismissViewControllerAnimated:true completion:nil];
 }
@@ -843,8 +857,88 @@ static NSString *roomCellId = @"roomCellId";
     }
 
 }
+- (void)createExtendVideoCapture:(BOOL)isCamaro {
+    if (isCamaro) {
+        [self startLocalCapture];
+    } else {
+        [self createFileCapture];
+    }
+}
+#pragma mark-- 自定义视频源采集摄像头回调
+- (void)initialSession {
+    _queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 
-#pragma mark-- 自定义视频源采集回调
+    self.session = [[AVCaptureSession alloc] init];
+    
+    self.videoInput = [[AVCaptureDeviceInput alloc] initWithDevice:[self frontCamera] error:nil];
+    
+    self.videoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
+//    self.videoDataOutput.videoSettings =
+    [self.videoDataOutput setSampleBufferDelegate:self queue:_queue];
+    
+
+    
+    if ([self.session canAddInput:self.videoInput]) {
+        [self.session addInput:self.videoInput];
+    }
+    if ([self.session canAddOutput:self.videoDataOutput]) {
+        [self.session addOutput:self.videoDataOutput];
+    }
+    
+    AVCaptureConnection *videoConnection = [self.videoDataOutput connectionWithMediaType:(AVMediaTypeVideo)];
+    self.videoConnection = videoConnection;
+    self.videoConnection.videoMirrored = YES;
+        
+}
+
+- (void)startLocalCapture {
+  
+    [self initialSession];
+
+    if (self.session) {
+        [self.session startRunning];
+    }
+}
+
+- (void)stopLocalCapture{
+    if (self.session) {
+        [self.session stopRunning];
+    }
+}
+
+// 这是获取前后摄像头对象的方法
+- (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition)position {
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    for (AVCaptureDevice *device in devices) {
+        if (device.position == position) {
+            return device;
+        }
+    }
+    return nil;
+}
+
+- (AVCaptureDevice *)frontCamera {
+    return [self cameraWithPosition:AVCaptureDevicePositionFront];
+}
+
+- (AVCaptureDevice *)backCamera {
+    return [self cameraWithPosition:AVCaptureDevicePositionBack];
+}
+
+- (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    if (self.videoConnection == connection) {
+        
+        CMMediaType mediaType = CMFormatDescriptionGetMediaType(CMSampleBufferGetFormatDescription(sampleBuffer));
+        if (mediaType == kCMMediaType_Video) {
+            CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+            CMTime timeStamp = CMSampleBufferGetPresentationTimeStamp(sampleBuffer);
+            [self.rtcEngine publishPixelBuffer:pixelBuffer timestamp:timeStamp rotation:UCloudRtcVideoRotation_180];
+        }
+       
+        
+    }
+}
+#pragma mark-- 自定义视频源采集文件回调
 - (void)capturer:(URTCFileCaptureController *)fileCaptureController didCaptureVideoPixelBufferRef:(CVPixelBufferRef)pixelBufferRef timestamp:(CMTime)timestamp {
     if (self.rtcEngine.enableExtendVideoCapture) {
         [self.rtcEngine publishPixelBuffer:pixelBufferRef timestamp:timestamp rotation:(UCloudRtcVideoRotation_0)];

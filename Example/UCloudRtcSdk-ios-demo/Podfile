@@ -6,7 +6,9 @@ target 'UCloudRtcSdkDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 # pod 'UCloudRtcSdk', :path => '../../'
-  pod 'UCloudRtcSdk', '~> 1.8.2'
+   #pod 'UCloudRtcSdk', '~> 1.8.7'
+
+
   target 'UCloudRtcSdkDemoTests' do
     inherit! :search_paths
     # Pods for testing
