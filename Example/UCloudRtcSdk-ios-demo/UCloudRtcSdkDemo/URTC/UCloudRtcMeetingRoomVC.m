@@ -110,6 +110,8 @@ static NSString *roomCellId = @"roomCellId";
     // 渲染远程流的CollectionView
     [self setupCollectionView];
     
+    NSLog(@"---verson: %@---", [UCloudRtcEngine currentVersion]);
+    
 }
 
 
