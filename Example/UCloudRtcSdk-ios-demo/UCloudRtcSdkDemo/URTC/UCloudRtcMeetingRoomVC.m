@@ -279,12 +279,13 @@ static NSString *roomCellId = @"roomCellId";
     // 设置视频编码格式，默认VP8，可选 VP8 || H264
     _rtcEngine.videoDefaultCodec = @"H264";
     // 设置视频分辨率
-    _rtcEngine.videoProfile = UCloudRtcEngine_VideoProfile_480P;
+//    _rtcEngine.videoProfile = UCloudRtcEngine_VideoProfile_480P;
+//    _rtcEngine.videoProfile = UCloudRtcEngine_VideoProfile_1080P;
 //    _rtcEngine.streamProfile = UCloudRtcEngine_StreamProfileUpload;
     // 是否开启音量检测，默认NO
 //    _rtcEngine.isTrackVolume = YES;
     // 开启自定义视频源,默认为NO
-    _rtcEngine.enableExtendVideoCapture = YES;
+    _rtcEngine.enableExtendVideoCapture = NO;
     if (_rtcEngine.enableExtendVideoCapture) {
         // 用户自行设置要发送的视频数据
         [self createExtendVideoCapture:YES];// 测试

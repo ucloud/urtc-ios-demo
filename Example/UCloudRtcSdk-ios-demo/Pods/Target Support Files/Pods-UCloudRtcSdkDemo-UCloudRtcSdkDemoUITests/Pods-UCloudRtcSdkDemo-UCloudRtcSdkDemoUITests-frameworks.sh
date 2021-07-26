@@ -175,10 +175,10 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${PODS_ROOT}/UCloudRtcSdk/UCloudRtcSdk_iOS-1.8.7/UCloudRtcSdk_ios.framework"
+  install_framework "${PODS_ROOT}/UCloudRtcSdk/UCloudRtcSdk_iOS-1.8.9/UCloudRtcSdk_ios.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${PODS_ROOT}/UCloudRtcSdk/UCloudRtcSdk_iOS-1.8.7/UCloudRtcSdk_ios.framework"
+  install_framework "${PODS_ROOT}/UCloudRtcSdk/UCloudRtcSdk_iOS-1.8.9/UCloudRtcSdk_ios.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
