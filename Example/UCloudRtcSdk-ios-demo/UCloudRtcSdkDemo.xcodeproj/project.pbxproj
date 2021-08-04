@@ -1,0 +1,891 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38FDC3A82591A23A00767A0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3A72591A23A00767A0A /* AppDelegate.m */; };
+		38FDC3AB2591A23A00767A0A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3AA2591A23A00767A0A /* SceneDelegate.m */; };
+		38FDC3B12591A23A00767A0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC3AF2591A23A00767A0A /* Main.storyboard */; };
+		38FDC3B32591A23B00767A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC3B22591A23B00767A0A /* Assets.xcassets */; };
+		38FDC3B62591A23B00767A0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC3B42591A23B00767A0A /* LaunchScreen.storyboard */; };
+		38FDC3B92591A23B00767A0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3B82591A23B00767A0A /* main.m */; };
+		38FDC3C32591A23C00767A0A /* UCloudRtcSdkDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3C22591A23C00767A0A /* UCloudRtcSdkDemoTests.m */; };
+		38FDC3CE2591A23C00767A0A /* UCloudRtcSdkDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3CD2591A23C00767A0A /* UCloudRtcSdkDemoUITests.m */; };
+		38FDC40E2591A64400767A0A /* CLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3E92591A64400767A0A /* CLSlider.m */; };
+		38FDC40F2591A64400767A0A /* MLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3EA2591A64400767A0A /* MLMenuItem.m */; };
+		38FDC4102591A64400767A0A /* MLMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3ED2591A64400767A0A /* MLMenuCell.m */; };
+		38FDC4112591A64400767A0A /* MLMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3EF2591A64400767A0A /* MLMenuView.m */; };
+		38FDC4122591A64400767A0A /* URTCFileCaptureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3F32591A64400767A0A /* URTCFileCaptureController.m */; };
+		38FDC4132591A64400767A0A /* URTCResolutionChoosePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3F52591A64400767A0A /* URTCResolutionChoosePicker.m */; };
+		38FDC4142591A64400767A0A /* URTCRecodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC3F72591A64400767A0A /* URTCRecodView.xib */; };
+		38FDC4152591A64400767A0A /* URTCRecodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3F82591A64400767A0A /* URTCRecodView.m */; };
+		38FDC4162591A64400767A0A /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3FA2591A64400767A0A /* UIView+Toast.m */; };
+		38FDC4172591A64400767A0A /* NativeMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3FC2591A64400767A0A /* NativeMediaViewController.m */; };
+		38FDC4182591A64400767A0A /* UCloudRtcTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3FE2591A64400767A0A /* UCloudRtcTextField.m */; };
+		38FDC4192591A64400767A0A /* UCloudRtcRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3FF2591A64400767A0A /* UCloudRtcRoomCell.m */; };
+		38FDC41A2591A64400767A0A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC4012591A64400767A0A /* ViewController.m */; };
+		38FDC41B2591A64400767A0A /* UCloudRtcMeetingRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC4032591A64400767A0A /* UCloudRtcMeetingRoomVC.m */; };
+		38FDC41C2591A64400767A0A /* dy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC4052591A64400767A0A /* dy.mp3 */; };
+		38FDC41D2591A64400767A0A /* UCloudRtcRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC4062591A64400767A0A /* UCloudRtcRoomCell.xib */; };
+		38FDC41E2591A64400767A0A /* UCloudRtcMeetingRoomVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC4082591A64400767A0A /* UCloudRtcMeetingRoomVC.xib */; };
+		38FDC41F2591A64400767A0A /* NativeMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC4092591A64400767A0A /* NativeMediaViewController.xib */; };
+		38FDC4202591A64400767A0A /* UCloudRtcSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC40A2591A64400767A0A /* UCloudRtcSettingVC.m */; };
+		38FDC4212591A64400767A0A /* test480.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC40B2591A64400767A0A /* test480.mp4 */; };
+		38FDC4222591A64400767A0A /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FDC40D2591A64400767A0A /* Bugly.framework */; };
+		7654EF6DAB5957470611F526 /* Pods_UCloudRtcSdkDemo_UCloudRtcSdkDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FFE9EF4A1C9739DF210134 /* Pods_UCloudRtcSdkDemo_UCloudRtcSdkDemoUITests.framework */; };
+		76E5BDD60DB22AA5BD38EE5F /* Pods_UCloudRtcSdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3EB3F9D63C31BFD07833B57 /* Pods_UCloudRtcSdkDemo.framework */; };
+		7D1DA16C0B1FC20B5AF6B9B7 /* Pods_UCloudRtcSdkDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A441177DCFCC3758A1F072FA /* Pods_UCloudRtcSdkDemoTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38FDC3BF2591A23C00767A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38FDC39B2591A23A00767A0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38FDC3A22591A23A00767A0A;
+			remoteInfo = UCloudRtcSdkDemo;
+		};
+		38FDC3CA2591A23C00767A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38FDC39B2591A23A00767A0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38FDC3A22591A23A00767A0A;
+			remoteInfo = UCloudRtcSdkDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		29E85147832619188A189D15 /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCloudRtcSdkDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-UCloudRtcSdkDemoTests/Pods-UCloudRtcSdkDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38FDC3A32591A23A00767A0A /* UCloudRtcSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCloudRtcSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FDC3A62591A23A00767A0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		38FDC3A72591A23A00767A0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		38FDC3A92591A23A00767A0A /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		38FDC3AA2591A23A00767A0A /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		38FDC3B02591A23A00767A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38FDC3B22591A23B00767A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38FDC3B52591A23B00767A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38FDC3B72591A23B00767A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38FDC3B82591A23B00767A0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		38FDC3BE2591A23C00767A0A /* UCloudRtcSdkDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCloudRtcSdkDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FDC3C22591A23C00767A0A /* UCloudRtcSdkDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UCloudRtcSdkDemoTests.m; sourceTree = "<group>"; };
+		38FDC3C42591A23C00767A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38FDC3C92591A23C00767A0A /* UCloudRtcSdkDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCloudRtcSdkDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FDC3CD2591A23C00767A0A /* UCloudRtcSdkDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UCloudRtcSdkDemoUITests.m; sourceTree = "<group>"; };
+		38FDC3CF2591A23C00767A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38FDC3E92591A64400767A0A /* CLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSlider.m; sourceTree = "<group>"; };
+		38FDC3EA2591A64400767A0A /* MLMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMenuItem.m; sourceTree = "<group>"; };
+		38FDC3EB2591A64400767A0A /* URTCResolutionChoosePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URTCResolutionChoosePicker.h; sourceTree = "<group>"; };
+		38FDC3EC2591A64400767A0A /* URTCFileCaptureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URTCFileCaptureController.h; sourceTree = "<group>"; };
+		38FDC3ED2591A64400767A0A /* MLMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMenuCell.m; sourceTree = "<group>"; };
+		38FDC3EE2591A64400767A0A /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		38FDC3EF2591A64400767A0A /* MLMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMenuView.m; sourceTree = "<group>"; };
+		38FDC3F02591A64400767A0A /* URTCRecodView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URTCRecodView.h; sourceTree = "<group>"; };
+		38FDC3F12591A64400767A0A /* MLMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMenu.h; sourceTree = "<group>"; };
+		38FDC3F22591A64400767A0A /* CLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSlider.h; sourceTree = "<group>"; };
+		38FDC3F32591A64400767A0A /* URTCFileCaptureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URTCFileCaptureController.m; sourceTree = "<group>"; };
+		38FDC3F42591A64400767A0A /* MLMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMenuCell.h; sourceTree = "<group>"; };
+		38FDC3F52591A64400767A0A /* URTCResolutionChoosePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URTCResolutionChoosePicker.m; sourceTree = "<group>"; };
+		38FDC3F62591A64400767A0A /* MLMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMenuItem.h; sourceTree = "<group>"; };
+		38FDC3F72591A64400767A0A /* URTCRecodView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = URTCRecodView.xib; sourceTree = "<group>"; };
+		38FDC3F82591A64400767A0A /* URTCRecodView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URTCRecodView.m; sourceTree = "<group>"; };
+		38FDC3F92591A64400767A0A /* MLMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMenuView.h; sourceTree = "<group>"; };
+		38FDC3FA2591A64400767A0A /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		38FDC3FC2591A64400767A0A /* NativeMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeMediaViewController.m; sourceTree = "<group>"; };
+		38FDC3FD2591A64400767A0A /* UCloudRtcMeetingRoomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudRtcMeetingRoomVC.h; sourceTree = "<group>"; };
+		38FDC3FE2591A64400767A0A /* UCloudRtcTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCloudRtcTextField.m; sourceTree = "<group>"; };
+		38FDC3FF2591A64400767A0A /* UCloudRtcRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCloudRtcRoomCell.m; sourceTree = "<group>"; };
+		38FDC4002591A64400767A0A /* UCloudRtcSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudRtcSettingVC.h; sourceTree = "<group>"; };
+		38FDC4012591A64400767A0A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		38FDC4022591A64400767A0A /* UCloudRtcTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudRtcTextField.h; sourceTree = "<group>"; };
+		38FDC4032591A64400767A0A /* UCloudRtcMeetingRoomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCloudRtcMeetingRoomVC.m; sourceTree = "<group>"; };
+		38FDC4042591A64400767A0A /* NativeMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeMediaViewController.h; sourceTree = "<group>"; };
+		38FDC4052591A64400767A0A /* dy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dy.mp3; sourceTree = "<group>"; };
+		38FDC4062591A64400767A0A /* UCloudRtcRoomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCloudRtcRoomCell.xib; sourceTree = "<group>"; };
+		38FDC4072591A64400767A0A /* UCloudRtcRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudRtcRoomCell.h; sourceTree = "<group>"; };
+		38FDC4082591A64400767A0A /* UCloudRtcMeetingRoomVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCloudRtcMeetingRoomVC.xib; sourceTree = "<group>"; };
+		38FDC4092591A64400767A0A /* NativeMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeMediaViewController.xib; sourceTree = "<group>"; };
+		38FDC40A2591A64400767A0A /* UCloudRtcSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCloudRtcSettingVC.m; sourceTree = "<group>"; };
+		38FDC40B2591A64400767A0A /* test480.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test480.mp4; sourceTree = "<group>"; };
+		38FDC40C2591A64400767A0A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		38FDC40D2591A64400767A0A /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		57BE36633318ECCCD8C18205 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		85F1A2886047B0E833C0DF83 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCloudRtcSdkDemoTests.release.xcconfig"; path = "Target Support Files/Pods-UCloudRtcSdkDemoTests/Pods-UCloudRtcSdkDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		A3EB3F9D63C31BFD07833B57 /* Pods_UCloudRtcSdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCloudRtcSdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A441177DCFCC3758A1F072FA /* Pods_UCloudRtcSdkDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCloudRtcSdkDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1CE06131632F2E07229EDB8 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CC5A8851522818CF09BECF02 /* Pods-UCloudRtcSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCloudRtcSdkDemo.debug.xcconfig"; path = "Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D0A13401CB43AA52694EA817 /* Pods-UCloudRtcSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCloudRtcSdkDemo.release.xcconfig"; path = "Target Support Files/Pods-UCloudRtcSdkDemo/Pods-UCloudRtcSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D5FFE9EF4A1C9739DF210134 /* Pods_UCloudRtcSdkDemo_UCloudRtcSdkDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCloudRtcSdkDemo_UCloudRtcSdkDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38FDC3A02591A23A00767A0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FDC4222591A64400767A0A /* Bugly.framework in Frameworks */,
+				76E5BDD60DB22AA5BD38EE5F /* Pods_UCloudRtcSdkDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FDC3BB2591A23C00767A0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1DA16C0B1FC20B5AF6B9B7 /* Pods_UCloudRtcSdkDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FDC3C62591A23C00767A0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7654EF6DAB5957470611F526 /* Pods_UCloudRtcSdkDemo_UCloudRtcSdkDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38FDC39A2591A23A00767A0A = {
+			isa = PBXGroup;
+			children = (
+				38FDC3A52591A23A00767A0A /* UCloudRtcSdkDemo */,
+				38FDC3C12591A23C00767A0A /* UCloudRtcSdkDemoTests */,
+				38FDC3CC2591A23C00767A0A /* UCloudRtcSdkDemoUITests */,
+				38FDC3A42591A23A00767A0A /* Products */,
+				56B7F1334F25D9CCB36770E6 /* Pods */,
+				5F55F1C4B06004B015CFBD11 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		38FDC3A42591A23A00767A0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38FDC3A32591A23A00767A0A /* UCloudRtcSdkDemo.app */,
+				38FDC3BE2591A23C00767A0A /* UCloudRtcSdkDemoTests.xctest */,
+				38FDC3C92591A23C00767A0A /* UCloudRtcSdkDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38FDC3A52591A23A00767A0A /* UCloudRtcSdkDemo */ = {
+			isa = PBXGroup;
+			children = (
+				38FDC40D2591A64400767A0A /* Bugly.framework */,
+				38FDC3E82591A64400767A0A /* Tools */,
+				38FDC3FB2591A64400767A0A /* URTC */,
+				38FDC3A62591A23A00767A0A /* AppDelegate.h */,
+				38FDC3A72591A23A00767A0A /* AppDelegate.m */,
+				38FDC3A92591A23A00767A0A /* SceneDelegate.h */,
+				38FDC3AA2591A23A00767A0A /* SceneDelegate.m */,
+				38FDC3AF2591A23A00767A0A /* Main.storyboard */,
+				38FDC3B22591A23B00767A0A /* Assets.xcassets */,
+				38FDC3B42591A23B00767A0A /* LaunchScreen.storyboard */,
+				38FDC3B72591A23B00767A0A /* Info.plist */,
+				38FDC3B82591A23B00767A0A /* main.m */,
+			);
+			path = UCloudRtcSdkDemo;
+			sourceTree = "<group>";
+		};
+		38FDC3C12591A23C00767A0A /* UCloudRtcSdkDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				38FDC3C22591A23C00767A0A /* UCloudRtcSdkDemoTests.m */,
+				38FDC3C42591A23C00767A0A /* Info.plist */,
+			);
+			path = UCloudRtcSdkDemoTests;
+			sourceTree = "<group>";
+		};
+		38FDC3CC2591A23C00767A0A /* UCloudRtcSdkDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				38FDC3CD2591A23C00767A0A /* UCloudRtcSdkDemoUITests.m */,
+				38FDC3CF2591A23C00767A0A /* Info.plist */,
+			);
+			path = UCloudRtcSdkDemoUITests;
+			sourceTree = "<group>";
+		};
+		38FDC3E82591A64400767A0A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				38FDC3F22591A64400767A0A /* CLSlider.h */,
+				38FDC3E92591A64400767A0A /* CLSlider.m */,
+				38FDC3F12591A64400767A0A /* MLMenu.h */,
+				38FDC3F42591A64400767A0A /* MLMenuCell.h */,
+				38FDC3ED2591A64400767A0A /* MLMenuCell.m */,
+				38FDC3F62591A64400767A0A /* MLMenuItem.h */,
+				38FDC3EA2591A64400767A0A /* MLMenuItem.m */,
+				38FDC3F92591A64400767A0A /* MLMenuView.h */,
+				38FDC3EF2591A64400767A0A /* MLMenuView.m */,
+				38FDC3EE2591A64400767A0A /* UIView+Toast.h */,
+				38FDC3FA2591A64400767A0A /* UIView+Toast.m */,
+				38FDC3EC2591A64400767A0A /* URTCFileCaptureController.h */,
+				38FDC3F32591A64400767A0A /* URTCFileCaptureController.m */,
+				38FDC3F02591A64400767A0A /* URTCRecodView.h */,
+				38FDC3F82591A64400767A0A /* URTCRecodView.m */,
+				38FDC3F72591A64400767A0A /* URTCRecodView.xib */,
+				38FDC3EB2591A64400767A0A /* URTCResolutionChoosePicker.h */,
+				38FDC3F52591A64400767A0A /* URTCResolutionChoosePicker.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		38FDC3FB2591A64400767A0A /* URTC */ = {
+			isa = PBXGroup;
+			children = (
+				38FDC4052591A64400767A0A /* dy.mp3 */,
+				38FDC4042591A64400767A0A /* NativeMediaViewController.h */,
+				38FDC3FC2591A64400767A0A /* NativeMediaViewController.m */,
+				38FDC4092591A64400767A0A /* NativeMediaViewController.xib */,
+				38FDC40B2591A64400767A0A /* test480.mp4 */,
+				38FDC3FD2591A64400767A0A /* UCloudRtcMeetingRoomVC.h */,
+				38FDC4032591A64400767A0A /* UCloudRtcMeetingRoomVC.m */,
+				38FDC4082591A64400767A0A /* UCloudRtcMeetingRoomVC.xib */,
+				38FDC4072591A64400767A0A /* UCloudRtcRoomCell.h */,
+				38FDC3FF2591A64400767A0A /* UCloudRtcRoomCell.m */,
+				38FDC4062591A64400767A0A /* UCloudRtcRoomCell.xib */,
+				38FDC4002591A64400767A0A /* UCloudRtcSettingVC.h */,
+				38FDC40A2591A64400767A0A /* UCloudRtcSettingVC.m */,
+				38FDC4022591A64400767A0A /* UCloudRtcTextField.h */,
+				38FDC3FE2591A64400767A0A /* UCloudRtcTextField.m */,
+				38FDC40C2591A64400767A0A /* ViewController.h */,
+				38FDC4012591A64400767A0A /* ViewController.m */,
+			);
+			path = URTC;
+			sourceTree = "<group>";
+		};
+		56B7F1334F25D9CCB36770E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC5A8851522818CF09BECF02 /* Pods-UCloudRtcSdkDemo.debug.xcconfig */,
+				D0A13401CB43AA52694EA817 /* Pods-UCloudRtcSdkDemo.release.xcconfig */,
+				57BE36633318ECCCD8C18205 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */,
+				C1CE06131632F2E07229EDB8 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */,
+				29E85147832619188A189D15 /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */,
+				85F1A2886047B0E833C0DF83 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5F55F1C4B06004B015CFBD11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3EB3F9D63C31BFD07833B57 /* Pods_UCloudRtcSdkDemo.framework */,
+				D5FFE9EF4A1C9739DF210134 /* Pods_UCloudRtcSdkDemo_UCloudRtcSdkDemoUITests.framework */,
+				A441177DCFCC3758A1F072FA /* Pods_UCloudRtcSdkDemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38FDC3A22591A23A00767A0A /* UCloudRtcSdkDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38FDC3D22591A23C00767A0A /* Build configuration list for PBXNativeTarget "UCloudRtcSdkDemo" */;
+			buildPhases = (
+				24EE19C44E7848BBDF65BA67 /* [CP] Check Pods Manifest.lock */,
+				38FDC39F2591A23A00767A0A /* Sources */,
+				38FDC3A02591A23A00767A0A /* Frameworks */,
+				38FDC3A12591A23A00767A0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UCloudRtcSdkDemo;
+			productName = UCloudRtcSdkDemo;
+			productReference = 38FDC3A32591A23A00767A0A /* UCloudRtcSdkDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		38FDC3BD2591A23C00767A0A /* UCloudRtcSdkDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38FDC3D52591A23C00767A0A /* Build configuration list for PBXNativeTarget "UCloudRtcSdkDemoTests" */;
+			buildPhases = (
+				304F21D583675D7564E964E5 /* [CP] Check Pods Manifest.lock */,
+				38FDC3BA2591A23C00767A0A /* Sources */,
+				38FDC3BB2591A23C00767A0A /* Frameworks */,
+				38FDC3BC2591A23C00767A0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38FDC3C02591A23C00767A0A /* PBXTargetDependency */,
+			);
+			name = UCloudRtcSdkDemoTests;
+			productName = UCloudRtcSdkDemoTests;
+			productReference = 38FDC3BE2591A23C00767A0A /* UCloudRtcSdkDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		38FDC3C82591A23C00767A0A /* UCloudRtcSdkDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38FDC3D82591A23C00767A0A /* Build configuration list for PBXNativeTarget "UCloudRtcSdkDemoUITests" */;
+			buildPhases = (
+				2FC0918C8D0E117B5FBF039E /* [CP] Check Pods Manifest.lock */,
+				38FDC3C52591A23C00767A0A /* Sources */,
+				38FDC3C62591A23C00767A0A /* Frameworks */,
+				38FDC3C72591A23C00767A0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38FDC3CB2591A23C00767A0A /* PBXTargetDependency */,
+			);
+			name = UCloudRtcSdkDemoUITests;
+			productName = UCloudRtcSdkDemoUITests;
+			productReference = 38FDC3C92591A23C00767A0A /* UCloudRtcSdkDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38FDC39B2591A23A00767A0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					38FDC3A22591A23A00767A0A = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					38FDC3BD2591A23C00767A0A = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 38FDC3A22591A23A00767A0A;
+					};
+					38FDC3C82591A23C00767A0A = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 38FDC3A22591A23A00767A0A;
+					};
+				};
+			};
+			buildConfigurationList = 38FDC39E2591A23A00767A0A /* Build configuration list for PBXProject "UCloudRtcSdkDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38FDC39A2591A23A00767A0A;
+			productRefGroup = 38FDC3A42591A23A00767A0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38FDC3A22591A23A00767A0A /* UCloudRtcSdkDemo */,
+				38FDC3BD2591A23C00767A0A /* UCloudRtcSdkDemoTests */,
+				38FDC3C82591A23C00767A0A /* UCloudRtcSdkDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38FDC3A12591A23A00767A0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FDC41D2591A64400767A0A /* UCloudRtcRoomCell.xib in Resources */,
+				38FDC4212591A64400767A0A /* test480.mp4 in Resources */,
+				38FDC41E2591A64400767A0A /* UCloudRtcMeetingRoomVC.xib in Resources */,
+				38FDC41C2591A64400767A0A /* dy.mp3 in Resources */,
+				38FDC4142591A64400767A0A /* URTCRecodView.xib in Resources */,
+				38FDC41F2591A64400767A0A /* NativeMediaViewController.xib in Resources */,
+				38FDC3B62591A23B00767A0A /* LaunchScreen.storyboard in Resources */,
+				38FDC3B32591A23B00767A0A /* Assets.xcassets in Resources */,
+				38FDC3B12591A23A00767A0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FDC3BC2591A23C00767A0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FDC3C72591A23C00767A0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24EE19C44E7848BBDF65BA67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UCloudRtcSdkDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FC0918C8D0E117B5FBF039E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		304F21D583675D7564E964E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UCloudRtcSdkDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38FDC39F2591A23A00767A0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FDC4162591A64400767A0A /* UIView+Toast.m in Sources */,
+				38FDC4112591A64400767A0A /* MLMenuView.m in Sources */,
+				38FDC41B2591A64400767A0A /* UCloudRtcMeetingRoomVC.m in Sources */,
+				38FDC4202591A64400767A0A /* UCloudRtcSettingVC.m in Sources */,
+				38FDC4192591A64400767A0A /* UCloudRtcRoomCell.m in Sources */,
+				38FDC4102591A64400767A0A /* MLMenuCell.m in Sources */,
+				38FDC4172591A64400767A0A /* NativeMediaViewController.m in Sources */,
+				38FDC3A82591A23A00767A0A /* AppDelegate.m in Sources */,
+				38FDC4132591A64400767A0A /* URTCResolutionChoosePicker.m in Sources */,
+				38FDC4182591A64400767A0A /* UCloudRtcTextField.m in Sources */,
+				38FDC4122591A64400767A0A /* URTCFileCaptureController.m in Sources */,
+				38FDC41A2591A64400767A0A /* ViewController.m in Sources */,
+				38FDC40F2591A64400767A0A /* MLMenuItem.m in Sources */,
+				38FDC4152591A64400767A0A /* URTCRecodView.m in Sources */,
+				38FDC40E2591A64400767A0A /* CLSlider.m in Sources */,
+				38FDC3B92591A23B00767A0A /* main.m in Sources */,
+				38FDC3AB2591A23A00767A0A /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FDC3BA2591A23C00767A0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FDC3C32591A23C00767A0A /* UCloudRtcSdkDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FDC3C52591A23C00767A0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FDC3CE2591A23C00767A0A /* UCloudRtcSdkDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38FDC3C02591A23C00767A0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38FDC3A22591A23A00767A0A /* UCloudRtcSdkDemo */;
+			targetProxy = 38FDC3BF2591A23C00767A0A /* PBXContainerItemProxy */;
+		};
+		38FDC3CB2591A23C00767A0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38FDC3A22591A23A00767A0A /* UCloudRtcSdkDemo */;
+			targetProxy = 38FDC3CA2591A23C00767A0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		38FDC3AF2591A23A00767A0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38FDC3B02591A23A00767A0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		38FDC3B42591A23B00767A0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38FDC3B52591A23B00767A0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38FDC3D02591A23C00767A0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		38FDC3D12591A23C00767A0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		38FDC3D32591A23C00767A0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC5A8851522818CF09BECF02 /* Pods-UCloudRtcSdkDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = CFP9KY4MGC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCloudRtcSdkDemo",
+				);
+				INFOPLIST_FILE = UCloudRtcSdkDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.8.8;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"bz2\"",
+					"-l\"c++\"",
+					"-l\"iconv\"",
+					"-l\"icucore\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UCloudRtcSdk_ios\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.urtcdemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = wildcard;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		38FDC3D42591A23C00767A0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A13401CB43AA52694EA817 /* Pods-UCloudRtcSdkDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = CFP9KY4MGC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCloudRtcSdkDemo",
+				);
+				INFOPLIST_FILE = UCloudRtcSdkDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.8.8;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"bz2\"",
+					"-l\"c++\"",
+					"-l\"iconv\"",
+					"-l\"icucore\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UCloudRtcSdk_ios\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.urtcdemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = wildcard;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		38FDC3D62591A23C00767A0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29E85147832619188A189D15 /* Pods-UCloudRtcSdkDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UCloudRtcSdkDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.UCloudRtcSdkDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCloudRtcSdkDemo.app/UCloudRtcSdkDemo";
+			};
+			name = Debug;
+		};
+		38FDC3D72591A23C00767A0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85F1A2886047B0E833C0DF83 /* Pods-UCloudRtcSdkDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UCloudRtcSdkDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.UCloudRtcSdkDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCloudRtcSdkDemo.app/UCloudRtcSdkDemo";
+			};
+			name = Release;
+		};
+		38FDC3D92591A23C00767A0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57BE36633318ECCCD8C18205 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UCloudRtcSdkDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.UCloudRtcSdkDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UCloudRtcSdkDemo;
+			};
+			name = Debug;
+		};
+		38FDC3DA2591A23C00767A0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1CE06131632F2E07229EDB8 /* Pods-UCloudRtcSdkDemo-UCloudRtcSdkDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UCloudRtcSdkDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.UCloudRtcSdkDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UCloudRtcSdkDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38FDC39E2591A23A00767A0A /* Build configuration list for PBXProject "UCloudRtcSdkDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38FDC3D02591A23C00767A0A /* Debug */,
+				38FDC3D12591A23C00767A0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38FDC3D22591A23C00767A0A /* Build configuration list for PBXNativeTarget "UCloudRtcSdkDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38FDC3D32591A23C00767A0A /* Debug */,
+				38FDC3D42591A23C00767A0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38FDC3D52591A23C00767A0A /* Build configuration list for PBXNativeTarget "UCloudRtcSdkDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38FDC3D62591A23C00767A0A /* Debug */,
+				38FDC3D72591A23C00767A0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38FDC3D82591A23C00767A0A /* Build configuration list for PBXNativeTarget "UCloudRtcSdkDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38FDC3D92591A23C00767A0A /* Debug */,
+				38FDC3DA2591A23C00767A0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38FDC39B2591A23A00767A0A /* Project object */;
+}
