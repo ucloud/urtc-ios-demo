@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^UCloudRtcRoomCellMuteComplete)(UCloudRtcStream *stream, int type, BOOL mute);
 @interface UCloudRtcRoomCell : UICollectionViewCell
 
-@property (strong, nonatomic)  UCloudRtcStream *stream;
+@property (weak, nonatomic)  UCloudRtcStream *stream;
 
 @property (copy, nonatomic) UCloudRtcRoomCellMuteComplete muteComplete;
 
