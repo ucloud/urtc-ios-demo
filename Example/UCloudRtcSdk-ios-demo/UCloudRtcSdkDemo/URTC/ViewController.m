@@ -15,9 +15,10 @@
 
 //线上
 //#error 在[UCloud 控制台](https://console.ucloud.cn/urtc/manage)， 创建URTC应用，得到 appId 和 appKey
-#define APP_ID <#APP_ID #>
-#define APP_KEY <#APP_KEY#>
-
+//#define APP_ID <#APP_ID #>
+//#define APP_KEY <#APP_KEY#>
+#define APP_ID @"URtc-h4r1txxy"
+#define APP_KEY @"9129304dbf8c5c4bf68d70824462409f"
 #define TOKEN @""
 #import <AVFoundation/AVFoundation.h>
 #import <UCloudRtcSdk_ios/UCloudRtcSdk_ios.h>
