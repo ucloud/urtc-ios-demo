@@ -7,7 +7,6 @@ target 'UCloudRtcSdkDemo' do
   use_frameworks!
 # pod 'UCloudRtcSdk', :path => '../../'
 # pod 'UCloudRtcSdk', '~> 1.9.1.2'
-
    pod 'UCloudRtcSdk'
 
 
