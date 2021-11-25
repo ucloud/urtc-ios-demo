@@ -84,14 +84,25 @@
 
 static NSString *roomCellId = @"roomCellId";
 
+#ifndef kAutoLandscapeRightAndPortrait
+#define kAutoLandscapeRightAndPortrait 1
+#endif
 
 @implementation UCloudRtcMeetingRoomVC
 
 -(void)dealloc{
     NSLog(@"----%@ dealloc------",self);
+#if kAutoLandscapeRightAndPortrait
+    [[NSNotificationCenter defaultCenter]  removeObserver:self];
+#endif
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+#if kAutoLandscapeRightAndPortrait
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChange:)name:UIDeviceOrientationDidChangeNotification object:nil];
+#endif
+
     
     _canSubstreamList = [NSMutableArray arrayWithCapacity:0];
     _remoteStreamList = [NSMutableArray arrayWithCapacity:0];
@@ -293,6 +304,18 @@ static NSString *roomCellId = @"roomCellId";
         // 用户自行设置要发送的视频数据
         [self createExtendVideoCapture:YES];// 测试
     }
+    // 开启SDK摄像头视频源回调
+//    _rtcEngine.enableGetVideoCapture = YES;
+    
+#if kAutoLandscapeRightAndPortrait
+    _rtcEngine.orientationMode = UCloudRtcOrientationModePortrait;
+#else
+    _rtcEngine.orientationMode = UCloudRtcOrientationModeLandscapeRight;
+#endif
+    
+    //    _rtcEngine.orientationMode = UCloudRtcOrientationModeLandscapeLeft;
+    
+//    _rtcEngine.orientationMode = UCloudRtcOrientationModeLandscapeRight;
     
     //添加本地预览
 //    [_rtcEngine setLocalPreview:_localPreview];
@@ -312,6 +335,58 @@ static NSString *roomCellId = @"roomCellId";
     
 
 }
+
+// FIXME: 横屏展示
+#if kAutoLandscapeRightAndPortrait
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscapeRight| UIInterfaceOrientationMaskPortrait;
+}
+#else
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscapeRight;
+}
+#endif
+
+
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskLandscapeRight| UIInterfaceOrientationMaskLandscapeLeft;
+//}
+/// home right
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskLandscapeRight;
+//}
+/// home left
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskLandscapeLeft;
+//}
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskPortrait;
+//}
+
+- (void)orientationDidChange:(NSNotification *)noti  {
+
+    NSLog(@"OrientationDidChange:%@",noti);
+
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (orientation == UIInterfaceOrientationLandscapeLeft) {//
+        _rtcEngine.orientationMode = UCloudRtcOrientationModeLandscapeLeft;
+
+    }
+    if (orientation == UIInterfaceOrientationLandscapeRight) {
+        _rtcEngine.orientationMode = UCloudRtcOrientationModeLandscapeRight;
+    }
+    if (orientation == UIInterfaceOrientationPortrait) {
+        _rtcEngine.orientationMode = UCloudRtcOrientationModePortrait;
+    }
+}
+
 
 /// 自定义视频源（从文件读取视频上传）
 - (void)createFileCapture {
@@ -645,6 +720,38 @@ static NSString *roomCellId = @"roomCellId";
 */
 - (void)uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager queryMix:(UCloudRtcMixResponse *_Nullable)response {
     
+}
+
+
+#pragma mark--- urtc摄像头数据 回调处理
+- (CVPixelBufferRef _Nonnull )uCloudRtcEngine:(UCloudRtcEngine *_Nonnull)manager didOutputPixelBufferRef:(CVPixelBufferRef _Nonnull )pixelBufferRef {
+//    return pixelBufferRef;
+    return [self coreImageHandle:pixelBufferRef];;
+}
+
+- (CVPixelBufferRef)coreImageHandle:(CVPixelBufferRef)pixelBuffer
+{
+    CIImage *inputImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
+      
+    /**
+     @"CIPhotoEffectChrome",
+     @"CIPhotoEffectFade",
+     @"CIPhotoEffectInstant",
+     @"CIPhotoEffectMono",
+     @"CIPhotoEffectNoir",
+     @"CIPhotoEffectProcess",
+     @"CIPhotoEffectTonal",
+     @"CIPhotoEffectTransfer"
+     */
+    CIFilter *filter = [CIFilter filterWithName:@"CIPhotoEffectInstant" keysAndValues:kCIInputImageKey,inputImage, nil];
+    CIImage *outputImage = filter.outputImage;
+    
+    // 创建基于 GPU 的 CIContext 对象
+    EAGLContext *eaglctx = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    CIContext *ctx = [CIContext contextWithEAGLContext:eaglctx options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:kCIContextUseSoftwareRenderer]];
+    
+    [ctx render:outputImage toCVPixelBuffer:pixelBuffer];
+    return pixelBuffer;
 }
 
 
