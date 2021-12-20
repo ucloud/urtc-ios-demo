@@ -1,5 +1,14 @@
 # IOS SDK 版本说明
 
+### v1.9.2.2
+
+该版本发布于2021-12-20
+
+* 1.增加禁用或者启用本地音频回调，"uCloudRtcEngine: didMuteLocalStreamAudioWithMediaType: muteState:"
+* 2.增加禁用或者启用本地视频回调，"uCloudRtcEngine: didMuteLocalStreamAudioWithMediaType: muteState:"
+* 3.修复mute操作导致预览失败
+
+
 ### v1.9.2.1
 
 该版本发布于2021-12-07
