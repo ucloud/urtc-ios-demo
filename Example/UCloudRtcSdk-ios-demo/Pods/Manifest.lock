@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: dbf307af827778831daf53822b895de6768ba16d
+PODS:
+  - UCloudRtcSdk (1.9.2.4)
+
+DEPENDENCIES:
+  - UCloudRtcSdk (~> 1.9.2.4)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - UCloudRtcSdk
+
+SPEC CHECKSUMS:
+  UCloudRtcSdk: 1f58acc6214850be535a9a17b6175e2204f2b426
+
+PODFILE CHECKSUM: 7d82dc127ab21cae7c7a0fd4d8a54340a479a1df
 
 COCOAPODS: 1.11.2
