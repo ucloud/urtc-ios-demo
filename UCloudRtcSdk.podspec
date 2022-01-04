@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "UCloudRtcSdk"
-  spec.version      = "1.9.2.3"
+  spec.version      = "1.9.2.4"
   spec.summary      = "Real-time audio and video calling with UCloudRtcSdk"
 
   spec.description  = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "ucloudyj" => "yj.wang@ucloud.cn" }
   spec.platform     = :ios
   spec.ios.deployment_target = "9.0"
-  spec.source       = { "http": "http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.3.zip" }
+  spec.source       = { "http": "http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.4.zip" }
 
    
   spec.xcconfig = {
@@ -30,6 +30,6 @@ Pod::Spec.new do |spec|
    }
   spec.frameworks = "CFNetwork", "Security", "OpenGLES", "GLKit", "VideoToolbox", "Metal", "MetalKit"
   spec.libraries = "icucore", "c++", "bz2", "z", "iconv"
-  spec.vendored_frameworks = 'UCloudRtcSdk_iOS_1.9.2.3/*.framework'
+  spec.vendored_frameworks = 'UCloudRtcSdk_iOS_1.9.2.4/*.framework'
 
 end
