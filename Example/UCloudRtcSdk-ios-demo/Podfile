@@ -6,7 +6,7 @@ target 'UCloudRtcSdkDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 # pod 'UCloudRtcSdk', :path => '../../'
-  pod 'UCloudRtcSdk', '~> 1.9.2.4'
+  pod 'UCloudRtcSdk', '~> 1.9.2.6'
    #pod 'UCloudRtcSdk'
 
 

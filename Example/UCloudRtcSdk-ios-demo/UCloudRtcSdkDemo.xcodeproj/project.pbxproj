@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		38FDC3A82591A23A00767A0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3A72591A23A00767A0A /* AppDelegate.m */; };
-		38FDC3AB2591A23A00767A0A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDC3AA2591A23A00767A0A /* SceneDelegate.m */; };
 		38FDC3B12591A23A00767A0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC3AF2591A23A00767A0A /* Main.storyboard */; };
 		38FDC3B32591A23B00767A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC3B22591A23B00767A0A /* Assets.xcassets */; };
 		38FDC3B62591A23B00767A0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FDC3B42591A23B00767A0A /* LaunchScreen.storyboard */; };
@@ -63,8 +62,6 @@
 		38FDC3A32591A23A00767A0A /* UCloudRtcSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCloudRtcSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FDC3A62591A23A00767A0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		38FDC3A72591A23A00767A0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		38FDC3A92591A23A00767A0A /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		38FDC3AA2591A23A00767A0A /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		38FDC3B02591A23A00767A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38FDC3B22591A23B00767A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38FDC3B52591A23B00767A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -181,8 +178,6 @@
 				38FDC3FB2591A64400767A0A /* URTC */,
 				38FDC3A62591A23A00767A0A /* AppDelegate.h */,
 				38FDC3A72591A23A00767A0A /* AppDelegate.m */,
-				38FDC3A92591A23A00767A0A /* SceneDelegate.h */,
-				38FDC3AA2591A23A00767A0A /* SceneDelegate.m */,
 				38FDC3AF2591A23A00767A0A /* Main.storyboard */,
 				38FDC3B22591A23B00767A0A /* Assets.xcassets */,
 				38FDC3B42591A23B00767A0A /* LaunchScreen.storyboard */,
@@ -505,7 +500,6 @@
 				38FDC4152591A64400767A0A /* URTCRecodView.m in Sources */,
 				38FDC40E2591A64400767A0A /* CLSlider.m in Sources */,
 				38FDC3B92591A23B00767A0A /* main.m in Sources */,
-				38FDC3AB2591A23A00767A0A /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,7 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UCloudRtcTextField *userTf;
 @property (weak, nonatomic) IBOutlet UCloudRtcTextField *roomTf;
-@property (weak, nonatomic) IBOutlet UISwitch *roomTypeSwitch;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *roomTypeSegmControl;
 
 ///  参数设置
 @property (nonatomic,strong) NSDictionary *engineSetting;
@@ -38,7 +38,6 @@
     [self setupUI];
     
     self.versionLB.text = [UCloudRtcEngine currentVersion];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -65,10 +64,10 @@
     roomVC.token = TOKEN;
     roomVC.engineSetting = self.engineSetting;
     roomVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    if (self.roomTypeSwitch.on) {
-        roomVC.roomType = UCloudRtcEngineRoomType_Broadcast;
-    }else{
+    if (_roomTypeSegmControl.selectedSegmentIndex == 0) {
         roomVC.roomType = UCloudRtcEngineRoomType_Communicate;
+    }else{
+        roomVC.roomType = UCloudRtcEngineRoomType_Broadcast;
     }
     [self presentViewController:roomVC animated:true completion:nil];
 }

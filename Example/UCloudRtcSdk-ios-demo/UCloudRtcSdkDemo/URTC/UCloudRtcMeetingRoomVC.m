@@ -278,6 +278,8 @@ static NSString *roomCellId = @"roomCellId";
     [_rtcEngine setRemoteViewMode:(UCloudRtcVideoViewModeScaleAspectFit)];
     [_rtcEngine setPreviewMode:(UCloudRtcVideoViewModeScaleAspectFill)];
     _rtcEngine.engineMode = UCloudRtcEngineModeTrival;
+    
+    _rtcEngine.roomType = UCloudRtcEngineRoomType_Communicate;
 
     // 本地录制文件输出路径
     NSString *tempDir = NSTemporaryDirectory();
