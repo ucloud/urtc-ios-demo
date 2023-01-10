@@ -4,69 +4,9 @@ urtc iOS 端demo
 > 运行demo
 
 ```
-cd  [path]/urtc-ios-demo/Example/UCloudRtcSdk-ios-demo
-
-pod install
-
-打开UCloudRtcSdkDemo.xcworkspace
+打开  [path]/urtc-ios-demo/Example/UCloudRtcSdk-ios-demo/UCloudRtcSdkDemo.xcodeproj
+修改 ViewController.m 中 APP_ID/APP_KEY
 ```
-
-> UCloudRtcSdk_iOS下载
-
-- [UCloudRtcSdk_iOS_1.9.2.4](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.4.zip)
-
-- [UCloudRtcSdk_iOS_1.9.2.4_非bitcode](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.4_非bitcode.zip)
-
-- [UCloudRtcSdk_iOS_1.9.2.3](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.3.zip)
-
-- [UCloudRtcSdk_iOS_1.9.2.3_非bitcode](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.3_非bitcode.zip)
-
-- [UCloudRtcSdk_iOS_1.9.2.2](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.2.zip)
-
-- [UCloudRtcSdk_iOS_1.9.2.1](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.1.zip)
-
-- [UCloudRtcSdk_iOS_1.9.2](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.2.zip)
-
-- [UCloudRtcSdk_iOS_1.9.1.7](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.1.7.zip)
-
-- [UCloudRtcSdk_iOS_1.9.1.6](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.1.6.zip)
-
-- [UCloudRtcSdk_iOS_1.9.1.5](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.1.5.zip)
-
-- [UCloudRtcSdk_iOS_1.9.1.4](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.1.4.zip)
-
-- [UCloudRtcSdk_iOS_1.9.1.3](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.1.3.zip)
-
-- [UCloudRtcSdk_iOS_1.9.1.2](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.1.2.zip)
-
-- [UCloudRtcSdk_iOS_1.9.1.1](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.1.1.zip)
-
-- [UCloudRtcSdk_iOS-1.9.1](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS_1.9.1.zip)
-
-- [UCloudRtcSdk_iOS-1.9.0](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.9.0.zip)
-
-- [UCloudRtcSdk_iOS-1.8.9](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.9.zip)
-
-- [UCloudRtcSdk_iOS-1.8.8](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.8.zip)
-
-- [UCloudRtcSdk_iOS-1.8.7](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.7.zip)
-
-- [UCloudRtcSdk_iOS-1.8.6](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.6.zip)
-
-- [UCloudRtcSdk_iOS-1.8.5](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.5.zip)
-
-- [UCloudRtcSdk_iOS-1.8.4](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.4.zip)
-
-- [UCloudRtcSdk_iOS-1.8.3](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.3.zip)
-
-- [UCloudRtcSdk_iOS-1.8.2](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.2.zip)
-
-- [UCloudRtcSdk_iOS-1.8.1](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.1.zip)
-
-- [UCloudRtcSdk_iOS-1.8.0](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.8.0.zip)
-
-- [UCloudRtcSdk_iOS-1.7.9](http://urtcsdk.cn-bj.ufileos.com/UCloudRtcSdk_iOS-1.7.9.zip)
-
 
 # 1 描述
 UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时音视频 SDK，支持iOS 8.0及以上系统，提供了音视频通话基础功能，提供灵活的接口，支持高度定制以及二次开发。<br/><br/>
@@ -136,31 +76,13 @@ UCloudRtcSdk_ios.framework 是UCloud推出的一款适用于iOS平台的实时�
 # 5 快速使用
 
 ##  5.1 导入SDK
-### 5.1.1 使用 CocoaPods 自动集成
-``` 
-pod 'UCloudRtcSdk'
-  platform :ios, '9.0'
-  source 'https://github.com/CocoaPods/Specs.git'
-  target 'Your App' do
-  	use_frameworks!
-  	#pod 'UCloudRtcSdk'
-	pod 'UCloudRtcSdk', '~> 1.6.9'
-end
-```
-### 5.1.2 手动导入 SDK 
+### 5.1.1 手动导入 SDK 
 > 手动导入
 
 ```
 Add Files to "Your targets" -> [`pwd`/UCloudRtcSdk/Framework/UCloudRtcSdk_ios.framework]
 ```
-
-> 添加系统依赖库
-
-```
-进入 TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content 菜单
-点击 +，分别添加 CFNetwork.framework, Security.framework, OpenGLES.framework, GLKit.framework, VideoToolbox.framework和libicucore.tdb，libc++.tdb
-```
-### 5.1.3 工程配置
+### 5.1.2 工程配置
 > Enable Bitcode
 
 - 低于v1.5.7（包含）版本：

@@ -1,6 +1,0 @@
-framework module Pods_UCloudRtcSdkDemoTests {
-  umbrella header "Pods-UCloudRtcSdkDemoTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
